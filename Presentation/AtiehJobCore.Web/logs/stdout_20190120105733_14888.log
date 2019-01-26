@@ -1,0 +1,258 @@
+warn: Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Average' on entity type 'Education'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [k].[XmlData]
+      FROM [DataProtectionKeys] AS [k]
+warn: Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Average' on entity type 'Education'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: Microsoft.EntityFrameworkCore.Migrations[20405]
+      No migrations were applied. The database is already up to date.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (52ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedByBrowserName], [u].[CreatedByIp], [u].[CreatedByUserId], [u].[CreatedDateTime], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FatherName], [u].[FirstName], [u].[GenderType], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailPublic], [u].[LastName], [u].[LastVisitedDateTime], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[MobileNumber], [u].[ModifiedByBrowserName], [u].[ModifiedByIp], [u].[ModifiedByUserId], [u].[ModifiedDateTime], [u].[NationalCode], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PhotoFileName], [u].[PlaceOfBirth], [u].[SecurityStamp], [u].[SsnId], [u].[SsnSerial], [u].[TwoFactorEnabled], [u].[UserName], [u].[UserType]
+      FROM [Users] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: AtiehJobCore.Services.Identity.IdentityDbInitializer[0]
+      SeedDatabaseWithAdminUserAsync: adminUser already exists.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+Hosting environment: Development
+Content root path: H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.3029ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (97ms) [Parameters=[@__p_2='?' (DbType = Int32), @__now_0='?' (DbType = DateTimeOffset), @__minutes_1='?' (DbType = DateTimeOffset)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(@__p_2) [user].[Id], [user].[AccessFailedCount], [user].[ConcurrencyStamp], [user].[CreatedByBrowserName], [user].[CreatedByIp], [user].[CreatedByUserId], [user].[CreatedDateTime], [user].[DateOfBirth], [user].[Email], [user].[EmailConfirmed], [user].[FatherName], [user].[FirstName], [user].[GenderType], [user].[IsActive], [user].[IsDeleted], [user].[IsEmailPublic], [user].[LastName], [user].[LastVisitedDateTime], [user].[LockoutEnabled], [user].[LockoutEnd], [user].[MobileNumber], [user].[ModifiedByBrowserName], [user].[ModifiedByIp], [user].[ModifiedByUserId], [user].[ModifiedDateTime], [user].[NationalCode], [user].[NormalizedEmail], [user].[NormalizedUserName], [user].[PasswordHash], [user].[PhoneNumber], [user].[PhoneNumberConfirmed], [user].[PhotoFileName], [user].[PlaceOfBirth], [user].[SecurityStamp], [user].[SsnId], [user].[SsnSerial], [user].[TwoFactorEnabled], [user].[UserName], [user].[UserType]
+      FROM [Users] AS [user]
+      WHERE ([user].[LastVisitedDateTime] IS NOT NULL AND ([user].[LastVisitedDateTime] <= @__now_0)) AND ([user].[LastVisitedDateTime] >= @__minutes_1)
+      ORDER BY [user].[LastVisitedDateTime] DESC
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 642.8301ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 804.5235ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/dist/bundle.min.css?v=fNm5QO_3c-3pX-wKy8FyHepGXS8t-cfj33XFR1i9fck  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/dist/bundle.min.js?v=3ygPNwkMxG1Q80R28NSqSdkyeqGBL379s6v3mplii9s  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 989.6034ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/bundle.min.css'. Physical path: 'H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\dist\bundle.min.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/bundle.min.js'. Physical path: 'H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\dist\bundle.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 71.4214ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 72.3362ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim.woff  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/fa-solid-900.woff2  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim-Bold.woff  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim-Bold.woff'. Physical path: 'H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim-Bold.woff'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim.woff'. Physical path: 'H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim.woff'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 19.2569ms 200 application/font-woff
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 25.1219ms 200 application/font-woff
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/fa-solid-900.woff2'. Physical path: 'H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\fa-solid-900.woff2'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 44.3665ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 47.9911ms 404 text/plain
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Identity/account/login  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Identity", action = "Login", controller = "Account"}. Executing action AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web)
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web) with arguments () - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4062ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: DNTCaptcha.Core.Providers.CookieCaptchaStorageProvider[0]
+      Using the CookieCaptchaStorageProvider.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 211.7317ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web) in 355.5317ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 430.9966ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/DNTCaptchaImage/Show?text=CfDJ8JNDF9%2Bv6%2BNArEssoPCas6EUHmT2S%2Bq1Yl%2B5KqVxe8B%2F2iiU%2FNdngQBOs6Wz0cnL9ni8zadwAQS29M7CfZSuLlR796mReb%2BE7fiyyGBeXXR0U%2BmxN13bSE4AJj0s%2Fco5P%2BrFEbOgKc7GS%2BTct1U9GeAIvEYYRfZeAamTf7Z1yOjE&rndDate=636835913616113375&foreColor=%23333333&backColor=%23ccc&fontSize=20&fontName=Tahoma  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Show", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) with arguments (CfDJ8JNDF9+v6+NArEssoPCas6EUHmT2S+q1Yl+5KqVxe8B/2iiU/NdngQBOs6Wz0cnL9ni8zadwAQS29M7CfZSuLlR796mReb+E7fiyyGBeXXR0U+mxN13bSE4AJj0s/co5P+rFEbOgKc7GS+Tct1U9GeAIvEYYRfZeAamTf7Z1yOjE, 636835913616113375, #333333, #ccc, 20, Tahoma) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 157.0636ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.FileContentResultExecutor[2]
+      Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) in 198.8582ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 214.5788ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Identity/account/login  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Identity", action = "Login", controller = "Account"}. Executing action AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web)
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web) with arguments () - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0502ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 9.1824ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web) in 145.7132ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 173.4742ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/dist/bundle.min.css?v=fNm5QO_3c-3pX-wKy8FyHepGXS8t-cfj33XFR1i9fck  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/dist/bundle.min.js?v=3ygPNwkMxG1Q80R28NSqSdkyeqGBL379s6v3mplii9s  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/DNTCaptchaImage/Show?text=CfDJ8JNDF9%2Bv6%2BNArEssoPCas6G97OKvpIGXcS7YLsHEgzk9TIRdeFuQPtF2AW7jjiEmBltJ6Ev5nbD0RU5jI4LoiD1jMV8wRpt9MC%2BzoA8g9pKoABuN%2FgpnzfxXjfeeob4ljCcX0k3ScwgU3l11P6%2FzEQpmCGkQUPF7yWi%2BKQIIlQVh&rndDate=636835913622935008&foreColor=%23333333&backColor=%23ccc&fontSize=20&fontName=Tahoma  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Show", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/bundle.min.css'. Physical path: 'H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\dist\bundle.min.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/bundle.min.js'. Physical path: 'H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\dist\bundle.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 51.6004ms 200 text/css
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) with arguments (CfDJ8JNDF9+v6+NArEssoPCas6G97OKvpIGXcS7YLsHEgzk9TIRdeFuQPtF2AW7jjiEmBltJ6Ev5nbD0RU5jI4LoiD1jMV8wRpt9MC+zoA8g9pKoABuN/gpnzfxXjfeeob4ljCcX0k3ScwgU3l11P6/zEQpmCGkQUPF7yWi+KQIIlQVh, 636835913622935008, #333333, #ccc, 20, Tahoma) - Validation state: Valid
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 51.2551ms 200 application/javascript
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 30.2624ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.FileContentResultExecutor[2]
+      Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) in 73.4267ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 92.3663ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim-Bold.woff  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/fa-solid-900.woff2  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim.woff  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim.woff'. Physical path: 'H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim.woff'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim-Bold.woff'. Physical path: 'H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim-Bold.woff'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 18.7443ms 200 application/font-woff
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/fa-solid-900.woff2'. Physical path: 'H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\fa-solid-900.woff2'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 22.0978ms 200 application/font-woff
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 33.3687ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Identity/Account/Login application/x-www-form-urlencoded 700
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Identity", action = "Login", controller = "Account"}. Executing action AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web)
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Login (AtiehJobCore.Web) with arguments (AtiehJobCore.ViewModel.Models.Identity.Account.LoginViewModel, ) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (48ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedByBrowserName], [u].[CreatedByIp], [u].[CreatedByUserId], [u].[CreatedDateTime], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FatherName], [u].[FirstName], [u].[GenderType], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailPublic], [u].[LastName], [u].[LastVisitedDateTime], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[MobileNumber], [u].[ModifiedByBrowserName], [u].[ModifiedByIp], [u].[ModifiedByUserId], [u].[ModifiedDateTime], [u].[NationalCode], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PhotoFileName], [u].[PlaceOfBirth], [u].[SecurityStamp], [u].[SsnId], [u].[SsnSerial], [u].[TwoFactorEnabled], [u].[UserName], [u].[UserType]
+      FROM [Users] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (53ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedByBrowserName], [u].[CreatedByIp], [u].[CreatedByUserId], [u].[CreatedDateTime], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FatherName], [u].[FirstName], [u].[GenderType], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailPublic], [u].[LastName], [u].[LastVisitedDateTime], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[MobileNumber], [u].[ModifiedByBrowserName], [u].[ModifiedByIp], [u].[ModifiedByUserId], [u].[ModifiedDateTime], [u].[NationalCode], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PhotoFileName], [u].[PlaceOfBirth], [u].[SecurityStamp], [u].[SsnId], [u].[SsnSerial], [u].[TwoFactorEnabled], [u].[UserName], [u].[UserType]
+      FROM [Users] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (41ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (44ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (37ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0

@@ -1,0 +1,10 @@
+﻿namespace AtiehJobCore.Common.Caching
+{
+    /// <inheritdoc />
+    /// <summary>
+    /// Represents a manager for caching between HTTP requests (long term caching)
+    /// </summary>
+    public interface IStaticCacheManager : ICacheManager
+    {
+    }
+}

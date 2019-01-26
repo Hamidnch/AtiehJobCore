@@ -1,0 +1,49 @@
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (106ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [k].[XmlData]
+      FROM [DataProtectionKeys] AS [k]
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: Microsoft.EntityFrameworkCore.Migrations[20405]
+      No migrations were applied. The database is already up to date.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (63ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedByBrowserName], [u].[CreatedByIp], [u].[CreatedByUserId], [u].[CreatedDateTime], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[GenderType], [u].[IsActive], [u].[IsEmailPublic], [u].[LastName], [u].[LastVisitedDateTime], [u].[Location], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[MobileNumber], [u].[ModifiedByBrowserName], [u].[ModifiedByIp], [u].[ModifiedByUserId], [u].[ModifiedDateTime], [u].[NationalCode], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PhotoFileName], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+      FROM [Users] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (106ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: AtiehJobCore.Services.Identity.IdentityDbInitializer[0]
+      SeedDatabaseWithAdminUserAsync: adminRole already exists.
+warn: AtiehJobCore.Services.Identity.UserManager[14]
+      User (null) password validation failed: PasswordContainsUserName.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (72ms) [Parameters=[@p0='?' (Size = 1000), @p1='?' (Size = 255), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTimeOffset), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 1000), @p9='?' (Size = 255), @p10='?' (DbType = Int32), @p11='?' (DbType = DateTimeOffset), @p12='?' (Size = 4000), @p13='?' (Size = 4000)], CommandType='Text', CommandTimeout='180']
+      SET NOCOUNT ON;
+      INSERT INTO [LogItems] ([CreatedByBrowserName], [CreatedByIp], [CreatedByUserId], [CreatedDateTime], [EventId], [LogLevel], [Logger], [Message], [ModifiedByBrowserName], [ModifiedByIp], [ModifiedByUserId], [ModifiedDateTime], [StateJson], [Url])
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+      SELECT [Id]
+      FROM [LogItems]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();

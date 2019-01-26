@@ -1,0 +1,31 @@
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (651ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [k].[XmlData]
+      FROM [DataProtectionKeys] AS [k]
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[58]
+      Creating key {00d31ea0-2f50-4122-a235-3699d1bae006} with creation date 2019-01-15 19:07:34Z, activation date 2019-01-15 19:07:29Z, and expiration date 2019-01-30 19:07:29Z.
+warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
+      No XML encryptor configured. Key {00d31ea0-2f50-4122-a235-3699d1bae006} may be persisted to storage in unencrypted form.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (150ms) [Parameters=[@__friendlyName_0='?' (Size = 450)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(2) [k].[Id], [k].[FriendlyName], [k].[XmlData]
+      FROM [DataProtectionKeys] AS [k]
+      WHERE [k].[FriendlyName] = @__friendlyName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (247ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='180']
+      SET NOCOUNT ON;
+      INSERT INTO [DataProtectionKeys] ([FriendlyName], [XmlData])
+      VALUES (@p0, @p1);
+      SELECT [Id]
+      FROM [DataProtectionKeys]
+      WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [k].[XmlData]
+      FROM [DataProtectionKeys] AS [k]

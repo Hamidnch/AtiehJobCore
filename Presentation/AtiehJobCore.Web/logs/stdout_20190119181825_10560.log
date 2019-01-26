@@ -1,0 +1,329 @@
+warn: Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Average' on entity type 'Education'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (104ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [k].[XmlData]
+      FROM [DataProtectionKeys] AS [k]
+warn: Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Average' on entity type 'Education'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: Microsoft.EntityFrameworkCore.Migrations[20405]
+      No migrations were applied. The database is already up to date.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (66ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedByBrowserName], [u].[CreatedByIp], [u].[CreatedByUserId], [u].[CreatedDateTime], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FatherName], [u].[FirstName], [u].[GenderType], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailPublic], [u].[LastName], [u].[LastVisitedDateTime], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[MobileNumber], [u].[ModifiedByBrowserName], [u].[ModifiedByIp], [u].[ModifiedByUserId], [u].[ModifiedDateTime], [u].[NationalCode], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PhotoFileName], [u].[PlaceOfBirth], [u].[SecurityStamp], [u].[SsnId], [u].[SsnSerial], [u].[TwoFactorEnabled], [u].[UserName], [u].[UserType]
+      FROM [Users] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: AtiehJobCore.Services.Identity.IdentityDbInitializer[0]
+      SeedDatabaseWithAdminUserAsync: adminUser already exists.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+Hosting environment: Development
+Content root path: D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.2904ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 279.7807ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 460.6316ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 638.1349ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 63.0772ms 404 text/plain
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Identity/account/register  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Register (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Identity", action = "Register", controller = "Account"}. Executing action AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Register (AtiehJobCore.Web)
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Register (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Register (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3582ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Register.
+info: DNTCaptcha.Core.Providers.CookieCaptchaStorageProvider[0]
+      Using the CookieCaptchaStorageProvider.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Register executed in 271.655ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Register (AtiehJobCore.Web) in 485.7805ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Register (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 511.6577ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Identity/account/register  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Register (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Identity", action = "Register", controller = "Account"}. Executing action AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Register (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/DNTCaptchaImage/Show?text=CfDJ8LAVDtwkOhhMqDQGKX5XPyCycsEgtnUGi9SgYG7YO5Nz2CG4eP8oLm6IttkjeCWBR%2FeH52vnhRs3BgmhZZr%2FKbVkptHVYGUZLAuaPriqqexXxRyq7z%2F%2BPrHgUgAPSvPoCQD014Ruv1s1xcuvZ91%2F28fzFnXShfzyjE03myDHm5ub&rndDate=636835313344901714&foreColor=%23333333&backColor=%23ccc&fontSize=20&fontName=Tahoma  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Show", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) with arguments (CfDJ8LAVDtwkOhhMqDQGKX5XPyCycsEgtnUGi9SgYG7YO5Nz2CG4eP8oLm6IttkjeCWBR/eH52vnhRs3BgmhZZr/KbVkptHVYGUZLAuaPriqqexXxRyq7z/+PrHgUgAPSvPoCQD014Ruv1s1xcuvZ91/28fzFnXShfzyjE03myDHm5ub, 636835313344901714, #333333, #ccc, 20, Tahoma) - Validation state: Valid
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Register (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Register (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0346ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Register.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Register executed in 8.8266ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Register (AtiehJobCore.Web) in 279.27ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Areas.Identity.Controllers.AccountController.Register (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 307.5381ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/DNTCaptchaImage/Show?text=CfDJ8LAVDtwkOhhMqDQGKX5XPyDpQh4DrD%2FwXJGPwTVlxxc3vJ6ZtW3VS14NFo%2FZfKdbQJ7r%2FJW8GbRrck4pPQBuoMLIZW1zEELc1k0Tx5hTWnbeDC0AXuWG48UkGNaQkPOkGZeAtWjl8CNdi7JG1LSXHEUa%2BnF7xWQPyZDaWNWuc3Gb&rndDate=636835313348367746&foreColor=%23333333&backColor=%23ccc&fontSize=20&fontName=Tahoma  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Show", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) with arguments (CfDJ8LAVDtwkOhhMqDQGKX5XPyDpQh4DrD/wXJGPwTVlxxc3vJ6ZtW3VS14NFo/ZfKdbQJ7r/JW8GbRrck4pPQBuoMLIZW1zEELc1k0Tx5hTWnbeDC0AXuWG48UkGNaQkPOkGZeAtWjl8CNdi7JG1LSXHEUa+nF7xWQPyZDaWNWuc3Gb, 636835313348367746, #333333, #ccc, 20, Tahoma) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 124.5816ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.FileContentResultExecutor[2]
+      Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 419.6109ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.FileContentResultExecutor[2]
+      Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) in 193.7919ms
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) in 494.6791ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 212.2067ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 534.247ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/DNTCaptchaImage/Refresh?rndDate=636835313348369242&BackColor=%23ccc&FontName=Tahoma&FontSize=20&ForeColor=%23333333&Language=Persian&Max=9000&Min=1&Placeholder=%DA%A9%D8%AF%20%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C%20%D8%A8%D9%87%20%D8%B1%D9%82%D9%85&TextBoxClass=text-box%20form-control&TextBoxTemplate=%3Cdiv%20class%3D%27input-group%27%3E%3Cspan%20class%3D%27input-group-prepend%27%3E%3Cspan%20class%3D%27input-group-text%27%3E%3Ci%20class%3D%27fas%20fa-lock%27%3E%3C%2Fi%3E%3C%2Fspan%3E%3C%2Fspan%3E%7B0%7D%3C%2Fdiv%3E&ValidationErrorMessage=%D9%84%D8%B7%D9%81%D8%A7%20%DA%A9%D8%AF%20%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C%20%D8%B1%D8%A7%20%D8%A8%D9%87%20%D8%B1%D9%82%D9%85%20%D9%88%D8%A7%D8%B1%D8%AF%20%D9%86%D9%85%D8%A7%D8%A6%DB%8C%D8%AF&ValidationMessageClass=text-danger&CaptchaToken=.dntCaptchac4c3bb5e90fc2b82db65e15021e732fa08a8b47c487692095&RefreshButtonClass=fas%20fa-redo%20btn-sm application/x-www-form-urlencoded; charset=UTF-8 214
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Refresh", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core) with arguments (636835313348369242, DNTCaptcha.Core.DNTCaptchaTagHelperHtmlAttributes) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.ContentResult in 7.9206ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ContentResultExecutor[1]
+      Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core) in 71.9792ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 97.3127ms 200 text/plain; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/DNTCaptchaImage/Show?text=CfDJ8LAVDtwkOhhMqDQGKX5XPyCqByV%2BV28pJt4woUfcF1ThDSm17MZtvbYvh0zRXMFyaWttlaelriL165%2BvYKVX6zg4DWA%2Br7%2BO7J532VvK82y7p51VO2ldpYsMQ0cMtOTA1RrRs3AkmbUQhTlJBuichIb7hRjztQEEpohvgF4tAW7c&rndDate=636835313392520151&foreColor=%23333333&backColor=%23ccc&fontSize=20&fontName=Tahoma  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Show", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) with arguments (CfDJ8LAVDtwkOhhMqDQGKX5XPyCqByV+V28pJt4woUfcF1ThDSm17MZtvbYvh0zRXMFyaWttlaelriL165+vYKVX6zg4DWA+r7+O7J532VvK82y7p51VO2ldpYsMQ0cMtOTA1RrRs3AkmbUQhTlJBuichIb7hRjztQEEpohvgF4tAW7c, 636835313392520151, #333333, #ccc, 20, Tahoma) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 27.757ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.FileContentResultExecutor[2]
+      Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) in 74.4653ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 87.7398ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/DNTCaptchaImage/Refresh?rndDate=636835313392521226&BackColor=%23ccc&FontName=Tahoma&FontSize=20&ForeColor=%23333333&Language=Persian&Max=9000&Min=1&Placeholder=%DA%A9%D8%AF%20%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C%20%D8%A8%D9%87%20%D8%B1%D9%82%D9%85&TextBoxClass=text-box%20form-control&TextBoxTemplate=%3Cdiv%20class%3D%27input-group%27%3E%3Cspan%20class%3D%27input-group-prepend%27%3E%3Cspan%20class%3D%27input-group-text%27%3E%3Ci%20class%3D%27fas%20fa-lock%27%3E%3C%2Fi%3E%3C%2Fspan%3E%3C%2Fspan%3E%7B0%7D%3C%2Fdiv%3E&ValidationErrorMessage=%D9%84%D8%B7%D9%81%D8%A7%20%DA%A9%D8%AF%20%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C%20%D8%B1%D8%A7%20%D8%A8%D9%87%20%D8%B1%D9%82%D9%85%20%D9%88%D8%A7%D8%B1%D8%AF%20%D9%86%D9%85%D8%A7%D8%A6%DB%8C%D8%AF&ValidationMessageClass=text-danger&CaptchaToken=.dntCaptcha0c4e29c9e60a4d848f1ee2575e6c96e7326&RefreshButtonClass=fas%20fa-redo%20btn-sm application/x-www-form-urlencoded; charset=UTF-8 214
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Refresh", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core) with arguments (636835313392521226, DNTCaptcha.Core.DNTCaptchaTagHelperHtmlAttributes) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.ContentResult in 1.1523ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ContentResultExecutor[1]
+      Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core) in 39.1716ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 49.5391ms 200 text/plain; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/DNTCaptchaImage/Show?text=CfDJ8LAVDtwkOhhMqDQGKX5XPyBuE6wzkZyiE8XtQycmCaBq%2B0ILyqiDRHiLzC8xLvkLzXTIOtZPl74prP1WAAVKZ3ZonTOGxrxgL9G0V939ar2M49eCmqMzzEifCwp7paTg2FO%2BiztWYAWX7rTQSK15J8julnXOvjsXSfvj6PhIzLup%2FGI2l6NrpNy1uV%2FMgKLpjQ%3D%3D&rndDate=636835313402018418&foreColor=%23333333&backColor=%23ccc&fontSize=20&fontName=Tahoma  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Show", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) with arguments (CfDJ8LAVDtwkOhhMqDQGKX5XPyBuE6wzkZyiE8XtQycmCaBq+0ILyqiDRHiLzC8xLvkLzXTIOtZPl74prP1WAAVKZ3ZonTOGxrxgL9G0V939ar2M49eCmqMzzEifCwp7paTg2FO+iztWYAWX7rTQSK15J8julnXOvjsXSfvj6PhIzLup/GI2l6NrpNy1uV/MgKLpjQ==, 636835313402018418, #333333, #ccc, 20, Tahoma) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 42.5341ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.FileContentResultExecutor[2]
+      Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) in 86.4007ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 98.5249ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/DNTCaptchaImage/Refresh?rndDate=636835313402019614&BackColor=%23ccc&FontName=Tahoma&FontSize=20&ForeColor=%23333333&Language=Persian&Max=9000&Min=1&Placeholder=%DA%A9%D8%AF%20%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C%20%D8%A8%D9%87%20%D8%B1%D9%82%D9%85&TextBoxClass=text-box%20form-control&TextBoxTemplate=%3Cdiv%20class%3D%27input-group%27%3E%3Cspan%20class%3D%27input-group-prepend%27%3E%3Cspan%20class%3D%27input-group-text%27%3E%3Ci%20class%3D%27fas%20fa-lock%27%3E%3C%2Fi%3E%3C%2Fspan%3E%3C%2Fspan%3E%7B0%7D%3C%2Fdiv%3E&ValidationErrorMessage=%D9%84%D8%B7%D9%81%D8%A7%20%DA%A9%D8%AF%20%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C%20%D8%B1%D8%A7%20%D8%A8%D9%87%20%D8%B1%D9%82%D9%85%20%D9%88%D8%A7%D8%B1%D8%AF%20%D9%86%D9%85%D8%A7%D8%A6%DB%8C%D8%AF&ValidationMessageClass=text-danger&CaptchaToken=.dntCaptchaa3baee52e91b47ec9968b498dde34a957928&RefreshButtonClass=fas%20fa-redo%20btn-sm application/x-www-form-urlencoded; charset=UTF-8 214
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Refresh", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core) with arguments (636835313402019614, DNTCaptcha.Core.DNTCaptchaTagHelperHtmlAttributes) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.ContentResult in 0.7016ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ContentResultExecutor[1]
+      Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core) in 35.0648ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 45.3394ms 200 text/plain; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/DNTCaptchaImage/Show?text=CfDJ8LAVDtwkOhhMqDQGKX5XPyCsOa54OjT8RVQux%2FGK8ZBATrPwK4cDhR8risGfPXDAmrd6PyvG5nVVxbZzM2ez5VoM3wQJEXrNSV%2F2NwNTO5tO8XI2Ge5UuhU7lqsZusSmIUzUn0FtQryI%2Fu5leVBKz9%2FVil%2FaLtLb9OtytBcr1SQSTpywfKBsJeh90TftcbJeuA%3D%3D&rndDate=636835313417761879&foreColor=%23333333&backColor=%23ccc&fontSize=20&fontName=Tahoma  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Show", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) with arguments (CfDJ8LAVDtwkOhhMqDQGKX5XPyCsOa54OjT8RVQux/GK8ZBATrPwK4cDhR8risGfPXDAmrd6PyvG5nVVxbZzM2ez5VoM3wQJEXrNSV/2NwNTO5tO8XI2Ge5UuhU7lqsZusSmIUzUn0FtQryI/u5leVBKz9/Vil/aLtLb9OtytBcr1SQSTpywfKBsJeh90TftcbJeuA==, 636835313417761879, #333333, #ccc, 20, Tahoma) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 31.3447ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.FileContentResultExecutor[2]
+      Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) in 68.3265ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 81.852ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/DNTCaptchaImage/Refresh?rndDate=636835313417762842&BackColor=%23ccc&FontName=Tahoma&FontSize=20&ForeColor=%23333333&Language=Persian&Max=9000&Min=1&Placeholder=%DA%A9%D8%AF%20%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C%20%D8%A8%D9%87%20%D8%B1%D9%82%D9%85&TextBoxClass=text-box%20form-control&TextBoxTemplate=%3Cdiv%20class%3D%27input-group%27%3E%3Cspan%20class%3D%27input-group-prepend%27%3E%3Cspan%20class%3D%27input-group-text%27%3E%3Ci%20class%3D%27fas%20fa-lock%27%3E%3C%2Fi%3E%3C%2Fspan%3E%3C%2Fspan%3E%7B0%7D%3C%2Fdiv%3E&ValidationErrorMessage=%D9%84%D8%B7%D9%81%D8%A7%20%DA%A9%D8%AF%20%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C%20%D8%B1%D8%A7%20%D8%A8%D9%87%20%D8%B1%D9%82%D9%85%20%D9%88%D8%A7%D8%B1%D8%AF%20%D9%86%D9%85%D8%A7%D8%A6%DB%8C%D8%AF&ValidationMessageClass=text-danger&CaptchaToken=.dntCaptcha2620e775757642418743d40c5ee1a0877084&RefreshButtonClass=fas%20fa-redo%20btn-sm application/x-www-form-urlencoded; charset=UTF-8 214
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Refresh", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core) with arguments (636835313417762842, DNTCaptcha.Core.DNTCaptchaTagHelperHtmlAttributes) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.ContentResult in 0.7061ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ContentResultExecutor[1]
+      Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core) in 39.7375ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 49.7686ms 200 text/plain; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/DNTCaptchaImage/Show?text=CfDJ8LAVDtwkOhhMqDQGKX5XPyBIxrbL2kM9PQz3R4HFZeVA7ffbz4zfOfQzh%2BZxvXERY0DGjkCMYiF7kMo3NxRFDyRwNKrfgbUDe0%2FbRdfq%2Fb1H2bXk37swzPXW0mDU0EbjQ3gBq%2BSjRinM7yaeYvdKU15RPs3e735dknQtLyj3ftOZ&rndDate=636835313433334563&foreColor=%23333333&backColor=%23ccc&fontSize=20&fontName=Tahoma  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Show", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) with arguments (CfDJ8LAVDtwkOhhMqDQGKX5XPyBIxrbL2kM9PQz3R4HFZeVA7ffbz4zfOfQzh+ZxvXERY0DGjkCMYiF7kMo3NxRFDyRwNKrfgbUDe0/bRdfq/b1H2bXk37swzPXW0mDU0EbjQ3gBq+SjRinM7yaeYvdKU15RPs3e735dknQtLyj3ftOZ, 636835313433334563, #333333, #ccc, 20, Tahoma) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 23.1249ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.FileContentResultExecutor[2]
+      Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) in 60.9201ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 73.7616ms 200 image/png
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/DNTCaptchaImage/Refresh?rndDate=636835313433335548&BackColor=%23ccc&FontName=Tahoma&FontSize=20&ForeColor=%23333333&Language=Persian&Max=9000&Min=1&Placeholder=%DA%A9%D8%AF%20%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C%20%D8%A8%D9%87%20%D8%B1%D9%82%D9%85&TextBoxClass=text-box%20form-control&TextBoxTemplate=%3Cdiv%20class%3D%27input-group%27%3E%3Cspan%20class%3D%27input-group-prepend%27%3E%3Cspan%20class%3D%27input-group-text%27%3E%3Ci%20class%3D%27fas%20fa-lock%27%3E%3C%2Fi%3E%3C%2Fspan%3E%3C%2Fspan%3E%7B0%7D%3C%2Fdiv%3E&ValidationErrorMessage=%D9%84%D8%B7%D9%81%D8%A7%20%DA%A9%D8%AF%20%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C%20%D8%B1%D8%A7%20%D8%A8%D9%87%20%D8%B1%D9%82%D9%85%20%D9%88%D8%A7%D8%B1%D8%AF%20%D9%86%D9%85%D8%A7%D8%A6%DB%8C%D8%AF&ValidationMessageClass=text-danger&CaptchaToken=.dntCaptchaa93441197b7a4cb692bec46aded428653379&RefreshButtonClass=fas%20fa-redo%20btn-sm application/x-www-form-urlencoded; charset=UTF-8 214
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Refresh", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core) with arguments (636835313433335548, DNTCaptcha.Core.DNTCaptchaTagHelperHtmlAttributes) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.ContentResult in 0.82ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ContentResultExecutor[1]
+      Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core) in 39.5793ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Refresh (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 50.2025ms 200 text/plain; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/DNTCaptchaImage/Show?text=CfDJ8LAVDtwkOhhMqDQGKX5XPyB3s131ws6fCiUz28VMSr%2F6ldCI7HGQD8D6i3Rwq50MFDGG5CM7A5cXLmLRsvgB6%2FH1BYAh1BMCuDIbkqirvPhkphux5oqDpBqPc%2FteXBpLtX55%2FGbeooxfRQV3FdRT1DUCw1jreBGg2y0Qr%2FqHOelx&rndDate=636835313447240552&foreColor=%23333333&backColor=%23ccc&fontSize=20&fontName=Tahoma  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Show", controller = "DNTCaptchaImage", area = ""}. Executing action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) with arguments (CfDJ8LAVDtwkOhhMqDQGKX5XPyB3s131ws6fCiUz28VMSr/6ldCI7HGQD8D6i3Rwq50MFDGG5CM7A5cXLmLRsvgB6/H1BYAh1BMCuDIbkqirvPhkphux5oqDpBqPc/teXBpLtX55/GbeooxfRQV3FdRT1DUCw1jreBGg2y0Qr/qHOelx, 636835313447240552, #333333, #ccc, 20, Tahoma) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 26.3568ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.FileContentResultExecutor[2]
+      Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core) in 59.9406ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'DNTCaptcha.Core.DNTCaptchaImageController.Show (DNTCaptcha.Core)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 72.0649ms 200 image/png

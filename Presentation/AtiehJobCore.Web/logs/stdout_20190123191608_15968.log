@@ -1,0 +1,1109 @@
+warn: Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Average' on entity type 'Education'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (843ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [k].[XmlData]
+      FROM [DataProtectionKeys] AS [k]
+warn: Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Average' on entity type 'Education'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (54ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: Microsoft.EntityFrameworkCore.Migrations[20405]
+      No migrations were applied. The database is already up to date.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (294ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedByBrowserName], [u].[CreatedByIp], [u].[CreatedByUserId], [u].[CreatedDateTime], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FatherName], [u].[FirstName], [u].[GenderType], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailPublic], [u].[LastName], [u].[LastVisitedDateTime], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[MobileNumber], [u].[ModifiedByBrowserName], [u].[ModifiedByIp], [u].[ModifiedByUserId], [u].[ModifiedDateTime], [u].[NationalCode], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PhotoFileName], [u].[PlaceOfBirth], [u].[SecurityStamp], [u].[SsnId], [u].[SsnSerial], [u].[TwoFactorEnabled], [u].[UserName], [u].[UserType]
+      FROM [Users] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: AtiehJobCore.Services.Identity.IdentityDbInitializer[0]
+      SeedDatabaseWithAdminUserAsync: adminUser already exists.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+Hosting environment: Development
+Content root path: D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (152ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (151ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (41ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (52ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.1179ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (295ms) [Parameters=[@__p_2='?' (DbType = Int32), @__now_0='?' (DbType = DateTimeOffset), @__minutes_1='?' (DbType = DateTimeOffset)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(@__p_2) [user].[Id], [user].[AccessFailedCount], [user].[ConcurrencyStamp], [user].[CreatedByBrowserName], [user].[CreatedByIp], [user].[CreatedByUserId], [user].[CreatedDateTime], [user].[DateOfBirth], [user].[Email], [user].[EmailConfirmed], [user].[FatherName], [user].[FirstName], [user].[GenderType], [user].[IsActive], [user].[IsDeleted], [user].[IsEmailPublic], [user].[LastName], [user].[LastVisitedDateTime], [user].[LockoutEnabled], [user].[LockoutEnd], [user].[MobileNumber], [user].[ModifiedByBrowserName], [user].[ModifiedByIp], [user].[ModifiedByUserId], [user].[ModifiedDateTime], [user].[NationalCode], [user].[NormalizedEmail], [user].[NormalizedUserName], [user].[PasswordHash], [user].[PhoneNumber], [user].[PhoneNumberConfirmed], [user].[PhotoFileName], [user].[PlaceOfBirth], [user].[SecurityStamp], [user].[SsnId], [user].[SsnSerial], [user].[TwoFactorEnabled], [user].[UserName], [user].[UserType]
+      FROM [Users] AS [user]
+      WHERE ([user].[LastVisitedDateTime] IS NOT NULL AND ([user].[LastVisitedDateTime] <= @__now_0)) AND ([user].[LastVisitedDateTime] >= @__minutes_1)
+      ORDER BY [user].[LastVisitedDateTime] DESC
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 1990.5383ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 2327.1739ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4106.9339ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/avatars/icon-user-default.png  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (46ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (39ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (45ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (81ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 849.7109ms 404 text/plain
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (41ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (68ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (66ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 594.3623ms 404 text/plain
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Home/SetLanguage?returnUrl=~%2F application/x-www-form-urlencoded 239
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (38ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (39ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (39ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "SetLanguage", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web) with arguments (en-US, ~/) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult in 1.763ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.LocalRedirectResultExecutor[1]
+      Executing LocalRedirectResult, redirecting to /.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web) in 128.0483ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 650.8035ms 302 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1368ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 15.7289ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 56.583ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 350.1632ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/avatars/icon-user-default.png  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (41ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (60ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (55ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 647.7066ms 404 text/plain
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Home/SetLanguage?returnUrl=~%2F application/x-www-form-urlencoded 239
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (33ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (42ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (45ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (51ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "SetLanguage", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web) with arguments (fa-IR, ~/) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult in 0.0771ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.LocalRedirectResultExecutor[1]
+      Executing LocalRedirectResult, redirecting to /.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web) in 51.7691ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 550.2667ms 302 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.026ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 7.0279ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 47.3607ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 241.1333ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/avatars/icon-user-default.png  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (48ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (52ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (97ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (42ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (65ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 630.8704ms 404 text/plain
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Admin/Home  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (55ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (60ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (39ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (37ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Index", controller = "Home"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3778ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 1030.1453ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web) in 1189.5369ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1665.7879ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (57ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (37ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (41ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0206ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 130.3102ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 195.6362ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 614.1617ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/avatars/icon-user-default.png  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 267.3382ms 404 text/plain
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Home/SetLanguage?returnUrl=~%2F application/x-www-form-urlencoded 239
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (40ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (47ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (52ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (60ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (41ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "SetLanguage", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web) with arguments (en-US, ~/) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult in 0.0612ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.LocalRedirectResultExecutor[1]
+      Executing LocalRedirectResult, redirecting to /.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web) in 69.9094ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 728.6814ms 302 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0293ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 4.4287ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 52.3898ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 328.7054ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/avatars/icon-user-default.png  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 215.6871ms 404 text/plain
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Admin/Home  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (56ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (70ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (51ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Index", controller = "Home"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0293ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 111.5543ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web) in 181.4363ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 719.0166ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (48ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (48ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (38ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (44ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (45ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0227ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 76.9966ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 141.1169ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 572.8586ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/avatars/icon-user-default.png  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 233.7699ms 404 text/plain
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Home/SetLanguage?returnUrl=~%2F application/x-www-form-urlencoded 239
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (35ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (51ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (51ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (39ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "SetLanguage", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web) with arguments (fa-IR, ~/) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult in 0.0648ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.LocalRedirectResultExecutor[1]
+      Executing LocalRedirectResult, redirecting to /.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web) in 51.4779ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 627.933ms 302 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (42ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (47ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (35ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (37ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0243ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 92.5645ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 163.0649ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 550.4076ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/avatars/icon-user-default.png  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 226.4311ms 404 text/plain
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Admin/Home  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (39ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (55ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (59ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (40ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (39ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Index", controller = "Home"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0241ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 180.9797ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web) in 258.1047ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 708.1125ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (53ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (38ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (37ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (38ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0242ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (86ms) [Parameters=[@__p_2='?' (DbType = Int32), @__now_0='?' (DbType = DateTimeOffset), @__minutes_1='?' (DbType = DateTimeOffset)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(@__p_2) [user].[Id], [user].[AccessFailedCount], [user].[ConcurrencyStamp], [user].[CreatedByBrowserName], [user].[CreatedByIp], [user].[CreatedByUserId], [user].[CreatedDateTime], [user].[DateOfBirth], [user].[Email], [user].[EmailConfirmed], [user].[FatherName], [user].[FirstName], [user].[GenderType], [user].[IsActive], [user].[IsDeleted], [user].[IsEmailPublic], [user].[LastName], [user].[LastVisitedDateTime], [user].[LockoutEnabled], [user].[LockoutEnd], [user].[MobileNumber], [user].[ModifiedByBrowserName], [user].[ModifiedByIp], [user].[ModifiedByUserId], [user].[ModifiedDateTime], [user].[NationalCode], [user].[NormalizedEmail], [user].[NormalizedUserName], [user].[PasswordHash], [user].[PhoneNumber], [user].[PhoneNumberConfirmed], [user].[PhotoFileName], [user].[PlaceOfBirth], [user].[SecurityStamp], [user].[SsnId], [user].[SsnSerial], [user].[TwoFactorEnabled], [user].[UserName], [user].[UserType]
+      FROM [Users] AS [user]
+      WHERE ([user].[LastVisitedDateTime] IS NOT NULL AND ([user].[LastVisitedDateTime] <= @__now_0)) AND ([user].[LastVisitedDateTime] >= @__minutes_1)
+      ORDER BY [user].[LastVisitedDateTime] DESC
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 280.1529ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 347.2928ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 763.1855ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/avatars/icon-user-default.png  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (40ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (47ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (38ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (55ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (65ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 605.2734ms 404 text/plain
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Home/SetLanguage?returnUrl=~%2F application/x-www-form-urlencoded 239
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (45ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (61ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (44ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (40ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (51ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "SetLanguage", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web) with arguments (en-US, ~/) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult in 0.0704ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.LocalRedirectResultExecutor[1]
+      Executing LocalRedirectResult, redirecting to /.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web) in 73.7488ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.SetLanguage (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 635.3078ms 302 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (37ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (56ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (46ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (49ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0236ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 97.2687ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 156.4082ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 621.372ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/avatars/icon-user-default.png  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 214.3073ms 404 text/plain
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Admin/Home  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (43ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (68ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (42ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (49ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (57ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Index", controller = "Home"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0257ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 85.508ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web) in 166.5539ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 654.2695ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (38ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (55ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (39ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0259ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 92.5971ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 158.2316ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 559.0621ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/avatars/icon-user-default.png  
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (59ms) [Parameters=[@__get_Item_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedByBrowserName], [e].[CreatedByIp], [e].[CreatedByUserId], [e].[CreatedDateTime], [e].[DateOfBirth], [e].[Email], [e].[EmailConfirmed], [e].[FatherName], [e].[FirstName], [e].[GenderType], [e].[IsActive], [e].[IsDeleted], [e].[IsEmailPublic], [e].[LastName], [e].[LastVisitedDateTime], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[MobileNumber], [e].[ModifiedByBrowserName], [e].[ModifiedByIp], [e].[ModifiedByUserId], [e].[ModifiedDateTime], [e].[NationalCode], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[PhotoFileName], [e].[PlaceOfBirth], [e].[SecurityStamp], [e].[SsnId], [e].[SsnSerial], [e].[TwoFactorEnabled], [e].[UserName], [e].[UserType]
+      FROM [Users] AS [e]
+      WHERE [e].[Id] = @__get_Item_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (86ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[CreatedByBrowserName], [uc].[CreatedByIp], [uc].[CreatedByUserId], [uc].[CreatedDateTime], [uc].[ModifiedByBrowserName], [uc].[ModifiedByIp], [uc].[ModifiedByUserId], [uc].[ModifiedDateTime], [uc].[UserId]
+      FROM [UserClaims] AS [uc]
+      WHERE [uc].[UserId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (56ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [role].[Name]
+      FROM [UserRoles] AS [userRole]
+      INNER JOIN [Roles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+      WHERE [userRole].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (64ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]
+      WHERE [r].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (63ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='180']
+      SELECT [rc].[ClaimType], [rc].[ClaimValue]
+      FROM [RoleClaims] AS [rc]
+      WHERE [rc].[RoleId] = @__role_Id_0
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 714.5906ms 404 text/plain

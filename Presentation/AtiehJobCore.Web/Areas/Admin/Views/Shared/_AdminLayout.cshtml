@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html dir="@(IsRtl() ? "rtl" : "ltr")">
+
+<!-- Head-->
+@await Html.PartialAsync("_Head")
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+
+    <!-- Header-->
+    @await Html.PartialAsync("_Header")
+
+    <div class="app-body">
+        <!-- Sidebar Menu-->
+        @await Html.PartialAsync("_SidebarMenu")
+
+        <main class="main">
+
+            <!-- Breadcrumb-->
+            @await Html.PartialAsync("_Breadcrumb")
+
+            <div class="container">
+                @RenderBody()
+            </div>
+
+        </main>
+
+        <!-- Aside Menu-->
+        @await Html.PartialAsync("_AsideMenu")
+    </div>
+
+    <!-- Footer-->
+    @await Html.PartialAsync("_Footer")
+
+    <!-- Foot-->
+    @await Html.PartialAsync("_Foot")
+
+    @RenderSection("Scripts", required: false);
+
+</body>
+
+</html>

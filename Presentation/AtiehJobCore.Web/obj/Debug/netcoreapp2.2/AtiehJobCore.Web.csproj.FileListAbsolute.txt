@@ -1,0 +1,6 @@
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.csprojAssemblyReference.cache
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.csproj.CoreCompileInputs.cache
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.RazorAssemblyInfo.cache
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.RazorAssemblyInfo.cs
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.AssemblyInfoInputs.cache
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.AssemblyInfo.cs

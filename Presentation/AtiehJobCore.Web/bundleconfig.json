@@ -1,0 +1,119 @@
+[
+  {
+    "outputFileName": "wwwroot/dist/bundle.min.css",
+    "inputFiles": [
+      "wwwroot/source/bootstrap/bootstrap.min.css",
+      "wwwroot/source/font-awesome/fa-solid.min.css",
+      "wwwroot/source/font-awesome/fontawesome-all.min.css",
+      "wwwroot/source/sweetalert2/sweetalert2.min.css",
+      "wwwroot/source/custom/custom.min.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false,
+      "adjustRelativePaths": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/dist/bundle-rtl.min.css",
+    "inputFiles": [
+      "wwwroot/source/bootstrap/bootstrap-rtl.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false,
+      "adjustRelativePaths": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/dist/bundle.min.js",
+    "inputFiles": [
+      "wwwroot/source/jquery/jquery.min.js",
+      "wwwroot/source/popper/pooper.min.js",
+      "wwwroot/source/jquery/jquery.validate.min.js",
+      "wwwroot/source/jquery/jquery.validate.unobtrusive.min.js",
+      "wwwroot/source/jquery/jquery.unobtrusive-ajax.min.js",
+      "wwwroot/source/bootstrap/bootstrap.min.js",
+      "wwwroot/source/sweetalert2/sweetalert2.all.min.js",
+      "wwwroot/source/custom/custom.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "adjustRelativePaths": false,
+      "renameLocals": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/dist/admin.min.css",
+    "inputFiles": [
+      "wwwroot/source/core-ui/coreui-icons/css/coreui-icons.min.css",
+      "wwwroot/source/core-ui/flag-icons/css/flag-icon.min.css",
+      "wwwroot/source/font-awesome/fa-solid.min.css",
+      "wwwroot/source/font-awesome/fontawesome-all.min.css",
+      "wwwroot/source/core-ui/simple-line-icons/css/simple-line-icons.min.css",
+      "wwwroot/source/core-ui/css/coreui.min.css",
+      "wwwroot/source/core-ui/pace/pace.min.css"
+    ],
+    "minify": {
+      "enabled": false,
+      "adjustRelativePaths": false,
+      "renameLocals": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/dist/admin.min.js",
+    "inputFiles": [
+      "wwwroot/source/jquery/jquery.min.js",
+      "wwwroot/source/popper/popper.min.js",
+      "wwwroot/source/bootstrap/bootstrap.min.js",
+      "wwwroot/source/core-ui/pace/pace.min.js",
+      "wwwroot/source/core-ui/perfect-scrollbar/perfect-scrollbar.min.js",
+      "wwwroot/source/core-ui/js/coreui.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "adjustRelativePaths": false,
+      "renameLocals": false
+    }
+  }
+  //  ,
+  //{
+  //  "outputFileName": "wwwroot/dist/admin-rtl.min.css",
+  //  "inputFiles": [
+  //    "wwwroot/source/core-ui/coreui-icons/css/coreui-icons.min.css",
+  //    "wwwroot/source/core-ui/flag-icons/css/flag-icon.min.css",
+  //    "wwwroot/source/font-awesome/fa-solid.min.css",
+  //    "wwwroot/source/font-awesome/fontawesome-all.min.css",
+  //    "wwwroot/source/core-ui/simple-line-icons/css/simple-line-icons.min.css",
+  //    "wwwroot/source/core-ui/css/coreui-rtl.min.css",
+  //    "wwwroot/source/core-ui/pace/pace.min.css"
+  //  ],
+  //  "minify": {
+  //    "enabled": false,
+  //    "adjustRelativePaths": false,
+  //    "renameLocals": false
+  //  }
+  //},
+  //{
+  //  "outputFileName": "wwwroot/dist/admin-rtl.min.js",
+  //  "inputFiles": [
+  //    "wwwroot/source/jquery/jquery.min.js",
+  //    "wwwroot/source/popper/popper.min.js",
+  //    "wwwroot/source/bootstrap/bootstrap.min.js",
+  //    "wwwroot/source/core-ui/pace/pace.min.js",
+  //    "wwwroot/source/core-ui/perfect-scrollbar/perfect-scrollbar.min.js",
+  //    "wwwroot/source/core-ui/js/coreui-rtl.min.js"
+  //  ],
+  //  "minify": {
+  //    "enabled": true,
+  //    "adjustRelativePaths": false,
+  //    "renameLocals": false
+  //  }
+  //},
+  //{
+  //  "outputFileName": "wwwroot/source/custom/custom.min.css",
+  //  "inputFiles": [
+  //    "wwwroot/source/custom/custom.css"
+  //  ]
+  //}
+]
