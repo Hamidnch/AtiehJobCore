@@ -52,7 +52,7 @@
           "lib/netstandard2.0/DNTCommon.Web.Core.dll": {}
         }
       },
-      "DNTPersianUtils.Core/3.1.0": {
+      "DNTPersianUtils.Core/3.2.0": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel.Annotations": "4.5.0",
@@ -3318,7 +3318,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "DNTPersianUtils.Core": "3.1.0",
+          "DNTPersianUtils.Core": "3.2.0",
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Razor": "2.2.0",
@@ -3418,14 +3418,14 @@
         "lib/netstandard2.0/DNTCommon.Web.Core.xml"
       ]
     },
-    "DNTPersianUtils.Core/3.1.0": {
-      "sha512": "DAPPAh1dNShkASo22htBQUpp0WWi9+F8LDdZ4hltsAaCx/FxCqdgDxLM/DiVo2QmV+MflE7lqG9OGRBJFfOcqQ==",
+    "DNTPersianUtils.Core/3.2.0": {
+      "sha512": "BMdGhn5qRj2SinQMn/5ZNh3I2P/V12jdJZz3Q6BQF1iFAHZtimy8hHf/UXpfJa5qN7KafNj8ujUw9RjYKXI89A==",
       "type": "package",
-      "path": "dntpersianutils.core/3.1.0",
+      "path": "dntpersianutils.core/3.2.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "dntpersianutils.core.3.1.0.nupkg.sha512",
+        "dntpersianutils.core.3.2.0.nupkg.sha512",
         "dntpersianutils.core.nuspec",
         "lib/net40/DNTPersianUtils.Core.dll",
         "lib/net40/DNTPersianUtils.Core.xml",

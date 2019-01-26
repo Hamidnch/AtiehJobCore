@@ -60,7 +60,7 @@
           "lib/netstandard2.0/DNTBreadCrumb.Core.dll": {}
         }
       },
-      "DNTCaptcha.Core/1.6.6": {
+      "DNTCaptcha.Core/1.6.7": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
@@ -99,7 +99,7 @@
           "lib/netstandard2.0/DNTCommon.Web.Core.dll": {}
         }
       },
-      "DNTPersianUtils.Core/3.1.0": {
+      "DNTPersianUtils.Core/3.2.0": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel.Annotations": "4.5.0",
@@ -3016,11 +3016,11 @@
           "lib/netstandard1.3/Microsoft.SyndicationFeed.ReaderWriter.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration/2.2.0": {
+      "Microsoft.VisualStudio.Web.CodeGeneration/2.2.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "2.2.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": "2.2.0"
+          "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore": "2.2.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.dll": {}
@@ -3029,7 +3029,7 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/2.2.0": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/2.2.1": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "11.0.2"
@@ -3041,11 +3041,11 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Core/2.2.0": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Core/2.2.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "2.2.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Templating": "2.2.0",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Templating": "2.2.1",
           "Newtonsoft.Json": "11.0.2"
         },
         "compile": {
@@ -3055,10 +3055,10 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design/2.2.0": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design/2.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "2.2.0"
+          "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "2.2.1"
         },
         "compile": {
           "lib/netstandard2.0/dotnet-aspnet-codegenerator-design.dll": {}
@@ -3067,10 +3067,10 @@
           "lib/netstandard2.0/dotnet-aspnet-codegenerator-design.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/2.2.0": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/2.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.VisualStudio.Web.CodeGeneration.Core": "2.2.0"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Core": "2.2.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll": {}
@@ -3079,12 +3079,12 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Templating/2.2.0": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Templating/2.2.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Razor.Language": "2.2.0",
           "Microsoft.CodeAnalysis.CSharp": "2.8.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Utils": "2.2.0"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Utils": "2.2.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll": {}
@@ -3093,11 +3093,11 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGeneration.Utils/2.2.0": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Utils/2.2.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "2.8.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Contracts": "2.2.0",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Contracts": "2.2.1",
           "Newtonsoft.Json": "11.0.2",
           "NuGet.Frameworks": "4.7.0"
         },
@@ -3108,10 +3108,10 @@
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Web.CodeGenerators.Mvc/2.2.0": {
+      "Microsoft.VisualStudio.Web.CodeGenerators.Mvc/2.2.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.VisualStudio.Web.CodeGeneration": "2.2.0"
+          "Microsoft.VisualStudio.Web.CodeGeneration": "2.2.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll": {}
@@ -5414,7 +5414,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "DNTPersianUtils.Core": "3.1.0",
+          "DNTPersianUtils.Core": "3.2.0",
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Razor": "2.2.0",
@@ -5608,14 +5608,14 @@
         "lib/netstandard2.0/DNTBreadCrumb.Core.xml"
       ]
     },
-    "DNTCaptcha.Core/1.6.6": {
-      "sha512": "cYreRSqCDnxTnIOf0d7PnoIKXl3L9tN3JTl9yc01Kr3SObaO0EaCsLcQXvkHecaFcF+KyZzoTO5EW067a4rVvw==",
+    "DNTCaptcha.Core/1.6.7": {
+      "sha512": "OQo+v/RN+eqyXXCHEAzFq7f49tAg8aeFdsyPoSjSiJ/g4e1Oh1/6VcNOoUZrdhVZgzYp1SWVm2xO9f60dh+vUw==",
       "type": "package",
-      "path": "dntcaptcha.core/1.6.6",
+      "path": "dntcaptcha.core/1.6.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "dntcaptcha.core.1.6.6.nupkg.sha512",
+        "dntcaptcha.core.1.6.7.nupkg.sha512",
         "dntcaptcha.core.nuspec",
         "lib/netstandard1.6/DNTCaptcha.Core.dll",
         "lib/netstandard1.6/DNTCaptcha.Core.xml",
@@ -5638,14 +5638,14 @@
         "lib/netstandard2.0/DNTCommon.Web.Core.xml"
       ]
     },
-    "DNTPersianUtils.Core/3.1.0": {
-      "sha512": "DAPPAh1dNShkASo22htBQUpp0WWi9+F8LDdZ4hltsAaCx/FxCqdgDxLM/DiVo2QmV+MflE7lqG9OGRBJFfOcqQ==",
+    "DNTPersianUtils.Core/3.2.0": {
+      "sha512": "BMdGhn5qRj2SinQMn/5ZNh3I2P/V12jdJZz3Q6BQF1iFAHZtimy8hHf/UXpfJa5qN7KafNj8ujUw9RjYKXI89A==",
       "type": "package",
-      "path": "dntpersianutils.core/3.1.0",
+      "path": "dntpersianutils.core/3.2.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "dntpersianutils.core.3.1.0.nupkg.sha512",
+        "dntpersianutils.core.3.2.0.nupkg.sha512",
         "dntpersianutils.core.nuspec",
         "lib/net40/DNTPersianUtils.Core.dll",
         "lib/net40/DNTPersianUtils.Core.xml",
@@ -8640,49 +8640,49 @@
         "microsoft.syndicationfeed.readerwriter.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration/2.2.0": {
-      "sha512": "hwJ000llwuI8vJn/mqVl2cNIfB0t+99Wu/gixfYDR9sX1ynWoO/bK6UDaw8MRmC9cW6r07sGM6XHxHN4jzBFKQ==",
+    "Microsoft.VisualStudio.Web.CodeGeneration/2.2.1": {
+      "sha512": "DP50n8RUc23OEW2rDfT2fUkB+5El9rw3EVdYk8kj3F7Dz0JVq38WD8Vfoz0KPmbLDxnHyDKbm0mezNnXKvUw6Q==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration/2.2.0",
+      "path": "microsoft.visualstudio.web.codegeneration/2.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.xml",
-        "microsoft.visualstudio.web.codegeneration.2.2.0.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.2.2.1.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/2.2.0": {
-      "sha512": "85ghsz7+veQEvIVVMgzxrdb6as+eSRL0/iTrkdZAUr+Xw3ED1vs0bzLa6k8s7mAMoRvYmNisMAQLp7l0yW3gbQ==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/2.2.1": {
+      "sha512": "ttp25LRG118tuOITS5QqabptJwhv0AqX929h7zuCs+8Fb1TS5ns4938zb9EOzfoiVdXMqJ/v/SQJfPINk5cptQ==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.contracts/2.2.0",
+      "path": "microsoft.visualstudio.web.codegeneration.contracts/2.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.xml",
-        "microsoft.visualstudio.web.codegeneration.contracts.2.2.0.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.contracts.2.2.1.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.contracts.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.Core/2.2.0": {
-      "sha512": "Z0p6viSlN+2swAU4E/MWi2/Qhs4984TN2TPmGCzAmFwZwK4AgdpAlLh7UNdQppoUNxrT8Hh1MxBMWisNru12gQ==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Core/2.2.1": {
+      "sha512": "sbDIu17AhXw0Ucn56Y2hs4KIZ6+hymEYNjfiyhax1bcMt8jM8tvJUDxzCIyPlTspMTZkr2F2xEujEKRLdNrKxg==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.core/2.2.0",
+      "path": "microsoft.visualstudio.web.codegeneration.core/2.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.xml",
-        "microsoft.visualstudio.web.codegeneration.core.2.2.0.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.core.2.2.1.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.core.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.Design/2.2.0": {
-      "sha512": "2l/Tr/Qym+byw/ZiBNTH+oh/iTLetZGCJ8F8k+BUgc8Pwmo+3ROQabmhr7vH/yLSjuhMYEuDEzY4ZWmzdln9lw==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Design/2.2.1": {
+      "sha512": "ihisH/adb9r/+jGOonUPMiT5iShL1vLDJFdZQGXVyH2SlY7WqY6k+yqEZxxj11cn0DarLDUmxDjE5h0HMuFEDQ==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.design/2.2.0",
+      "path": "microsoft.visualstudio.web.codegeneration.design/2.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -8690,7 +8690,7 @@
         "lib/net461/dotnet-aspnet-codegenerator-design.xml",
         "lib/netstandard2.0/dotnet-aspnet-codegenerator-design.dll",
         "lib/netstandard2.0/dotnet-aspnet-codegenerator-design.xml",
-        "microsoft.visualstudio.web.codegeneration.design.2.2.0.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.design.2.2.1.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.design.nuspec",
         "runtimes/win-arm/lib/net461/dotnet-aspnet-codegenerator-design.exe",
         "runtimes/win-arm/lib/net461/dotnet-aspnet-codegenerator-design.xml",
@@ -8702,50 +8702,50 @@
         "runtimes/win7-x86/lib/net461/dotnet-aspnet-codegenerator-design.xml"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/2.2.0": {
-      "sha512": "OJyhib+Bm/L7yRW2tMkZIgJrR6NlJeyJmf0JQgDWR8m+aP0aRDb5kRiXI0b45j1RXRfmtQsrmIOfzhq9TWE7Uw==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/2.2.1": {
+      "sha512": "IX5JR8nWTjLiia7mygyaR2DOkoEYyf8iI0G5fqKiphJg9zxN004YSwFmSkJFWXjCuGhO2cRhm/vw3djyNgM4mw==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.entityframeworkcore/2.2.0",
+      "path": "microsoft.visualstudio.web.codegeneration.entityframeworkcore/2.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Templates/DbContext/NewLocalDbContext.cshtml",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.xml",
-        "microsoft.visualstudio.web.codegeneration.entityframeworkcore.2.2.0.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.entityframeworkcore.2.2.1.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.Templating/2.2.0": {
-      "sha512": "4jiW9u5TAOTNY/GgCZy+gdl8JP7dHsw2zPIK1k+Fd4AtLu9cdIYVpVxj+CWgXKbfGwqxiM+mXzJ6I0/bjYVOeQ==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Templating/2.2.1": {
+      "sha512": "KqnZR/VJRDmSXPDHr02rBDK0Or6mLD8FUQgsnPZkSftoFHFlhAP13EgzSZBT3YoRcwhtDOInAtf30bNdykoFEA==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.templating/2.2.0",
+      "path": "microsoft.visualstudio.web.codegeneration.templating/2.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.xml",
-        "microsoft.visualstudio.web.codegeneration.templating.2.2.0.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.templating.2.2.1.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.templating.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGeneration.Utils/2.2.0": {
-      "sha512": "kaEp3SVcfqX6eYXmAXackCf4nbkuwpz/1PHA1h1hN5V/J7G2skokgILKCqLECaKnocx0ipIV73rWtoUY2kqKQw==",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Utils/2.2.1": {
+      "sha512": "OV1HfT9SxFL8NIJUHVoelVW49qJ2/RhhOYDknH+4JpfnEbOiocmncxi4xOTdlYOEYTq5qMdTE6qCjkj4ytGi9A==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegeneration.utils/2.2.0",
+      "path": "microsoft.visualstudio.web.codegeneration.utils/2.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.xml",
-        "microsoft.visualstudio.web.codegeneration.utils.2.2.0.nupkg.sha512",
+        "microsoft.visualstudio.web.codegeneration.utils.2.2.1.nupkg.sha512",
         "microsoft.visualstudio.web.codegeneration.utils.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc/2.2.0": {
-      "sha512": "0CKCe4GNJlCIY5DqM52jD+DIvjhjBMxv3iBShdgGkGUZ+kVbb0ruvyJfgy+9Xk+erDxirNOXWGk4f6E9bqoNAA==",
+    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc/2.2.1": {
+      "sha512": "AX9BbwAIwrtuAN/7OHCmvgHYQwr1fIr17N89SfNpw7qDtkU0a+t5CEdCZZhvsy5xKieKh7yQ5hQlcO3/0sCvmA==",
       "type": "package",
-      "path": "microsoft.visualstudio.web.codegenerators.mvc/2.2.0",
+      "path": "microsoft.visualstudio.web.codegenerators.mvc/2.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -9033,7 +9033,7 @@
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.xml",
         "lib/netstandard2.0/bootstrap3_identitygeneratorfilesconfig.json",
         "lib/netstandard2.0/bootstrap4_identitygeneratorfilesconfig.json",
-        "microsoft.visualstudio.web.codegenerators.mvc.2.2.0.nupkg.sha512",
+        "microsoft.visualstudio.web.codegenerators.mvc.2.2.1.nupkg.sha512",
         "microsoft.visualstudio.web.codegenerators.mvc.nuspec"
       ]
     },
@@ -14799,14 +14799,14 @@
       "AtiehJobCore.Web.Framework >= 1.0.0",
       "Ben.BlockingDetector >= 0.0.3",
       "DNTBreadCrumb.Core >= 1.7.2",
-      "DNTCaptcha.Core >= 1.6.6",
+      "DNTCaptcha.Core >= 1.6.7",
       "DNTCommon.Web.Core >= 1.3.3",
       "DotNetCore.NPOI >= 1.2.1",
       "ElmahCore >= 1.2.3",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.0"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.1"
     ]
   },
   "packageFolders": {
@@ -14882,7 +14882,7 @@
           },
           "DNTCaptcha.Core": {
             "target": "Package",
-            "version": "[1.6.6, )"
+            "version": "[1.6.7, )"
           },
           "DNTCommon.Web.Core": {
             "target": "Package",
@@ -14915,7 +14915,7 @@
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
-            "version": "[2.2.0, )"
+            "version": "[2.2.1, )"
           }
         },
         "imports": [
