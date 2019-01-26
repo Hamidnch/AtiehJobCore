@@ -1,0 +1,14 @@
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\bin\Debug\netcoreapp2.2\AtiehJobCore.WebApi.deps.json
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\bin\Debug\netcoreapp2.2\AtiehJobCore.WebApi.runtimeconfig.json
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\bin\Debug\netcoreapp2.2\AtiehJobCore.WebApi.runtimeconfig.dev.json
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\bin\Debug\netcoreapp2.2\AtiehJobCore.WebApi.dll
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\bin\Debug\netcoreapp2.2\AtiehJobCore.WebApi.pdb
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\obj\Debug\netcoreapp2.2\AtiehJobCore.WebApi.csprojAssemblyReference.cache
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\obj\Debug\netcoreapp2.2\AtiehJobCore.WebApi.csproj.CoreCompileInputs.cache
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\obj\Debug\netcoreapp2.2\AtiehJobCore.WebApi.RazorAssemblyInfo.cache
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\obj\Debug\netcoreapp2.2\AtiehJobCore.WebApi.RazorAssemblyInfo.cs
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\obj\Debug\netcoreapp2.2\AtiehJobCore.WebApi.AssemblyInfoInputs.cache
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\obj\Debug\netcoreapp2.2\AtiehJobCore.WebApi.AssemblyInfo.cs
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\obj\Debug\netcoreapp2.2\AtiehJobCore.WebApi.RazorTargetAssemblyInfo.cache
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\obj\Debug\netcoreapp2.2\AtiehJobCore.WebApi.dll
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.WebApi\obj\Debug\netcoreapp2.2\AtiehJobCore.WebApi.pdb

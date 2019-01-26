@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AtiehJobCore.Domain.Entities.Employers;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AtiehJobCore.Data.Mappings.Employers
 {
-    public class EmployerConfig : IEntityTypeConfiguration<Domain.Entities.Employers.Employer>
+    public class EmployerConfig : IEntityTypeConfiguration<Employer>
     {
-        public void Configure(EntityTypeBuilder<Domain.Entities.Employers.Employer> builder)
+        public void Configure(EntityTypeBuilder<Employer> builder)
         {
             builder.ToTable("Employers").HasKey(c => c.Id);
             builder.Property(c => c.HumanApplicantUnit).HasMaxLength(255);
@@ -19,6 +20,9 @@ namespace AtiehJobCore.Data.Mappings.Employers
             builder.Property(c => c.Phone).HasMaxLength(255);
             builder.Property(c => c.MobileNumber).HasMaxLength(11);
             builder.Property(c => c.Description).HasMaxLength(255);
+
+            // Set concurrency token for entity
+            builder.Property(j => j.Timestamp).ValueGeneratedOnAddOrUpdate().IsConcurrencyToken();
 
             // => User and Employer
             builder.HasOne(c => c.User)

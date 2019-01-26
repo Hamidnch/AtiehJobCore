@@ -20,7 +20,6 @@ D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\bin\De
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\bin\Debug\netstandard2.0\AtiehJobCore.Resources.pdb
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\bin\Debug\netstandard2.0\en\AtiehJobCore.Resources.resources.dll
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\bin\Debug\netstandard2.0\fa\AtiehJobCore.Resources.resources.dll
-D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.csprojAssemblyReference.cache
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.Resources.AtiehJobCore.ViewModel.Models.Identity.Account.RegisterViewModel.en.resources
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.Resources.AtiehJobCore.ViewModel.Models.Identity.Account.RegisterViewModel.fa.resources
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.Resources.Controllers.HomeController.fa.resources
@@ -33,3 +32,5 @@ D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\De
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\fa\AtiehJobCore.Resources.resources.dll
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.dll
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.pdb
+H:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.csprojAssemblyReference.cache
+D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.csprojAssemblyReference.cache

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using AtiehJobCore.Common.Contracts;
+﻿using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Enums;
 using AtiehJobCore.Domain.Entities.Address;
 using AtiehJobCore.Domain.Entities.Common;
 using AtiehJobCore.Domain.Entities.Identity;
 using AtiehJobCore.Domain.Entities.JobOpportunities;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AtiehJobCore.Domain.Entities.Jobseekers
 {
@@ -155,6 +155,7 @@ namespace AtiehJobCore.Domain.Entities.Jobseekers
 
         public virtual InstitutionalLetter InstitutionalLetter { get; set; }
 
+        public byte[] Timestamp { get; set; }
 
         /**************** آدرس و تماس و شماره تلفن های ضروری *****************/
         /// <summary>

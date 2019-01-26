@@ -1,0 +1,14 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_ColumnsOneLayout.cshtml";
+    ViewData["Title"] = "یافت نشد!";
+    Context.Response.StatusCode = (int)HttpStatusCode.Gone;
+}
+
+<div class="mt-5">
+    <div class="alert alert-warning">
+        <h1><span aria-hidden="true" class="fas fa-warning"></span>خطا</h1>
+        <h3>اطلاعات درخواستی یافت نشد.</h3>
+    </div>
+</div>
+

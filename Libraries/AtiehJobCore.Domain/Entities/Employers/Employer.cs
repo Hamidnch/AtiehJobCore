@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using AtiehJobCore.Common.Contracts;
+﻿using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Enums;
 using AtiehJobCore.Domain.Entities.Common;
 using AtiehJobCore.Domain.Entities.Identity;
 using AtiehJobCore.Domain.Entities.JobOpportunities;
+using System;
+using System.Collections.Generic;
 
 namespace AtiehJobCore.Domain.Entities.Employers
 {
@@ -148,6 +148,7 @@ namespace AtiehJobCore.Domain.Entities.Employers
         /// </summary>
         public string CurrentState { get; set; }
 
+        public byte[] Timestamp { get; set; }
 
         /****************** آدرس ********************/
         /// <summary>

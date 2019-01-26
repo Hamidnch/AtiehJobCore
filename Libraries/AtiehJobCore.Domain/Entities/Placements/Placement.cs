@@ -90,6 +90,8 @@ namespace AtiehJobCore.Domain.Entities.Placements
         /// </summary>
         public string WorkshopCode { get; set; }
 
+        public byte[] Timestamp { get; set; }
+
         /***********************  آدرس های کارفرما *************************/
         /// <summary>
         /// لیست آدرس های کاریاب

@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "_RootLayout";
+}
+
+<div>
+    @await Html.PartialAsync("_Header")
+    @await Html.PartialAsync("_NavbarMenu")
+
+    @await Html.PartialAsync("_BreadCrumb")
+
+    <main role="main" class="container">
+        <div id="content" class="row">
+            @RenderBody()
+        </div>
+    </main>
+    @*@await Html.PartialAsync("_Adv")*@
+
+    @await Html.PartialAsync("_Footer")
+
+    @await RenderSectionAsync("Scripts", required: false)
+</div>

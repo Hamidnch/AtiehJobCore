@@ -1,12 +1,13 @@
 [
+  /************ Css Section **********/
   {
-    "outputFileName": "wwwroot/dist/bundle.min.css",
+    "outputFileName": "wwwroot/css/web.min.css",
     "inputFiles": [
-      "wwwroot/source/bootstrap/bootstrap.min.css",
-      "wwwroot/source/font-awesome/fa-solid.min.css",
-      "wwwroot/source/font-awesome/fontawesome-all.min.css",
-      "wwwroot/source/sweetalert2/sweetalert2.min.css",
-      "wwwroot/source/custom/custom.min.css"
+      "source/bootstrap/bootstrap.min.css",
+      "source/font-awesome/fa-solid.min.css",
+      "source/font-awesome/fontawesome-all.min.css",
+      "source/sweetalert2/sweetalert2.min.css",
+      "source/customs/custom.min.css"
     ],
     "minify": {
       "enabled": true,
@@ -15,9 +16,9 @@
     }
   },
   {
-    "outputFileName": "wwwroot/dist/bundle-rtl.min.css",
+    "outputFileName": "wwwroot/css/web-rtl.min.css",
     "inputFiles": [
-      "wwwroot/source/bootstrap/bootstrap-rtl.css"
+      "source/bootstrap/bootstrap-rtl.min.css"
     ],
     "minify": {
       "enabled": true,
@@ -25,34 +26,17 @@
       "adjustRelativePaths": false
     }
   },
+
   {
-    "outputFileName": "wwwroot/dist/bundle.min.js",
+    "outputFileName": "wwwroot/css/admin/admin.min.css",
     "inputFiles": [
-      "wwwroot/source/jquery/jquery.min.js",
-      "wwwroot/source/popper/pooper.min.js",
-      "wwwroot/source/jquery/jquery.validate.min.js",
-      "wwwroot/source/jquery/jquery.validate.unobtrusive.min.js",
-      "wwwroot/source/jquery/jquery.unobtrusive-ajax.min.js",
-      "wwwroot/source/bootstrap/bootstrap.min.js",
-      "wwwroot/source/sweetalert2/sweetalert2.all.min.js",
-      "wwwroot/source/custom/custom.min.js"
-    ],
-    "minify": {
-      "enabled": true,
-      "adjustRelativePaths": false,
-      "renameLocals": false
-    }
-  },
-  {
-    "outputFileName": "wwwroot/dist/admin.min.css",
-    "inputFiles": [
-      "wwwroot/source/core-ui/coreui-icons/css/coreui-icons.min.css",
-      "wwwroot/source/core-ui/flag-icons/css/flag-icon.min.css",
-      "wwwroot/source/font-awesome/fa-solid.min.css",
-      "wwwroot/source/font-awesome/fontawesome-all.min.css",
-      "wwwroot/source/core-ui/simple-line-icons/css/simple-line-icons.min.css",
-      "wwwroot/source/core-ui/css/coreui.min.css",
-      "wwwroot/source/core-ui/pace/pace.min.css"
+      "source/core-ui/coreui-icons/css/coreui-icons.min.css",
+      "source/core-ui/flag-icons/css/flag-icon.min.css",
+      "source/font-awesome/fa-solid.min.css",
+      "source/font-awesome/fontawesome-all.min.css",
+      "source/core-ui/simple-line-icons/css/simple-line-icons.min.css",
+      "source/core-ui/css/coreui.min.css",
+      "source/core-ui/pace/pace.min.css"
     ],
     "minify": {
       "enabled": false,
@@ -60,15 +44,50 @@
       "renameLocals": false
     }
   },
+
+  /************ Js Section **********/
   {
-    "outputFileName": "wwwroot/dist/admin.min.js",
+    "outputFileName": "wwwroot/js/jqueryAll.min.js",
     "inputFiles": [
-      "wwwroot/source/jquery/jquery.min.js",
-      "wwwroot/source/popper/popper.min.js",
-      "wwwroot/source/bootstrap/bootstrap.min.js",
-      "wwwroot/source/core-ui/pace/pace.min.js",
-      "wwwroot/source/core-ui/perfect-scrollbar/perfect-scrollbar.min.js",
-      "wwwroot/source/core-ui/js/coreui.min.js"
+      "source/jquery/jquery.min.js",
+      "source/popper/pooper.min.js",
+      "source/jquery/jquery.validate.min.js",
+      "source/jquery/jquery.validate.unobtrusive.min.js",
+      "source/jquery/jquery.unobtrusive-ajax.min.js",
+      "source/bootstrap/bootstrap.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "adjustRelativePaths": false,
+      "renameLocals": false
+    }
+  },
+
+  {
+    "outputFileName": "wwwroot/js/web.min.js",
+    "inputFiles": [
+      "source/jquery/jquery.bootstrap-modal-confirm.min.js",
+      "source/jquery/jquery.bootstrap-modal-alert.min.js",
+      "source/jquery/jquery.bootstrap-modal-ajax-form.min.js",
+      "source/sweetalert2/sweetalert2.all.min.js",
+      "source/customs/custom.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "adjustRelativePaths": false,
+      "renameLocals": false
+    }
+  },
+
+  {
+    "outputFileName": "wwwroot/js/admin/admin.min.js",
+    "inputFiles": [
+      "source/jquery/jquery.min.js",
+      "source/popper/popper.min.js",
+      "source/bootstrap/bootstrap.min.js",
+      "source/core-ui/pace/pace.min.js",
+      "source/core-ui/perfect-scrollbar/perfect-scrollbar.min.js",
+      "source/core-ui/js/coreui.min.js"
     ],
     "minify": {
       "enabled": true,
@@ -76,44 +95,4 @@
       "renameLocals": false
     }
   }
-  //  ,
-  //{
-  //  "outputFileName": "wwwroot/dist/admin-rtl.min.css",
-  //  "inputFiles": [
-  //    "wwwroot/source/core-ui/coreui-icons/css/coreui-icons.min.css",
-  //    "wwwroot/source/core-ui/flag-icons/css/flag-icon.min.css",
-  //    "wwwroot/source/font-awesome/fa-solid.min.css",
-  //    "wwwroot/source/font-awesome/fontawesome-all.min.css",
-  //    "wwwroot/source/core-ui/simple-line-icons/css/simple-line-icons.min.css",
-  //    "wwwroot/source/core-ui/css/coreui-rtl.min.css",
-  //    "wwwroot/source/core-ui/pace/pace.min.css"
-  //  ],
-  //  "minify": {
-  //    "enabled": false,
-  //    "adjustRelativePaths": false,
-  //    "renameLocals": false
-  //  }
-  //},
-  //{
-  //  "outputFileName": "wwwroot/dist/admin-rtl.min.js",
-  //  "inputFiles": [
-  //    "wwwroot/source/jquery/jquery.min.js",
-  //    "wwwroot/source/popper/popper.min.js",
-  //    "wwwroot/source/bootstrap/bootstrap.min.js",
-  //    "wwwroot/source/core-ui/pace/pace.min.js",
-  //    "wwwroot/source/core-ui/perfect-scrollbar/perfect-scrollbar.min.js",
-  //    "wwwroot/source/core-ui/js/coreui-rtl.min.js"
-  //  ],
-  //  "minify": {
-  //    "enabled": true,
-  //    "adjustRelativePaths": false,
-  //    "renameLocals": false
-  //  }
-  //},
-  //{
-  //  "outputFileName": "wwwroot/source/custom/custom.min.css",
-  //  "inputFiles": [
-  //    "wwwroot/source/custom/custom.css"
-  //  ]
-  //}
 ]

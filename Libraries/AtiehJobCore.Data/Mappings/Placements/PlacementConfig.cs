@@ -20,6 +20,9 @@ namespace AtiehJobCore.Data.Mappings.Placements
             builder.Property(b => b.WorkshopCode).HasMaxLength(50);
             builder.Property(b => b.Description).HasMaxLength(255);
 
+            // Set concurrency token for entity
+            builder.Property(j => j.Timestamp).ValueGeneratedOnAddOrUpdate().IsConcurrencyToken();
+
             //  => User and Placement
             builder.HasOne(j => j.User)
                .WithMany(j => j.Placements)

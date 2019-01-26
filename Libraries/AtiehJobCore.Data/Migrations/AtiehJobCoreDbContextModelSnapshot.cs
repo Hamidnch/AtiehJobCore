@@ -588,6 +588,10 @@ namespace AtiehJobCore.Data.Migrations
 
                     b.Property<int?>("Rank");
 
+                    b.Property<byte[]>("Timestamp")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate();
+
                     b.Property<string>("UnitCode")
                         .HasMaxLength(50);
 
@@ -1989,6 +1993,10 @@ namespace AtiehJobCore.Data.Migrations
 
                     b.Property<int?>("StreetCode");
 
+                    b.Property<byte[]>("Timestamp")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate();
+
                     b.Property<bool?>("UnemploymentInsurance");
 
                     b.Property<int>("UserId");
@@ -2766,6 +2774,10 @@ namespace AtiehJobCore.Data.Migrations
                         .HasMaxLength(50);
 
                     b.Property<int?>("ProvinceCode");
+
+                    b.Property<byte[]>("Timestamp")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate();
 
                     b.Property<int>("UserId");
 

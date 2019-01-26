@@ -1,0 +1,26 @@
+﻿@using AtiehJobCore.Common.Extensions
+
+@{
+    ViewData["Title"] = "Columns One";
+    Layout = "_BasicLayout";
+
+}
+
+<h1>به سایت کاریابی آتیه کار خوش آمدید</h1>
+<hr />
+<div asp-is-visible="false" style="background-color: red;color:blue">
+    <p>Hello World!</p>
+</div>
+
+<div asp-is-visible="true" class="container">
+    <div dir="rtl">
+        <cache expires-after="@TimeSpan.FromMinutes(1)">
+            <vc:online-users numbers-to-take="100" minutes-to-take="15" show-more-items-link="true"></vc:online-users>
+        </cache>
+    </div>
+</div>
+
+@*@if (User.Identity.IsAuthenticated)
+    {
+      <p>نام کاربر: </p>@User.Identity.GetUserDisplayName()
+    }*@

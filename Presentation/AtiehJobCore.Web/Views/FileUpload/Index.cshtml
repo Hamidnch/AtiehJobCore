@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_ColumnsOneLayout.cshtml";
+}
+
+<h2>
+    Uploading File in ASP.NET Core using
+    <strong>IFormFile</strong> Interface
+</h2>
+<form method="post" enctype="multipart/form-data"
+      asp-controller="FileUpload" asp-action="UploadFile">
+    <div class="form-group">
+        <div class="col-md-10">
+            <p>Upload Image File (.png):</p>
+            <input type="file" name="file" />
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" value="Upload File" />
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <span>@ViewBag.Message</span>
+    </div>
+</form>
+

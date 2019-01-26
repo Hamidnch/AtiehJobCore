@@ -1,0 +1,9 @@
+﻿@{
+    Layout = "_BasicLayout";
+}
+
+<div id="first-column" class="box effect2 col-lg-12 col-md-12 col-sm-12">
+    @RenderBody()
+
+    @await RenderSectionAsync("Scripts", required: false)
+</div>

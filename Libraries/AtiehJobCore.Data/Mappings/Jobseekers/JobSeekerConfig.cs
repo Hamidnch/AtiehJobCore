@@ -9,7 +9,8 @@ namespace AtiehJobCore.Data.Mappings.Jobseekers
         public void Configure(EntityTypeBuilder<Jobseeker> builder)
         {
             builder.ToTable("Jobseekers").HasKey(j => j.Id);//.HasKey(j => j.FileNumber);
-
+            // Set identity for entity (auto increment)
+            builder.Property(p => p.Id).UseSqlServerIdentityColumn();
             builder.Property(j => j.FileNumber).IsRequired().HasMaxLength(60);
             builder.HasIndex(x => x.FileNumber).IsUnique();
             //.HasColumnAnnotation(
@@ -43,6 +44,9 @@ namespace AtiehJobCore.Data.Mappings.Jobseekers
             builder.Property(j => j.StartDatePension).HasColumnType("date");
             builder.Property(j => j.EndDatePension).HasColumnType("date");
             builder.Property(j => j.Description).HasMaxLength(255);
+
+            // Set concurrency token for entity
+            builder.Property(j => j.Timestamp).ValueGeneratedOnAddOrUpdate().IsConcurrencyToken();
 
             //  => Country and Jobseeker
             builder.HasOne(c => c.Country)

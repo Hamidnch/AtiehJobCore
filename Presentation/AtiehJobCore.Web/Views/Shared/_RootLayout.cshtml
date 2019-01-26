@@ -1,0 +1,30 @@
+﻿@{
+    var pageTitle = ViewData["Title"] ?? "کاریابی آتیه کار";
+}
+<!DOCTYPE html>
+
+<html dir="@(IsRtl() ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8" /> @*جهت تعیین یونیکد صفحه وب*@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    @*<meta http-equiv="refresh" content="30; url=http://yoursite.com"" />
+        <meta http-equiv="Content-Language" content="Fa">
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta name="author" content="Hamid nch" />*@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="description" content="کاریابی آتیه کار" />
+    <meta name="keywords" content="کاریابی,کارجو,کارفرما,آتیه کار" />
+    <meta name="robots" content="index, follow">  @*content="noindex, nofollow" or content="ALL"*@
+    <meta name="copyright" content="(c) 2018 Hamidnch2007@gmail.com">
+    <title>@pageTitle</title>
+
+    @await Html.PartialAsync("_Head")
+</head>
+<body>
+    @RenderBody()
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
