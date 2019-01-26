@@ -30,3 +30,11 @@ D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\bin\Debug\netstandard2.0\AtiehJobCore.Resources.pdb
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\bin\Debug\netstandard2.0\en\AtiehJobCore.Resources.resources.dll
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\bin\Debug\netstandard2.0\fa\AtiehJobCore.Resources.resources.dll
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\bin\Debug\netstandard2.0\AtiehJobCore.Domain.dll
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\bin\Debug\netstandard2.0\AtiehJobCore.Resources.dll
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\bin\Debug\netstandard2.0\AtiehJobCore.ViewModel.dll
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\bin\Debug\netstandard2.0\AtiehJobCore.ViewModel.pdb
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\bin\Debug\netstandard2.0\AtiehJobCore.Domain.pdb
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\bin\Debug\netstandard2.0\AtiehJobCore.Resources.pdb
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\bin\Debug\netstandard2.0\en\AtiehJobCore.Resources.resources.dll
+H:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\bin\Debug\netstandard2.0\fa\AtiehJobCore.Resources.resources.dll
