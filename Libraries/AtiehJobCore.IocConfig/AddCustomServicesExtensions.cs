@@ -1,5 +1,6 @@
 ﻿using System.Security.Claims;
 using System.Security.Principal;
+using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Infrastructure;
 using AtiehJobCore.Common.Web;
 using AtiehJobCore.Data.DbContext;

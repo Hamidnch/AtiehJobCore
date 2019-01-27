@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using AtiehJobCore.Common.Contracts;
+﻿using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Securities;
 using AtiehJobCore.Common.Utilities;
 using AtiehJobCore.Data.DbContext;
@@ -25,6 +24,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using System.Globalization;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace AtiehJobCore.Web

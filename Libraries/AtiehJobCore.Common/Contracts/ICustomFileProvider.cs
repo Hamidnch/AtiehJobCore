@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Microsoft.Extensions.FileProviders;
+using System;
 using System.Collections.Generic;
 using System.Security.AccessControl;
 using System.Text;
-using Microsoft.Extensions.FileProviders;
 
-namespace AtiehJobCore.Common.Infrastructure
+namespace AtiehJobCore.Common.Contracts
 {
     /// <inheritdoc />
     /// <summary>

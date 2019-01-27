@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using AtiehJobCore.Common;
+﻿using AtiehJobCore.Common;
 using AtiehJobCore.Common.Configuration;
 using AtiehJobCore.Common.Constants;
-using AtiehJobCore.Common.Infrastructure;
+using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Utilities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
@@ -14,6 +10,10 @@ using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Primitives;
 using Microsoft.Net.Http.Headers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
 
 namespace AtiehJobCore.Services.Helpers
 {
