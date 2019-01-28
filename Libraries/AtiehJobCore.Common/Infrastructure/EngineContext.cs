@@ -1,5 +1,5 @@
-﻿using AtiehJobCore.Common.Contracts;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
+using AtiehJobCore.Common.Contracts;
 
 namespace AtiehJobCore.Common.Infrastructure
 {
@@ -17,10 +17,7 @@ namespace AtiehJobCore.Common.Infrastructure
         public static IEngine Create()
         {
             //create GrandEngine as engine
-            if (Singleton<IEngine>.Instance == null)
-                Singleton<IEngine>.Instance = new CommonEngine();
-
-            return Singleton<IEngine>.Instance;
+            return Singleton<IEngine>.Instance ?? (Singleton<IEngine>.Instance = new CommonEngine());
         }
 
         /// <summary>

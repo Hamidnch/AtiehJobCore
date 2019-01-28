@@ -7,7 +7,6 @@ using AtiehJobCore.Domain.Entities.Identity;
 using AtiehJobCore.Services.Identity.Interfaces;
 using AtiehJobCore.ViewModel.Models.Identity.Settings;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Options;
 
 namespace AtiehJobCore.Services.Identity
 {
@@ -17,16 +16,19 @@ namespace AtiehJobCore.Services.Identity
         private readonly ISet<string> _passwordsBanList;
 
         public PasswordValidator(IdentityErrorDescriber errors,
-            IOptionsSnapshot<SiteSettings> siteSettings,
+            //IOptionsSnapshot<SiteSettings> siteSettings,
+            SiteSettings siteSettings,
             IUsedPasswordsService usedPasswordsService) : base(errors)
         {
             _usedPasswordsService = usedPasswordsService;
             _usedPasswordsService.CheckArgumentIsNull(nameof(_usedPasswordsService));
 
             siteSettings.CheckArgumentIsNull(nameof(siteSettings));
-            _passwordsBanList =
-                new HashSet<string>(siteSettings.Value.PasswordsBanList, StringComparer.OrdinalIgnoreCase);
+            //_passwordsBanList =
+            //    new HashSet<string>(siteSettings.Value.PasswordsBanList, StringComparer.OrdinalIgnoreCase);
 
+            _passwordsBanList =
+                new HashSet<string>(siteSettings.PasswordsBanList, StringComparer.OrdinalIgnoreCase);
             if (!_passwordsBanList.Any())
             {
                 throw new InvalidOperationException(

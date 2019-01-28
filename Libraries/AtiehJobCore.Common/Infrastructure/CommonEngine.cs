@@ -1,4 +1,7 @@
-﻿using AtiehJobCore.Common.Configuration;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using AtiehJobCore.Common.Configuration;
 using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Extensions;
 using AtiehJobCore.Common.Infrastructure.MongoDb;
@@ -13,9 +16,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace AtiehJobCore.Common.Infrastructure
 {
@@ -30,10 +30,18 @@ namespace AtiehJobCore.Common.Infrastructure
         /// <summary>
         /// Gets or sets service provider
         /// </summary>
-        private IServiceProvider _serviceProvider { get; set; }
+        private IServiceProvider Provider { get; set; }
 
         #endregion
 
+        #region Properties
+
+        /// <summary>
+        /// Service provider
+        /// </summary>
+        public virtual IServiceProvider ServiceProvider => Provider;
+
+        #endregion
         #region Utilities
 
         protected IServiceProvider GetServiceProvider()
@@ -96,8 +104,8 @@ namespace AtiehJobCore.Common.Infrastructure
             containerBuilder.Populate(services);
 
             //create service provider
-            _serviceProvider = new AutofacServiceProvider(containerBuilder.Build());
-            return _serviceProvider;
+            Provider = new AutofacServiceProvider(containerBuilder.Build());
+            return Provider;
         }
 
         /// <summary>
@@ -137,6 +145,7 @@ namespace AtiehJobCore.Common.Infrastructure
 
         #region Methods
 
+        /// <inheritdoc />
         /// <summary>
         /// Initialize engine
         /// </summary>
@@ -161,6 +170,7 @@ namespace AtiehJobCore.Common.Infrastructure
 
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Add and configure services
         /// </summary>
@@ -194,9 +204,10 @@ namespace AtiehJobCore.Common.Infrastructure
             if (!grandConfig.IgnoreStartupTasks)
                 RunStartupTasks(typeFinder);
 
-            return _serviceProvider;
+            return Provider;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Configure HTTP request pipeline
         /// </summary>
@@ -218,6 +229,7 @@ namespace AtiehJobCore.Common.Infrastructure
                 instance.Configure(application);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Resolve dependency
         /// </summary>
@@ -228,6 +240,7 @@ namespace AtiehJobCore.Common.Infrastructure
             return (T)GetServiceProvider().GetRequiredService(typeof(T));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Resolve dependency
         /// </summary>
@@ -238,6 +251,7 @@ namespace AtiehJobCore.Common.Infrastructure
             return GetServiceProvider().GetRequiredService(type);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Resolve dependencies
         /// </summary>
@@ -248,6 +262,7 @@ namespace AtiehJobCore.Common.Infrastructure
             return (IEnumerable<T>)GetServiceProvider().GetServices(typeof(T));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Resolve unregistered service
         /// </summary>
@@ -275,15 +290,6 @@ namespace AtiehJobCore.Common.Infrastructure
             }
             throw new CustomException("No constructor was found that had all the dependencies satisfied.");
         }
-
-        #endregion
-
-        #region Properties
-
-        /// <summary>
-        /// Service provider
-        /// </summary>
-        public virtual IServiceProvider ServiceProvider => _serviceProvider;
 
         #endregion
     }

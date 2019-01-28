@@ -845,13 +845,13 @@
     <ProjectReference Include="..\..\Libraries\AtiehJobCore.Common\AtiehJobCore.Common.csproj" />
     <ProjectReference Include="..\..\Libraries\AtiehJobCore.Data\AtiehJobCore.Data.csproj" />
     <ProjectReference Include="..\..\Libraries\AtiehJobCore.Domain\AtiehJobCore.Domain.csproj" />
-    <ProjectReference Include="..\..\Libraries\AtiehJobCore.IocConfig\AtiehJobCore.IocConfig.csproj" />
     <ProjectReference Include="..\..\Libraries\AtiehJobCore.Services\AtiehJobCore.Services.csproj" />
     <ProjectReference Include="..\..\Libraries\AtiehJobCore.ViewModel\AtiehJobCore.ViewModel.csproj" />
     <ProjectReference Include="..\AtiehJobCore.Web.Framework\AtiehJobCore.Web.Framework.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="App_Data\DataProtectionKeys\" />
     <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Areas\Identity\Models\" />
     <Folder Include="Areas\Admin\Data\" />

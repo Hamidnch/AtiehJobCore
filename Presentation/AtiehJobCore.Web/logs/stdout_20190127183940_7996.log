@@ -1,0 +1,40 @@
+warn: Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Average' on entity type 'Education'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (93ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [k].[XmlData]
+      FROM [DataProtectionKeys] AS [k]
+warn: Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Average' on entity type 'Education'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: Microsoft.EntityFrameworkCore.Migrations[20405]
+      No migrations were applied. The database is already up to date.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (358ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='180']
+      SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedByBrowserName], [u].[CreatedByIp], [u].[CreatedByUserId], [u].[CreatedDateTime], [u].[DateOfBirth], [u].[Email], [u].[EmailConfirmed], [u].[FatherName], [u].[FirstName], [u].[GenderType], [u].[IsActive], [u].[IsDeleted], [u].[IsEmailPublic], [u].[LastName], [u].[LastVisitedDateTime], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[MobileNumber], [u].[ModifiedByBrowserName], [u].[ModifiedByIp], [u].[ModifiedByUserId], [u].[ModifiedDateTime], [u].[NationalCode], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PhotoFileName], [u].[PlaceOfBirth], [u].[SecurityStamp], [u].[SsnId], [u].[SsnSerial], [u].[TwoFactorEnabled], [u].[UserName], [u].[UserType]
+      FROM [Users] AS [u]
+      WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+info: AtiehJobCore.Services.Identity.IdentityDbInitializer[0]
+      SeedDatabaseWithAdminUserAsync: adminUser already exists.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (36ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [r].[Id], [r].[ConcurrencyStamp], [r].[CreatedByBrowserName], [r].[CreatedByIp], [r].[CreatedByUserId], [r].[CreatedDateTime], [r].[Description], [r].[IsActive], [r].[IsDeleted], [r].[ModifiedByBrowserName], [r].[ModifiedByIp], [r].[ModifiedByUserId], [r].[ModifiedDateTime], [r].[Name], [r].[NormalizedName]
+      FROM [Roles] AS [r]

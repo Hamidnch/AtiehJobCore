@@ -6,7 +6,6 @@ using AtiehJobCore.Common.Extensions;
 using AtiehJobCore.Domain.Entities.Identity;
 using AtiehJobCore.ViewModel.Models.Identity.Settings;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Options;
 
 namespace AtiehJobCore.Services.Identity
 {
@@ -15,12 +14,19 @@ namespace AtiehJobCore.Services.Identity
         private readonly ISet<string> _emailsBanList;
 
         public UserValidator(IdentityErrorDescriber errors,
-            IOptionsSnapshot<SiteSettings> configurationRoot) : base(errors)
+            //,IOptionsSnapshot<SiteSettings> configurationRoot
+            SiteSettings siteSettings
+            ) : base(errors)
         {
-            configurationRoot.CheckArgumentIsNull(nameof(configurationRoot));
-            _emailsBanList = new HashSet<string>(
-                configurationRoot.Value.EmailsBanList, StringComparer.OrdinalIgnoreCase);
+            //configurationRoot.CheckArgumentIsNull(nameof(configurationRoot));
+            //_emailsBanList = new HashSet<string>(
+            //    configurationRoot.Value.EmailsBanList, StringComparer.OrdinalIgnoreCase);
 
+            //var siteSettings = EngineContext.Current.Resolve<SiteSettings>();
+            siteSettings.CheckArgumentIsNull(nameof(siteSettings));
+
+            _emailsBanList = new HashSet<string>(
+                siteSettings.EmailsBanList, StringComparer.OrdinalIgnoreCase);
             if (!_emailsBanList.Any())
             {
                 throw new InvalidOperationException(

@@ -11,13 +11,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace AtiehJobCore.Services.Identity
 {
     public class IdentityDbInitializer : IIdentityDbInitializer
     {
-        private readonly IOptionsSnapshot<SiteSettings> _siteSettings;
+        private readonly SiteSettings _siteSettings;
         private readonly IUserManager _applicationUserManager;
         private readonly ILogger<IdentityDbInitializer> _logger;
         private readonly IRoleManager _roleManager;
@@ -25,7 +24,7 @@ namespace AtiehJobCore.Services.Identity
 
         public IdentityDbInitializer(
             IUserManager applicationUserManager, IServiceScopeFactory scopeFactory,
-            IRoleManager roleManager, IOptionsSnapshot<SiteSettings> siteSettings,
+            IRoleManager roleManager, SiteSettings siteSettings,
             ILogger<IdentityDbInitializer> logger)
         {
             _applicationUserManager = applicationUserManager;
@@ -88,7 +87,7 @@ namespace AtiehJobCore.Services.Identity
 
         public async Task<IdentityResult> SeedDatabaseWithAdminUserAsync()
         {
-            var adminUserSeed = _siteSettings.Value.AdminUserSeed;
+            var adminUserSeed = _siteSettings.AdminUserSeed;
             adminUserSeed.CheckArgumentIsNull(nameof(adminUserSeed));
 
             var name = adminUserSeed.Username;

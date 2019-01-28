@@ -1,14 +1,12 @@
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.Common.dll
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.Data.dll
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.Domain.dll
-D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.IocConfig.dll
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.Services.dll
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.ViewModel.dll
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.Web.Framework.dll
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.Common.pdb
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.Data.pdb
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.Domain.pdb
-D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.IocConfig.pdb
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.Services.pdb
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\AtiehJobCore.ViewModel.pdb
 D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.csprojAssemblyReference.cache

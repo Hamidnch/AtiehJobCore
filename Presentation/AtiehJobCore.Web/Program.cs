@@ -12,6 +12,8 @@ namespace AtiehJobCore.Web
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+               .CaptureStartupErrors(true)
+               .UseSetting(WebHostDefaults.PreventHostingStartupKey, "true")
                 .UseStartup<Startup>();
 
         //public static IWebHostBuilder CreateWebHostBuilder(string[] args)

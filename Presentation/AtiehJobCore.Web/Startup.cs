@@ -1,30 +1,15 @@
-﻿using AtiehJobCore.Common.Contracts;
-using AtiehJobCore.Common.Securities;
-using AtiehJobCore.Common.Utilities;
-using AtiehJobCore.Data.DbContext;
-using AtiehJobCore.Data.Extensions;
-using AtiehJobCore.IocConfig;
+﻿using System.Globalization;
 using AtiehJobCore.Services.Identity.Logger.Extensions;
-using AtiehJobCore.ViewModel.Models.Identity.Settings;
-using AtiehJobCore.Web.Framework.AuthorizationHandler;
-using AtiehJobCore.Web.Framework.Filters;
+using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
 using AtiehJobCore.Web.Framework.Middleware;
 using Ben.Diagnostics;
-using DNTCaptcha.Core;
-using DNTCommon.Web.Core;
 using ElmahCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
-using System.Globalization;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace AtiehJobCore.Web
@@ -33,87 +18,89 @@ namespace AtiehJobCore.Web
     {
         public IConfiguration Configuration { get; set; }
 
-        public Startup(IConfiguration configuration)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+            //create configuration
+            Configuration = new ConfigurationBuilder()
+               .SetBasePath(env.ContentRootPath)
+               .AddJsonFile("App_Data/appsettings.json", optional: false, reloadOnChange: true)
+               .AddEnvironmentVariables()
+               .Build();
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IStartupFilter, SiteSettingsValidationStartUpFilter>();
-            services.AddSingleton<IValidatable>(resolver =>
-                resolver.GetRequiredService<IOptions<SiteSettings>>().Value);
+            //services.Configure<SiteSettings>(options => Configuration.Bind(options));
+            //services.AddCustomIdentityServices();
 
-            services.Configure<SiteSettings>(options => Configuration.Bind(options));
+            services.ConfigureApplicationServices(Configuration);
 
-            // Adds all of the ASP.NET Core Identity related services and configurations at once.
-            services.AddCustomIdentityServices();
+            //var siteSettings = services.GetSiteSettings();
 
-            var siteSettings = services.GetSiteSettings();
-            // It's added to access services from the dbContext,
-            // remove it if you are using the normal `AddDbContext`
-            // and normal constructor dependency injection.
-            services.AddEntityFrameworkByActiveDatabase(siteSettings.ActiveDatabase);
+            //// It's added to access services from the dbContext,
+            //// remove it if you are using the normal `AddDbContext`
+            //// and normal constructor dependency injection.
+            //services.AddEntityFrameworkByActiveDatabase(siteSettings.ActiveDatabase);
 
-            services.AddDbContextPool<AtiehJobCoreDbContext>((serviceProvider, optionsBuilder) =>
-            {
-                optionsBuilder.SetDbContextOptions(siteSettings);
-                // It's added to access services from the dbContext,
-                // remove it if you are using the normal `AddDbContext`
-                // and normal constructor dependency injection.
-                optionsBuilder.UseInternalServiceProvider(serviceProvider);
-            });
+            //services.AddDbContextPool<AtiehJobCoreDbContext>((serviceProvider, optionsBuilder) =>
+            //{
+            //    optionsBuilder.SetDbContextOptions(siteSettings);
+            //    // It's added to access services from the dbContext,
+            //    // remove it if you are using the normal `AddDbContext`
+            //    // and normal constructor dependency injection.
+            //    optionsBuilder.UseInternalServiceProvider(serviceProvider);
+            //});
 
-            services.AddLocalization(options => options.ResourcesPath = "Resources");
+            //services.AddLocalization(options => options.ResourcesPath = "Resources");
 
-            services.Configure<RequestLocalizationOptions>(options =>
-                {
-                    var supportedCultures = new[]
-                    {
-                    new CultureInfo("en-US"),
-                    new CultureInfo("fa-IR")
-                    };
-                    options.DefaultRequestCulture = new RequestCulture(culture: "fa-IR", uiCulture: "fa-IR");
-                    options.SupportedCultures = supportedCultures;
-                    options.SupportedUICultures = supportedCultures;
+            //services.Configure<RequestLocalizationOptions>(options =>
+            //    {
+            //        var supportedCultures = new[]
+            //        {
+            //        new CultureInfo("en-US"),
+            //        new CultureInfo("fa-IR")
+            //        };
+            //        options.DefaultRequestCulture = new RequestCulture(culture: "fa-IR", uiCulture: "fa-IR");
+            //        options.SupportedCultures = supportedCultures;
+            //        options.SupportedUICultures = supportedCultures;
 
-                    options.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(async context => new ProviderCultureResult("fa")));
-                });
-            services.AddMvc(options =>
-            {
-                options.AllowEmptyInputInBodyModelBinding = true;
-                options.UseYeKeModelBinder();
-                options.UsePersianDateModelBinder();
-                // options.Filters.Add(new NoBrowserCacheAttribute());
-                //options.Filters.Add(new SecurityHeadersAttribute());
-            })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
-                .AddDataAnnotationsLocalization(options =>
-                {
-                    options.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(
-                        baseName: type.FullName /* بر این اساس نام فایل منبع متناظر باید به همراه ذکر فضای نام پایه آن هم باشد */,
-                        location: "AtiehJobCore.Resources" /*نام اسمبلی ثالث*/);
-                })
-                .AddJsonOptions(jsonOptions =>
-                {
-                    jsonOptions.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-                });
+            //        options.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(async context => new ProviderCultureResult("fa")));
+            //    });
+            //services.AddMvc(options =>
+            //{
+            //    options.AllowEmptyInputInBodyModelBinding = true;
+            //    options.UseYeKeModelBinder();
+            //    options.UsePersianDateModelBinder();
+            //    // options.Filters.Add(new NoBrowserCacheAttribute());
+            //    //options.Filters.Add(new SecurityHeadersAttribute());
+            //})
+            //    .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            //    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+            //    .AddDataAnnotationsLocalization(options =>
+            //    {
+            //        options.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(
+            //            baseName: type.FullName /* بر این اساس نام فایل منبع متناظر باید به همراه ذکر فضای نام پایه آن هم باشد */,
+            //            location: "AtiehJobCore.Resources" /*نام اسمبلی ثالث*/);
+            //    })
+            //    .AddJsonOptions(jsonOptions =>
+            //    {
+            //        jsonOptions.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            //    });
 
-            services.AddElmah(options =>
-            {
-                options.Path = "ElmahDashboard";
-                options.CheckPermissionAction = ElmahSecurity.CheckPermissionAction;
-            });
-            services.AddDNTCommonWeb();
+            //services.AddElmah(options =>
+            //{
+            //    options.Path = "ElmahDashboard";
+            //    options.CheckPermissionAction = ElmahSecurity.CheckPermissionAction;
+            //});
+            //services.AddDNTCommonWeb();
 
-            services.AddDNTCaptcha();
-            services.AddCloudscribePagination();
+            //services.AddDNTCaptcha();
+            //services.AddCloudscribePagination();
 
-            services.AddSingleton<FileManager>();
+            //services.AddSingleton<FileManager>();
 
-            services.AddSingleton<IAuthorizationPolicyProvider, AuthorizationPolicyProvider>();
-            //services.AddScoped<ITagHelperComponent, LanguageDirectionTagHelperComponent>();
+            //services.AddSingleton<IAuthorizationPolicyProvider, AuthorizationPolicyProvider>();
+            ////services.AddScoped<ITagHelperComponent, LanguageDirectionTagHelperComponent>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env,
@@ -182,7 +169,6 @@ namespace AtiehJobCore.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
         }
     }
 }

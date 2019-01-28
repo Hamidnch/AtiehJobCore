@@ -1,0 +1,8 @@
+warn: Microsoft.EntityFrameworkCore.Model.Validation[30000]
+      No type was specified for the decimal column 'Average' on entity type 'Education'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 2.2.0-rtm-35687 initialized 'AtiehJobCoreDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MaxPoolSize=128 CommandTimeout=180 
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (95ms) [Parameters=[], CommandType='Text', CommandTimeout='180']
+      SELECT [k].[XmlData]
+      FROM [DataProtectionKeys] AS [k]

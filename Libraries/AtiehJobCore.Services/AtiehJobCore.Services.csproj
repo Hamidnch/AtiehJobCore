@@ -5,14 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AtiehJobCore.Common\AtiehJobCore.Common.csproj" />
-    <ProjectReference Include="..\AtiehJobCore.Data\AtiehJobCore.Data.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Microsoft.AspNetCore.StaticFiles">
-      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.staticfiles\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.StaticFiles.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\AtiehJobCore.Common\AtiehJobCore.Common.csproj" />
+    <ProjectReference Include="..\AtiehJobCore.Data\AtiehJobCore.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -42,7 +42,5 @@ D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Services\bin\Deb
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Services\bin\Debug\netstandard2.0\AtiehJobCore.Resources.pdb
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Services\bin\Debug\netstandard2.0\en\AtiehJobCore.Resources.resources.dll
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Services\bin\Debug\netstandard2.0\fa\AtiehJobCore.Resources.resources.dll
-D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Services\bin\Debug\netstandard2.0\Microsoft.AspNetCore.StaticFiles.dll
-D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Services\bin\Debug\netstandard2.0\Microsoft.AspNetCore.StaticFiles.xml
 H:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Services\bin\Debug\netstandard2.0\Microsoft.AspNetCore.StaticFiles.dll
 H:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Services\bin\Debug\netstandard2.0\Microsoft.AspNetCore.StaticFiles.xml

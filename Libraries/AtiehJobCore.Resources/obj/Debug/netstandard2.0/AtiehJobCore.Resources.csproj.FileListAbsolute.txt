@@ -33,4 +33,3 @@ D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\De
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.dll
 D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.pdb
 H:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.csprojAssemblyReference.cache
-D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.csprojAssemblyReference.cache

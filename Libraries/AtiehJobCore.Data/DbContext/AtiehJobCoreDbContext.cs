@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
 using AtiehJobCore.Common.Extensions;
+using AtiehJobCore.Common.Infrastructure;
 using AtiehJobCore.Data.Extensions;
 using AtiehJobCore.Data.Mappings.Identity.Plus;
 using AtiehJobCore.Domain.Entities.Identity;
@@ -14,7 +15,6 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace AtiehJobCore.Data.DbContext
 {
@@ -189,15 +189,18 @@ namespace AtiehJobCore.Data.DbContext
             base.OnModelCreating(builder);
 
             // we can't use constructor injection anymore, because we are using the `AddDbContextPool<>`
-            var siteSettings = this.GetService<IOptionsSnapshot<SiteSettings>>();
-            siteSettings.CheckArgumentIsNull(nameof(siteSettings));
-            siteSettings.Value.CheckArgumentIsNull(nameof(siteSettings.Value));
 
+            //var siteSettings = this.GetService<IOptionsSnapshot<SiteSettings>>();
+            //siteSettings.CheckArgumentIsNull(nameof(siteSettings));
+            //siteSettings.Value.CheckArgumentIsNull(nameof(siteSettings.Value));
+
+            var siteSettings = EngineContext.Current.Resolve<SiteSettings>();
             // Adds all of the ASP.NET Core Identity related mappings at once.
             builder.ApplyConfigurationsFromAssembly(typeof(AtiehJobCoreDbContext).Assembly);
 
-            builder.AddSqlCacheConfig(siteSettings.Value);
+            //builder.AddSqlCacheConfig(siteSettings.Value);
 
+            builder.AddSqlCacheConfig(siteSettings);
             builder.AddAuditableShadowProperties();
         }
 
