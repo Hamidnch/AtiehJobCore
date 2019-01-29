@@ -1,6 +1,4 @@
-﻿using System.Security.Claims;
-using System.Security.Principal;
-using AtiehJobCore.Common.Contracts;
+﻿using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Infrastructure;
 using AtiehJobCore.Common.Web;
 using AtiehJobCore.Data.DbContext;
@@ -12,6 +10,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Security.Claims;
+using System.Security.Principal;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 {
@@ -21,6 +21,7 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
         {
             services.AddScoped<IUnitOfWork, AtiehJobCoreDbContext>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             services.AddScoped<IPrincipal>(provider =>
                 provider.GetService<IHttpContextAccessor>()?.HttpContext?.User ?? ClaimsPrincipal.Current);
 

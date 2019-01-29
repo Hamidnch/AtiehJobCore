@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using AtiehJobCore.Common.Extensions;
+﻿using AtiehJobCore.Common.Extensions;
 using AtiehJobCore.Data.DbContext;
 using AtiehJobCore.Domain.Entities.Identity;
 using AtiehJobCore.Services.Constants;
@@ -11,24 +9,26 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Threading.Tasks;
 
 namespace AtiehJobCore.Services.Identity
 {
     public class IdentityDbInitializer : IIdentityDbInitializer
     {
         private readonly SiteSettings _siteSettings;
-        private readonly IUserManager _applicationUserManager;
+        private readonly IUserManager _userManager;
         private readonly ILogger<IdentityDbInitializer> _logger;
         private readonly IRoleManager _roleManager;
         private readonly IServiceScopeFactory _scopeFactory;
 
         public IdentityDbInitializer(
-            IUserManager applicationUserManager, IServiceScopeFactory scopeFactory,
+            IUserManager userManager, IServiceScopeFactory scopeFactory,
             IRoleManager roleManager, SiteSettings siteSettings,
             ILogger<IdentityDbInitializer> logger)
         {
-            _applicationUserManager = applicationUserManager;
-            _applicationUserManager.CheckArgumentIsNull(nameof(_applicationUserManager));
+            _userManager = userManager;
+            _userManager.CheckArgumentIsNull(nameof(_userManager));
 
             _scopeFactory = scopeFactory;
             _scopeFactory.CheckArgumentIsNull(nameof(_scopeFactory));
@@ -97,7 +97,7 @@ namespace AtiehJobCore.Services.Identity
 
             const string methodName = nameof(SeedDatabaseWithAdminUserAsync);
 
-            var adminUser = await _applicationUserManager.FindByNameAsync(name);
+            var adminUser = await _userManager.FindByNameAsync(name);
             if (adminUser != null)
             {
                 _logger.LogInformation($"{methodName}: adminUser already exists.");
@@ -131,7 +131,7 @@ namespace AtiehJobCore.Services.Identity
                 LockoutEnabled = false,
                 IsActive = true
             };
-            var adminUserResult = await _applicationUserManager.CreateAsync(adminUser, password);
+            var adminUserResult = await _userManager.CreateAsync(adminUser, password);
             if (adminUserResult == IdentityResult.Failed())
             {
                 _logger.LogError($"{methodName}: adminUser CreateAsync failed. " +
@@ -140,7 +140,7 @@ namespace AtiehJobCore.Services.Identity
             }
 
             var setLockoutResult =
-                await _applicationUserManager.SetLockoutEnabledAsync(adminUser, enabled: false);
+                await _userManager.SetLockoutEnabledAsync(adminUser, enabled: false);
             if (setLockoutResult == IdentityResult.Failed())
             {
                 _logger.LogError($"{methodName}: adminUser SetLockoutEnabledAsync failed." +
@@ -149,7 +149,7 @@ namespace AtiehJobCore.Services.Identity
             }
 
             var addToRoleResult =
-                await _applicationUserManager.AddToRoleAsync(adminUser, adminRole.Name);
+                await _userManager.AddToRoleAsync(adminUser, adminRole.Name);
             if (addToRoleResult != IdentityResult.Failed()) return IdentityResult.Success;
 
             _logger.LogError($"{methodName}: adminUser AddToRoleAsync failed. " +

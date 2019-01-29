@@ -1,0 +1,15 @@
+Hosting environment: Development
+Content root path: D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+fail: Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware[1]
+      An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No service for type 'AtiehJobCore.Services.Helpers.IWebHelper' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at AtiehJobCore.Common.Infrastructure.CommonEngine.Resolve[T]() in D:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Common\Infrastructure\CommonEngine.cs:line 240
+   at AtiehJobCore.Web.Framework.Infrastructure.Extensions.ApplicationBuilderExtensions.<>c.<<UsePageNotFound>b__2_0>d.MoveNext() in D:\Programming\Best Project\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\Infrastructure\Extensions\ApplicationBuilderExtensions.cs:line 102
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)

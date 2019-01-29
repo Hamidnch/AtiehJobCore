@@ -11193,11 +11193,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\AtiehJobCore.Data.csproj",
+      "projectUniqueName": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\AtiehJobCore.Data.csproj",
       "projectName": "AtiehJobCore.Data",
-      "projectPath": "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\AtiehJobCore.Data.csproj",
+      "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\AtiehJobCore.Data.csproj",
       "packagesPath": "C:\\Users\\Chegini-pc\\.nuget\\packages\\",
-      "outputPath": "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\obj\\",
+      "outputPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11216,11 +11216,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\AtiehJobCore.Common.csproj": {
-              "projectPath": "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\AtiehJobCore.Common.csproj"
+            "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\AtiehJobCore.Common.csproj": {
+              "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\AtiehJobCore.Common.csproj"
             },
-            "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.ViewModel\\AtiehJobCore.ViewModel.csproj": {
-              "projectPath": "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.ViewModel\\AtiehJobCore.ViewModel.csproj"
+            "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.ViewModel\\AtiehJobCore.ViewModel.csproj": {
+              "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.ViewModel\\AtiehJobCore.ViewModel.csproj"
             }
           }
         }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using AtiehJobCore.Common.Extensions;
+﻿using AtiehJobCore.Common.Extensions;
 using AtiehJobCore.Domain.Entities.Identity;
 using AtiehJobCore.Services.Identity;
 using AtiehJobCore.ViewModel.Models.Identity.Settings;
@@ -8,6 +6,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Threading.Tasks;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 {
@@ -35,8 +35,6 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
               .AddRoleManager<RoleManager>()
               .AddSignInManager<SignInManager>()
               .AddErrorDescriber<CustomIdentityErrorDescriber>()
-              // You **cannot** use .AddEntityFrameworkStores() when you customize everything
-              //.AddEntityFrameworkStores<AlvandFoodDbContext, int>()
               .AddDefaultTokenProviders()
               .AddTokenProvider<Services.Identity
                         .DataProtectorTokenProvider<User>>(EmailConfirmationTokenProviderName);

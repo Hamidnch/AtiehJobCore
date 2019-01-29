@@ -181,7 +181,7 @@ namespace AtiehJobCore.Common.Infrastructure
         {
             //find startup configurations provided by other assemblies
             var typeFinder = new WebAppTypeFinder();
-            var startupConfigurations = typeFinder.FindClassesOfType<IStartup>();
+            var startupConfigurations = typeFinder.FindClassesOfType<ICommonStartup>();
 
             //create and sort instances of startup configurations
             var instances = startupConfigurations
@@ -197,11 +197,11 @@ namespace AtiehJobCore.Common.Infrastructure
             AddAutoMapper(services, typeFinder);
 
             //register dependencies
-            var grandConfig = services.BuildServiceProvider().GetService<CommonConfig>();
-            RegisterDependencies(grandConfig, services, typeFinder);
+            var commonConfig = services.BuildServiceProvider().GetService<CommonConfig>();
+            RegisterDependencies(commonConfig, services, typeFinder);
 
             //run startup tasks
-            if (!grandConfig.IgnoreStartupTasks)
+            if (!commonConfig.IgnoreStartupTasks)
                 RunStartupTasks(typeFinder);
 
             return Provider;

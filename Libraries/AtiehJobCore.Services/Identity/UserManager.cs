@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
-using AtiehJobCore.Common.Extensions;
+﻿using AtiehJobCore.Common.Extensions;
 using AtiehJobCore.Data.DbContext;
 using AtiehJobCore.Domain.Entities.Identity;
 using AtiehJobCore.Services.Identity.Interfaces;
@@ -17,6 +12,11 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AtiehJobCore.Services.Identity
 {

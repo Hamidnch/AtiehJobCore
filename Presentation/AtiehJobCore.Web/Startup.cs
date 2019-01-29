@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using AtiehJobCore.Services.Identity.Logger.Extensions;
 using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
 using AtiehJobCore.Web.Framework.Middleware;
@@ -28,12 +29,12 @@ namespace AtiehJobCore.Web
                .Build();
         }
 
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             //services.Configure<SiteSettings>(options => Configuration.Bind(options));
             //services.AddCustomIdentityServices();
 
-            services.ConfigureApplicationServices(Configuration);
+            return services.ConfigureApplicationServices(Configuration);
 
             //var siteSettings = services.GetSiteSettings();
 
@@ -149,13 +150,15 @@ namespace AtiehJobCore.Web
             });
 
             // Adds all of the ASP.NET Core Identity related initializations at once.
-            app.UseCustomIdentityServices();
+            //app.UseCustomIdentityServices();
 
             app.UseCookiePolicy();
 
             // app.UseNoBrowserCache();
 
             app.UseBlockingDetection();
+
+            //app.ConfigureRequestPipeline();
 
             app.UseMvc(routes =>
             {

@@ -9690,11 +9690,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\AtiehJobCore.Common.csproj",
+      "projectUniqueName": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\AtiehJobCore.Common.csproj",
       "projectName": "AtiehJobCore.Common",
-      "projectPath": "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\AtiehJobCore.Common.csproj",
+      "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\AtiehJobCore.Common.csproj",
       "packagesPath": "C:\\Users\\Chegini-pc\\.nuget\\packages\\",
-      "outputPath": "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\obj\\",
+      "outputPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

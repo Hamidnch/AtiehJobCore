@@ -9736,11 +9736,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Domain\\AtiehJobCore.Domain.csproj",
+      "projectUniqueName": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Domain\\AtiehJobCore.Domain.csproj",
       "projectName": "AtiehJobCore.Domain",
-      "projectPath": "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Domain\\AtiehJobCore.Domain.csproj",
+      "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Domain\\AtiehJobCore.Domain.csproj",
       "packagesPath": "C:\\Users\\Chegini-pc\\.nuget\\packages\\",
-      "outputPath": "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Domain\\obj\\",
+      "outputPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -9759,8 +9759,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\AtiehJobCore.Common.csproj": {
-              "projectPath": "H:\\Programming\\Best Project\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\AtiehJobCore.Common.csproj"
+            "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\AtiehJobCore.Common.csproj": {
+              "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Common\\AtiehJobCore.Common.csproj"
             }
           }
         }

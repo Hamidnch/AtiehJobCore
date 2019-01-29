@@ -22,3 +22,15 @@ H:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Domain\bin\Debug
 H:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Domain\bin\Debug\netstandard2.0\AtiehJobCore.Common.dll
 H:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Domain\bin\Debug\netstandard2.0\AtiehJobCore.Common.pdb
 H:\Programming\Best Project\AtiehJobCore\Libraries\AtiehJobCore.Domain\obj\Debug\netstandard2.0\AtiehJobCore.Domain.csproj.CopyComplete
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Domain\bin\Debug\netstandard2.0\AtiehJobCore.Domain.deps.json
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Domain\bin\Debug\netstandard2.0\AtiehJobCore.Domain.dll
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Domain\bin\Debug\netstandard2.0\AtiehJobCore.Domain.pdb
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Domain\bin\Debug\netstandard2.0\AtiehJobCore.Common.dll
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Domain\bin\Debug\netstandard2.0\AtiehJobCore.Common.pdb
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Domain\obj\Debug\netstandard2.0\AtiehJobCore.Domain.csprojAssemblyReference.cache
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Domain\obj\Debug\netstandard2.0\AtiehJobCore.Domain.csproj.CoreCompileInputs.cache
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Domain\obj\Debug\netstandard2.0\AtiehJobCore.Domain.AssemblyInfoInputs.cache
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Domain\obj\Debug\netstandard2.0\AtiehJobCore.Domain.AssemblyInfo.cs
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Domain\obj\Debug\netstandard2.0\AtiehJobCore.Domain.csproj.CopyComplete
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Domain\obj\Debug\netstandard2.0\AtiehJobCore.Domain.dll
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Domain\obj\Debug\netstandard2.0\AtiehJobCore.Domain.pdb

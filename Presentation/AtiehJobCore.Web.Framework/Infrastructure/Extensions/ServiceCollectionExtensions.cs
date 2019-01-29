@@ -6,8 +6,6 @@ using AtiehJobCore.Common.Extensions;
 using AtiehJobCore.Common.Infrastructure;
 using AtiehJobCore.Common.Securities;
 using AtiehJobCore.Common.Utilities;
-using AtiehJobCore.Data.DbContext;
-using AtiehJobCore.Data.Extensions;
 using AtiehJobCore.ViewModel.Models.Identity.Settings;
 using AtiehJobCore.Web.Framework.AuthorizationHandler;
 using AtiehJobCore.Web.Framework.Filters;
@@ -43,42 +41,6 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
             //add accessor to HttpContext
             services.AddHttpContextAccessor();
 
-            //create, initialize and configure the engine
-            var engine = EngineContext.Create();
-            engine.Initialize(services);
-            var serviceProvider = engine.ConfigureServices(services, configuration);
-
-            ////log application start
-            //var logger = EngineContext.Current.Resolve<ILogger>();
-            //logger.Information("Application started", null, null);
-
-            AddStartupFilterServices(services);
-
-            // Adds all of the ASP.NET Core Identity related services and configurations at once.
-            //services.AddCustomIdentityServices();
-            var siteSettings = GetSiteSettings(services);
-
-            services.AddIdentityOptions(siteSettings);
-            services.RegisterAllCustomServices();
-            services.AddCustomTicketStore(siteSettings);
-            services.AddDynamicPermissions();
-            services.AddCustomDataProtection(siteSettings);
-
-            //var siteSettings = services.GetSiteSettings();
-
-            // It's added to access services from the dbContext,
-            // remove it if you are using the normal `AddDbContext`
-            // and normal constructor dependency injection.
-            services.AddEntityFrameworkByActiveDatabase(siteSettings.ActiveDatabase);
-
-            services.AddDbContextPool<AtiehJobCoreDbContext>((provider, optionsBuilder) =>
-            {
-                optionsBuilder.SetDbContextOptions(siteSettings);
-                // It's added to access services from the dbContext,
-                // remove it if you are using the normal `AddDbContext`
-                // and normal constructor dependency injection.
-                optionsBuilder.UseInternalServiceProvider(provider);
-            });
 
             services.AddElmahService();
 
@@ -90,14 +52,57 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
             services.AddMvcService();
 
             services.AddDNTCommonWeb();
-
             services.AddDNTCaptcha();
+
             services.AddCloudscribePagination();
 
             services.AddSingleton<FileManager>();
 
             services.AddSingleton<IAuthorizationPolicyProvider, AuthorizationPolicyProvider>();
             //services.AddScoped<ITagHelperComponent, LanguageDirectionTagHelperComponent>();
+
+            //create, initialize and configure the engine
+            var engine = EngineContext.Create();
+            engine.Initialize(services);
+            var serviceProvider = engine.ConfigureServices(services, configuration);
+
+
+            ////log application start
+            //var logger = EngineContext.Current.Resolve<ILogger>();
+            //logger.Information("Application started", null, null);
+
+            AddStartupFilterServices(services);
+
+            // Adds all of the ASP.NET Core Identity related services and configurations at once.
+            //services.AddCustomIdentityServices();
+            var siteSettings = GetSiteSettings(services);
+
+            //services.AddIdentityOptions(siteSettings);
+
+            //services.RegisterAllCustomServices();
+
+            //services.AddScoped<IPrincipal>(provider =>
+            //    provider.GetService<IHttpContextAccessor>()?.HttpContext?.User ?? ClaimsPrincipal.Current);
+
+            //services.AddCustomTicketStore(siteSettings);
+            //services.AddDynamicPermissions();
+            //services.AddCustomDataProtection(siteSettings);
+
+            //var siteSettings = services.GetSiteSettings();
+
+            // It's added to access services from the dbContext,
+            // remove it if you are using the normal `AddDbContext`
+            // and normal constructor dependency injection.
+            //services.AddEntityFrameworkByActiveDatabase(siteSettings.ActiveDatabase);
+
+            //services.AddDbContextPool<AtiehJobCoreDbContext>((provider, optionsBuilder) =>
+            //{
+            //    optionsBuilder.SetDbContextOptions(siteSettings);
+            //    // It's added to access services from the dbContext,
+            //    // remove it if you are using the normal `AddDbContext`
+            //    // and normal constructor dependency injection.
+            //    optionsBuilder.UseInternalServiceProvider(provider);
+            //});
 
             return serviceProvider;
         }
@@ -109,7 +114,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
         /// <param name="services">Collection of service descriptors</param>
         /// <param name="configuration">Set of key/value application configuration properties</param>
         /// <returns>Instance of configuration parameters</returns>
-        private static TConfig ConfigureStartupConfig<TConfig>(this IServiceCollection services, IConfiguration configuration) where TConfig : class, new()
+        private static TConfig ConfigureStartupConfig<TConfig>(this IServiceCollection services,
+            IConfiguration configuration) where TConfig : class, new()
         {
             if (services == null)
                 throw new ArgumentNullException(nameof(services));
@@ -225,7 +231,9 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
                 options.SupportedUICultures = supportedCultures;
 
                 options.RequestCultureProviders.Insert(0,
+#pragma warning disable 1998
                     new CustomRequestCultureProvider(async context => new ProviderCultureResult("fa")));
+#pragma warning restore 1998
             });
         }
         private static void AddElmahService(this IServiceCollection services)

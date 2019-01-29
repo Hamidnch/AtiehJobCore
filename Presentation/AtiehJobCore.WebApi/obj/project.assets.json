@@ -12086,11 +12086,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Programming\\Best Project\\AtiehJobCore\\Presentation\\AtiehJobCore.WebApi\\AtiehJobCore.WebApi.csproj",
+      "projectUniqueName": "D:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.WebApi\\AtiehJobCore.WebApi.csproj",
       "projectName": "AtiehJobCore.WebApi",
-      "projectPath": "H:\\Programming\\Best Project\\AtiehJobCore\\Presentation\\AtiehJobCore.WebApi\\AtiehJobCore.WebApi.csproj",
+      "projectPath": "D:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.WebApi\\AtiehJobCore.WebApi.csproj",
       "packagesPath": "C:\\Users\\Chegini-pc\\.nuget\\packages\\",
-      "outputPath": "H:\\Programming\\Best Project\\AtiehJobCore\\Presentation\\AtiehJobCore.WebApi\\obj\\",
+      "outputPath": "D:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

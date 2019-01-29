@@ -12,13 +12,13 @@
     <p>Hello World!</p>
 </div>
 
-<div asp-is-visible="true" class="container">
-    <div dir="rtl">
-        <cache expires-after="@TimeSpan.FromMinutes(1)">
-            <vc:online-users numbers-to-take="100" minutes-to-take="15" show-more-items-link="true"></vc:online-users>
-        </cache>
-    </div>
-</div>
+@*<div asp-is-visible="true" class="container">
+        <div dir="rtl">
+            <cache expires-after="@TimeSpan.FromMinutes(1)">
+                <vc:online-users numbers-to-take="100" minutes-to-take="15" show-more-items-link="true"></vc:online-users>
+            </cache>
+        </div>
+    </div>*@
 
 @*@if (User.Identity.IsAuthenticated)
     {

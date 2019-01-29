@@ -12,6 +12,7 @@
     <PackageReference Include="DNTCaptcha.Core" Version="1.6.7" />
     <PackageReference Include="ElmahCore" Version="1.2.3" />
     <PackageReference Include="LewisTech.Utils" Version="3.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />

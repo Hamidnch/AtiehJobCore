@@ -107,7 +107,7 @@ namespace AtiehJobCore.Common.Plugins
                         var pluginDescriptor = dfd.Value;
 
                         //ensure that version of plugin is valid
-                        if (!pluginDescriptor.SupportedVersions.Contains(AtiehJobCoreVersion.CurrentVersion, StringComparer.OrdinalIgnoreCase))
+                        if (!pluginDescriptor.SupportedVersions.Contains(SiteVersion.CurrentVersion, StringComparer.OrdinalIgnoreCase))
                         {
                             incompatiblePlugins.Add(pluginDescriptor.SystemName);
                             continue;

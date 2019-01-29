@@ -1,11 +1,11 @@
-﻿@using AtiehJobCore.Common.Extensions
-@using AtiehJobCore.Services.Identity.Interfaces
+﻿@*@using AtiehJobCore.Common.Extensions
+    @using AtiehJobCore.Services.Identity.Interfaces
 
-@inject IUsersPhotoService UsersPhotoService;
-@{
-    var displayName = User.Identity.GetUserDisplayName();
-    var photoUrl = UsersPhotoService.GetCurrentUserPhotoUrl();
-}
+    @inject IUsersPhotoService UsersPhotoService;
+    @{
+        var displayName = User.Identity.GetUserDisplayName();
+        var photoUrl = UsersPhotoService.GetCurrentUserPhotoUrl();
+    }*@
 
 @*navbar bg-dark navbar-dark navbar-expand-sm fixed-top*@
 <div class="navbar navbar-expand-md navbar-expand-sm navbar-light bg-light fixed-top">
@@ -32,9 +32,9 @@
                     <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown"
                        id="userDropdown" aria-haspopup="true"
                        aria-expanded="false" href="#">
-                        <img class="img-thumbnail userImage" src="@photoUrl" alt="" asp-append-version="true"
+                        <img class="img-thumbnail userImage" src="" alt="" asp-append-version="true"
                              onerror="this.style.visibility = 'hidden';this.width=0; this.height=0;" />
-                        <span class="author">@displayName</span>
+                        <span class="author">test</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="userDropdown">
                         <a class="dropdown-item" asp-controller="Home" asp-action="ColumnsOne" asp-area="">

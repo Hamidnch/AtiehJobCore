@@ -1,5 +1,4 @@
 [
-  /************ Css Section **********/
   {
     "outputFileName": "wwwroot/css/web.min.css",
     "inputFiles": [
@@ -26,7 +25,6 @@
       "adjustRelativePaths": false
     }
   },
-
   {
     "outputFileName": "wwwroot/css/admin/admin.min.css",
     "inputFiles": [
@@ -44,8 +42,6 @@
       "renameLocals": false
     }
   },
-
-  /************ Js Section **********/
   {
     "outputFileName": "wwwroot/js/jqueryAll.min.js",
     "inputFiles": [
@@ -62,7 +58,6 @@
       "renameLocals": false
     }
   },
-
   {
     "outputFileName": "wwwroot/js/web.min.js",
     "inputFiles": [
@@ -78,7 +73,6 @@
       "renameLocals": false
     }
   },
-
   {
     "outputFileName": "wwwroot/js/admin/admin.min.js",
     "inputFiles": [
@@ -94,5 +88,11 @@
       "adjustRelativePaths": false,
       "renameLocals": false
     }
+  },
+  {
+    "outputFileName": "source/customs/custom.min.css",
+    "inputFiles": [
+      "source/customs/custom.css"
+    ]
   }
 ]
