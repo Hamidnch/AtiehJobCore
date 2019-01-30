@@ -47,9 +47,14 @@ using AtiehJobCore.Services.Constants;
 
 #line default
 #line hidden
+#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"715b953644013812f80d9c6a89ca174b1f913fa2", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0ecb11b38307dcc5ffe85644d99b92e61307ddec", @"/Views/_ViewImports.cshtml")]
-    public class Views_Shared_Error : AtiehJobCore.Web.Framework.Web.Razor.BaseView<object>
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7e669b73eb774d464909c0f35f3fa4900866ecf8", @"/Views/_ViewImports.cshtml")]
+    public class Views_Shared_Error : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("card-header"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("card-body"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -88,12 +93,12 @@ using AtiehJobCore.Services.Constants;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(175, 495, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715b953644013812f80d9c6a89ca174b1f913fa25349", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715b953644013812f80d9c6a89ca174b1f913fa25522", async() => {
                 BeginContext(211, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(217, 93, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715b953644013812f80d9c6a89ca174b1f913fa25733", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715b953644013812f80d9c6a89ca174b1f913fa25906", async() => {
                     BeginContext(242, 33, true);
                     WriteLiteral("\r\n        <h5 class=\"card-title\">");
                     EndContext();
@@ -124,7 +129,7 @@ using AtiehJobCore.Services.Constants;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(316, 346, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715b953644013812f80d9c6a89ca174b1f913fa27500", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715b953644013812f80d9c6a89ca174b1f913fa27673", async() => {
                     BeginContext(339, 68, true);
                     WriteLiteral("\r\n        متاسفانه در حین پردازش درخواست جاری خطایی رخ داده‌است.\r\n\r\n");
                     EndContext();

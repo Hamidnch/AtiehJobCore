@@ -1,7 +1,7 @@
-﻿@*@using AtiehJobCore.Common.Extensions
-    @using AtiehJobCore.Services.Identity.Interfaces
+﻿@using AtiehJobCore.Common.Extensions
+@using AtiehJobCore.Services.Identity.Interfaces
 
-    @inject IUsersPhotoService UsersPhotoService;
+@*@inject IUsersPhotoService UsersPhotoService;
     @{
         var displayName = User.Identity.GetUserDisplayName();
         var photoUrl = UsersPhotoService.GetCurrentUserPhotoUrl();
@@ -34,7 +34,7 @@
                        aria-expanded="false" href="#">
                         <img class="img-thumbnail userImage" src="" alt="" asp-append-version="true"
                              onerror="this.style.visibility = 'hidden';this.width=0; this.height=0;" />
-                        <span class="author">test</span>
+                        <span class="author">Test</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="userDropdown">
                         <a class="dropdown-item" asp-controller="Home" asp-action="ColumnsOne" asp-area="">

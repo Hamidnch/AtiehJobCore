@@ -1,0 +1,137 @@
+﻿<Language Name="فارسی" IsDefault="true" IsRightToLeft="true">
+  <LocaleResource Name="AdminEmail">
+    <Value>ایمیل مدیر سیستم</Value>
+  </LocaleResource>
+  <LocaleResource Name="AdminEmailRequired">
+    <Value>ایمیل مدیر سیستم را وارد نمایید</Value>
+  </LocaleResource>
+  <LocaleResource Name="AdminPassword">
+    <Value>کلمه عبور مدیر سیستم</Value>
+  </LocaleResource>
+  <LocaleResource Name="AdminPasswordRequired">
+    <Value>کلمه عبور مدیر سیستم را وارد نمایید</Value>
+  </LocaleResource>
+  <LocaleResource Name="ConfigureDirectoryPermissions">
+    <Value>حساب کاربری '{0}' با مجوز تغییر در پوشه «{1}» اعطا نمی شود. لطفا این مجوزها را پیکربندی کنید.</Value>
+  </LocaleResource>
+  <LocaleResource Name="ConfigureFilePermissions">
+    <Value>حساب کاربری '{0}' با مجوز تغییر در فایل «{1}» اعطا نشده است. لطفا این مجوزها را پیکربندی کنید.</Value>
+  </LocaleResource>
+  <LocaleResource Name="ConfirmPassword">
+    <Value>تایید رمز عبور</Value>
+  </LocaleResource>
+  <LocaleResource Name="ConfirmPasswordRequired">
+    <Value>تاییدیه رمز عبور را وارد کنید</Value>
+  </LocaleResource>
+  <LocaleResource Name="ConnectionString">
+    <Value>رشته اتصال بانک اطلاعاتی</Value>
+  </LocaleResource>
+  <LocaleResource Name="ConnectionStringRequired">
+    <Value>یک رشته اتصال بانک اطلاعاتی MongoDb موردنیاز هست.</Value>
+  </LocaleResource>
+  <LocaleResource Name="ConnectionStringValues">
+    <Value>مقادیر رشته اتصال بانک اطلاعاتی MongoDb را وارد کنید</Value>
+  </LocaleResource>
+  <LocaleResource Name="ConnectionStringWrongFormat">
+    <Value>فرمت رشته اتصال MongoDb اشتباه است</Value>
+  </LocaleResource>
+  <LocaleResource Name="CreateDatabaseIfDoesNotExist">
+    <Value>در صورت عدم وجود پایگاه داده ایجاد شود.</Value>
+  </LocaleResource>
+  <LocaleResource Name="CreateSampleData">
+    <Value>ایجاد اطلاعات  آزمایشی</Value>
+  </LocaleResource>
+  <LocaleResource Name="CustomCollation">
+    <Value>Collation</Value>
+  </LocaleResource>
+  <LocaleResource Name="DatabaseCreationError">
+    <Value>هنگام ایجاد پایگاه داده خطایی رخ داد: {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="DatabaseInformation">
+    <Value>اطلاعات بانک اطلاعاتی</Value>
+  </LocaleResource>
+  <LocaleResource Name="DatabaseName">
+    <Value>نام پایگاه داده</Value>
+  </LocaleResource>
+  <LocaleResource Name="DatabaseNameRequired">
+    <Value>نام پایگاه داده الزامی است.</Value>
+  </LocaleResource>
+  <LocaleResource Name="DatabaseNotExists">
+    <Value>بانک اطلاعاتی وجود ندارد یا شما هیچ مجوزی برای اتصال به آن ندارید</Value>
+  </LocaleResource>
+  <LocaleResource Name="DataProviderRequired">
+    <Value>ارائه دهنده داده را انتخاب کنید(Data Provider)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Example">
+    <Value>نمونه</Value>
+  </LocaleResource>
+  <LocaleResource Name="Install">
+    <Value>نصب</Value>
+  </LocaleResource>
+  <LocaleResource Name="Installing">
+    <Value>در حال نصب و راه اندازی...</Value>
+  </LocaleResource>
+  <LocaleResource Name="PasswordsDoNotMatch">
+    <Value>رمز عبورها باهم نمیخوانند</Value>
+  </LocaleResource>
+  <LocaleResource Name="RawConnectionString">
+    <Value>رشته اتصال خام را وارد کنید (پیشرفته)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Recommended">
+    <Value>[توصیه شده]</Value>
+  </LocaleResource>
+  <LocaleResource Name="RestartInstallation">
+    <Value>راه اندازی مجدد</Value>
+  </LocaleResource>
+  <LocaleResource Name="RestartInstallationTooltip">
+    <Value>برای راه اندازی مجدد روی دکمه راه اندازی کلیک کنید (پاک کردن تمام مقادیر ذخیره شده)</Value>
+  </LocaleResource>
+  <LocaleResource Name="SetupFailed">
+    <Value>راه اندازی نشد: {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="MongoDbAuthentication">
+    <Value>از حساب کاربری سرویس دهنده MongoDb استفاده کنید</Value>
+  </LocaleResource>
+  <LocaleResource Name="MongoDbServerName">
+    <Value>نام سرویس دهنده MongoDb</Value>
+  </LocaleResource>
+  <LocaleResource Name="MongoDbServerNameRequired">
+    <Value>نام سرور MongoDb لازم است</Value>
+  </LocaleResource>
+  <LocaleResource Name="MongoDbServerPassword">
+    <Value>کلمه عبور MongoDb</Value>
+  </LocaleResource>
+  <LocaleResource Name="MongoDbServerPasswordRequired">
+    <Value>کلمه عبور MongoDb موردنیاز است</Value>
+  </LocaleResource>
+  <LocaleResource Name="MongoDbServerUsername">
+    <Value>نام کاربری MongoDb</Value>
+  </LocaleResource>
+  <LocaleResource Name="MongoDbServerUsernameRequired">
+    <Value>نام کاربری MongoDb موردنیاز است.</Value>
+  </LocaleResource>
+  <LocaleResource Name="MongoDbStandard">
+    <Value>از پایگاه داده سرور MongoDb استفاده کنید</Value>
+  </LocaleResource>
+  <LocaleResource Name="StoreInformation">
+    <Value>اطلاعات سایت</Value>
+  </LocaleResource>
+  <LocaleResource Name="Title">
+    <Value>نصب و راه اندازی</Value>
+  </LocaleResource>
+  <LocaleResource Name="Tooltip1">
+    <Value>آتیه کار</Value>
+  </LocaleResource>
+  <LocaleResource Name="Tooltip2">
+    <Value>برای تکمیل نصب و راه اندازی، باید برخی از اطلاعات مربوط به سرور پایگاه داده ("رشته اتصال") را بدانید. لطفا در صورت لزوم با ISP خود تماس بگیرید. اگر شما در حال نصب بر روی یک ماشین محلی یا سرور هستید، ممکن است نیاز به اطلاعاتی از مدیر سیستم خود داشته باشید.</Value>
+  </LocaleResource>
+  <LocaleResource Name="WindowsAuthentication">
+    <Value>Use integrated Windows authentication</Value>
+  </LocaleResource>
+  <LocaleResource Name="Installed">
+    <Value>برنامه با موفقیت نصب شده است، لطفا برنامه را مجددا راه اندازی کنید.</Value>
+  </LocaleResource>
+  <LocaleResource Name="AlreadyInstalled">
+    <Value>این پایگاه داده در حال حاضر موجود است و سایت بر روی آن نصب شده است. پایگاه داده دیگری را انتخاب کنید.</Value>
+  </LocaleResource>
+</Language>

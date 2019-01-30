@@ -47,9 +47,14 @@ using AtiehJobCore.Services.Constants;
 
 #line default
 #line hidden
+#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"983fdf4dfa4cbdf08e96c6c3959e3ccc4355129e", @"/Views/Shared/_RootLayout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0ecb11b38307dcc5ffe85644d99b92e61307ddec", @"/Views/_ViewImports.cshtml")]
-    public class Views_Shared__RootLayout : AtiehJobCore.Web.Framework.Web.Razor.BaseView<object>
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7e669b73eb774d464909c0f35f3fa4900866ecf8", @"/Views/_ViewImports.cshtml")]
+    public class Views_Shared__RootLayout : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         #line hidden
         #pragma warning disable 0169
@@ -94,7 +99,7 @@ WriteAttributeValue("", 99, IsRtl() ? "rtl" : "ltr", 99, 26, false);
             WriteLiteral(">\r\n");
             EndContext();
             BeginContext(129, 990, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "983fdf4dfa4cbdf08e96c6c3959e3ccc4355129e4825", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "983fdf4dfa4cbdf08e96c6c3959e3ccc4355129e4998", async() => {
                 BeginContext(135, 31, true);
                 WriteLiteral("\r\n    <meta charset=\"utf-8\" /> ");
                 EndContext();
@@ -146,7 +151,7 @@ Write(await Html.PartialAsync("_Head"));
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1121, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "983fdf4dfa4cbdf08e96c6c3959e3ccc4355129e7662", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "983fdf4dfa4cbdf08e96c6c3959e3ccc4355129e7835", async() => {
                 BeginContext(1127, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();

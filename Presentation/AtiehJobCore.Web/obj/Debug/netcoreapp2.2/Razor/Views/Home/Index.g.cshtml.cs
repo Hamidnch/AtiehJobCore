@@ -47,14 +47,19 @@ using AtiehJobCore.Services.Constants;
 
 #line default
 #line hidden
+#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models;
+
+#line default
+#line hidden
 #line 1 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\Home\Index.cshtml"
 using AtiehJobCore.Common.Extensions;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a1b57275cee4a9f399d1cf9161324dc506a4e86c", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0ecb11b38307dcc5ffe85644d99b92e61307ddec", @"/Views/_ViewImports.cshtml")]
-    public class Views_Home_Index : AtiehJobCore.Web.Framework.Web.Razor.BaseView<object>
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7e669b73eb774d464909c0f35f3fa4900866ecf8", @"/Views/_ViewImports.cshtml")]
+    public class Views_Home_Index : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("style", new global::Microsoft.AspNetCore.Html.HtmlString("background-color: red;color:blue"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         #line hidden
@@ -94,7 +99,7 @@ using AtiehJobCore.Common.Extensions;
             WriteLiteral("\r\n<h1>به سایت کاریابی آتیه کار خوش آمدید</h1>\r\n<hr />\r\n");
             EndContext();
             BeginContext(175, 102, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1b57275cee4a9f399d1cf9161324dc506a4e86c4876", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1b57275cee4a9f399d1cf9161324dc506a4e86c5049", async() => {
                 BeginContext(244, 27, true);
                 WriteLiteral("\r\n    <p>Hello World!</p>\r\n");
                 EndContext();

@@ -48,8 +48,8 @@ using AtiehJobCore.Services.Constants;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4938c7e7ef1faf84135e26f38d9ce18761c48156", @"/Areas/Admin/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0ecb11b38307dcc5ffe85644d99b92e61307ddec", @"/Areas/Admin/Views/_ViewImports.cshtml")]
-    public class Areas_Admin_Views_Home_Index : AtiehJobCore.Web.Framework.Web.Razor.BaseView<object>
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d92eb80d43aa3e081240d6bb84f926f55689c18", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    public class Areas_Admin_Views_Home_Index : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()

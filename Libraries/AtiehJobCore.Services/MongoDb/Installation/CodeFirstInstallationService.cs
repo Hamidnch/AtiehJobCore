@@ -1,38 +1,41 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using AtiehJobCore.Common;
+﻿using AtiehJobCore.Common;
 using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb.Common;
+using AtiehJobCore.Common.MongoDb;
 using AtiehJobCore.Common.MongoDb.Data;
+using AtiehJobCore.Common.MongoDb.Domain.Common;
+using AtiehJobCore.Common.MongoDb.Domain.Localization;
+using AtiehJobCore.Common.Utilities;
 using AtiehJobCore.Data.MongoDb;
+using AtiehJobCore.Services.MongoDb.Configuration;
+using AtiehJobCore.Services.MongoDb.Localization;
 using Microsoft.AspNetCore.Hosting;
 using MongoDB.Driver;
+using System;
+using System.IO;
+using System.Linq;
 
 namespace AtiehJobCore.Services.MongoDb.Installation
 {
     public class CodeFirstInstallationService : IInstallationService
     {
         private readonly IRepository<AtiehJobCoreVersion> _versionRepository;
+        private readonly IRepository<Language> _languageRepository;
         private readonly IHostingEnvironment _hostingEnvironment;
 
         public CodeFirstInstallationService(IRepository<AtiehJobCoreVersion> versionRepository,
-            IHostingEnvironment hostingEnvironment)
+            IHostingEnvironment hostingEnvironment, IRepository<Language> languageRepository)
         {
             _versionRepository = versionRepository;
             _hostingEnvironment = hostingEnvironment;
+            _languageRepository = languageRepository;
         }
 
-        public void InstallData(string defaultUserEmail, string defaultUserPassword, string collation, bool installSampleData = true)
+        protected virtual string GetSamplesPath()
         {
-            defaultUserEmail = defaultUserEmail.ToLower();
-            CreateTables(collation);
-            CreateIndexes();
-            InstallVersion();
+            return Path.Combine(_hostingEnvironment.WebRootPath, "content/samples/");
         }
-
-        private void CreateTables(string local)
+        private static void CreateTables(string local)
         {
             if (string.IsNullOrEmpty(local))
                 local = "en";
@@ -76,14 +79,33 @@ namespace AtiehJobCore.Services.MongoDb.Installation
 
             _versionRepository.Collection.Indexes.CreateOne(atiehJobVersionIndex);
         }
-
-
-        protected virtual string GetSamplesPath()
+        public void InstallData(string defaultUserEmail, string defaultUserPassword, string collation, bool installSampleData = true)
         {
-            return Path.Combine(_hostingEnvironment.WebRootPath, "content/samples/");
+            defaultUserEmail = defaultUserEmail.ToLower();
+            CreateTables(collation);
+            CreateIndexes();
+            InstallVersion();
+            InstallLanguages();
+            InstallLocaleResources();
+            InstallSettings(installSampleData);
         }
 
+        protected virtual void InstallSettings(bool installSampleData)
+        {
+            var settingService = EngineContext.Current.Resolve<ISettingService>();
 
+            settingService.SaveSetting(new LocalizationSettings
+            {
+                DefaultAdminLanguageId = _languageRepository.Table.Single(l => l.Name == "English").Id,
+                UseImagesForLanguageSelection = false,
+                SeoFriendlyUrlsForLanguagesEnabled = false,
+                AutomaticallyDetectLanguage = false,
+                LoadAllLocaleRecordsOnStartup = true,
+                LoadAllLocalizedPropertiesOnStartup = true,
+                LoadAllUrlRecordsOnStartup = false,
+                IgnoreRtlPropertyForAdminArea = false,
+            });
+        }
         protected virtual void InstallVersion()
         {
             var version = new AtiehJobCoreVersion
@@ -91,6 +113,34 @@ namespace AtiehJobCore.Services.MongoDb.Installation
                 DataBaseVersion = SiteVersion.CurrentVersion
             };
             _versionRepository.Insert(version);
+        }
+        protected virtual void InstallLanguages()
+        {
+            var language = new Language
+            {
+                Name = "English",
+                LanguageCulture = "en-US",
+                UniqueSeoCode = "en",
+                FlagImageFileName = "us.png",
+                Published = true,
+                DisplayOrder = 1
+            };
+            _languageRepository.Insert(language);
+        }
+        protected virtual void InstallLocaleResources()
+        {
+            //'English' language
+            var language = _languageRepository.Table.Single(l => l.Name == "English");
+
+            //save resources
+            foreach (var filePath in Directory.EnumerateFiles(
+                CommonHelper.MapPath("~/App_Data/Localization/"), "*.atiehjobres.xml", SearchOption.TopDirectoryOnly))
+            {
+                var localesXml = File.ReadAllText(filePath);
+                var localizationService = EngineContext.Current.Resolve<ILocalizationService>();
+                localizationService.ImportResourcesFromXmlInstall(language, localesXml);
+            }
+
         }
     }
 }

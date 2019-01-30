@@ -1,6 +1,4 @@
-﻿using System;
-using System.Globalization;
-using AtiehJobCore.Services.Identity.Logger.Extensions;
+﻿using AtiehJobCore.Services.Identity.Logger.Extensions;
 using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
 using AtiehJobCore.Web.Framework.Middleware;
 using Ben.Diagnostics;
@@ -11,6 +9,8 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Globalization;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace AtiehJobCore.Web
@@ -124,9 +124,9 @@ namespace AtiehJobCore.Web
                 app.UseHttpsRedirection();
             }
 
-            app.UseContentSecurityPolicy();
-
             app.UseElmah();
+
+            app.UseContentSecurityPolicy();
 
             var supportedCultures = new[]
             {
@@ -163,14 +163,16 @@ namespace AtiehJobCore.Web
             app.UseMvc(routes =>
             {
                 //routes.MapRoute("default", "{Controller=Home}/{Action=Index}/{id?}");
-
+                //install
+                //routes.MapRoute("Installation", "install",
+                //    new { controller = "Install", action = "Index" });
                 routes.MapRoute(
                     name: "areas",
                     template: "{area:exists}/{controller=Account}/{action=Index}/{id?}");
 
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Install}/{action=Index}/{id?}");
             });
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace AtiehJobCore.ViewModel.Enums
 {
-    public enum LogLevel
+    public enum MongoLogLevel
     {
         Debug = 10,
         Information = 20,

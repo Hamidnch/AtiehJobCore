@@ -53,8 +53,8 @@ using AtiehJobCore.Common.Constants;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f854be4e6373e0220fa723a8e57f10189611bca1", @"/Areas/Admin/Views/Shared/_Breadcrumb.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0ecb11b38307dcc5ffe85644d99b92e61307ddec", @"/Areas/Admin/Views/_ViewImports.cshtml")]
-    public class Areas_Admin_Views_Shared__Breadcrumb : AtiehJobCore.Web.Framework.Web.Razor.BaseView<object>
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d92eb80d43aa3e081240d6bb84f926f55689c18", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    public class Areas_Admin_Views_Shared__Breadcrumb : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-homepage-title", "خانه", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-homepage-glyphicon", "fas fa-home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -84,7 +84,7 @@ using AtiehJobCore.Common.Constants;
             WriteLiteral("<ol class=\"breadcrumb\">\r\n\r\n    <li>\r\n\r\n        ");
             EndContext();
             BeginContext(85, 274, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("breadcrumb", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f854be4e6373e0220fa723a8e57f10189611bca15054", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("breadcrumb", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f854be4e6373e0220fa723a8e57f10189611bca15055", async() => {
                 BeginContext(336, 10, true);
                 WriteLiteral("\r\n        ");
                 EndContext();

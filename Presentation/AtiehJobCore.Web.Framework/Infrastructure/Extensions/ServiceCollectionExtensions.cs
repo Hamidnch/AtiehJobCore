@@ -1,6 +1,4 @@
-﻿using System;
-using System.Globalization;
-using AtiehJobCore.Common.Configuration;
+﻿using AtiehJobCore.Common.Configuration;
 using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Extensions;
 using AtiehJobCore.Common.Infrastructure;
@@ -23,6 +21,8 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
+using System;
+using System.Globalization;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 {
@@ -75,7 +75,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 
             // Adds all of the ASP.NET Core Identity related services and configurations at once.
             //services.AddCustomIdentityServices();
-            var siteSettings = GetSiteSettings(services);
+
+            //var siteSettings = GetSiteSettings(services);
 
             //services.AddIdentityOptions(siteSettings);
 

@@ -48,8 +48,8 @@ using AtiehJobCore.Services.Constants;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fa5717bef1cf29da0d9f460c659f7ffa2b68accc", @"/Areas/Admin/Views/Shared/_SidebarMenu.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0ecb11b38307dcc5ffe85644d99b92e61307ddec", @"/Areas/Admin/Views/_ViewImports.cshtml")]
-    public class Areas_Admin_Views_Shared__SidebarMenu : AtiehJobCore.Web.Framework.Web.Razor.BaseView<object>
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d92eb80d43aa3e081240d6bb84f926f55689c18", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    public class Areas_Admin_Views_Shared__SidebarMenu : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("nav-link"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -81,12 +81,12 @@ using AtiehJobCore.Services.Constants;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             BeginContext(0, 8591, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa5717bef1cf29da0d9f460c659f7ffa2b68accc6144", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa5717bef1cf29da0d9f460c659f7ffa2b68accc6145", async() => {
                 BeginContext(21, 90, true);
                 WriteLiteral("\r\n  <nav class=\"sidebar-nav\">\r\n    <ul class=\"nav\">\r\n      <li class=\"nav-item\">\r\n        ");
                 EndContext();
                 BeginContext(111, 214, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa5717bef1cf29da0d9f460c659f7ffa2b68accc6625", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa5717bef1cf29da0d9f460c659f7ffa2b68accc6626", async() => {
                     BeginContext(193, 128, true);
                     WriteLiteral("\r\n          <i class=\"nav-icon icon-speedometer\"></i> پیشخوان\r\n          <span class=\"badge badge-primary\">جدید</span>\r\n        ");
                     EndContext();
@@ -113,7 +113,7 @@ using AtiehJobCore.Services.Constants;
                 WriteLiteral("\r\n      </li>\r\n      <li class=\"nav-title\">تنظیمات</li>\r\n      <li class=\"nav-item\">\r\n        ");
                 EndContext();
                 BeginContext(419, 147, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa5717bef1cf29da0d9f460c659f7ffa2b68accc8829", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa5717bef1cf29da0d9f460c659f7ffa2b68accc8830", async() => {
                     BeginContext(497, 65, true);
                     WriteLiteral("\r\n          <i class=\"nav-icon icon-drop\"></i> پیکربندی\r\n        ");
                     EndContext();

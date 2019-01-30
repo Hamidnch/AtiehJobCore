@@ -3,72 +3,110 @@
 namespace AtiehJobCore.Services.Helpers
 {
     /// <summary>
-    /// Represents a web helper
+    /// Represents a common helper
     /// </summary>
     public partial interface IWebHelper
     {
         /// <summary>
-        /// Get URL referrer if exists
+        /// Get URL referrer
         /// </summary>
         /// <returns>URL referrer</returns>
         string GetUrlReferrer();
 
         /// <summary>
-        /// Get IP address from HTTP context
+        /// Get context IP address
         /// </summary>
-        /// <returns>String of IP address</returns>
+        /// <returns>URL referrer</returns>
         string GetCurrentIpAddress();
+
+        /// <summary>
+        /// Gets this page name
+        /// </summary>
+        /// <param name="includeQueryString">Value indicating whether to include query strings</param>
+        /// <returns>Page name</returns>
+        string GetThisPageUrl(bool includeQueryString);
+
+        /// <summary>
+        /// Gets this page name
+        /// </summary>
+        /// <param name="includeQueryString">Value indicating whether to include query strings</param>
+        /// <param name="useSsl">Value indicating whether to get SSL protected page</param>
+        /// <returns>Page name</returns>
+        string GetThisPageUrl(bool includeQueryString, bool useSsl);
 
         /// <summary>
         /// Gets a value indicating whether current connection is secured
         /// </summary>
-        /// <returns>True if it's secured, otherwise false</returns>
+        /// <returns>true - secured, false - not secured</returns>
         bool IsCurrentConnectionSecured();
 
         /// <summary>
         /// Gets host location
         /// </summary>
-        /// <param name="useSsl">Whether to get SSL secured URL</param>
+        /// <param name="useSsl">Use SSL</param>
         /// <returns>host location</returns>
-        string GetHostLocation(bool useSsl);
+        string GetHost(bool useSsl);
 
         /// <summary>
-        /// Returns true if the requested resource is one of the typical resources that needn't be processed by the CMS engine.
+        /// Gets location
         /// </summary>
+        /// <param name="useSsl">Whether to get SSL secured URL; pass null to determine automatically</param>
+        /// <returns>location</returns>
+        string GetLocation(bool? useSsl = null);
+
+        ///  <summary>
+        ///  Returns true if the requested resource is one of the typical resources that needn't be processed by the cms engine.
+        ///  </summary>
         /// <returns>True if the request targets a static resource file.</returns>
+        ///  <remarks>
+        ///  These are the file extensions considered to be static resources:
+        ///  .css
+        /// 	.gif
+        ///  .png 
+        ///  .jpg
+        ///  .jpeg
+        ///  .js
+        ///  .axd
+        ///  .ashx
+        ///  </remarks>
         bool IsStaticResource();
 
         /// <summary>
-        /// Modify query string of the URL
+        /// Request has user agent header
         /// </summary>
-        /// <param name="url">Url to modify</param>
-        /// <param name="key">Query parameter key to add</param>
-        /// <param name="values">Query parameter values to add</param>
-        /// <returns>New URL with passed query parameter</returns>
-        string ModifyQueryString(string url, string key, params string[] values);
+        /// <param name="request"></param>
+        /// <returns></returns>
+        bool HasUserAgent(HttpRequest request);
 
         /// <summary>
-        /// Remove query parameter from the URL
+        /// Modifies query string
         /// </summary>
         /// <param name="url">Url to modify</param>
-        /// <param name="key">Query parameter key to remove</param>
-        /// <param name="value">Query parameter value to remove; pass null to remove all query parameters with the specified key</param>
-        /// <returns>New URL without passed query parameter</returns>
-        string RemoveQueryString(string url, string key, string value = null);
+        /// <param name="queryStringModification">Query string modification</param>
+        /// <param name="anchor">Anchor</param>
+        /// <returns>New url</returns>
+        string ModifyQueryString(string url, string queryStringModification, string anchor);
+
+        /// <summary>
+        /// Remove query string from url
+        /// </summary>
+        /// <param name="url">Url to modify</param>
+        /// <param name="queryString">Query string to remove</param>
+        /// <returns>New url</returns>
+        string RemoveQueryString(string url, string queryString);
 
         /// <summary>
         /// Gets query string value by name
         /// </summary>
-        /// <typeparam name="T">Returned value type</typeparam>
-        /// <param name="name">Query parameter name</param>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="name">Parameter name</param>
         /// <returns>Query string value</returns>
         T QueryString<T>(string name);
 
         /// <summary>
         /// Restart application domain
         /// </summary>
-        /// <param name="makeRedirect">A value indicating whether we should made redirection after restart</param>
-        void RestartAppDomain(bool makeRedirect = false);
+        void RestartAppDomain();
 
         /// <summary>
         /// Gets a value that indicates whether the client is being redirected to a new location
@@ -81,21 +119,16 @@ namespace AtiehJobCore.Services.Helpers
         bool IsPostBeingDone { get; set; }
 
         /// <summary>
-        /// Gets current HTTP request protocol
+        /// Gets whether the specified http request uri references the local host.
         /// </summary>
-        string CurrentRequestProtocol { get; }
-
-        /// <summary>
-        /// Gets whether the specified HTTP request URI references the local host.
-        /// </summary>
-        /// <param name="req">HTTP request</param>
-        /// <returns>True, if HTTP request URI references to the local host</returns>
+        /// <param name="req">Http request</param>
+        /// <returns>True, if http request uri references to the local host</returns>
         bool IsLocalRequest(HttpRequest req);
 
         /// <summary>
         /// Get the raw path and full query of request
         /// </summary>
-        /// <param name="request">HTTP request</param>
+        /// <param name="request">Http request</param>
         /// <returns>Raw URL</returns>
         string GetRawUrl(HttpRequest request);
     }

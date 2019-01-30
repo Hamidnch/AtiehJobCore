@@ -1,5 +1,33 @@
 [
   {
+    "outputFileName": "wwwroot/css/install.min.css",
+    "inputFiles": [
+      "source/customs/style.css",
+      "source/bootstrap/bootstrap.min.css"
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": false,
+      "adjustRelativePaths": false
+    }
+  }, 
+  {
+    "outputFileName": "wwwroot/js/install.min.js",
+    "inputFiles": [
+      "source/jquery/jquery.min.js",
+      "source/jquery/jquery.validate.min.js",
+      "source/jquery/jquery.validate.unobtrusive.min.js",
+      "source/customs/public.common.min.js",
+      "source/popper/popper.min.js",
+      "source/bootstrap/bootstrap.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false,
+      "adjustRelativePaths": false
+    }
+  },
+  {
     "outputFileName": "wwwroot/css/web.min.css",
     "inputFiles": [
       "source/bootstrap/bootstrap.min.css",
@@ -46,7 +74,7 @@
     "outputFileName": "wwwroot/js/jqueryAll.min.js",
     "inputFiles": [
       "source/jquery/jquery.min.js",
-      "source/popper/pooper.min.js",
+      "source/popper/popper.min.js",
       "source/jquery/jquery.validate.min.js",
       "source/jquery/jquery.validate.unobtrusive.min.js",
       "source/jquery/jquery.unobtrusive-ajax.min.js",

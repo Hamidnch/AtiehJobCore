@@ -48,8 +48,8 @@ using AtiehJobCore.Services.Constants;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"86ea2e77fde2f5035f6ec24f10545298e38c43dd", @"/Areas/Admin/Views/Shared/_AdminLayout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0ecb11b38307dcc5ffe85644d99b92e61307ddec", @"/Areas/Admin/Views/_ViewImports.cshtml")]
-    public class Areas_Admin_Views_Shared__AdminLayout : AtiehJobCore.Web.Framework.Web.Razor.BaseView<object>
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d92eb80d43aa3e081240d6bb84f926f55689c18", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    public class Areas_Admin_Views_Shared__AdminLayout : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("container"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("app-body"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -101,7 +101,7 @@ Write(await Html.PartialAsync("_Head"));
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(113, 752, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86ea2e77fde2f5035f6ec24f10545298e38c43dd6292", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86ea2e77fde2f5035f6ec24f10545298e38c43dd6293", async() => {
                 BeginContext(191, 28, true);
                 WriteLiteral("\r\n\r\n    <!-- Header-->\r\n    ");
                 EndContext();
@@ -116,7 +116,7 @@ Write(await Html.PartialAsync("_Header"));
                 WriteLiteral("\r\n\r\n    ");
                 EndContext();
                 BeginContext(262, 419, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86ea2e77fde2f5035f6ec24f10545298e38c43dd7100", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86ea2e77fde2f5035f6ec24f10545298e38c43dd7101", async() => {
                     BeginContext(284, 40, true);
                     WriteLiteral("\r\n        <!-- Sidebar Menu-->\r\n        ");
                     EndContext();
@@ -141,7 +141,7 @@ Write(await Html.PartialAsync("_Header"));
                     WriteLiteral("\r\n\r\n            ");
                     EndContext();
                     BeginContext(498, 74, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86ea2e77fde2f5035f6ec24f10545298e38c43dd8479", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86ea2e77fde2f5035f6ec24f10545298e38c43dd8480", async() => {
                         BeginContext(521, 18, true);
                         WriteLiteral("\r\n                ");
                         EndContext();

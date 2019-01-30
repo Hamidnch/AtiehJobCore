@@ -47,9 +47,14 @@ using AtiehJobCore.Services.Constants;
 
 #line default
 #line hidden
+#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3039d02c5b9803031789af0c74526c5d19434723", @"/Views/Shared/_Footer.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0ecb11b38307dcc5ffe85644d99b92e61307ddec", @"/Views/_ViewImports.cshtml")]
-    public class Views_Shared__Footer : AtiehJobCore.Web.Framework.Web.Razor.BaseView<object>
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7e669b73eb774d464909c0f35f3fa4900866ecf8", @"/Views/_ViewImports.cshtml")]
+    public class Views_Shared__Footer : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("support-layer"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("container"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -101,12 +106,12 @@ using AtiehJobCore.Services.Constants;
             WriteLiteral("<footer>\r\n    ");
             EndContext();
             BeginContext(14, 185, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472311688", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472311861", async() => {
                 BeginContext(37, 10, true);
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(47, 140, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472312077", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472312250", async() => {
                     BeginContext(74, 107, true);
                     WriteLiteral("\r\n            <a href=\"#\">در این سایت شغل مناسب خود را پیدا کنید.</a>\r\n            <span> </span>\r\n        ");
                     EndContext();
@@ -143,17 +148,17 @@ using AtiehJobCore.Services.Constants;
             WriteLiteral("\r\n\r\n    ");
             EndContext();
             BeginContext(207, 1602, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472314384", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472314557", async() => {
                 BeginContext(230, 12, true);
                 WriteLiteral("\r\n\r\n        ");
                 EndContext();
                 BeginContext(242, 1553, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472314780", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472314953", async() => {
                     BeginContext(265, 61, true);
                     WriteLiteral("\r\n            <section class=\"about-layer\">\r\n                ");
                     EndContext();
                     BeginContext(326, 212, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472315246", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472315419", async() => {
                         BeginContext(345, 187, true);
                         WriteLiteral("\r\n                    <ul>\r\n                        <li><a>آگهی‌های استخدام</a></li>\r\n                        <li><a>‌سوالات متداول</a></li>\r\n                    </ul>\r\n\r\n                ");
                         EndContext();
@@ -174,12 +179,12 @@ using AtiehJobCore.Services.Constants;
                     WriteLiteral("\r\n            </section>\r\n\r\n            ");
                     EndContext();
                     BeginContext(578, 1157, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472316895", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472317068", async() => {
                         BeginContext(601, 18, true);
                         WriteLiteral("\r\n                ");
                         EndContext();
                         BeginContext(619, 162, false);
-                        __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472317334", async() => {
+                        __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472317507", async() => {
                             BeginContext(642, 133, true);
                             WriteLiteral("\r\n                    <ul>\r\n                        <li><a href=\"/\">صفحه اصلی</a></li>\r\n                    </ul>\r\n\r\n                ");
                             EndContext();
@@ -200,17 +205,17 @@ using AtiehJobCore.Services.Constants;
                         WriteLiteral("\r\n                ");
                         EndContext();
                         BeginContext(799, 916, false);
-                        __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472318986", async() => {
+                        __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472319159", async() => {
                             BeginContext(821, 63, true);
                             WriteLiteral("\r\n                    <!-- newsletter -->\r\n                    ");
                             EndContext();
                             BeginContext(884, 664, false);
-                            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472319492", async() => {
+                            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472319665", async() => {
                                 BeginContext(908, 188, true);
                                 WriteLiteral("\r\n                        <h3> عضویت در خبرنامه </h3>\r\n                        <p>\r\n                            ثبت نام رایگان ...\r\n                        </p>\r\n\r\n                        ");
                                 EndContext();
                                 BeginContext(1096, 422, false);
-                                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472320153", async() => {
+                                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472320326", async() => {
                                     BeginContext(1271, 240, true);
                                     WriteLiteral("\r\n\r\n                            <input type=\"text\" name=\"Email\" placeholder=\"ایمیل خود را وارد نمایید\" id=\"NewsLetterEmail\">\r\n                            <button type=\"submit\" class=\"btn btn-success\">عضویت</button>\r\n                        ");
                                     EndContext();
@@ -255,7 +260,7 @@ using AtiehJobCore.Services.Constants;
                             WriteLiteral("\r\n\r\n                    <!-- namad -->\r\n                    ");
                             EndContext();
                             BeginContext(1608, 83, false);
-                            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472324259", async() => {
+                            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472324432", async() => {
                                 BeginContext(1633, 52, true);
                                 WriteLiteral("\r\n                        test\r\n                    ");
                                 EndContext();
@@ -308,7 +313,7 @@ using AtiehJobCore.Services.Constants;
                     WriteLiteral("\r\n\r\n            ");
                     EndContext();
                     BeginContext(1751, 28, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472327978", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472328151", async() => {
                     }
                     );
                     __AtiehJobCore_Web_TagHelpers_VisibilityTagHelper = CreateTagHelper<global::AtiehJobCore.Web.TagHelpers.VisibilityTagHelper>();
@@ -358,17 +363,17 @@ using AtiehJobCore.Services.Constants;
             WriteLiteral("\r\n\r\n    ");
             EndContext();
             BeginContext(1817, 832, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472331058", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472331231", async() => {
                 BeginContext(1843, 10, true);
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(1853, 784, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472331451", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472331624", async() => {
                     BeginContext(1876, 14, true);
                     WriteLiteral("\r\n            ");
                     EndContext();
                     BeginContext(1890, 512, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472331868", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472332041", async() => {
                         BeginContext(1911, 485, true);
                         WriteLiteral(@"
                 <a href=""""><i class=""zmdi zmdi-facebook""></i></a>
@@ -396,7 +401,7 @@ using AtiehJobCore.Services.Constants;
                     WriteLiteral("\r\n            <p>\r\n                تمامی حقوق مادی و معنوی این سایت متعلق به <a href=\"/\"> آتیه کار </a> می باشد،  کپی برداری از منابع پیگرد قانونی خواهد داشت .\r\n            </p>\r\n            ");
                     EndContext();
                     BeginContext(2593, 28, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472333990", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472334163", async() => {
                     }
                     );
                     __AtiehJobCore_Web_TagHelpers_VisibilityTagHelper = CreateTagHelper<global::AtiehJobCore.Web.TagHelpers.VisibilityTagHelper>();
@@ -446,7 +451,7 @@ using AtiehJobCore.Services.Constants;
             WriteLiteral("\r\n</footer>\r\n\r\n");
             EndContext();
             BeginContext(2664, 105, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472337076", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472337249", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ScriptTagHelper>();
@@ -472,7 +477,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(2771, 99, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472338875", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3039d02c5b9803031789af0c74526c5d1943472339048", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ScriptTagHelper>();

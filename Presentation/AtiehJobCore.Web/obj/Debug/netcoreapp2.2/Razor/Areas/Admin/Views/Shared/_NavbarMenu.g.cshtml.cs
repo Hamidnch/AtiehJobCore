@@ -48,8 +48,8 @@ using AtiehJobCore.Services.Constants;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4c40dc62cc4fb689c084681ff1fe1915ba2c21fb", @"/Areas/Admin/Views/Shared/_NavbarMenu.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0ecb11b38307dcc5ffe85644d99b92e61307ddec", @"/Areas/Admin/Views/_ViewImports.cshtml")]
-    public class Areas_Admin_Views_Shared__NavbarMenu : AtiehJobCore.Web.Framework.Web.Razor.BaseView<object>
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d92eb80d43aa3e081240d6bb84f926f55689c18", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    public class Areas_Admin_Views_Shared__NavbarMenu : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("nav-link"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -85,7 +85,7 @@ using AtiehJobCore.Services.Constants;
             WriteLiteral("<ul class=\"nav navbar-nav d-md-down-none\">\r\n    <li class=\"nav-item px-3\">\r\n        ");
             EndContext();
             BeginContext(84, 86, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c40dc62cc4fb689c084681ff1fe1915ba2c21fb6766", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c40dc62cc4fb689c084681ff1fe1915ba2c21fb6767", async() => {
                 BeginContext(157, 9, true);
                 WriteLiteral("صفحه اصلی");
                 EndContext();
@@ -145,12 +145,12 @@ WriteAttributeValue(" ", 217, IsRtl() ?"ml-auto" : "mr-auto", 218, 33, false);
         ");
             EndContext();
             BeginContext(1032, 1915, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c40dc62cc4fb689c084681ff1fe1915ba2c21fb10062", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c40dc62cc4fb689c084681ff1fe1915ba2c21fb10063", async() => {
                 BeginContext(1079, 14, true);
                 WriteLiteral("\r\n            ");
                 EndContext();
                 BeginContext(1093, 103, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c40dc62cc4fb689c084681ff1fe1915ba2c21fb10459", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c40dc62cc4fb689c084681ff1fe1915ba2c21fb10460", async() => {
                     BeginContext(1134, 56, true);
                     WriteLiteral("\r\n                <strong>Account</strong>\r\n            ");
                     EndContext();
@@ -188,7 +188,7 @@ WriteAttributeValue(" ", 217, IsRtl() ?"ml-auto" : "mr-auto", 218, 33, false);
             ");
                 EndContext();
                 BeginContext(1935, 104, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c40dc62cc4fb689c084681ff1fe1915ba2c21fb12613", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c40dc62cc4fb689c084681ff1fe1915ba2c21fb12614", async() => {
                     BeginContext(1976, 57, true);
                     WriteLiteral("\r\n                <strong>Settings</strong>\r\n            ");
                     EndContext();
@@ -224,7 +224,7 @@ WriteAttributeValue(" ", 217, IsRtl() ?"ml-auto" : "mr-auto", 218, 33, false);
             ");
                 EndContext();
                 BeginContext(2653, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c40dc62cc4fb689c084681ff1fe1915ba2c21fb14638", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c40dc62cc4fb689c084681ff1fe1915ba2c21fb14639", async() => {
                 }
                 );
                 __AtiehJobCore_Web_TagHelpers_VisibilityTagHelper = CreateTagHelper<global::AtiehJobCore.Web.TagHelpers.VisibilityTagHelper>();

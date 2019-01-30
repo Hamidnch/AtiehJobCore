@@ -1,22 +1,24 @@
 ﻿@*@using Microsoft.AspNetCore.Mvc.Localization
-  @inject IHtmlLocalizerFactory HtmlLocalizerFactory*@
+    @inject IHtmlLocalizerFactory HtmlLocalizerFactory*@
 
 @{
-  ViewData["Title"] = "Columns One";
-  Layout = "_ColumnsOneLayout";
+    ViewData["Title"] = "Columns One";
+    Layout = "_ColumnsOneLayout";
 
-  //var localizer = HtmlLocalizerFactory.Create(
-  //  baseName: "Controllers.HomeController" /*مشخصات كنترلر جاري*/,
-  //  location: "AtiehJobCore.Resources" /*نام اسمبلي ثالث*/);
+    //var localizer = HtmlLocalizerFactory.Create(
+    //  baseName: "Controllers.HomeController" /*مشخصات كنترلر جاري*/,
+    //  location: "AtiehJobCore.Resources" /*نام اسمبلي ثالث*/);
 
-  //var sharedLocalizer = HtmlLocalizerFactory.Create(
-  //  baseName: "SharedResource" /*مشخصات*/,
-  //  location: "AtiehJobCore.Resources" /*نام اسمبلي ثالث*/);
+    //var sharedLocalizer = HtmlLocalizerFactory.Create(
+    //  baseName: "SharedResource" /*مشخصات*/,
+    //  location: "AtiehJobCore.Resources" /*نام اسمبلي ثالث*/);
 
 
 }
 
 <h1>OneColumn</h1>
 <div></div>
+
+@T("account.avatar")
 
 <div>@DateTime.Now.ToLongDateString()</div>

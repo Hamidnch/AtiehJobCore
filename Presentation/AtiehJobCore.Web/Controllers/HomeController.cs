@@ -1,6 +1,4 @@
-﻿using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Services.MongoDb.Installation;
-using DNTBreadCrumb.Core;
+﻿using DNTBreadCrumb.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Localization;
 using Microsoft.Extensions.Localization;
@@ -35,9 +33,9 @@ namespace AtiehJobCore.Web.Controllers
         [BreadCrumb(Title = "صفحه نخست", Order = 1)]
         public IActionResult Index()
         {
-            var installationService = EngineContext.Current.Resolve<IInstallationService>();
-            installationService.InstallData(
-                "Hamidnch2007@gmail.com", "Masommeh352", "", true);
+            //var installationService = EngineContext.Current.Resolve<IInstallationService>();
+            //installationService.InstallData(
+            //    "Hamidnch2007@gmail.com", "Masommeh352", "", true);
             return View();
         }
         [BreadCrumb(Title = "تک ستونی", Order = 1)]

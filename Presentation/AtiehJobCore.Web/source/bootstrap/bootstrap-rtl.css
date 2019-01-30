@@ -1233,3 +1233,6 @@ dl.row > dd + dt {
         right: 20%;
     }
 }
+.custom-control-description {
+    padding-right: 18px;
+}

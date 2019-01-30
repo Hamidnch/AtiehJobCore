@@ -5,7 +5,8 @@
 @using System.Threading.Tasks
 @using DNTPersianUtils.Core
 @using AtiehJobCore.Services.Constants
-@inherits AtiehJobCore.Web.Framework.Web.Razor.BaseView<object>
+@using AtiehJobCore.Web.Framework.Models
+@inherits AtiehJobCore.Web.Framework.Web.Razor.BaseView<TModel>
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, DNTBreadCrumb.Core

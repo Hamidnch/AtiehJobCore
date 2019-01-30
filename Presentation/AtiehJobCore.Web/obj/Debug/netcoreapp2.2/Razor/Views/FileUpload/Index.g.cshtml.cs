@@ -47,9 +47,14 @@ using AtiehJobCore.Services.Constants;
 
 #line default
 #line hidden
+#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"df25dcd7c3025adaecf61ddf465e390504640be8", @"/Views/FileUpload/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0ecb11b38307dcc5ffe85644d99b92e61307ddec", @"/Views/_ViewImports.cshtml")]
-    public class Views_FileUpload_Index : AtiehJobCore.Web.Framework.Web.Razor.BaseView<object>
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7e669b73eb774d464909c0f35f3fa4900866ecf8", @"/Views/_ViewImports.cshtml")]
+    public class Views_FileUpload_Index : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("col-md-10"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("form-group"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -95,17 +100,17 @@ using AtiehJobCore.Services.Constants;
             WriteLiteral("\r\n<h2>\r\n    Uploading File in ASP.NET Core using\r\n    <strong>IFormFile</strong> Interface\r\n</h2>\r\n");
             EndContext();
             BeginContext(199, 555, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df25dcd7c3025adaecf61ddf465e390504640be86702", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df25dcd7c3025adaecf61ddf465e390504640be86875", async() => {
                 BeginContext(308, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(314, 178, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df25dcd7c3025adaecf61ddf465e390504640be87088", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df25dcd7c3025adaecf61ddf465e390504640be87261", async() => {
                     BeginContext(338, 10, true);
                     WriteLiteral("\r\n        ");
                     EndContext();
                     BeginContext(348, 132, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df25dcd7c3025adaecf61ddf465e390504640be87498", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df25dcd7c3025adaecf61ddf465e390504640be87671", async() => {
                         BeginContext(371, 103, true);
                         WriteLiteral("\r\n            <p>Upload Image File (.png):</p>\r\n            <input type=\"file\" name=\"file\" />\r\n        ");
                         EndContext();
@@ -142,12 +147,12 @@ using AtiehJobCore.Services.Constants;
                 WriteLiteral("\r\n    <hr />\r\n    ");
                 EndContext();
                 BeginContext(510, 142, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df25dcd7c3025adaecf61ddf465e390504640be89961", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df25dcd7c3025adaecf61ddf465e390504640be810134", async() => {
                     BeginContext(534, 10, true);
                     WriteLiteral("\r\n        ");
                     EndContext();
                     BeginContext(544, 96, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df25dcd7c3025adaecf61ddf465e390504640be810370", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df25dcd7c3025adaecf61ddf465e390504640be810544", async() => {
                         BeginContext(567, 67, true);
                         WriteLiteral("\r\n            <input type=\"submit\" value=\"Upload File\" />\r\n        ");
                         EndContext();
@@ -184,7 +189,7 @@ using AtiehJobCore.Services.Constants;
                 WriteLiteral("\r\n    <hr />\r\n    ");
                 EndContext();
                 BeginContext(670, 75, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df25dcd7c3025adaecf61ddf465e390504640be812794", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df25dcd7c3025adaecf61ddf465e390504640be812968", async() => {
                     BeginContext(694, 16, true);
                     WriteLiteral("\r\n        <span>");
                     EndContext();
