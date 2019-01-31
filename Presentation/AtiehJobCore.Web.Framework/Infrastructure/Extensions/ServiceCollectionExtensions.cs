@@ -37,6 +37,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
             services.ConfigureStartupConfig<CommonConfig>(configuration.GetSection("CommonConfig"));
             //add hosting configuration parameters
             services.ConfigureStartupConfig<HostingConfig>(configuration.GetSection("Hosting"));
+            //add api configuration parameters
+            services.ConfigureStartupConfig<ApiConfig>(configuration.GetSection("Api"));
 
             //add accessor to HttpContext
             services.AddHttpContextAccessor();

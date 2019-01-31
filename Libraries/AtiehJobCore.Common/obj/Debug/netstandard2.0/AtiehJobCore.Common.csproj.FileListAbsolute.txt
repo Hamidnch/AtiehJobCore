@@ -24,3 +24,4 @@ D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Common\obj\Debug\netstand
 D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Common\obj\Debug\netstandard2.0\AtiehJobCore.Common.AssemblyInfo.cs
 D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Common\obj\Debug\netstandard2.0\AtiehJobCore.Common.dll
 D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Common\obj\Debug\netstandard2.0\AtiehJobCore.Common.pdb
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Common\obj\Debug\netstandard2.0\AtiehJobCore.Common.csprojAssemblyReference.cache

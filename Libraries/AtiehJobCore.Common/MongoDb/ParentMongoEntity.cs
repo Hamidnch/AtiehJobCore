@@ -16,6 +16,7 @@ namespace AtiehJobCore.Common.MongoDb
         }
 
         private string _id;
+        public string Description { get; set; }
 
     }
 }
