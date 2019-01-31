@@ -1,4 +1,5 @@
-﻿using DNTBreadCrumb.Core;
+﻿using AtiehJobCore.Common.Infrastructure.MongoDb;
+using DNTBreadCrumb.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Localization;
 using Microsoft.Extensions.Localization;
@@ -11,10 +12,12 @@ namespace AtiehJobCore.Web.Controllers
     {
         private readonly IStringLocalizer _stringLocalizer;
         private readonly IHtmlLocalizer _htmlLocalizer;
+        private readonly IWorkContext _workContext;
 
         public HomeController(IStringLocalizerFactory stringLocalizerFactory,
-            IHtmlLocalizerFactory htmlLocalizerFactory)
+            IHtmlLocalizerFactory htmlLocalizerFactory, IWorkContext workContext)
         {
+            _workContext = workContext;
             _stringLocalizer = stringLocalizerFactory.Create(
                 baseName: "Controllers.HomeController" /*مشخصات كنترلر جاري*/,
                 location: "AtiehJobCore.Resources" /*نام اسمبلي ثالث*/);
@@ -36,6 +39,8 @@ namespace AtiehJobCore.Web.Controllers
             //var installationService = EngineContext.Current.Resolve<IInstallationService>();
             //installationService.InstallData(
             //    "Hamidnch2007@gmail.com", "Masommeh352", "", true);
+            ViewBag.CurrentUser = _workContext.CurrentUser;
+            ViewBag.CurrentLanguage = _workContext.WorkingLanguage.Name;
             return View();
         }
         [BreadCrumb(Title = "تک ستونی", Order = 1)]

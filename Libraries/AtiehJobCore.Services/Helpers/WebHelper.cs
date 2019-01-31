@@ -1,5 +1,7 @@
 ﻿using AtiehJobCore.Common.Configuration;
+using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Utilities;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.StaticFiles;
@@ -11,10 +13,10 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using Microsoft.AspNetCore.Hosting;
 
 namespace AtiehJobCore.Services.Helpers
 {
+    /// <inheritdoc />
     /// <summary>
     /// Represents a common helper
     /// </summary>
@@ -35,7 +37,7 @@ namespace AtiehJobCore.Services.Helpers
         /// <summary>
         /// Ctor
         /// </summary>
-        public WebHelper(IHttpContextAccessor httpContextAccessor, 
+        public WebHelper(IHttpContextAccessor httpContextAccessor,
             HostingConfig hostingConfig, IApplicationLifetime applicationLifetime)
         {
             this._hostingConfig = hostingConfig;
@@ -79,6 +81,7 @@ namespace AtiehJobCore.Services.Helpers
 
         #region Methods
 
+        /// <inheritdoc />
         /// <summary>
         /// Get URL referrer
         /// </summary>
@@ -92,6 +95,7 @@ namespace AtiehJobCore.Services.Helpers
             return _httpContextAccessor.HttpContext.Request.Headers[HeaderNames.Referer];
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Get context IP address
         /// </summary>
@@ -144,6 +148,7 @@ namespace AtiehJobCore.Services.Helpers
         }
 
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets this page name
         /// </summary>
@@ -155,6 +160,7 @@ namespace AtiehJobCore.Services.Helpers
             return GetThisPageUrl(includeQueryString, useSsl);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets this page name
         /// </summary>
@@ -176,6 +182,7 @@ namespace AtiehJobCore.Services.Helpers
             return url.ToLowerInvariant();
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a value indicating whether current connection is secured
         /// </summary>
@@ -197,6 +204,7 @@ namespace AtiehJobCore.Services.Helpers
             return _httpContextAccessor.HttpContext.Request.IsHttps;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets host location
         /// </summary>
@@ -221,6 +229,7 @@ namespace AtiehJobCore.Services.Helpers
             return host;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets location
         /// </summary>
@@ -254,6 +263,7 @@ namespace AtiehJobCore.Services.Helpers
             return location;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Returns true if the requested resource is one of the typical resources that needn't be processed by the cms engine.
         /// </summary>
@@ -272,6 +282,7 @@ namespace AtiehJobCore.Services.Helpers
             return contentTypeProvider.TryGetContentType(path, out var _);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Request has user agent header
         /// </summary>
@@ -282,6 +293,7 @@ namespace AtiehJobCore.Services.Helpers
             return !string.IsNullOrEmpty(request.Headers["User-Agent"]);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Modifies query string
         /// </summary>
@@ -323,25 +335,27 @@ namespace AtiehJobCore.Services.Helpers
                     var dictionary = new Dictionary<string, string>();
                     foreach (var str3 in str.Split(new[] { '&' }))
                     {
-                        if (!string.IsNullOrEmpty(str3))
+                        if (string.IsNullOrEmpty(str3))
                         {
-                            var strArray = str3.Split(new[] { '=' });
-                            if (strArray.Length == 2)
+                            continue;
+                        }
+
+                        var strArray = str3.Split(new[] { '=' });
+                        if (strArray.Length == 2)
+                        {
+                            if (!dictionary.ContainsKey(strArray[0]))
                             {
-                                if (!dictionary.ContainsKey(strArray[0]))
-                                {
-                                    //do not add value if it already exists
-                                    //two the same query parameters? theoretically it's not possible.
-                                    //but MVC has some ugly implementation for checkboxes and we can have two values
-                                    //find more info here: http://www.mindstorminteractive.com/topics/jquery-fix-asp-net-mvc-checkbox-truefalse-value/
-                                    //we do this validation just to ensure that the first one is not overridden
-                                    dictionary[strArray[0]] = strArray[1];
-                                }
+                                //do not add value if it already exists
+                                //two the same query parameters? theoretically it's not possible.
+                                //but MVC has some ugly implementation for checkboxes and we can have two values
+                                //find more info here: http://www.mindstorminteractive.com/topics/jquery-fix-asp-net-mvc-checkbox-truefalse-value/
+                                //we do this validation just to ensure that the first one is not overridden
+                                dictionary[strArray[0]] = strArray[1];
                             }
-                            else
-                            {
-                                dictionary[str3] = null;
-                            }
+                        }
+                        else
+                        {
+                            dictionary[str3] = null;
                         }
                     }
                     foreach (var str4 in queryStringModification.Split(new[] { '&' }))
@@ -387,6 +401,7 @@ namespace AtiehJobCore.Services.Helpers
             return (url + (string.IsNullOrEmpty(str) ? "" : ("?" + str)) + (string.IsNullOrEmpty(str2) ? "" : ("#" + str2))).ToLowerInvariant();
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Remove query string from url
         /// </summary>
@@ -410,48 +425,54 @@ namespace AtiehJobCore.Services.Helpers
                 str = url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1);
                 url = url.Substring(0, url.IndexOf("?", StringComparison.Ordinal));
             }
-            if (!string.IsNullOrEmpty(queryString))
-            {
-                if (!string.IsNullOrEmpty(str))
-                {
-                    var dictionary = new Dictionary<string, string>();
-                    foreach (var str3 in str.Split(new[] { '&' }))
-                    {
-                        if (!string.IsNullOrEmpty(str3))
-                        {
-                            var strArray = str3.Split(new[] { '=' });
-                            if (strArray.Length == 2)
-                            {
-                                dictionary[strArray[0]] = strArray[1];
-                            }
-                            else
-                            {
-                                dictionary[str3] = null;
-                            }
-                        }
-                    }
-                    dictionary.Remove(queryString);
 
-                    var builder = new StringBuilder();
-                    foreach (var str5 in dictionary.Keys)
+            if (string.IsNullOrEmpty(queryString))
+            {
+                return (url + (string.IsNullOrEmpty(str) ? "" : ("?" + str)));
+            }
+
+            if (!string.IsNullOrEmpty(str))
+            {
+                var dictionary = new Dictionary<string, string>();
+                foreach (var str3 in str.Split(new[] { '&' }))
+                {
+                    if (string.IsNullOrEmpty(str3))
                     {
-                        if (builder.Length > 0)
-                        {
-                            builder.Append("&");
-                        }
-                        builder.Append(str5);
-                        if (dictionary[str5] != null)
-                        {
-                            builder.Append("=");
-                            builder.Append(dictionary[str5]);
-                        }
+                        continue;
                     }
-                    str = builder.ToString();
+
+                    var strArray = str3.Split(new[] { '=' });
+                    if (strArray.Length == 2)
+                    {
+                        dictionary[strArray[0]] = strArray[1];
+                    }
+                    else
+                    {
+                        dictionary[str3] = null;
+                    }
                 }
+                dictionary.Remove(queryString);
+
+                var builder = new StringBuilder();
+                foreach (var str5 in dictionary.Keys)
+                {
+                    if (builder.Length > 0)
+                    {
+                        builder.Append("&");
+                    }
+                    builder.Append(str5);
+                    if (dictionary[str5] != null)
+                    {
+                        builder.Append("=");
+                        builder.Append(dictionary[str5]);
+                    }
+                }
+                str = builder.ToString();
             }
             return (url + (string.IsNullOrEmpty(str) ? "" : ("?" + str)));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets query string value by name
         /// </summary>
@@ -463,23 +484,24 @@ namespace AtiehJobCore.Services.Helpers
             if (!IsRequestAvailable())
                 return default(T);
 
-            if (StringValues.IsNullOrEmpty(_httpContextAccessor.HttpContext.Request.Query[name]))
-                return default(T);
-
-            return CommonHelper.To<T>(_httpContextAccessor.HttpContext.Request.Query[name].ToString());
+            return StringValues.IsNullOrEmpty(_httpContextAccessor.HttpContext.Request.Query[name])
+                ? default(T)
+                : CommonHelper.To<T>(_httpContextAccessor.HttpContext.Request.Query[name].ToString());
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Restart application domain
         /// </summary>
         public virtual void RestartAppDomain()
         {
-            if (Common.Infrastructure.OperatingSystem.IsWindows())
+            if (AtiehJobCore.Common.Infrastructure.OperatingSystem.IsWindows())
                 File.SetLastWriteTimeUtc(CommonHelper.MapPath("~/web.config"), DateTime.UtcNow);
             else
                 _applicationLifetime.StopApplication();
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a value that indicates whether the client is being redirected to a new location
         /// </summary>
@@ -494,6 +516,7 @@ namespace AtiehJobCore.Services.Helpers
         }
 
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets or sets a value that indicates whether the client is being redirected to a new location using POST
         /// </summary>
@@ -503,6 +526,7 @@ namespace AtiehJobCore.Services.Helpers
             set => _httpContextAccessor.HttpContext.Items["atiehJob.IsPOSTBeingDone"] = value;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets whether the specified http request uri references the local host.
         /// </summary>
@@ -525,6 +549,7 @@ namespace AtiehJobCore.Services.Helpers
             return true;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Get the raw path and full query of request
         /// </summary>

@@ -1,7 +1,8 @@
 ﻿using AtiehJobCore.Common;
+using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.MongoDb.Data;
 using AtiehJobCore.Common.MongoDb.Domain.Logging;
-using AtiehJobCore.Services.Helpers;
+using AtiehJobCore.Common.MongoDb.Domain.Users;
 using AtiehJobCore.ViewModel.Enums;
 using MongoDB.Driver;
 using System;
@@ -165,8 +166,9 @@ namespace AtiehJobCore.Services.MongoDb.Logging
         /// <param name="logLevel">Log level</param>
         /// <param name="shortMessage">The short message</param>
         /// <param name="fullMessage">The full message</param>
+        /// <param name="user"></param>
         /// <returns>A log item</returns>
-        public virtual Log InsertLog(MongoLogLevel logLevel, string shortMessage, string fullMessage = "")
+        public virtual Log InsertLog(MongoLogLevel logLevel, string shortMessage, string fullMessage = "", User user = null)
         {
             var log = new Log
             {
@@ -174,6 +176,7 @@ namespace AtiehJobCore.Services.MongoDb.Logging
                 ShortMessage = shortMessage,
                 FullMessage = fullMessage,
                 IpAddress = _webHelper.GetCurrentIpAddress(),
+                UserId = user != null ? user.Id : "",
                 PageUrl = _webHelper.GetThisPageUrl(true),
                 ReferrerUrl = _webHelper.GetUrlReferrer(),
                 CreatedOnUtc = DateTime.UtcNow

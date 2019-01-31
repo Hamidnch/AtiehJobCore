@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Infrastructure;
 using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Services.Helpers;
 using AtiehJobCore.Services.MongoDb.Installation;
 using AtiehJobCore.Web.Framework.Models;
 using Microsoft.AspNetCore.Mvc;

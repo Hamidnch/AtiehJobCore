@@ -28,9 +28,9 @@ namespace AtiehJobCore.Common.MongoDb.Domain.Logging
         public string IpAddress { get; set; }
 
         /// <summary>
-        /// Gets or sets the customer identifier
+        /// Gets or sets the user identifier
         /// </summary>
-        public string CustomerId { get; set; }
+        public string UserId { get; set; }
 
         /// <summary>
         /// Gets or sets the page URL

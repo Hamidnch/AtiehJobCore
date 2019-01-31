@@ -4,7 +4,6 @@ using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Infrastructure;
 using AtiehJobCore.Common.Infrastructure.MongoDb;
 using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Common.MongoDb.Domain.Localization;
 using AtiehJobCore.Data.MongoDb;
 using AtiehJobCore.Services.Authentication;
 using AtiehJobCore.Services.Common;
@@ -15,6 +14,9 @@ using AtiehJobCore.Services.MongoDb.Installation;
 using AtiehJobCore.Services.MongoDb.Localization;
 using AtiehJobCore.Services.MongoDb.Logging;
 using AtiehJobCore.Services.MongoDb.Users;
+using AtiehJobCore.Services.Seo;
+using AtiehJobCore.Services.Tasks;
+using AtiehJobCore.Web.Framework.Mvc.Routing;
 using Autofac;
 using Autofac.Core;
 using FluentValidation;
@@ -37,7 +39,7 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
         /// <param name="builder">Container builder</param>
         /// <param name="typeFinder">Type finder</param>
         /// <param name="config">Config</param>
-        public virtual void Register(ContainerBuilder builder, ITypeFinder typeFinder, CommonConfig config)
+        public virtual void Register(ContainerBuilder builder, ITypeFinder typeFinder, AtiehJobConfig config)
         {
 
             //web helper
@@ -91,8 +93,10 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
             builder.RegisterType<WebWorkContext>().As<IWorkContext>().InstancePerLifetimeScope();
 
             //services
-            builder.RegisterType<LocalizationSettings>().As<LocalizationSettings>()
-                .WithParameter(ResolvedParameter.ForNamed<ICacheManager>("atiehjob_cache_static")).InstancePerLifetimeScope();
+            //builder.RegisterType<LocalizationSettings>().As<LocalizationSettings>()
+            //    .WithParameter(ResolvedParameter.ForNamed<ICacheManager>("atiehjob_cache_static")).InstancePerLifetimeScope();
+            //builder.RegisterType<UserSettings>().As<UserSettings>()
+            //    .WithParameter(ResolvedParameter.ForNamed<ICacheManager>("atiehjob_cache_static")).InstancePerLifetimeScope();
 
             if (config.RedisCachingEnabled)
             {
@@ -115,6 +119,9 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
             builder.RegisterType<UserApiService>().As<IUserApiService>().InstancePerLifetimeScope();
             builder.RegisterType<AtiehJobCookieAuthenticationService>().As<IAtiehJobAuthenticationService>().InstancePerLifetimeScope();
             builder.RegisterType<ApiAuthenticationService>().As<IApiAuthenticationService>().InstancePerLifetimeScope();
+            builder.RegisterType<UrlRecordService>().As<IUrlRecordService>().InstancePerLifetimeScope();
+            builder.RegisterType<ScheduleTaskService>().As<IScheduleTaskService>().InstancePerLifetimeScope();
+            builder.RegisterType<RoutePublisher>().As<IRoutePublisher>().SingleInstance();
 
             var databaseInstalled = DataSettingsHelper.DatabaseIsInstalled();
             if (!databaseInstalled)

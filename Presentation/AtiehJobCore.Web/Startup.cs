@@ -1,17 +1,10 @@
-﻿using AtiehJobCore.Services.Identity.Logger.Extensions;
-using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
-using AtiehJobCore.Web.Framework.Middleware;
-using Ben.Diagnostics;
-using ElmahCore.Mvc;
+﻿using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Globalization;
-using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace AtiehJobCore.Web
 {
@@ -107,73 +100,72 @@ namespace AtiehJobCore.Web
         public void Configure(IApplicationBuilder app, IHostingEnvironment env,
             ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddDbLogger(
-                serviceProvider: app.ApplicationServices, minLevel: LogLevel.Warning);
+            app.ConfigureRequestPipeline();
+            //loggerFactory.AddDbLogger(
+            //    serviceProvider: app.ApplicationServices, minLevel: LogLevel.Warning);
 
-            if (env.IsDevelopment())
-            {
-                app.UseStatusCodePages();
-                app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/error/index/500");
-                app.UseStatusCodePagesWithReExecute("/error/index/{0}");
-                app.UseHsts();
-                app.UseHttpsRedirection();
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseStatusCodePages();
+            //    app.UseDeveloperExceptionPage();
+            //    app.UseDatabaseErrorPage();
+            //}
+            //else
+            //{
+            //    app.UseExceptionHandler("/error/index/500");
+            //    app.UseStatusCodePagesWithReExecute("/error/index/{0}");
+            //    app.UseHsts();
+            //    app.UseHttpsRedirection();
+            //}
 
-            app.UseElmah();
+            //app.UseElmah();
 
-            app.UseContentSecurityPolicy();
+            //app.UseContentSecurityPolicy();
 
-            var supportedCultures = new[]
-            {
-                new CultureInfo("en-US"),
-                new CultureInfo("fa-IR")
-            };
-            app.UseRequestLocalization(new RequestLocalizationOptions
-            {
-                DefaultRequestCulture = new RequestCulture("fa-IR"),
-                // تاریخ، ساعت و واحد پولی و نحوه‌ی مقایسه‌ی حروف و مرتب سازی آن‌ها
-                SupportedCultures = supportedCultures,
-                // تعیین فایل ریسورس برنامه resx
-                SupportedUICultures = supportedCultures
-            });
+            //var supportedCultures = new[]
+            //{
+            //    new CultureInfo("en-US"),
+            //    new CultureInfo("fa-IR")
+            //};
+            //app.UseRequestLocalization(new RequestLocalizationOptions
+            //{
+            //    DefaultRequestCulture = new RequestCulture("fa-IR"),
+            //    // تاریخ، ساعت و واحد پولی و نحوه‌ی مقایسه‌ی حروف و مرتب سازی آن‌ها
+            //    SupportedCultures = supportedCultures,
+            //    // تعیین فایل ریسورس برنامه resx
+            //    SupportedUICultures = supportedCultures
+            //});
 
-            // Serve wwwroot as root
-            app.UseFileServer(new FileServerOptions
-            {
-                // Don't expose file system
-                EnableDirectoryBrowsing = false
-            });
+            //// Serve wwwroot as root
+            //app.UseFileServer(new FileServerOptions
+            //{
+            //    // Don't expose file system
+            //    EnableDirectoryBrowsing = false
+            //});
 
-            // Adds all of the ASP.NET Core Identity related initializations at once.
-            //app.UseCustomIdentityServices();
+            //// Adds all of the ASP.NET Core Identity related initializations at once.
+            ////app.UseCustomIdentityServices();
 
-            app.UseCookiePolicy();
+            //app.UseCookiePolicy();
 
-            // app.UseNoBrowserCache();
+            //// app.UseNoBrowserCache();
 
-            app.UseBlockingDetection();
+            //app.UseBlockingDetection();
 
-            //app.ConfigureRequestPipeline();
+            //app.UseMvc(routes =>
+            //{
+            //    //routes.MapRoute("default", "{Controller=Home}/{Action=Index}/{id?}");
+            //    //install
+            //    //routes.MapRoute("Installation", "install",
+            //    //    new { controller = "Install", action = "Index" });
+            //    routes.MapRoute(
+            //        name: "areas",
+            //        template: "{area:exists}/{controller=Account}/{action=Index}/{id?}");
 
-            app.UseMvc(routes =>
-            {
-                //routes.MapRoute("default", "{Controller=Home}/{Action=Index}/{id?}");
-                //install
-                //routes.MapRoute("Installation", "install",
-                //    new { controller = "Install", action = "Index" });
-                routes.MapRoute(
-                    name: "areas",
-                    template: "{area:exists}/{controller=Account}/{action=Index}/{id?}");
-
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Install}/{action=Index}/{id?}");
-            });
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Install}/{action=Index}/{id?}");
+            //});
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AtiehJobCore.Common;
 using AtiehJobCore.Common.MongoDb.Domain.Logging;
+using AtiehJobCore.Common.MongoDb.Domain.Users;
 using AtiehJobCore.ViewModel.Enums;
 using System;
 using System.Collections.Generic;
@@ -63,7 +64,8 @@ namespace AtiehJobCore.Services.MongoDb.Logging
         /// <param name="logLevel">Log level</param>
         /// <param name="shortMessage">The short message</param>
         /// <param name="fullMessage">The full message</param>
+        /// <param name="user"></param>
         /// <returns>A log item</returns>
-        Log InsertLog(MongoLogLevel logLevel, string shortMessage, string fullMessage = "");
+        Log InsertLog(MongoLogLevel logLevel, string shortMessage, string fullMessage = "", User user = null);
     }
 }

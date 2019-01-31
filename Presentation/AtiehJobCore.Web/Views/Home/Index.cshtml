@@ -24,3 +24,8 @@
     {
       <p>نام کاربر: </p>@User.Identity.GetUserDisplayName()
     }*@
+
+<p>Current User: @ViewBag.CurrentUser</p>
+<p>Current Language: @ViewBag.CurrentLanguage</p>
+<div>@IsRtlCurrentLanguage</div>
+<div>@WorkingLanguage()</div>

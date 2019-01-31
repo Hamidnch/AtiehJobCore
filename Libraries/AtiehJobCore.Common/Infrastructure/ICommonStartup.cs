@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace AtiehJobCore.Common.Infrastructure
 {
-    public interface ICommonStartup
+    public interface IAtiehJobStartup
     {
         /// <summary>
         /// Add and configure any of the middleware

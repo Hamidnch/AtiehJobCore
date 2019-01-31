@@ -1,9 +1,9 @@
 ﻿using AtiehJobCore.Common.Caching;
 using AtiehJobCore.Common.Configuration;
+using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Infrastructure;
 using AtiehJobCore.Common.MongoDb.Data;
 using AtiehJobCore.Common.Utilities;
-using AtiehJobCore.Services.Helpers;
 using AtiehJobCore.Services.MongoDb.Installation;
 using AtiehJobCore.Web.Framework.Models;
 using AtiehJobCore.Web.Framework.Security;
@@ -22,7 +22,7 @@ namespace AtiehJobCore.Web.Controllers
         #region Fields
 
         private readonly IInstallationLocalizationService _locService;
-        private readonly CommonConfig _config;
+        private readonly AtiehJobConfig _config;
         private readonly ICacheManager _cacheManager;
         private readonly IHttpContextAccessor _contextAccessor;
 
@@ -31,7 +31,7 @@ namespace AtiehJobCore.Web.Controllers
         #region Ctor
 
         public InstallController(IInstallationLocalizationService locService,
-            CommonConfig config, ICacheManager cacheManager, IHttpContextAccessor contextAccessor)
+            AtiehJobConfig config, ICacheManager cacheManager, IHttpContextAccessor contextAccessor)
         {
             this._locService = locService;
             this._config = config;

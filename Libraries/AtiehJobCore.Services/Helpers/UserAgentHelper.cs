@@ -14,7 +14,7 @@ namespace AtiehJobCore.Services.Helpers
     /// </summary>
     public partial class UserAgentHelper : IUserAgentHelper
     {
-        private readonly CommonConfig _config;
+        private readonly AtiehJobConfig _config;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private static readonly object Locker = new object();
         /// <summary>
@@ -22,7 +22,7 @@ namespace AtiehJobCore.Services.Helpers
         /// </summary>
         /// <param name="config">Config</param>
         /// <param name="httpContextAccessor">HTTP context</param>
-        public UserAgentHelper(CommonConfig config, IHttpContextAccessor httpContextAccessor)
+        public UserAgentHelper(AtiehJobConfig config, IHttpContextAccessor httpContextAccessor)
         {
             this._config = config;
             this._httpContextAccessor = httpContextAccessor;

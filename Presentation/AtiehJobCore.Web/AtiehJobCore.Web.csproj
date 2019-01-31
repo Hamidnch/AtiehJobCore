@@ -828,7 +828,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ben.BlockingDetector" Version="0.0.3" />
     <PackageReference Include="DNTCaptcha.Core" Version="1.6.7" />
     <PackageReference Include="DotNetCore.NPOI" Version="1.2.1" />
     <PackageReference Include="ElmahCore" Version="1.2.3" />

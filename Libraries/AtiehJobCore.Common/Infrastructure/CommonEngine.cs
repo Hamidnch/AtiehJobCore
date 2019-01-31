@@ -77,7 +77,7 @@ namespace AtiehJobCore.Common.Infrastructure
         /// <param name="grandConfiguration">Startup Grand configuration parameters</param>
         /// <param name="services">Collection of service descriptors</param>
         /// <param name="typeFinder">Type finder</param>
-        protected virtual IServiceProvider RegisterDependencies(CommonConfig grandConfiguration, IServiceCollection services, ITypeFinder typeFinder)
+        protected virtual IServiceProvider RegisterDependencies(AtiehJobConfig grandConfiguration, IServiceCollection services, ITypeFinder typeFinder)
         {
             var containerBuilder = new ContainerBuilder();
 
@@ -155,7 +155,7 @@ namespace AtiehJobCore.Common.Infrastructure
             //set base application path
             var provider = services.BuildServiceProvider();
             var hostingEnvironment = provider.GetRequiredService<IHostingEnvironment>();
-            var grandConfig = provider.GetRequiredService<CommonConfig>();
+            var grandConfig = provider.GetRequiredService<AtiehJobConfig>();
             CommonHelper.HostingEnvironment = hostingEnvironment;
 
             //register mongo mappings
@@ -181,12 +181,12 @@ namespace AtiehJobCore.Common.Infrastructure
         {
             //find startup configurations provided by other assemblies
             var typeFinder = new WebAppTypeFinder();
-            var startupConfigurations = typeFinder.FindClassesOfType<ICommonStartup>();
+            var startupConfigurations = typeFinder.FindClassesOfType<IAtiehJobStartup>();
 
             //create and sort instances of startup configurations
             var instances = startupConfigurations
                 .Where(startup => PluginManager.FindPlugin(startup).Return(plugin => plugin.Installed, true)) //ignore not installed plugins
-                .Select(startup => (ICommonStartup)Activator.CreateInstance(startup))
+                .Select(startup => (IAtiehJobStartup)Activator.CreateInstance(startup))
                 .OrderBy(startup => startup.Order);
 
             //configure services
@@ -197,7 +197,7 @@ namespace AtiehJobCore.Common.Infrastructure
             AddAutoMapper(services, typeFinder);
 
             //register dependencies
-            var commonConfig = services.BuildServiceProvider().GetService<CommonConfig>();
+            var commonConfig = services.BuildServiceProvider().GetService<AtiehJobConfig>();
             RegisterDependencies(commonConfig, services, typeFinder);
 
             //run startup tasks
@@ -216,12 +216,12 @@ namespace AtiehJobCore.Common.Infrastructure
         {
             //find startup configurations provided by other assemblies
             var typeFinder = Resolve<ITypeFinder>();
-            var startupConfigurations = typeFinder.FindClassesOfType<ICommonStartup>();
+            var startupConfigurations = typeFinder.FindClassesOfType<IAtiehJobStartup>();
 
             //create and sort instances of startup configurations
             var instances = startupConfigurations
                 .Where(startup => PluginManager.FindPlugin(startup).Return(plugin => plugin.Installed, true)) //ignore not installed plugins
-                .Select(startup => (ICommonStartup)Activator.CreateInstance(startup))
+                .Select(startup => (IAtiehJobStartup)Activator.CreateInstance(startup))
                 .OrderBy(startup => startup.Order);
 
             //configure request pipeline

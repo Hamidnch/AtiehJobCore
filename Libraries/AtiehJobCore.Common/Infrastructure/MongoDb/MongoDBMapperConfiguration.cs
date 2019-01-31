@@ -14,7 +14,7 @@ namespace AtiehJobCore.Common.Infrastructure.MongoDb
         /// Register MongoDB mappings
         /// </summary>
         /// <param name="config">Config</param>
-        public static void RegisterMongoDbMappings(CommonConfig config)
+        public static void RegisterMongoDbMappings(AtiehJobConfig config)
         {
             BsonSerializer.RegisterSerializer(typeof(decimal), new DecimalSerializer(BsonType.Decimal128));
             BsonSerializer.RegisterSerializer(typeof(decimal?), new NullableSerializer<decimal>(new DecimalSerializer(BsonType.Decimal128)));

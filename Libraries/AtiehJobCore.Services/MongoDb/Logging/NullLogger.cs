@@ -3,6 +3,7 @@ using AtiehJobCore.Common.MongoDb.Domain.Logging;
 using AtiehJobCore.ViewModel.Enums;
 using System;
 using System.Collections.Generic;
+using AtiehJobCore.Common.MongoDb.Domain.Users;
 
 namespace AtiehJobCore.Services.MongoDb.Logging
 {
@@ -80,15 +81,18 @@ namespace AtiehJobCore.Services.MongoDb.Logging
             return new List<Log>();
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc>
+        ///     <cref></cref>
+        /// </inheritdoc>
         /// <summary>
         /// Inserts a log item
         /// </summary>
         /// <param name="mongoLogLevel">Log level</param>
         /// <param name="shortMessage">The short message</param>
         /// <param name="fullMessage">The full message</param>
+        /// <param name="user"></param>
         /// <returns>A log item</returns>
-        public virtual Log InsertLog(MongoLogLevel mongoLogLevel, string shortMessage, string fullMessage = "")
+        public virtual Log InsertLog(MongoLogLevel mongoLogLevel, string shortMessage, string fullMessage = "", User user = null)
         {
             return null;
         }

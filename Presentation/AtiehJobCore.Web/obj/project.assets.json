@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "AspNetCore.HealthChecks.MongoDb/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "2.2.0",
+          "MongoDB.Driver": "2.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/HealthChecks.MongoDb.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/HealthChecks.MongoDb.dll": {}
+        }
+      },
       "Autofac/4.8.1": {
         "type": "package",
         "dependencies": {
@@ -52,19 +65,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
-        }
-      },
-      "Ben.BlockingDetector/0.0.3": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.1",
-          "Microsoft.AspNetCore.Http.Abstractions": "2.0.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/Ben.BlockingDetector.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Ben.BlockingDetector.dll": {}
         }
       },
       "cloudscribe.Pagination.Models/1.0.4": {
@@ -276,6 +276,15 @@
           "lib/netstandard2.0/ElmahCore.dll": {}
         }
       },
+      "FluentScheduler/5.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.4/FluentScheduler.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/FluentScheduler.dll": {}
+        }
+      },
       "FluentValidation/8.1.3": {
         "type": "package",
         "dependencies": {
@@ -286,6 +295,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/FluentValidation.dll": {}
+        }
+      },
+      "FluentValidation.AspNetCore/8.1.3": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "8.1.3",
+          "Microsoft.AspNetCore.Mvc": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.AspNetCore.dll": {}
         }
       },
       "FluentValidation.ValidatorAttribute/8.1.3": {
@@ -6137,6 +6159,7 @@
         "dependencies": {
           "AtiehJobCore.Common": "1.0.0",
           "AtiehJobCore.Data": "1.0.0",
+          "FluentScheduler": "5.3.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "2.2.0",
           "Microsoft.AspNetCore.StaticFiles": "2.2.0"
         },
@@ -6167,21 +6190,31 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "AspNetCore.HealthChecks.MongoDb": "2.2.1",
           "AtiehJobCore.Common": "1.0.0",
           "AtiehJobCore.Data": "1.0.0",
           "AtiehJobCore.Services": "1.0.0",
           "AtiehJobCore.ViewModel": "1.0.0",
           "DNTCaptcha.Core": "1.6.7",
           "ElmahCore": "1.2.3",
+          "FluentScheduler": "5.3.0",
           "FluentValidation": "8.1.3",
+          "FluentValidation.AspNetCore": "8.1.3",
           "FluentValidation.ValidatorAttribute": "8.1.3",
           "LewisTech.Utils": "3.0.3",
           "Microsoft.AspNetCore.Diagnostics": "2.2.0",
+          "Microsoft.AspNetCore.Diagnostics.HealthChecks": "2.2.0",
+          "Microsoft.AspNetCore.HttpOverrides": "2.2.0",
+          "Microsoft.AspNetCore.HttpsPolicy": "2.2.0",
           "Microsoft.AspNetCore.Localization": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.0",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
+          "Microsoft.AspNetCore.ResponseCompression": "2.2.0",
+          "Microsoft.AspNetCore.Rewrite": "2.2.0",
           "Microsoft.AspNetCore.Session": "2.2.0",
-          "Microsoft.Extensions.Caching.SqlServer": "2.2.0"
+          "Microsoft.Extensions.Caching.SqlServer": "2.2.0",
+          "Microsoft.Extensions.DependencyInjection": "2.2.0",
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "2.2.0"
         },
         "compile": {
           "bin/placeholder/AtiehJobCore.Web.Framework.dll": {}
@@ -6193,6 +6226,18 @@
     }
   },
   "libraries": {
+    "AspNetCore.HealthChecks.MongoDb/2.2.1": {
+      "sha512": "imX3vIBQPEgeJW+j8t4TFZLOoOYVXDkSlNs3vFOfqKF1Fr+JFB8A364agjCMIu/WsKZkXfOgCedog/Unq95lfw==",
+      "type": "package",
+      "path": "aspnetcore.healthchecks.mongodb/2.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspnetcore.healthchecks.mongodb.2.2.1.nupkg.sha512",
+        "aspnetcore.healthchecks.mongodb.nuspec",
+        "lib/netstandard2.0/HealthChecks.MongoDb.dll"
+      ]
+    },
     "Autofac/4.8.1": {
       "sha512": "aIT9rupCOdab5RMfxvWTBmOxGU77tLqmvSF4V89SzV6oQcJrtuKw/Xp55xy9EijSktbMka55SbroAPOyT+lziw==",
       "type": "package",
@@ -6253,25 +6298,6 @@
         "automapper.extensions.microsoft.dependencyinjection.nuspec",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.pdb"
-      ]
-    },
-    "Ben.BlockingDetector/0.0.3": {
-      "sha512": "bEhnyGV9ipMPgAscTVl4RcHED10ktps58YZ2OPWls0SJR4MsnVl4SisjY6QAB0u+KGoT8F+SE22Ceqp8CVzhQg==",
-      "type": "package",
-      "path": "ben.blockingdetector/0.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ben.blockingdetector.0.0.3.nupkg.sha512",
-        "ben.blockingdetector.nuspec",
-        "lib/netstandard2.0/Ben.BlockingDetector.dll",
-        "lib/netstandard2.0/Ben.BlockingDetector.pdb",
-        "src/Ben.BlockingDetector/Ben.BlockingDetector.csproj",
-        "src/Ben.BlockingDetector/BlockingDetectionMiddleware.cs",
-        "src/Ben.BlockingDetector/BlockingMonitor.cs",
-        "src/Ben.BlockingDetector/DetectBlockingSynchronizationContext.cs",
-        "src/Ben.BlockingDetector/DiagnosticsLoggerExtensions.cs",
-        "src/Ben.BlockingDetector/TaskBlockingListener.cs"
       ]
     },
     "cloudscribe.Pagination.Models/1.0.4": {
@@ -6455,6 +6481,23 @@
         "lib/netstandard2.0/ElmahCore.dll"
       ]
     },
+    "FluentScheduler/5.3.0": {
+      "sha512": "XBLwqw3FFdkG6qIrxg7M9mIsigZje+qKTinWZWfyr47IN6O/0z6fFUoQCVEBvY0lk1puf4hU0VnVhN/kPNZL+A==",
+      "type": "package",
+      "path": "fluentscheduler/5.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentscheduler.5.3.0.nupkg.sha512",
+        "fluentscheduler.nuspec",
+        "lib/net40/FluentScheduler.dll",
+        "lib/net40/FluentScheduler.pdb",
+        "lib/net40/FluentScheduler.xml",
+        "lib/netstandard1.4/FluentScheduler.dll",
+        "lib/netstandard1.4/FluentScheduler.pdb",
+        "lib/netstandard1.4/FluentScheduler.xml"
+      ]
+    },
     "FluentValidation/8.1.3": {
       "sha512": "OHV6NFyGKP+v8us+X+yJ5hjFEjiJUp6MJyRNzcf4jc7GnRHsrmBwV6IyrQQ65a73r8ikaszH33InQG9ANB5j2g==",
       "type": "package",
@@ -6472,6 +6515,19 @@
         "lib/netstandard1.6/FluentValidation.xml",
         "lib/netstandard2.0/FluentValidation.dll",
         "lib/netstandard2.0/FluentValidation.xml"
+      ]
+    },
+    "FluentValidation.AspNetCore/8.1.3": {
+      "sha512": "UjhrphJceg2t9pWcDuG4aAEprnFncvXGSzxkBikMgC60Vh35U35BBcNHFJg+HpqiEjA7D/iFSDr1x4keheuBZQ==",
+      "type": "package",
+      "path": "fluentvalidation.aspnetcore/8.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentvalidation.aspnetcore.8.1.3.nupkg.sha512",
+        "fluentvalidation.aspnetcore.nuspec",
+        "lib/netstandard2.0/FluentValidation.AspNetCore.dll",
+        "lib/netstandard2.0/FluentValidation.AspNetCore.xml"
       ]
     },
     "FluentValidation.ValidatorAttribute/8.1.3": {
@@ -16095,7 +16151,6 @@
       "AtiehJobCore.Services >= 1.0.0",
       "AtiehJobCore.ViewModel >= 1.0.0",
       "AtiehJobCore.Web.Framework >= 1.0.0",
-      "Ben.BlockingDetector >= 0.0.3",
       "DNTBreadCrumb.Core >= 1.7.2",
       "DNTCaptcha.Core >= 1.6.7",
       "DNTCommon.Web.Core >= 1.3.3",
@@ -16171,10 +16226,6 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
-          "Ben.BlockingDetector": {
-            "target": "Package",
-            "version": "[0.0.3, )"
-          },
           "DNTBreadCrumb.Core": {
             "target": "Package",
             "version": "[1.7.2, )"

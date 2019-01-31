@@ -1,6 +1,6 @@
 ﻿namespace AtiehJobCore.Common.Configuration
 {
-    public partial class CommonConfig
+    public partial class AtiehJobConfig
     {
         /// <summary>
         /// Indicates whether we should ignore startup tasks

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace AtiehJobCore.Services.Helpers
+namespace AtiehJobCore.Common.Contracts
 {
     /// <summary>
     /// Represents a common helper

@@ -49,7 +49,7 @@ namespace AtiehJobCore.Common.Plugins
         /// <summary>
         /// Initialize
         /// </summary>
-        public static void Initialize(ApplicationPartManager applicationPartManager, CommonConfig config)
+        public static void Initialize(ApplicationPartManager applicationPartManager, AtiehJobConfig config)
         {
             if (applicationPartManager == null)
                 throw new ArgumentNullException(nameof(applicationPartManager));

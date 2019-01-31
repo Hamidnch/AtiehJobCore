@@ -8,7 +8,7 @@ namespace AtiehJobCore.Web.Infrastructure
 {
     public class DependencyRegistrar : IDependencyRegistrar
     {
-        public void Register(ContainerBuilder builder, ITypeFinder typeFinder, CommonConfig config)
+        public void Register(ContainerBuilder builder, ITypeFinder typeFinder, AtiehJobConfig config)
         {
             //installation localization service
             builder.RegisterType<InstallationLocalizationService>().As<IInstallationLocalizationService>().InstancePerLifetimeScope();

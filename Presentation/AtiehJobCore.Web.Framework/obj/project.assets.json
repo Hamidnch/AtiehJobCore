@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "AspNetCore.HealthChecks.MongoDb/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "2.2.0",
+          "MongoDB.Driver": "2.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/HealthChecks.MongoDb.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/HealthChecks.MongoDb.dll": {}
+        }
+      },
       "Autofac/4.8.1": {
         "type": "package",
         "dependencies": {
@@ -52,6 +65,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+      "Ben.BlockingDetector/0.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.1",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Ben.BlockingDetector.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ben.BlockingDetector.dll": {}
         }
       },
       "cloudscribe.Pagination.Models/1.0.4": {
@@ -195,6 +221,15 @@
           "lib/netstandard2.0/ElmahCore.dll": {}
         }
       },
+      "FluentScheduler/5.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.4/FluentScheduler.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/FluentScheduler.dll": {}
+        }
+      },
       "FluentValidation/8.1.3": {
         "type": "package",
         "dependencies": {
@@ -205,6 +240,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/FluentValidation.dll": {}
+        }
+      },
+      "FluentValidation.AspNetCore/8.1.3": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "8.1.3",
+          "Microsoft.AspNetCore.Mvc": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.AspNetCore.dll": {}
         }
       },
       "FluentValidation.ValidatorAttribute/8.1.3": {
@@ -516,6 +564,21 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Diagnostics.Abstractions.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Diagnostics.HealthChecks/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0",
+          "Microsoft.Net.Http.Headers": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Diagnostics.HealthChecks.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Diagnostics.HealthChecks.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Hosting.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -609,6 +672,36 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.HttpOverrides/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.HttpOverrides.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.HttpOverrides.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.HttpsPolicy/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Http": "2.2.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.Extensions.Configuration.Binder": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.HttpsPolicy.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.HttpsPolicy.dll": {}
         }
       },
       "Microsoft.AspNetCore.Identity/2.2.0": {
@@ -932,6 +1025,37 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.ResponseCaching.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.ResponseCompression/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.ResponseCompression.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.ResponseCompression.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Rewrite/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.2.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Rewrite.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Rewrite.dll": {}
         }
       },
       "Microsoft.AspNetCore.Routing/2.2.0": {
@@ -1544,6 +1668,29 @@
         },
         "runtime": {
           "lib/netstandard1.6/Microsoft.Extensions.DependencyModel.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Diagnostics.HealthChecks/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll": {}
         }
       },
       "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
@@ -4321,6 +4468,7 @@
         "dependencies": {
           "AtiehJobCore.Common": "1.0.0",
           "AtiehJobCore.Data": "1.0.0",
+          "FluentScheduler": "5.3.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "2.2.0",
           "Microsoft.AspNetCore.StaticFiles": "2.2.0"
         },
@@ -4350,6 +4498,18 @@
     }
   },
   "libraries": {
+    "AspNetCore.HealthChecks.MongoDb/2.2.1": {
+      "sha512": "imX3vIBQPEgeJW+j8t4TFZLOoOYVXDkSlNs3vFOfqKF1Fr+JFB8A364agjCMIu/WsKZkXfOgCedog/Unq95lfw==",
+      "type": "package",
+      "path": "aspnetcore.healthchecks.mongodb/2.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspnetcore.healthchecks.mongodb.2.2.1.nupkg.sha512",
+        "aspnetcore.healthchecks.mongodb.nuspec",
+        "lib/netstandard2.0/HealthChecks.MongoDb.dll"
+      ]
+    },
     "Autofac/4.8.1": {
       "sha512": "aIT9rupCOdab5RMfxvWTBmOxGU77tLqmvSF4V89SzV6oQcJrtuKw/Xp55xy9EijSktbMka55SbroAPOyT+lziw==",
       "type": "package",
@@ -4410,6 +4570,25 @@
         "automapper.extensions.microsoft.dependencyinjection.nuspec",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.pdb"
+      ]
+    },
+    "Ben.BlockingDetector/0.0.3": {
+      "sha512": "bEhnyGV9ipMPgAscTVl4RcHED10ktps58YZ2OPWls0SJR4MsnVl4SisjY6QAB0u+KGoT8F+SE22Ceqp8CVzhQg==",
+      "type": "package",
+      "path": "ben.blockingdetector/0.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ben.blockingdetector.0.0.3.nupkg.sha512",
+        "ben.blockingdetector.nuspec",
+        "lib/netstandard2.0/Ben.BlockingDetector.dll",
+        "lib/netstandard2.0/Ben.BlockingDetector.pdb",
+        "src/Ben.BlockingDetector/Ben.BlockingDetector.csproj",
+        "src/Ben.BlockingDetector/BlockingDetectionMiddleware.cs",
+        "src/Ben.BlockingDetector/BlockingMonitor.cs",
+        "src/Ben.BlockingDetector/DetectBlockingSynchronizationContext.cs",
+        "src/Ben.BlockingDetector/DiagnosticsLoggerExtensions.cs",
+        "src/Ben.BlockingDetector/TaskBlockingListener.cs"
       ]
     },
     "cloudscribe.Pagination.Models/1.0.4": {
@@ -4526,6 +4705,23 @@
         "lib/netstandard2.0/ElmahCore.dll"
       ]
     },
+    "FluentScheduler/5.3.0": {
+      "sha512": "XBLwqw3FFdkG6qIrxg7M9mIsigZje+qKTinWZWfyr47IN6O/0z6fFUoQCVEBvY0lk1puf4hU0VnVhN/kPNZL+A==",
+      "type": "package",
+      "path": "fluentscheduler/5.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentscheduler.5.3.0.nupkg.sha512",
+        "fluentscheduler.nuspec",
+        "lib/net40/FluentScheduler.dll",
+        "lib/net40/FluentScheduler.pdb",
+        "lib/net40/FluentScheduler.xml",
+        "lib/netstandard1.4/FluentScheduler.dll",
+        "lib/netstandard1.4/FluentScheduler.pdb",
+        "lib/netstandard1.4/FluentScheduler.xml"
+      ]
+    },
     "FluentValidation/8.1.3": {
       "sha512": "OHV6NFyGKP+v8us+X+yJ5hjFEjiJUp6MJyRNzcf4jc7GnRHsrmBwV6IyrQQ65a73r8ikaszH33InQG9ANB5j2g==",
       "type": "package",
@@ -4543,6 +4739,19 @@
         "lib/netstandard1.6/FluentValidation.xml",
         "lib/netstandard2.0/FluentValidation.dll",
         "lib/netstandard2.0/FluentValidation.xml"
+      ]
+    },
+    "FluentValidation.AspNetCore/8.1.3": {
+      "sha512": "UjhrphJceg2t9pWcDuG4aAEprnFncvXGSzxkBikMgC60Vh35U35BBcNHFJg+HpqiEjA7D/iFSDr1x4keheuBZQ==",
+      "type": "package",
+      "path": "fluentvalidation.aspnetcore/8.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentvalidation.aspnetcore.8.1.3.nupkg.sha512",
+        "fluentvalidation.aspnetcore.nuspec",
+        "lib/netstandard2.0/FluentValidation.AspNetCore.dll",
+        "lib/netstandard2.0/FluentValidation.AspNetCore.xml"
       ]
     },
     "FluentValidation.ValidatorAttribute/8.1.3": {
@@ -4893,6 +5102,19 @@
         "microsoft.aspnetcore.diagnostics.abstractions.nuspec"
       ]
     },
+    "Microsoft.AspNetCore.Diagnostics.HealthChecks/2.2.0": {
+      "sha512": "2XawTHGCcz1ncQtN5Rytw1QnAikezKGV3qEH8zPKUQC1FsSM0vhN48AdE0Wpz9AGZtuTewWFoVfdwAwhB0JNBA==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.diagnostics.healthchecks/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Diagnostics.HealthChecks.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Diagnostics.HealthChecks.xml",
+        "microsoft.aspnetcore.diagnostics.healthchecks.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.diagnostics.healthchecks.nuspec"
+      ]
+    },
     "Microsoft.AspNetCore.Hosting.Abstractions/2.2.0": {
       "sha512": "pVGrKK652a4lFcve2393473ojKfiSbDGpmnKyHT+RIYU+V93fSQafRitkJSh9ldNNIm9kjKZ8WuKRF8IMMi7Vg==",
       "type": "package",
@@ -4982,6 +5204,32 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
         "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.http.features.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.HttpOverrides/2.2.0": {
+      "sha512": "7NCmNmYah9rPWeRTBNd2h0F4fba8zi6yYGcXw23rr/sZPKbtdg/lkgD/KRGaNefVuwnP+IH7uTi6/RuvZQn/Wg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.httpoverrides/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.HttpOverrides.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.HttpOverrides.xml",
+        "microsoft.aspnetcore.httpoverrides.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.httpoverrides.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.HttpsPolicy/2.2.0": {
+      "sha512": "qfsE42jfnt7FdhomaVucv5YFKHa72xBGoEfC0ROAHW8Y7cSlpSosJ6zjPvLM8qcjBjzNSc+WHFNTVUh17Pj6xQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.httpspolicy/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.HttpsPolicy.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.HttpsPolicy.xml",
+        "microsoft.aspnetcore.httpspolicy.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.httpspolicy.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Identity/2.2.0": {
@@ -5288,6 +5536,36 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.ResponseCaching.Abstractions.xml",
         "microsoft.aspnetcore.responsecaching.abstractions.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.responsecaching.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.ResponseCompression/2.2.0": {
+      "sha512": "xETcZODoAhqelysOOrHzyBV9mZYkaYwvjsN6rf9yb4K61Bb9JUJORscOzFQJpD+wgeMVYwptXz9eYhJ6Me8fZw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.responsecompression/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/Microsoft.AspNetCore.ResponseCompression.dll",
+        "lib/net461/Microsoft.AspNetCore.ResponseCompression.xml",
+        "lib/netcoreapp2.1/Microsoft.AspNetCore.ResponseCompression.dll",
+        "lib/netcoreapp2.1/Microsoft.AspNetCore.ResponseCompression.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.ResponseCompression.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.ResponseCompression.xml",
+        "microsoft.aspnetcore.responsecompression.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.responsecompression.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Rewrite/2.2.0": {
+      "sha512": "wzrnbb3Wmw2wsV/UU17pnBKYEYom4+XviN8H407yfMXhupwTEtIW/9lKyHMeAcmn9s4YhKcSrQy//F9eAcsByg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.rewrite/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Rewrite.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Rewrite.xml",
+        "microsoft.aspnetcore.rewrite.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.rewrite.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Routing/2.2.0": {
@@ -5824,6 +6102,32 @@
         "lib/netstandard1.6/Microsoft.Extensions.DependencyModel.dll",
         "microsoft.extensions.dependencymodel.2.1.0.nupkg.sha512",
         "microsoft.extensions.dependencymodel.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Diagnostics.HealthChecks/2.2.0": {
+      "sha512": "eAPgIakH2hRxFFUNKQjsR/Ig6lWzs2AsvH2VI4FjewTIEvmP/1gE/KdWIlvxchKtWwGuxbZdNbEKyvSwRSInRw==",
+      "type": "package",
+      "path": "microsoft.extensions.diagnostics.healthchecks/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.xml",
+        "microsoft.extensions.diagnostics.healthchecks.2.2.0.nupkg.sha512",
+        "microsoft.extensions.diagnostics.healthchecks.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions/2.2.0": {
+      "sha512": "IEKGsrDTX5ftH+fLjukcAOSMSnBNJxrbENWnfjBAjkMVsRMTjckKRuagWwjCHANkruDa35vd2ViczkBxvDZRCw==",
+      "type": "package",
+      "path": "microsoft.extensions.diagnostics.healthchecks.abstractions/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.xml",
+        "microsoft.extensions.diagnostics.healthchecks.abstractions.2.2.0.nupkg.sha512",
+        "microsoft.extensions.diagnostics.healthchecks.abstractions.nuspec"
       ]
     },
     "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
@@ -12162,21 +12466,32 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "AspNetCore.HealthChecks.MongoDb >= 2.2.1",
       "AtiehJobCore.Common >= 1.0.0",
       "AtiehJobCore.Data >= 1.0.0",
       "AtiehJobCore.Services >= 1.0.0",
       "AtiehJobCore.ViewModel >= 1.0.0",
+      "Ben.BlockingDetector >= 0.0.3",
       "DNTCaptcha.Core >= 1.6.7",
       "ElmahCore >= 1.2.3",
+      "FluentScheduler >= 5.3.0",
       "FluentValidation >= 8.1.3",
+      "FluentValidation.AspNetCore >= 8.1.3",
       "FluentValidation.ValidatorAttribute >= 8.1.3",
       "LewisTech.Utils >= 3.0.3",
       "Microsoft.AspNetCore.Diagnostics >= 2.2.0",
+      "Microsoft.AspNetCore.Diagnostics.HealthChecks >= 2.2.0",
+      "Microsoft.AspNetCore.HttpOverrides >= 2.2.0",
+      "Microsoft.AspNetCore.HttpsPolicy >= 2.2.0",
       "Microsoft.AspNetCore.Localization >= 2.2.0",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.0",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
+      "Microsoft.AspNetCore.ResponseCompression >= 2.2.0",
+      "Microsoft.AspNetCore.Rewrite >= 2.2.0",
       "Microsoft.AspNetCore.Session >= 2.2.0",
       "Microsoft.Extensions.Caching.SqlServer >= 2.2.0",
+      "Microsoft.Extensions.DependencyInjection >= 2.2.0",
+      "Microsoft.Extensions.Diagnostics.HealthChecks >= 2.2.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -12234,6 +12549,14 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "AspNetCore.HealthChecks.MongoDb": {
+            "target": "Package",
+            "version": "[2.2.1, )"
+          },
+          "Ben.BlockingDetector": {
+            "target": "Package",
+            "version": "[0.0.3, )"
+          },
           "DNTCaptcha.Core": {
             "target": "Package",
             "version": "[1.6.7, )"
@@ -12242,7 +12565,15 @@
             "target": "Package",
             "version": "[1.2.3, )"
           },
+          "FluentScheduler": {
+            "target": "Package",
+            "version": "[5.3.0, )"
+          },
           "FluentValidation": {
+            "target": "Package",
+            "version": "[8.1.3, )"
+          },
+          "FluentValidation.AspNetCore": {
             "target": "Package",
             "version": "[8.1.3, )"
           },
@@ -12258,6 +12589,18 @@
             "target": "Package",
             "version": "[2.2.0, )"
           },
+          "Microsoft.AspNetCore.Diagnostics.HealthChecks": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.AspNetCore.HttpOverrides": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.AspNetCore.HttpsPolicy": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
           "Microsoft.AspNetCore.Localization": {
             "target": "Package",
             "version": "[2.2.0, )"
@@ -12270,11 +12613,27 @@
             "target": "Package",
             "version": "[2.2.0, )"
           },
+          "Microsoft.AspNetCore.ResponseCompression": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.AspNetCore.Rewrite": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
           "Microsoft.AspNetCore.Session": {
             "target": "Package",
             "version": "[2.2.0, )"
           },
           "Microsoft.Extensions.Caching.SqlServer": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.Extensions.DependencyInjection": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.Extensions.Diagnostics.HealthChecks": {
             "target": "Package",
             "version": "[2.2.0, )"
           },

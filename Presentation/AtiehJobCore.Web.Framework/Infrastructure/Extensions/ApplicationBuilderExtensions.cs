@@ -1,12 +1,22 @@
-﻿using System;
-using System.Threading.Tasks;
-using AtiehJobCore.Common.Configuration;
+﻿using AtiehJobCore.Common.Configuration;
+using AtiehJobCore.Common.Contracts;
+using AtiehJobCore.Common.Http;
 using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.Utilities;
+using AtiehJobCore.Common.Infrastructure.MongoDb;
+using AtiehJobCore.Common.MongoDb.Data;
+using AtiehJobCore.Services.MongoDb.Logging;
+using AtiehJobCore.Web.Framework.Middleware;
+using AtiehJobCore.Web.Framework.Mvc.Routing;
+using Ben.Diagnostics;
+using ElmahCore.Mvc;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 {
@@ -28,258 +38,240 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
         /// Add exception handling
         /// </summary>
         /// <param name="application">Builder for configuring an application's request pipeline</param>
-        //public static void UseCustomExceptionHandler(this IApplicationBuilder application)
-        //{
-        //    var grandConfig = EngineContext.Current.Resolve<CommonConfig>();
-        //    var hostingEnvironment = EngineContext.Current.Resolve<IHostingEnvironment>();
-        //    var useDetailedExceptionPage = grandConfig.DisplayFullErrorStack || hostingEnvironment.IsDevelopment();
-        //    if (useDetailedExceptionPage)
-        //    {
-        //        //get detailed exceptions for developing and testing purposes
-        //        application.UseDeveloperExceptionPage();
-        //    }
-        //    else
-        //    {
-        //        //or use special exception handler
-        //        application.UseExceptionHandler("/errorpage.htm");
-        //    }
+        public static void UseAtiehJobExceptionHandler(this IApplicationBuilder application)
+        {
+            application.UseElmah();
 
-        //    //log errors
-        //    application.UseExceptionHandler(handler =>
-        //    {
-        //        handler.Run(context =>
-        //        {
-        //            var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
-        //            if (exception == null)
-        //                return Task.CompletedTask;
+            var atiehJobConfig = EngineContext.Current.Resolve<AtiehJobConfig>();
+            var hostingEnvironment = EngineContext.Current.Resolve<IHostingEnvironment>();
 
-        //            string authHeader = context.Request.Headers["Authorization"];
-        //            var apirequest = authHeader != null && authHeader.Split(' ')[0] == "Bearer";
-        //            if (apirequest)
-        //            {
-        //                context.Response.WriteAsync(exception.Message).Wait();
-        //                return Task.CompletedTask;
-        //            }
-        //            try
-        //            {
-        //                //check whether database is installed
-        //                //if (DataSettingsHelper.DatabaseIsInstalled())
-        //                //{
-        //                //    //get current customer
-        //                //    var currentCustomer = EngineContext.Current.Resolve<IWorkContext>().CurrentCustomer;
+            var useDetailedExceptionPage = atiehJobConfig.DisplayFullErrorStack || hostingEnvironment.IsDevelopment();
+            if (useDetailedExceptionPage)
+            {
+                //get detailed exceptions for developing and testing purposes
+                application.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                //or use special exception handler
+                application.UseExceptionHandler("/errorpage.htm");
+            }
 
-        //                //    //log error
-        //                //   // EngineContext.Current.Resolve<ILogger>().Error(exception.Message, exception, currentCustomer);
-        //                //}
-        //            }
-        //            finally
-        //            {
-        //                //rethrow the exception to show the error page
-        //                throw exception;
-        //            }
-        //        });
-        //    });
-        //}
+            //log errors
+            application.UseExceptionHandler(handler =>
+            {
+                handler.Run(context =>
+                {
+                    var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
+                    if (exception == null)
+                        return Task.CompletedTask;
+
+                    string authHeader = context.Request.Headers["Authorization"];
+                    var apirequest = authHeader != null && authHeader.Split(' ')[0] == "Bearer";
+                    if (apirequest)
+                    {
+                        context.Response.WriteAsync(exception.Message).Wait();
+                        return Task.CompletedTask;
+                    }
+                    try
+                    {
+                        //check whether database is installed
+                        if (DataSettingsHelper.DatabaseIsInstalled())
+                        {
+                            //get current customer
+                            var currentUser = EngineContext.Current.Resolve<IWorkContext>().CurrentUser;
+
+                            //log error
+                            EngineContext.Current.Resolve<ILogger>().Error(exception.Message, exception, currentUser);
+                        }
+                    }
+                    finally
+                    {
+                        //rethrow the exception to show the error page
+                        throw exception;
+                    }
+                });
+            });
+
+            application.UseContentSecurityPolicy();
+        }
 
         /// <summary>
         /// Adds a special handler that checks for responses with the 404 status code that do not have a body
         /// </summary>
         /// <param name="application">Builder for configuring an application's request pipeline</param>
-        //public static void UsePageNotFound(this IApplicationBuilder application)
-        //{
-        //    application.UseStatusCodePages(async context =>
-        //    {
-        //        string authHeader = context.HttpContext.Request.Headers["Authorization"];
-        //        var apirequest = authHeader != null && authHeader.Split(' ')[0] == "Bearer";
+        public static void UseAtiehJobPageNotFound(this IApplicationBuilder application)
+        {
+            application.UseStatusCodePages(async context =>
+            {
+                string authHeader = context.HttpContext.Request.Headers["Authorization"];
+                var apirequest = authHeader != null && authHeader.Split(' ')[0] == "Bearer";
 
-        //        //handle 404 Not Found
-        //        if (!apirequest && context.HttpContext.Response.StatusCode == 404)
-        //        {
-        //            var webHelper = EngineContext.Current.Resolve<IWebHelper>();
-        //            if (!webHelper.IsStaticResource())
-        //            {
-        //                //get original path and query
-        //                var originalPath = context.HttpContext.Request.Path;
-        //                var originalQueryString = context.HttpContext.Request.QueryString;
+                //handle 404 Not Found
+                if (!apirequest && context.HttpContext.Response.StatusCode == 404)
+                {
+                    var webHelper = EngineContext.Current.Resolve<IWebHelper>();
+                    if (!webHelper.IsStaticResource())
+                    {
+                        //get original path and query
+                        var originalPath = context.HttpContext.Request.Path;
+                        var originalQueryString = context.HttpContext.Request.QueryString;
 
-        //                //store the original paths in special feature, so we can use it later
-        //                context.HttpContext.Features.Set<IStatusCodeReExecuteFeature>(new StatusCodeReExecuteFeature()
-        //                {
-        //                    OriginalPathBase = context.HttpContext.Request.PathBase.Value,
-        //                    OriginalPath = originalPath.Value,
-        //                    OriginalQueryString = originalQueryString.HasValue ? originalQueryString.Value : null,
-        //                });
+                        //store the original paths in special feature, so we can use it later
+                        context.HttpContext.Features.Set<IStatusCodeReExecuteFeature>(new StatusCodeReExecuteFeature()
+                        {
+                            OriginalPathBase = context.HttpContext.Request.PathBase.Value,
+                            OriginalPath = originalPath.Value,
+                            OriginalQueryString = originalQueryString.HasValue ? originalQueryString.Value : null,
+                        });
 
-        //                //get new path
-        //                context.HttpContext.Request.Path = "/page-not-found";
-        //                context.HttpContext.Request.QueryString = QueryString.Empty;
+                        //get new path
+                        context.HttpContext.Request.Path = "/page-not-found";
+                        context.HttpContext.Request.QueryString = QueryString.Empty;
 
-        //                try
-        //                {
-        //                    //re-execute request with new path
-        //                    await context.Next(context.HttpContext);
-        //                }
-        //                finally
-        //                {
-        //                    //return original path to request
-        //                    context.HttpContext.Request.QueryString = originalQueryString;
-        //                    context.HttpContext.Request.Path = originalPath;
-        //                    context.HttpContext.Features.Set<IStatusCodeReExecuteFeature>(null);
-        //                }
-        //            }
-        //        }
-        //    });
-        //}
+                        try
+                        {
+                            //re-execute request with new path
+                            await context.Next(context.HttpContext);
+                        }
+                        finally
+                        {
+                            //return original path to request
+                            context.HttpContext.Request.QueryString = originalQueryString;
+                            context.HttpContext.Request.Path = originalPath;
+                            context.HttpContext.Features.Set<IStatusCodeReExecuteFeature>(null);
+                        }
+                    }
+                }
+            });
+        }
 
         /// <summary>
         /// Adds a special handler that checks for responses with the 400 status code (bad request)
         /// </summary>
         /// <param name="application">Builder for configuring an application's request pipeline</param>
-        public static void UseBadRequestResult(this IApplicationBuilder application)
+        public static void UseAtiehJobBadRequestResult(this IApplicationBuilder application)
         {
             application.UseStatusCodePages(context =>
             {
                 //handle 404 (Bad request)
-                //if (context.HttpContext.Response.StatusCode == StatusCodes.Status400BadRequest)
-                //{
-                //    var logger = EngineContext.Current.Resolve<ILogger>();
-                //    var workContext = EngineContext.Current.Resolve<IWorkContext>();
-                //    logger.Error("Error 400. Bad request", null, customer: workContext.CurrentCustomer);
-                //}
+                if (context.HttpContext.Response.StatusCode == StatusCodes.Status400BadRequest)
+                {
+                    var logger = EngineContext.Current.Resolve<ILogger>();
+                    var workContext = EngineContext.Current.Resolve<IWorkContext>();
+                    logger.Error("Error 400. Bad request", null, user: workContext.CurrentUser);
+                }
 
                 return Task.CompletedTask;
             });
 
         }
 
-        //public static void UseInstallUrl(this IApplicationBuilder application)
-        //{
-        //    application.UseMiddleware<InstallUrlMiddleware>();
-        //}
+        /// <summary>
+        /// Configure middleware checking whether database is installed
+        /// </summary>
+        /// <param name="application">Builder for configuring an application's request pipeline</param>
+        public static void UseAtiehJobInstallUrl(this IApplicationBuilder application)
+        {
+            application.UseMiddleware<InstallUrlMiddleware>();
+        }
 
         /// <summary>
         /// Configure authentication
         /// </summary>
         /// <param name="application">Builder for configuring an application's request pipeline</param>
-        //public static void UseCustomAuthentication(this IApplicationBuilder application)
-        //{
-        //    application.UseMiddleware<AuthenticationMiddleware>();
-        //}
+        public static void UseAtiehJobAuthentication(this IApplicationBuilder application)
+        {
+            application.UseMiddleware<AuthenticationMiddleware>();
+        }
 
         /// <summary>
         /// Configure MVC routing
         /// </summary>
         /// <param name="application">Builder for configuring an application's request pipeline</param>
-        public static void UseGrandMvc(this IApplicationBuilder application)
+        public static void UseAtiehJobMvc(this IApplicationBuilder application)
         {
-            application.UseMvc(routes =>
+            // app.UseNoBrowserCache();
+
+            application.UseBlockingDetection();
+
+            application.UseMvc(routeBuilder =>
             {
-                //routes.MapRoute("default", "{Controller=Home}/{Action=Index}/{id?}");
-
-                routes.MapRoute(
-                    name: "areas",
-                    template: "{area:exists}/{controller=Account}/{action=Index}/{id?}");
-
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                //register all routes
+                EngineContext.Current.Resolve<IRoutePublisher>().RegisterRoutes(routeBuilder);
             });
-            //application.UseMvc(routeBuilder =>
-            //{
-            //    //register all routes
-            //    EngineContext.Current.Resolve<IRoutePublisher>().RegisterRoutes(routeBuilder);
-            //});
         }
 
         /// <summary>
         /// Configure static file serving
         /// </summary>
         /// <param name="application">Builder for configuring an application's request pipeline</param>
-        public static void UseCustomStaticFiles(this IApplicationBuilder application, CommonConfig commonConfig)
+        /// <param name="atiehJobConfig"></param>
+        public static void UseAtiehJobStaticFiles(this IApplicationBuilder application, AtiehJobConfig atiehJobConfig)
         {
             //static files
             application.UseStaticFiles(new StaticFileOptions
             {
                 OnPrepareResponse = ctx =>
                 {
-                    if (!string.IsNullOrEmpty(commonConfig.StaticFilesCacheControl))
-                        ctx.Context.Response.Headers.Append(HeaderNames.CacheControl, commonConfig.StaticFilesCacheControl);
+                    if (!string.IsNullOrEmpty(atiehJobConfig.StaticFilesCacheControl))
+                        ctx.Context.Response.Headers.Append(HeaderNames.CacheControl, atiehJobConfig.StaticFilesCacheControl);
                 }
             });
 
-            //themes
-            application.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(CommonHelper.MapPath("Themes")),
-                RequestPath = new PathString("/Themes"),
-                OnPrepareResponse = ctx =>
-                {
-                    if (!String.IsNullOrEmpty(commonConfig.StaticFilesCacheControl))
-                        ctx.Context.Response.Headers.Append(HeaderNames.CacheControl, commonConfig.StaticFilesCacheControl);
-                }
-            });
-            //plugins
-            application.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(CommonHelper.MapPath("Plugins")),
-                RequestPath = new PathString("/Plugins"),
-                OnPrepareResponse = ctx =>
-                {
-                    if (!String.IsNullOrEmpty(commonConfig.StaticFilesCacheControl))
-                        ctx.Context.Response.Headers.Append(HeaderNames.CacheControl, commonConfig.StaticFilesCacheControl);
-                }
-            });
+            ////themes
+            //application.UseStaticFiles(new StaticFileOptions
+            //{
+            //    FileProvider = new PhysicalFileProvider(CommonHelper.MapPath("Themes")),
+            //    RequestPath = new PathString("/Themes"),
+            //    OnPrepareResponse = ctx =>
+            //    {
+            //        if (!string.IsNullOrEmpty(atiehJobConfig.StaticFilesCacheControl))
+            //            ctx.Context.Response.Headers.Append(HeaderNames.CacheControl, atiehJobConfig.StaticFilesCacheControl);
+            //    }
+            //});
+            ////plugins
+            //application.UseStaticFiles(new StaticFileOptions
+            //{
+            //    FileProvider = new PhysicalFileProvider(CommonHelper.MapPath("Plugins")),
+            //    RequestPath = new PathString("/Plugins"),
+            //    OnPrepareResponse = ctx =>
+            //    {
+            //        if (!string.IsNullOrEmpty(atiehJobConfig.StaticFilesCacheControl))
+            //            ctx.Context.Response.Headers.Append(HeaderNames.CacheControl, atiehJobConfig.StaticFilesCacheControl);
+            //    }
+            //});
 
         }
 
+        /// <summary>
+        /// Configure UseForwardedHeaders
+        /// </summary>
+        /// <param name="application">Builder for configuring an application's request pipeline</param>
+        public static void UseAtiehJobForwardedHeaders(this IApplicationBuilder application)
+        {
+            application.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+        }
 
-        ///// <summary>
-        ///// Create and configure MiniProfiler service
-        ///// </summary>
-        ///// <param name="application">Builder for configuring an application's request pipeline</param>
-        //public static void UseProfiler(this IApplicationBuilder application)
-        //{
-        //    //whether database is already installed
-        //    if (!DataSettingsHelper.DatabaseIsInstalled())
-        //        return;
+        /// <summary>
+        /// Configure Health checks
+        /// </summary>
+        /// <param name="application">Builder for configuring an application's request pipeline</param>
+        public static void UseAtiehJobHealthChecks(this IApplicationBuilder application)
+        {
+            application.UseHealthChecks("/health/live");
+        }
 
-        //    //whether MiniProfiler should be displayed
-        //    if (EngineContext.Current.Resolve<StoreInformationSettings>().DisplayMiniProfilerInPublicStore)
-        //    {
-        //        application.UseMiniProfiler();
-        //    }
-        //}
-
-        ///// <summary>
-        ///// Configure UseForwardedHeaders
-        ///// </summary>
-        ///// <param name="application">Builder for configuring an application's request pipeline</param>
-        //public static void UseGrandForwardedHeaders(this IApplicationBuilder application)
-        //{
-        //    application.UseForwardedHeaders(new ForwardedHeadersOptions
-        //    {
-        //        ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
-        //    });
-        //}
-
-        ///// <summary>
-        ///// Configure Health checks
-        ///// </summary>
-        ///// <param name="application">Builder for configuring an application's request pipeline</param>
-        //public static void UseGrandHealthChecks(this IApplicationBuilder application)
-        //{
-        //    application.UseHealthChecks("/health/live");
-        //}
-
-
-        ///// <summary>
-        ///// Configures wethere use or not the Header X-Powered-By and its value.
-        ///// </summary>
-        ///// <param name="application">Builder for configuring an application's request pipeline</param>
-        //public static void UsePoweredBy(this IApplicationBuilder application)
-        //{
-        //    application.UseMiddleware<PoweredByMiddleware>();
-        //}
-
+        /// <summary>
+        /// Configures for use or not the Header X-Powered-By and its value.
+        /// </summary>
+        /// <param name="application">Builder for configuring an application's request pipeline</param>
+        public static void UseAtiehJobPoweredBy(this IApplicationBuilder application)
+        {
+            application.UseMiddleware<PoweredByMiddleware>();
+        }
     }
 }

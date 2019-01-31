@@ -146,6 +146,15 @@
           "lib/netstandard2.0/DNTPersianUtils.Core.dll": {}
         }
       },
+      "FluentScheduler/5.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.4/FluentScheduler.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.4/FluentScheduler.dll": {}
+        }
+      },
       "HtmlAgilityPack/1.8.11": {
         "type": "package",
         "dependencies": {
@@ -4307,6 +4316,23 @@
         "lib/netstandard1.3/DNTPersianUtils.Core.xml",
         "lib/netstandard2.0/DNTPersianUtils.Core.dll",
         "lib/netstandard2.0/DNTPersianUtils.Core.xml"
+      ]
+    },
+    "FluentScheduler/5.3.0": {
+      "sha512": "XBLwqw3FFdkG6qIrxg7M9mIsigZje+qKTinWZWfyr47IN6O/0z6fFUoQCVEBvY0lk1puf4hU0VnVhN/kPNZL+A==",
+      "type": "package",
+      "path": "fluentscheduler/5.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentscheduler.5.3.0.nupkg.sha512",
+        "fluentscheduler.nuspec",
+        "lib/net40/FluentScheduler.dll",
+        "lib/net40/FluentScheduler.pdb",
+        "lib/net40/FluentScheduler.xml",
+        "lib/netstandard1.4/FluentScheduler.dll",
+        "lib/netstandard1.4/FluentScheduler.pdb",
+        "lib/netstandard1.4/FluentScheduler.xml"
       ]
     },
     "HtmlAgilityPack/1.8.11": {
@@ -11824,6 +11850,7 @@
     ".NETStandard,Version=v2.0": [
       "AtiehJobCore.Common >= 1.0.0",
       "AtiehJobCore.Data >= 1.0.0",
+      "FluentScheduler >= 5.3.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 2.2.0",
       "Microsoft.AspNetCore.StaticFiles >= 2.2.0",
       "NETStandard.Library >= 2.0.3"
@@ -11877,6 +11904,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "FluentScheduler": {
+            "target": "Package",
+            "version": "[5.3.0, )"
+          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[2.2.0, )"

@@ -1,5 +1,6 @@
 ﻿using AtiehJobCore.Common.Constants;
 using AtiehJobCore.Common.Infrastructure;
+using AtiehJobCore.Common.Infrastructure.MongoDb;
 using AtiehJobCore.Services.MongoDb.Localization;
 using AtiehJobCore.Web.Framework.Localization;
 using Microsoft.AspNetCore.Http;
@@ -28,11 +29,16 @@ namespace AtiehJobCore.Web.Framework.Web.Razor
             return isRtl;
         }
 
+        public bool IsRtlCurrentLanguage => WorkContext.WorkingLanguage.Rtl;
+
         [RazorInject]
         public IHttpContextAccessor HttpContextAccessor { get; set; }
-
         private ILocalizationService _localizationService;
         private Localizer _localizer;
+
+        private IWorkContext _workContext;
+
+        public IWorkContext WorkContext => _workContext ?? (_workContext = EngineContext.Current.Resolve<IWorkContext>());
 
         /// <summary>
         /// Get a localized resources
@@ -57,6 +63,10 @@ namespace AtiehJobCore.Web.Framework.Web.Razor
                         : string.Format(resFormat, args));
                 });
             }
+        }
+        public string WorkingLanguage()
+        {
+            return WorkContext.WorkingLanguage.UniqueSeoCode;
         }
     }
 
