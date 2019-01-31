@@ -2,15 +2,19 @@
 using AtiehJobCore.Common.Configuration;
 using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Infrastructure;
+using AtiehJobCore.Common.Infrastructure.MongoDb;
 using AtiehJobCore.Common.MongoDb.Data;
 using AtiehJobCore.Common.MongoDb.Domain.Localization;
 using AtiehJobCore.Data.MongoDb;
+using AtiehJobCore.Services.Authentication;
+using AtiehJobCore.Services.Common;
 using AtiehJobCore.Services.Helpers;
 using AtiehJobCore.Services.MongoDb.Configuration;
 using AtiehJobCore.Services.MongoDb.Events;
 using AtiehJobCore.Services.MongoDb.Installation;
 using AtiehJobCore.Services.MongoDb.Localization;
 using AtiehJobCore.Services.MongoDb.Logging;
+using AtiehJobCore.Services.MongoDb.Users;
 using Autofac;
 using Autofac.Core;
 using FluentValidation;
@@ -38,6 +42,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
 
             //web helper
             builder.RegisterType<WebHelper>().As<IWebHelper>().InstancePerLifetimeScope();
+            //user agent helper
+            builder.RegisterType<UserAgentHelper>().As<IUserAgentHelper>().InstancePerLifetimeScope();
             builder.RegisterType<CustomFileProvider>().As<ICustomFileProvider>().InstancePerLifetimeScope();
 
             //data layer
@@ -81,6 +87,9 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
                 builder.RegisterType<MemoryCacheManager>().As<ICacheManager>().Named<ICacheManager>("atiehjob_cache_static").SingleInstance();
             }
 
+            //work context
+            builder.RegisterType<WebWorkContext>().As<IWorkContext>().InstancePerLifetimeScope();
+
             //services
             builder.RegisterType<LocalizationSettings>().As<LocalizationSettings>()
                 .WithParameter(ResolvedParameter.ForNamed<ICacheManager>("atiehjob_cache_static")).InstancePerLifetimeScope();
@@ -101,7 +110,11 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
 
             builder.RegisterType<LanguageService>().As<ILanguageService>().InstancePerLifetimeScope();
             builder.RegisterType<DefaultLogger>().As<ILogger>().InstancePerLifetimeScope();
-
+            builder.RegisterType<GenericAttributeService>().As<IGenericAttributeService>().InstancePerLifetimeScope();
+            builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
+            builder.RegisterType<UserApiService>().As<IUserApiService>().InstancePerLifetimeScope();
+            builder.RegisterType<AtiehJobCookieAuthenticationService>().As<IAtiehJobAuthenticationService>().InstancePerLifetimeScope();
+            builder.RegisterType<ApiAuthenticationService>().As<IApiAuthenticationService>().InstancePerLifetimeScope();
 
             var databaseInstalled = DataSettingsHelper.DatabaseIsInstalled();
             if (!databaseInstalled)
