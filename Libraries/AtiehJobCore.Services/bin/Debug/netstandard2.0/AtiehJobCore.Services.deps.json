@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "8ca5f9a1ff1594ef8ae1e0f85593d041594d5e75"
+    "signature": "b476e14b9bd95f6d7663b380b9bf21adb9b39329"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,6 +11,7 @@
         "dependencies": {
           "AtiehJobCore.Common": "1.0.0",
           "AtiehJobCore.Data": "1.0.0",
+          "FluentScheduler": "5.3.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "2.2.0",
           "Microsoft.AspNetCore.StaticFiles": "2.2.0",
           "NETStandard.Library": "2.0.3"
@@ -151,6 +152,14 @@
           "lib/netstandard2.0/DNTPersianUtils.Core.dll": {
             "assemblyVersion": "3.2.0.0",
             "fileVersion": "3.2.0.0"
+          }
+        }
+      },
+      "FluentScheduler/5.3.0": {
+        "runtime": {
+          "lib/netstandard1.4/FluentScheduler.dll": {
+            "assemblyVersion": "5.3.0.0",
+            "fileVersion": "5.3.0.0"
           }
         }
       },
@@ -3465,6 +3474,13 @@
       "sha512": "sha512-BMdGhn5qRj2SinQMn/5ZNh3I2P/V12jdJZz3Q6BQF1iFAHZtimy8hHf/UXpfJa5qN7KafNj8ujUw9RjYKXI89A==",
       "path": "dntpersianutils.core/3.2.0",
       "hashPath": "dntpersianutils.core.3.2.0.nupkg.sha512"
+    },
+    "FluentScheduler/5.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XBLwqw3FFdkG6qIrxg7M9mIsigZje+qKTinWZWfyr47IN6O/0z6fFUoQCVEBvY0lk1puf4hU0VnVhN/kPNZL+A==",
+      "path": "fluentscheduler/5.3.0",
+      "hashPath": "fluentscheduler.5.3.0.nupkg.sha512"
     },
     "HtmlAgilityPack/1.8.11": {
       "type": "package",

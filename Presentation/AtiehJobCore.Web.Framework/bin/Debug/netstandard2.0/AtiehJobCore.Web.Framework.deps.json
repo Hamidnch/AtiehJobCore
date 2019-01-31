@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "12063c7ec0b80cb425437092a2d61a5d4203fdbc"
+    "signature": "db10ab16602aa8c7e3b4c0e7e729ff19b8df898a"
   },
   "compilationOptions": {},
   "targets": {
@@ -14,6 +14,7 @@
           "AtiehJobCore.Data": "1.0.0",
           "AtiehJobCore.Services": "1.0.0",
           "AtiehJobCore.ViewModel": "1.0.0",
+          "Ben.BlockingDetector": "0.0.3",
           "DNTCaptcha.Core": "1.6.7",
           "ElmahCore": "1.2.3",
           "FluentScheduler": "5.3.0",
@@ -97,6 +98,18 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "6.0.0.0"
+          }
+        }
+      },
+      "Ben.BlockingDetector/0.0.3": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ben.BlockingDetector.dll": {
+            "assemblyVersion": "0.0.3.0",
+            "fileVersion": "0.0.3.0"
           }
         }
       },
@@ -3745,6 +3758,13 @@
       "sha512": "sha512-EHxmLh6OuTuiGU3U+pHhNHwWOq1juK+Wbvr2n7Oj8/L819+DCnr7dtVtIGmBYHrle6foukEXqT5rcbRS9+CFyA==",
       "path": "automapper.extensions.microsoft.dependencyinjection/6.0.0",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.6.0.0.nupkg.sha512"
+    },
+    "Ben.BlockingDetector/0.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bEhnyGV9ipMPgAscTVl4RcHED10ktps58YZ2OPWls0SJR4MsnVl4SisjY6QAB0u+KGoT8F+SE22Ceqp8CVzhQg==",
+      "path": "ben.blockingdetector/0.0.3",
+      "hashPath": "ben.blockingdetector.0.0.3.nupkg.sha512"
     },
     "cloudscribe.Pagination.Models/1.0.4": {
       "type": "package",

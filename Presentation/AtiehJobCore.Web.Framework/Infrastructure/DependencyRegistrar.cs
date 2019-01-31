@@ -1,6 +1,7 @@
 ﻿using AtiehJobCore.Common.Caching;
 using AtiehJobCore.Common.Configuration;
 using AtiehJobCore.Common.Contracts;
+using AtiehJobCore.Common.Http;
 using AtiehJobCore.Common.Infrastructure;
 using AtiehJobCore.Common.Infrastructure.MongoDb;
 using AtiehJobCore.Common.MongoDb.Data;
@@ -122,6 +123,7 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
             builder.RegisterType<UrlRecordService>().As<IUrlRecordService>().InstancePerLifetimeScope();
             builder.RegisterType<ScheduleTaskService>().As<IScheduleTaskService>().InstancePerLifetimeScope();
             builder.RegisterType<RoutePublisher>().As<IRoutePublisher>().SingleInstance();
+            builder.RegisterType<PoweredByMiddlewareOptions>().As<IPoweredByMiddlewareOptions>().SingleInstance();
 
             var databaseInstalled = DataSettingsHelper.DatabaseIsInstalled();
             if (!databaseInstalled)

@@ -171,18 +171,18 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
                     user = _authenticationService.GetAuthenticatedUser();
                 }
 
-                if (user == null)
-                {
-                    //try to get api user
-                    user = _apiAuthenticationService.GetAuthenticatedUser();
-                    //if user comes from api, doesn't need to create cookies
-                    if (user != null)
-                    {
-                        //cache the found user
-                        _cachedUser = user;
-                        return _cachedUser;
-                    }
-                }
+                //if (user == null)
+                //{
+                //    //try to get api user
+                //    user = _apiAuthenticationService.GetAuthenticatedUser();
+                //    //if user comes from api, doesn't need to create cookies
+                //    if (user != null)
+                //    {
+                //        //cache the found user
+                //        _cachedUser = user;
+                //        return _cachedUser;
+                //    }
+                //}
 
                 if (user == null || user.Deleted || !user.Active)
                 {

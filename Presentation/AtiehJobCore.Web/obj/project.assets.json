@@ -67,6 +67,19 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
+      "Ben.BlockingDetector/0.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.1",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Ben.BlockingDetector.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Ben.BlockingDetector.dll": {}
+        }
+      },
       "cloudscribe.Pagination.Models/1.0.4": {
         "type": "package",
         "dependencies": {
@@ -6195,6 +6208,7 @@
           "AtiehJobCore.Data": "1.0.0",
           "AtiehJobCore.Services": "1.0.0",
           "AtiehJobCore.ViewModel": "1.0.0",
+          "Ben.BlockingDetector": "0.0.3",
           "DNTCaptcha.Core": "1.6.7",
           "ElmahCore": "1.2.3",
           "FluentScheduler": "5.3.0",
@@ -6298,6 +6312,25 @@
         "automapper.extensions.microsoft.dependencyinjection.nuspec",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
         "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.pdb"
+      ]
+    },
+    "Ben.BlockingDetector/0.0.3": {
+      "sha512": "bEhnyGV9ipMPgAscTVl4RcHED10ktps58YZ2OPWls0SJR4MsnVl4SisjY6QAB0u+KGoT8F+SE22Ceqp8CVzhQg==",
+      "type": "package",
+      "path": "ben.blockingdetector/0.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ben.blockingdetector.0.0.3.nupkg.sha512",
+        "ben.blockingdetector.nuspec",
+        "lib/netstandard2.0/Ben.BlockingDetector.dll",
+        "lib/netstandard2.0/Ben.BlockingDetector.pdb",
+        "src/Ben.BlockingDetector/Ben.BlockingDetector.csproj",
+        "src/Ben.BlockingDetector/BlockingDetectionMiddleware.cs",
+        "src/Ben.BlockingDetector/BlockingMonitor.cs",
+        "src/Ben.BlockingDetector/DetectBlockingSynchronizationContext.cs",
+        "src/Ben.BlockingDetector/DiagnosticsLoggerExtensions.cs",
+        "src/Ben.BlockingDetector/TaskBlockingListener.cs"
       ]
     },
     "cloudscribe.Pagination.Models/1.0.4": {

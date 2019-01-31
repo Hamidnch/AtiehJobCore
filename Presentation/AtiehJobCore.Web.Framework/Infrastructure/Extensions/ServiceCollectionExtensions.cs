@@ -289,6 +289,7 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
             {
                 options.DefaultScheme = AtiehJobCookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultSignInScheme = AtiehJobCookieAuthenticationDefaults.ExternalAuthenticationScheme;
+
             });
 
             //add main cookie authentication
