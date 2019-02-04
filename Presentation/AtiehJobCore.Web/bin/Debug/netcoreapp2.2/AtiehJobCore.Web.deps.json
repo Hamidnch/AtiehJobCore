@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "a824f2c6fcd04660f90596f59ae4c1c2315abd4c"
+    "signature": "8936424779489bdce3e9e0729962dfe3cd4c193d"
   },
   "compilationOptions": {
     "defines": [
@@ -139,6 +139,22 @@
         },
         "compile": {
           "lib/netstandard2.0/Ben.BlockingDetector.dll": {}
+        }
+      },
+      "BundlerMinifier.Core/2.8.391": {
+        "dependencies": {
+          "Microsoft.NETCore.App": "2.2.0",
+          "NUglify": "1.5.11",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/dotnet-bundle.dll": {
+            "assemblyVersion": "2.8.391.0",
+            "fileVersion": "2.8.391.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp2.0/dotnet-bundle.dll": {}
         }
       },
       "cloudscribe.Pagination.Models/1.0.4": {
@@ -1389,6 +1405,21 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "NUglify/1.5.11": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "System.Security.Cryptography.Algorithms": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NUglify.dll": {
+            "assemblyVersion": "1.5.11.0",
+            "fileVersion": "1.5.11.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/NUglify.dll": {}
+        }
+      },
       "Portable.BouncyCastle/1.8.2": {
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
@@ -2280,6 +2311,7 @@
           "AtiehJobCore.Services": "1.0.0",
           "AtiehJobCore.ViewModel": "1.0.0",
           "Ben.BlockingDetector": "0.0.3",
+          "BundlerMinifier.Core": "2.8.391",
           "DNTCaptcha.Core": "1.6.7",
           "ElmahCore": "1.2.3",
           "FluentScheduler": "5.3.0",
@@ -5124,6 +5156,13 @@
       "path": "ben.blockingdetector/0.0.3",
       "hashPath": "ben.blockingdetector.0.0.3.nupkg.sha512"
     },
+    "BundlerMinifier.Core/2.8.391": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I1FScX7XjqSnwDXyOlb6YjY94qi17QItoCKO9VJsCq+2pneKh73mIKcwrV7hijD0t1L1/2v6j+triavjdpblOw==",
+      "path": "bundlerminifier.core/2.8.391",
+      "hashPath": "bundlerminifier.core.2.8.391.nupkg.sha512"
+    },
     "cloudscribe.Pagination.Models/1.0.4": {
       "type": "package",
       "serviceable": true,
@@ -5508,6 +5547,13 @@
       "sha512": "sha512-KuqDbPzjOWbUM6gPMbkvdhlQ10roQAoMM7mNZ8hcY/fH+9J4Zc+qT8dLWoNzGyr0OrxQVdZdbSjy/fxwoICgGg==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "NUglify/1.5.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BsEI6jqtDNsvW0TIkX7susL1xNvBbGlnuIveQqGa36JJv9At5iiHHy3ehUv3K5Hg9PBITPn1PnIUOLw53pOSCA==",
+      "path": "nuglify/1.5.11",
+      "hashPath": "nuglify.1.5.11.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.8.2": {
       "type": "package",

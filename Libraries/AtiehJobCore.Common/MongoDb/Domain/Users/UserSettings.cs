@@ -5,22 +5,16 @@ namespace AtiehJobCore.Common.MongoDb.Domain.Users
 {
     public class UserSettings : ISettings
     {
+        //public bool EmailEnabled { get; set; }
+        //public bool UsernamesEnabled { get; set; }
+        //public bool MobileNumberEnabled { get; set; }
+        //public bool NationalCodeEnabled { get; set; }
+
         /// <summary>
-        /// Gets or sets a value indicating whether emails are used instead of usernames or mobile number or national code
+        /// Gets or sets a value indicating whether which are used
+        /// (national code or email or mobile number or username or national code 
         /// </summary>
-        public bool EmailEnabled { get; set; }
-        /// <summary>
-        /// Gets or sets a value indicating whether usernames are used instead of emails or mobile number or national code
-        /// </summary>
-        public bool UsernamesEnabled { get; set; }
-        /// <summary>
-        /// Gets or sets a value indicating whether mobile number are used instead of emails or usernames or national code
-        /// </summary>
-        public bool MobileNumberEnabled { get; set; }
-        /// <summary>
-        /// Gets or sets a value indicating whether national code are used instead of emails or mobile number or usernames
-        /// </summary>
-        public bool NationalCodeEnabled { get; set; }
+        public UserLoginType UserLoginType { get; set; } = UserLoginType.Email;
 
         /// <summary>
         /// Gets or sets a value indicating whether users can check the availability of usernames (when registering or changing in 'My Account')

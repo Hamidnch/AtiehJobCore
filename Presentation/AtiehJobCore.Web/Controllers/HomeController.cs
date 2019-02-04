@@ -39,8 +39,8 @@ namespace AtiehJobCore.Web.Controllers
             //var installationService = EngineContext.Current.Resolve<IInstallationService>();
             //installationService.InstallData(
             //    "Hamidnch2007@gmail.com", "Masommeh352", "", true);
-            ViewBag.CurrentUser = _workContext.CurrentUser;
-            ViewBag.CurrentLanguage = _workContext.WorkingLanguage.Name;
+            //ViewBag.CurrentUser = _workContext.CurrentUser;
+            //ViewBag.CurrentLanguage = _workContext.WorkingLanguage.Name;
             return View();
         }
         [BreadCrumb(Title = "تک ستونی", Order = 1)]

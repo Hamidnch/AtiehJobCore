@@ -52,8 +52,18 @@ using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Common.Contracts;
+
+#line default
+#line hidden
+#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models.Account;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"314f4f8d408d62021fd220d5a8873cbc25cba401", @"/Views/Shared/_Header.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7e669b73eb774d464909c0f35f3fa4900866ecf8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3b579ab313573b725426803737e39b391ee186af", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__Header : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/img/slide7.jpg"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -88,12 +98,12 @@ using AtiehJobCore.Web.Framework.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             BeginContext(0, 142, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "314f4f8d408d62021fd220d5a8873cbc25cba4016865", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "314f4f8d408d62021fd220d5a8873cbc25cba4017214", async() => {
                 BeginContext(20, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(26, 108, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "314f4f8d408d62021fd220d5a8873cbc25cba4017248", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "314f4f8d408d62021fd220d5a8873cbc25cba4017597", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -129,12 +139,12 @@ using AtiehJobCore.Web.Framework.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(144, 222, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "314f4f8d408d62021fd220d5a8873cbc25cba4019521", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "314f4f8d408d62021fd220d5a8873cbc25cba4019870", async() => {
                 BeginContext(281, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(287, 71, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "314f4f8d408d62021fd220d5a8873cbc25cba4019905", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "314f4f8d408d62021fd220d5a8873cbc25cba40110254", async() => {
                     BeginContext(331, 23, true);
                     WriteLiteral("نمایش همه فرصت های شغلی");
                     EndContext();
@@ -175,6 +185,8 @@ using AtiehJobCore.Web.Framework.Models;
             EndContext();
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public IWebHelper WebHelper { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

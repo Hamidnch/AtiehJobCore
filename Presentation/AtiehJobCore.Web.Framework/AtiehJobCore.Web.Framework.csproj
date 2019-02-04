@@ -11,6 +11,7 @@
   <ItemGroup>
     <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="2.2.1" />
     <PackageReference Include="Ben.BlockingDetector" Version="0.0.3" />
+    <PackageReference Include="BundlerMinifier.Core" Version="2.8.391" />
     <PackageReference Include="DNTCaptcha.Core" Version="1.6.7" />
     <PackageReference Include="ElmahCore" Version="1.2.3" />
     <PackageReference Include="FluentScheduler" Version="5.3.0" />

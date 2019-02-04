@@ -1,0 +1,14 @@
+﻿@{
+    var errors = ExternalAuthorizerHelper.RetrieveErrorsToDisplay(true);
+}
+@if (errors != null && errors.Any())
+{
+    <div class="external-auth-errors">
+        <ul>
+            @foreach (var error in errors)
+            {
+                <li>@error</li>
+            }
+        </ul>
+    </div>
+}

@@ -52,8 +52,18 @@ using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Common.Contracts;
+
+#line default
+#line hidden
+#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models.Account;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"12793a5a3e31cad3acfdcf55979a5cc60ff51c65", @"/Views/Shared/NotFound.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7e669b73eb774d464909c0f35f3fa4900866ecf8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3b579ab313573b725426803737e39b391ee186af", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_NotFound : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("alert alert-warning"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -95,12 +105,12 @@ using AtiehJobCore.Web.Framework.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(167, 199, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12793a5a3e31cad3acfdcf55979a5cc60ff51c655278", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12793a5a3e31cad3acfdcf55979a5cc60ff51c655627", async() => {
                 BeginContext(185, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(191, 167, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12793a5a3e31cad3acfdcf55979a5cc60ff51c655663", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12793a5a3e31cad3acfdcf55979a5cc60ff51c656012", async() => {
                     BeginContext(224, 128, true);
                     WriteLiteral("\r\n        <h1><span aria-hidden=\"true\" class=\"fas fa-warning\"></span>خطا</h1>\r\n        <h3>اطلاعات درخواستی یافت نشد.</h3>\r\n    ");
                     EndContext();
@@ -138,6 +148,8 @@ using AtiehJobCore.Web.Framework.Models;
             EndContext();
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public IWebHelper WebHelper { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

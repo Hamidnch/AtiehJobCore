@@ -1,0 +1,13 @@
+﻿@using System.Net
+@using AtiehJobCore.Common.Contracts
+@using AtiehJobCore.Web.Framework.UI
+@using AtiehJobCore.Web.Framework.Models.Account
+@using AtiehJobCore.Services.Authentication.External
+@inject IWebHelper WebHelper
+
+@inherits AtiehJobCore.Web.Framework.Web.Razor.BaseView<TModel>
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, DNTBreadCrumb.Core
+@addTagHelper *, AtiehJobCore.Web.Framework
+@addTagHelper *, AtiehJobCore.Web

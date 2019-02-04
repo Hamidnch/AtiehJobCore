@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace AtiehJobCore.Web.Framework.Validators.Install
 {
-    public class InstallValidator : BaseValidator<InstallModel>
+    public class InstallValidator : BaseAtiehJobValidator<InstallModel>
     {
         public InstallValidator(IInstallationLocalizationService locService)
         {

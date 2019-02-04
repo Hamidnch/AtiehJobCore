@@ -410,5 +410,15 @@ namespace AtiehJobCore.Common.Utilities
         public static ICustomFileProvider DefaultFileProvider { get; set; }
 
         #endregion
+
+        public static bool IsValidMobileNumber(string newMobileNumber)
+        {
+            return true;
+        }
+
+        public static bool IsValidNationalCode(string newNationalCode)
+        {
+            return true;
+        }
     }
 }

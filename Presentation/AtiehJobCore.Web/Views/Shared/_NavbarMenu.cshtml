@@ -8,7 +8,7 @@
     }*@
 
 @*navbar bg-dark navbar-dark navbar-expand-sm fixed-top*@
-<div class="navbar navbar-expand-md navbar-expand-sm navbar-light bg-light fixed-top">
+<div class="navbar navbar-expand-md navbar-expand-sm navUp navbar-light bg-light fixed-top">
     <div class="container-fluid">
         <a asp-controller="Home" asp-action="Index" asp-area="" class="navbar-brand d-none d-sm-inline-block">
             آتیه کار
@@ -69,7 +69,7 @@
                     </div>
                 }
                 <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link" asp-controller="Account" asp-action="LogOff" asp-area="Identity">
+                    <a class="nav-item nav-link" asp-controller="User" asp-action="LogOff" asp-area="Account">
                         <span class="fas fa-sign-out-alt" aria-hidden="true"></span> خروج
                     </a>
                 </div>
@@ -77,26 +77,26 @@
             else
             {
                 <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link" asp-controller="Account" asp-action="Login" asp-area="Identity">
+                    <a class="nav-item nav-link" asp-controller="User" asp-action="Login" asp-area="Account">
                         <span class="fas fa-sign-in-alt" aria-hidden="true"></span>
                         ورود
                     </a>
                 </div>
 
                 <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link" asp-controller="Account" asp-action="Register" asp-area="Identity">
+                    <a class="nav-item nav-link" asp-controller="User" asp-action="Register" asp-area="Account">
                         <span class="fas fa-plug"></span>
                         ثبت نام کارجو
                     </a>
                 </div>
                 <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link" asp-controller="Account" asp-action="Register" asp-area="Identity">
+                    <a class="nav-item nav-link" asp-controller="User" asp-action="Register" asp-area="Account">
                         <span class="fas fa-plug"></span>
                         ثبت نام کارفرما
                     </a>
                 </div>
                 <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link" asp-controller="Account" asp-action="Register" asp-area="Identity">
+                    <a class="nav-item nav-link" asp-controller="User" asp-action="Register" asp-area="Account">
                         <span class="fas fa-plug"></span>
                         ثبت نام کاریاب
                     </a>
@@ -113,9 +113,8 @@
                            placeholder="جستجو ..." id="txtSearch" name="txtSearch">
                 </div>
             </form>
-            <div class="navbar-nav ml-2 mr-auto">
-                @await Html.PartialAsync("_SelectLanguagePartial")
-            </div>
+
+            @await Component.InvokeAsync("LanguageSelector")
         </div>
     </div>
 </div>

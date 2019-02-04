@@ -17,15 +17,15 @@ namespace AtiehJobCore.Web.Infrastructure
 
             //login
             routeBuilder.MapLocalizedRoute("Login",
-                            "login/",
+                            "account/user/login/",
                             new { controller = "User", action = "Login" });
             //register
             routeBuilder.MapLocalizedRoute("Register",
-                            "register/",
+                            "account/user/register/",
                             new { controller = "User", action = "Register" });
             //logout
             routeBuilder.MapLocalizedRoute("Logout",
-                            "logout/",
+                            "account/user/logout/",
                             new { controller = "User", action = "Logout" });
 
             //contact us
@@ -94,7 +94,10 @@ namespace AtiehJobCore.Web.Infrastructure
                             "profile/{id}/page/{pageNumber}",
                             new { controller = "Profile", action = "Index" });
 
-
+            ////EU Cookie law accept button handler (AJAX link)
+            //routeBuilder.MapRoute("EuCookieLawAccept",
+            //                "eucookielawaccept",
+            //                new { controller = "Common", action = "EuCookieLawAccept" });
 
             //activate newsletters
             routeBuilder.MapLocalizedRoute("NewsletterActivation",

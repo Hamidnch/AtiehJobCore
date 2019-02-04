@@ -12,7 +12,7 @@ namespace AtiehJobCore.Web.Framework.Models
 
         public BaseMongoModel()
         {
-            this.CustomProperties = new Dictionary<string, object>();
+            CustomProperties = new Dictionary<string, object>();
             PostInitialize();
         }
 
@@ -54,7 +54,7 @@ namespace AtiehJobCore.Web.Framework.Models
     /// <summary>
     /// Represents base entity model
     /// </summary>
-    public partial class BaseGrandEntityModel : BaseMongoModel
+    public partial class BaseMongoEntityModel : BaseMongoModel
     {
         /// <summary>
         /// Gets or sets model identifier

@@ -19,6 +19,10 @@ namespace AtiehJobCore.Common.MongoDb.Domain.Seo
         /// </summary>
         public string PageTitleSeparator { get; set; }
         /// <summary>
+        /// Page title SEO adjustment
+        /// </summary>
+        public PageTitleSeoAdjustment PageTitleSeoAdjustment { get; set; }
+        /// <summary>
         /// Default title
         /// </summary>
         public string DefaultTitle { get; set; }

@@ -854,6 +854,8 @@
   <ItemGroup>
     <Folder Include="App_Data\DataProtectionKeys\" />
     <Folder Include="App_Data\Localization\Upgrade\" />
+    <Folder Include="Areas\Account\Data\" />
+    <Folder Include="Areas\Account\Models\" />
     <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Areas\Identity\Models\" />
     <Folder Include="Areas\Admin\Data\" />

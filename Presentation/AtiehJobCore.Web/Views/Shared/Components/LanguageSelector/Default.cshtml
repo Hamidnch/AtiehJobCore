@@ -1,0 +1,99 @@
+﻿@model LanguageSelectorModel
+
+@if (Model.AvailableLanguages.Count > 1)
+{
+    var rawUrl = WebHelper.GetRawUrl(HttpContextAccessor.HttpContext.Request);
+
+    if (Model.UseImages)
+    {
+        <div class="btn-group btn-group-sm float-xs-right align-self-center d-none d-lg-block pr-1">
+            <ul class="list-inline language-list pl-0 mb-0 d-flex align-items-center">
+                @foreach (var lang in Model.AvailableLanguages)
+                {
+
+                    <li class="list-inline-item">
+                        <a href="@WebHelper.ModifyQueryString(Url.RouteUrl("ChangeLanguage",
+                                     new {langId = lang.Id}),
+                                     "returnurl=" + WebUtility.UrlEncode(rawUrl), null)" title="@lang.Name">
+                            <img title='@lang.Name'
+                                 alt='@lang.Name' @(lang.Id == Model.CurrentLanguageId ? " class=selected" : null)
+                                 src="@Url.Content("~/img/flags/" + lang.FlagImageFileName) " />
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+        @*<div class="col px-0 language-list-mobile option-list-mobile text-center">
+                <h6 class="language-button mobile-option-button mb-0">Language</h6>
+                <ul class="">
+                    @foreach (var lang in Model.AvailableLanguages)
+                    {
+                        <li class="flag-lang">
+                            <a class="nav-link d-flex d-lg-none p-0"
+                               href="@WebHelper.ModifyQueryString(Url.RouteUrl("ChangeLanguage",
+                                         new {langId = lang.Id}), "returnurl=" + WebUtility.UrlEncode(rawUrl),
+                                         null)" title="@lang.Name">
+                                <img title='@lang.Name'
+                                     alt='@lang.Name' @(lang.Id == Model.CurrentLanguageId ? " class=selected" : null)
+                                     src="@Url.Content("~/img/flags/" + lang.FlagImageFileName) " />
+                            </a>
+                        </li>
+
+                    }
+                </ul>
+            </div>*@
+    }
+    else
+    {
+
+        var languages = Model.AvailableLanguages.Select(lang => new SelectListItem
+        {
+            Text = lang.Name,
+            Value = WebHelper.ModifyQueryString(Url.RouteUrl("ChangeLanguage",
+                new { langid = lang.Id }), "returnurl=" + WebUtility.UrlEncode(rawUrl), null),
+            Selected = lang.Id.Equals(Model.CurrentLanguageId)
+        });
+
+        <div>
+            <div class="navbar-nav">
+                <div class="dropdown">
+                    <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown"
+                       id="userDropdown" aria-haspopup="true"
+                       aria-expanded="false" href="#">
+                        <img class="img-thumbnail userImage" src="" alt="" asp-append-version="true"
+                             onerror="this.style.visibility = 'hidden';this.width=0; this.height=0;" />
+                        <span class="author">زبان سیستم</span>
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="userDropdown">
+
+                        @foreach (var item in languages)
+                        {
+                            var className = item.Selected ? "active" : "";
+                            <a class="dropdown-item @className" href="@item.Value">
+                                @item.Text
+                            </a>
+                        }
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*<div class="col px-0 language-list-mobile option-list-mobile text-center">
+                <h6 class="language-button mobile-option-button mb-0">Language</h6>
+                <ul class="">
+                    @foreach (var item in languages)
+                    {
+                        var className = item.Selected ? "active" : "";
+                        <li class="@className">
+                            <a href="@item.Value" class="nav-link d-flex d-lg-none p-0">
+                                @item.Text
+                            </a>
+                        </li>
+
+                    }
+                </ul>
+            </div>*@
+    }
+}

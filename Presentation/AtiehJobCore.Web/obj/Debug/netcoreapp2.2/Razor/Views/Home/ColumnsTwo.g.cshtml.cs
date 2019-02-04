@@ -52,8 +52,18 @@ using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Common.Contracts;
+
+#line default
+#line hidden
+#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models.Account;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9e28455264020bffffb001b75ba8288cd56949a6", @"/Views/Home/ColumnsTwo.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7e669b73eb774d464909c0f35f3fa4900866ecf8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3b579ab313573b725426803737e39b391ee186af", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_ColumnsTwo : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         #pragma warning disable 1998
@@ -71,6 +81,8 @@ using AtiehJobCore.Web.Framework.Models;
             EndContext();
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public IWebHelper WebHelper { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

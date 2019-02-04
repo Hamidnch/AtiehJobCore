@@ -121,17 +121,17 @@ namespace AtiehJobCore.Services.MongoDb.Installation
                 EncryptionKey = CommonHelper.GenerateRandomDigitCode(24),
                 AdminAreaAllowedIpAddresses = null,
                 EnableXsrfProtectionForAdminArea = true,
-                EnableXsrfProtectionForPublicStore = true,
+                EnableXsrfProtection = true,
                 HoneypotEnabled = false,
                 HoneypotInputName = "hpinput",
                 AllowNonAsciiCharInHeaders = true,
             });
             settingService.SaveSetting(new UserSettings
             {
-                UsernamesEnabled = false,
+                UserLoginType = UserLoginType.Email,
                 CheckUsernameAvailabilityEnabled = false,
                 AllowUsersToChangeUsernames = false,
-                DefaultPasswordFormat = PasswordFormat.Hashed,
+                DefaultPasswordFormat = PasswordFormat.Clear,
                 HashedPasswordFormat = "SHA1",
                 PasswordMinLength = 6,
                 PasswordRecoveryLinkDaysValid = 7,
@@ -197,16 +197,28 @@ namespace AtiehJobCore.Services.MongoDb.Installation
         }
         protected virtual void InstallLanguages()
         {
-            var language = new Language
+            var enLanguage = new Language
             {
                 Name = "English",
                 LanguageCulture = "en-US",
                 UniqueSeoCode = "en",
                 FlagImageFileName = "us.png",
                 Published = true,
-                DisplayOrder = 1
+                DisplayOrder = 0
             };
-            _languageRepository.Insert(language);
+            _languageRepository.Insert(enLanguage);
+
+            var faLanguage = new Language
+            {
+                Name = "Persian",
+                LanguageCulture = "fa-IR",
+                UniqueSeoCode = "fa",
+                FlagImageFileName = "ir.png",
+                Published = true,
+                DisplayOrder = 1,
+                Rtl = true
+            };
+            _languageRepository.Insert(faLanguage);
         }
         protected virtual void InstallLocaleResources()
         {

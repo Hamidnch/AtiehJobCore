@@ -52,8 +52,18 @@ using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Common.Contracts;
+
+#line default
+#line hidden
+#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models.Account;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e05e446eb17c7e4b3f481afd864d450ddc029c63", @"/Views/Shared/_ColumnsOneLayout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7e669b73eb774d464909c0f35f3fa4900866ecf8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3b579ab313573b725426803737e39b391ee186af", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__ColumnsOneLayout : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("id", new global::Microsoft.AspNetCore.Html.HtmlString("first-column"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -90,7 +100,7 @@ using AtiehJobCore.Web.Framework.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(39, 161, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e05e446eb17c7e4b3f481afd864d450ddc029c635148", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e05e446eb17c7e4b3f481afd864d450ddc029c635497", async() => {
                 BeginContext(112, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
@@ -133,6 +143,8 @@ Write(await RenderSectionAsync("Scripts", required: false));
             EndContext();
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public IWebHelper WebHelper { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

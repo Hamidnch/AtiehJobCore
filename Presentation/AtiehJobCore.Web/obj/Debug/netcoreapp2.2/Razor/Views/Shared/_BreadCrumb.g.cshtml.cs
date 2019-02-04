@@ -52,8 +52,18 @@ using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Common.Contracts;
+
+#line default
+#line hidden
+#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models.Account;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2ebd2d6c1734d9894385ef9a67ff67e489d5f39d", @"/Views/Shared/_BreadCrumb.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7e669b73eb774d464909c0f35f3fa4900866ecf8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3b579ab313573b725426803737e39b391ee186af", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__BreadCrumb : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-homepage-title", "خانه", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -85,27 +95,27 @@ using AtiehJobCore.Web.Framework.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             BeginContext(0, 476, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ebd2d6c1734d9894385ef9a67ff67e489d5f39d5880", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ebd2d6c1734d9894385ef9a67ff67e489d5f39d6229", async() => {
                 BeginContext(29, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(35, 433, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ebd2d6c1734d9894385ef9a67ff67e489d5f39d6263", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ebd2d6c1734d9894385ef9a67ff67e489d5f39d6612", async() => {
                     BeginContext(52, 10, true);
                     WriteLiteral("\r\n        ");
                     EndContext();
                     BeginContext(62, 394, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ebd2d6c1734d9894385ef9a67ff67e489d5f39d6671", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ebd2d6c1734d9894385ef9a67ff67e489d5f39d7020", async() => {
                         BeginContext(90, 14, true);
                         WriteLiteral("\r\n            ");
                         EndContext();
                         BeginContext(104, 336, false);
-                        __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ebd2d6c1734d9894385ef9a67ff67e489d5f39d7104", async() => {
+                        __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ebd2d6c1734d9894385ef9a67ff67e489d5f39d7453", async() => {
                             BeginContext(109, 18, true);
                             WriteLiteral("\r\n                ");
                             EndContext();
                             BeginContext(127, 293, false);
-                            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("breadcrumb", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ebd2d6c1734d9894385ef9a67ff67e489d5f39d7562", async() => {
+                            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("breadcrumb", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ebd2d6c1734d9894385ef9a67ff67e489d5f39d7911", async() => {
                                 BeginContext(389, 18, true);
                                 WriteLiteral("\r\n                ");
                                 EndContext();
@@ -208,6 +218,8 @@ __DNTBreadCrumb_Core_BreadCrumbTagHelper.BootstrapVersion = global::DNTBreadCrum
             EndContext();
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public IWebHelper WebHelper { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

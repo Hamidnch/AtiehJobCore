@@ -1,4 +1,5 @@
 ﻿using AtiehJobCore.Common.Constants;
+using AtiehJobCore.Common.Enums.MongoDb;
 using AtiehJobCore.Common.MongoDb.Domain.Users;
 using AtiehJobCore.Services.MongoDb.Users;
 using Microsoft.AspNetCore.Authentication;
@@ -127,7 +128,8 @@ namespace AtiehJobCore.Services.Authentication
             if (!authenticateResult.Succeeded) return null;
 
             User user = null;
-            if (_userSettings.MobileNumberEnabled)
+            var userLoginType = _userSettings.UserLoginType;
+            if (userLoginType == UserLoginType.MobileNumber)
             {
                 //try to get user by mobile number
                 var mobileNumberClaim = authenticateResult.Principal.FindFirst(
@@ -137,7 +139,7 @@ namespace AtiehJobCore.Services.Authentication
                 if (mobileNumberClaim != null)
                     user = _userService.GetUserByMobileNumber(mobileNumberClaim.Value);
             }
-            else if (_userSettings.NationalCodeEnabled)
+            else if (userLoginType == UserLoginType.NationalCode)
             {
                 //try to get user by mobile number
                 var nationalCodeClaim = authenticateResult.Principal.FindFirst(
@@ -147,7 +149,7 @@ namespace AtiehJobCore.Services.Authentication
                 if (nationalCodeClaim != null)
                     user = _userService.GetUserByNationalCode(nationalCodeClaim.Value);
             }
-            else if (_userSettings.UsernamesEnabled)
+            else if (userLoginType == UserLoginType.Username)
             {
                 //try to get user by username
                 var usernameClaim = authenticateResult.Principal.FindFirst(claim => claim.Type == ClaimTypes.Name
@@ -155,7 +157,7 @@ namespace AtiehJobCore.Services.Authentication
                 if (usernameClaim != null)
                     user = _userService.GetUserByUsername(usernameClaim.Value);
             }
-            else if (_userSettings.EmailEnabled)
+            else if (userLoginType == UserLoginType.Email)
             {
                 //try to get user by email
                 var emailClaim = authenticateResult.Principal.FindFirst(claim => claim.Type == ClaimTypes.Email

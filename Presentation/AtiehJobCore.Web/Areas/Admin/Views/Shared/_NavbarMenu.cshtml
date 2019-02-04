@@ -4,7 +4,7 @@
     </li>
 </ul>
 
-<ul class="nav navbar-nav @(IsRtl() ?"ml-auto" : "mr-auto")">
+<ul class="nav navbar-nav @(IsRtl ?"ml-auto" : "mr-auto")">
     <li class="nav-item d-md-down-none">
         <a class="nav-link" href="#">
             <i class="icon-bell"></i>
@@ -72,7 +72,7 @@
         </div>
     </li>
 </ul>
-<ul class="nav navbar-nav @(IsRtl() ?"ml-auto" : "mr-auto")">
+<ul class="nav navbar-nav @(IsRtl ?"ml-auto" : "mr-auto")">
     <li>
         @await Html.PartialAsync("_SelectLanguagePartial")
     </li>

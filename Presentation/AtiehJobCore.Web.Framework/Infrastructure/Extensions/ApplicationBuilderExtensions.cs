@@ -1,4 +1,6 @@
-﻿using AtiehJobCore.Common.Configuration;
+﻿using System.Globalization;
+using System.Threading.Tasks;
+using AtiehJobCore.Common.Configuration;
 using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Http;
 using AtiehJobCore.Common.Infrastructure;
@@ -15,8 +17,8 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.Net.Http.Headers;
-using System.Threading.Tasks;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 {
@@ -184,6 +186,29 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
         {
             application.UseMiddleware<AuthenticationMiddleware>();
         }
+
+
+        /// <summary>
+        /// Configure Localization
+        /// </summary>
+        /// <param name="application">Builder for configuring an application's request pipeline</param>
+        public static void UseAtiehJobLocalization(this IApplicationBuilder application)
+        {
+            var supportedCultures = new[]
+            {
+                new CultureInfo("en-US"),
+                new CultureInfo("fa-IR")
+            };
+            application.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("fa-IR"),
+                // تاریخ، ساعت و واحد پولی و نحوه‌ی مقایسه‌ی حروف و مرتب سازی آن‌ها
+                SupportedCultures = supportedCultures,
+                // تعیین فایل ریسورس برنامه resx
+                SupportedUICultures = supportedCultures
+            });
+        }
+
 
         /// <summary>
         /// Configure MVC routing

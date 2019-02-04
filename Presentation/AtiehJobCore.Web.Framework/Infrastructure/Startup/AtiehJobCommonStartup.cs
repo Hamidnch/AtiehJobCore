@@ -84,7 +84,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
                 application.UseAtiehJobPoweredBy();
 
             //use request localization
-            application.UseRequestLocalization();
+            //application.UseRequestLocalization();
+            application.UseAtiehJobLocalization();
         }
 
         /// <inheritdoc />

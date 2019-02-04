@@ -1,4 +1,8 @@
-﻿using AtiehJobCore.Common.Configuration;
+﻿using System;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using AtiehJobCore.Common.Configuration;
 using AtiehJobCore.Common.Contracts;
 using AtiehJobCore.Common.Extensions;
 using AtiehJobCore.Common.Infrastructure;
@@ -34,10 +38,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using System;
-using System.Globalization;
-using System.IO;
-using System.Linq;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 {

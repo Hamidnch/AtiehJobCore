@@ -52,8 +52,18 @@ using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Common.Contracts;
+
+#line default
+#line hidden
+#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models.Account;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d2e21d3ec6980ed584812e38e2b2acc612f2a4cc", @"/Views/Home/ColumnsOne.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7e669b73eb774d464909c0f35f3fa4900866ecf8", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3b579ab313573b725426803737e39b391ee186af", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_ColumnsOne : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         #line hidden
@@ -102,7 +112,7 @@ using AtiehJobCore.Web.Framework.Models;
             WriteLiteral("\r\n<h1>OneColumn</h1>\r\n");
             EndContext();
             BeginContext(582, 11, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d2e21d3ec6980ed584812e38e2b2acc612f2a4cc4892", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d2e21d3ec6980ed584812e38e2b2acc612f2a4cc5241", async() => {
             }
             );
             __AtiehJobCore_Web_TagHelpers_VisibilityTagHelper = CreateTagHelper<global::AtiehJobCore.Web.TagHelpers.VisibilityTagHelper>();
@@ -129,7 +139,7 @@ Write(T("account.avatar"));
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(621, 43, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d2e21d3ec6980ed584812e38e2b2acc612f2a4cc6276", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d2e21d3ec6980ed584812e38e2b2acc612f2a4cc6625", async() => {
                 BeginContext(627, 31, false);
 #line 24 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\Home\ColumnsOne.cshtml"
 Write(DateTime.Now.ToLongDateString());
@@ -154,6 +164,8 @@ Write(DateTime.Now.ToLongDateString());
             EndContext();
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
+        public IWebHelper WebHelper { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

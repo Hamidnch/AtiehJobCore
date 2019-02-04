@@ -5,7 +5,7 @@
       "source/customs/style.css",
       "source/bootstrap/bootstrap.min.css"
     ],
-    "minify": {
+    "minify": { 
       "enabled": false,
       "renameLocals": false,
       "adjustRelativePaths": false
@@ -34,8 +34,8 @@
       "source/font-awesome/fa-solid.min.css",
       "source/font-awesome/fontawesome-all.min.css",
       "source/sweetalert2/sweetalert2.min.css",
-      "source/customs/custom.min.css"
-    ],
+      "source/customs/custom.min.css" 
+    ],     
     "minify": {
       "enabled": true,
       "renameLocals": false,

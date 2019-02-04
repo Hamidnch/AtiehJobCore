@@ -1,5 +1,5 @@
-﻿using AtiehJobCore.Common.Configuration;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using AtiehJobCore.Common.Configuration;
 
 namespace AtiehJobCore.Common.MongoDb.Domain.Security
 {
@@ -23,7 +23,7 @@ namespace AtiehJobCore.Common.MongoDb.Domain.Security
         /// <summary>
         /// Gets or sets a value indicating whether XSRF protection for public store should be enabled
         /// </summary>
-        public bool EnableXsrfProtectionForPublicStore { get; set; }
+        public bool EnableXsrfProtection { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether honeypot is enabled on the registration page

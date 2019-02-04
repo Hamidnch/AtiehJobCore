@@ -333,3 +333,10 @@ D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcorea
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.Views.pdb
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.csproj.CopyComplete
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Upgrade\Index.g.cshtml.cs
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\LanguageSelector\Default.g.cshtml.cs
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Account\Views\_ViewImports.g.cshtml.cs
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Account\Views\_ViewStart.g.cshtml.cs
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\ExternalMethods\Default.g.cshtml.cs
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Account\Views\User\Login.g.cshtml.cs
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Account\Views\User\_ExternalAuthentication.Errors.g.cshtml.cs
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\EuCookieLaw\Default.g.cshtml.cs

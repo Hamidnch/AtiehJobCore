@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "db10ab16602aa8c7e3b4c0e7e729ff19b8df898a"
+    "signature": "27c79b970df428f0e90b9933e010b10e42843186"
   },
   "compilationOptions": {},
   "targets": {
@@ -15,6 +15,7 @@
           "AtiehJobCore.Services": "1.0.0",
           "AtiehJobCore.ViewModel": "1.0.0",
           "Ben.BlockingDetector": "0.0.3",
+          "BundlerMinifier.Core": "2.8.391",
           "DNTCaptcha.Core": "1.6.7",
           "ElmahCore": "1.2.3",
           "FluentScheduler": "5.3.0",
@@ -110,6 +111,18 @@
           "lib/netstandard2.0/Ben.BlockingDetector.dll": {
             "assemblyVersion": "0.0.3.0",
             "fileVersion": "0.0.3.0"
+          }
+        }
+      },
+      "BundlerMinifier.Core/2.8.391": {
+        "dependencies": {
+          "NUglify": "1.5.11",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/dotnet-bundle.dll": {
+            "assemblyVersion": "2.8.391.0",
+            "fileVersion": "2.8.391.0"
           }
         }
       },
@@ -2036,6 +2049,18 @@
           }
         }
       },
+      "NUglify/1.5.11": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "System.Security.Cryptography.Algorithms": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NUglify.dll": {
+            "assemblyVersion": "1.5.11.0",
+            "fileVersion": "1.5.11.0"
+          }
+        }
+      },
       "Portable.BouncyCastle/1.8.2": {
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
@@ -3766,6 +3791,13 @@
       "path": "ben.blockingdetector/0.0.3",
       "hashPath": "ben.blockingdetector.0.0.3.nupkg.sha512"
     },
+    "BundlerMinifier.Core/2.8.391": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I1FScX7XjqSnwDXyOlb6YjY94qi17QItoCKO9VJsCq+2pneKh73mIKcwrV7hijD0t1L1/2v6j+triavjdpblOw==",
+      "path": "bundlerminifier.core/2.8.391",
+      "hashPath": "bundlerminifier.core.2.8.391.nupkg.sha512"
+    },
     "cloudscribe.Pagination.Models/1.0.4": {
       "type": "package",
       "serviceable": true,
@@ -4710,6 +4742,13 @@
       "sha512": "sha512-W5Ke5xei9yS0ljQZuT75VgSp5M43eCPm5hHAelvKyGGU4dV7hYCmtwdsxoADb/exO6pYHeu/Iki43TdYPzfESQ==",
       "path": "newtonsoft.json.bson/1.0.1",
       "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
+    },
+    "NUglify/1.5.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BsEI6jqtDNsvW0TIkX7susL1xNvBbGlnuIveQqGa36JJv9At5iiHHy3ehUv3K5Hg9PBITPn1PnIUOLw53pOSCA==",
+      "path": "nuglify/1.5.11",
+      "hashPath": "nuglify.1.5.11.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.8.2": {
       "type": "package",
