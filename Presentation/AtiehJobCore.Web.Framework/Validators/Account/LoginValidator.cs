@@ -6,7 +6,7 @@ using FluentValidation;
 
 namespace AtiehJobCore.Web.Framework.Validators.Account
 {
-    public class LoginValidator : BaseAtiehJobValidator<LoginModel>
+    public class LoginValidator : BaseMongoValidator<LoginModel>
     {
         public LoginValidator(ILocalizationService localizationService, UserSettings userSettings)
         {

@@ -1,8 +1,77 @@
-﻿<head>
+﻿@using AtiehJobCore.Common.MongoDb.Domain.Localization
+@using AtiehJobCore.Common.MongoDb.Domain.Common
+@using AtiehJobCore.Web.Framework.UI
+
+@inject CommonSettings CommonSettings
+@inject LocalizationSettings LocalizationSettings
+@inject AdminAreaSettings AdminAreaSettings
+@{
+    var isRtl = this.IsRtl && !LocalizationSettings.IgnoreRtlPropertyForAdminArea;
+    var kendoLayout = AdminAreaSettings.KendoLayout;
+
+    //page title
+    var adminPageTitle = "";
+    if (!string.IsNullOrWhiteSpace(ViewBag.Title))
+    {
+        adminPageTitle = ViewBag.Title + " / ";
+    }
+    adminPageTitle += T("Admin.PageTitle").Text;
+
+    //X-UA-Compatible tag
+    if (CommonSettings.RenderXuaCompatible)
+    {
+        Html.AppendHeadCustomParts($"<meta http-equiv=\"X-UA-Compatible\" content=\"{CommonSettings.XuaCompatibleValue}\"/>");
+    }
+
+    @*<link rel="stylesheet" asp-href-include="/css/admin/admin.min.css" asp-append-version="true" />*@
+    Html.AddCssFileParts("/css/admin/admin.min.css", excludeFromBundle: true);
+    if (isRtl)
+    {
+        Html.AddCssFileParts("/css/admin/kendo/kendo.rtl.min.css", excludeFromBundle: true);
+    }
+    Html.AddCssFileParts($"/css/admin/kendo/kendo.{kendoLayout}.min.css", excludeFromBundle: true);
+    Html.AddCssFileParts("/css/admin/kendo/kendo.common.min.css", excludeFromBundle: true);
+    Html.AddCssFileParts("/css/admin/jquery-ui/jquery-ui.min.css", excludeFromBundle: true);
+
+
+    //js
+
+    Html.AppendScriptParts(ResourceLocation.Footer, "/js/admin/kendo/cultures/kendo.culture.en-US.min.js", excludeFromBundle: true);
+    Html.AppendScriptParts(ResourceLocation.Footer, $"/js/admin/kendo/cultures/kendo.culture.{CultureInfo.CurrentCulture.Name}.min.js", excludeFromBundle: true);
+    Html.AppendScriptParts(ResourceLocation.Footer, "/js/admin/kendo/kendo.grid.min.js", excludeFromBundle: true);
+    Html.AppendScriptParts(ResourceLocation.Footer, "/js/admin/kendo/kendo.ui.core.min.js", excludeFromBundle: true);
+    Html.AppendScriptParts(ResourceLocation.Footer, "/js/admin/admin.common.min.js", excludeFromBundle: true);
+    Html.AppendScriptParts(ResourceLocation.Footer, "/js/admin/jquery-ui/jquery-ui.min.js", excludeFromBundle: true);
+
+    //Html.AddScriptParts("~/scripts/jquery.validate.unobtrusive.min.js", excludeFromBundle: true);
+    //Html.AddScriptParts("~/scripts/jquery.validate.min.js", excludeFromBundle: true);
+    Html.AppendScriptParts(ResourceLocation.Footer, "/js/admin/admin.search.min.js", excludeFromBundle: true);
+
+    //Html.AddScriptParts("~/scripts/typeahead.js", excludeFromBundle: true);
+    //Html.AddScriptParts("~/administration/layout/js/layout.js", excludeFromBundle: true);
+    //Html.AddScriptParts("~/administration/global/js/jquery.cookieBar.min.js", excludeFromBundle: true);
+    //Html.AddScriptParts("~/administration/global/js/app.js", excludeFromBundle: true);
+    //Html.AddScriptParts("~/administration/bootstrap/js/daterangepicker.min.js", excludeFromBundle: true);
+    //Html.AddScriptParts("~/administration/global/js/moment.min.js", excludeFromBundle: true);
+    //Html.AddScriptParts("~/administration/bootstrap/js/bootstrap.min.js", excludeFromBundle: true);
+    //Html.AddScriptParts("~/administration/global/js/jquery.min.js", excludeFromBundle: true);
+
+    Html.AppendScriptParts(ResourceLocation.Head, "/js/jqueryAll.min.js", excludeFromBundle: true);
+    Html.AppendScriptParts(ResourceLocation.Footer, "/js/admin/admin.min.js", excludeFromBundle: true);
+
+    @*<script type="text/javascript" asp-src-include="/js/jqueryAll.min.js" asp-append-version="true"></script>
+        <script type="text/javascript" asp-src-include="/js/admin/admin.min.js" asp-append-version="true"></script>*@
+
+}
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@ViewBag.Title</title>
+    <title>@adminPageTitle</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" asp-href-include="/css/admin/admin.min.css" asp-append-version="true" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    @Html.AtiehJobHeadCustom()
+    @Html.AtiehJobCssFiles(this.Url, ResourceLocation.Head, false)
+    @Html.AtiehJobScripts(this.Url, ResourceLocation.Head, false)
+
 </head>

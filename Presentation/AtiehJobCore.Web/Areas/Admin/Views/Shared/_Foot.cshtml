@@ -1,2 +1,38 @@
-﻿<script type="text/javascript" asp-src-include="/js/jqueryAll.min.js" asp-append-version="true"></script>
-<script type="text/javascript" asp-src-include="/js/admin/admin.min.js" asp-append-version="true"></script>
+﻿@*@using AtiehJobCore.Common.MongoDb.Domain.Localization
+    @using AtiehJobCore.Common.MongoDb.Domain.Common*@
+@using AtiehJobCore.Web.Framework.UI
+@*@inject LocalizationSettings LocalizationSettings
+    @inject AdminAreaSettings AdminAreaSettings*@
+@*@{
+        var isRtl = this.IsRtl && !LocalizationSettings.IgnoreRtlPropertyForAdminArea;
+        var adminLayout = AdminAreaSettings.AdminLayout;
+        var kendoLayout = AdminAreaSettings.KendoLayout;
+    }*@
+
+@Html.AtiehJobCssFiles(this.Url, ResourceLocation.Footer)
+@Html.AtiehJobScripts(this.Url, ResourceLocation.Footer)
+
+@*<script type="text/javascript" asp-src-include="/js/jqueryAll.min.js" asp-append-version="true"></script>
+    <script type="text/javascript" asp-src-include="/js/admin/admin.min.js" asp-append-version="true"></script>
+    @{
+        Html.AddScriptParts(ResourceLocation.Footer, "/js/admin/kendo/cultures/kendo.culture.en-US.min.js", excludeFromBundle: true);
+        Html.AddScriptParts(ResourceLocation.Footer, $"/js/admin/kendo/cultures/kendo.culture.{CultureInfo.CurrentCulture.Name}.min.js", excludeFromBundle: true);
+
+        Html.AddScriptParts(ResourceLocation.Footer, "/js/admin/kendo/kendo.grid.js", excludeFromBundle: true);
+        Html.AddScriptParts(ResourceLocation.Footer, "/js/admin/kendo/kendo.ui.core.js", excludeFromBundle: true);
+        Html.AddScriptParts(ResourceLocation.Footer, "/js/admin/admin.common.min.js", excludeFromBundle: true);
+        Html.AddScriptParts(ResourceLocation.Footer, "/js/admin/jquery-ui/jquery-ui.min.js", excludeFromBundle: true);
+
+        //Html.AddScriptParts("~/scripts/jquery.validate.unobtrusive.min.js", excludeFromBundle: true);
+        //Html.AddScriptParts("~/scripts/jquery.validate.min.js", excludeFromBundle: true);
+        Html.AddScriptParts(ResourceLocation.Footer, "/js/admin/admin.search.min.js", excludeFromBundle: true);
+
+        //Html.AddScriptParts("~/scripts/typeahead.js", excludeFromBundle: true);
+        //Html.AddScriptParts("~/administration/layout/js/layout.js", excludeFromBundle: true);
+        //Html.AddScriptParts("~/administration/global/js/jquery.cookieBar.min.js", excludeFromBundle: true);
+        //Html.AddScriptParts("~/administration/global/js/app.js", excludeFromBundle: true);
+        //Html.AddScriptParts("~/administration/bootstrap/js/daterangepicker.min.js", excludeFromBundle: true);
+        //Html.AddScriptParts("~/administration/global/js/moment.min.js", excludeFromBundle: true);
+        //Html.AddScriptParts("~/administration/bootstrap/js/bootstrap.min.js", excludeFromBundle: true);
+        //Html.AddScriptParts("~/administration/global/js/jquery.min.js", excludeFromBundle: true);
+    }*@

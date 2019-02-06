@@ -186,6 +186,26 @@ namespace AtiehJobCore.Services.MongoDb.Installation
                 LoadAllUrlRecordsOnStartup = false,
                 IgnoreRtlPropertyForAdminArea = false,
             });
+
+            settingService.SaveSetting(new CommonSettings
+            {
+                StoreInDatabaseContactUsForm = true,
+                UseSystemEmailForContactUsForm = true,
+                UseStoredProceduresIfSupported = true,
+                SitemapEnabled = true,
+                SitemapIncludeCategories = true,
+                SitemapIncludeManufacturers = true,
+                SitemapIncludeProducts = false,
+                DisplayJavaScriptDisabledWarning = false,
+                UseFullTextSearch = false,
+                FullTextMode = FulltextSearchMode.ExactMatch,
+                Log404Errors = true,
+                BreadcrumbDelimiter = "/",
+                RenderXuaCompatible = false,
+                XuaCompatibleValue = "IE=edge",
+                DeleteGuestTaskOlderThanMinutes = 1440,
+                PopupForTermsOfServiceLinks = true
+            });
         }
         protected virtual void InstallVersion()
         {

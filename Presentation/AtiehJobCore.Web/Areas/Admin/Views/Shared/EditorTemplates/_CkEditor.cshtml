@@ -1,0 +1,21 @@
+﻿@using AtiehJobCore.Web.Framework.UI
+@model string
+
+@Html.TextArea("", Model, new { @class = "" })
+
+@{
+    Html.AddScriptParts("~/wwwwroot/js/ckeditor/ckeditor.js", excludeFromBundle: true);
+}
+
+<script type="text/javascript">
+    $(document).ready(function ()
+    {
+        var id = "@ViewData.TemplateInfo.HtmlFieldPrefix";
+        var ck = CKEDITOR.instances[id];
+        if (ck)//check if instance exist
+        {
+            CKEDITOR.remove(ck);
+        }
+        CKEDITOR.replace(id);
+    });
+</script>

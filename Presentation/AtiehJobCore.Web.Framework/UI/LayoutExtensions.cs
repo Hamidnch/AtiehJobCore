@@ -3,7 +3,6 @@ using AtiehJobCore.Web.Framework.Services;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Reflection;
 
 namespace AtiehJobCore.Web.Framework.UI
 {
@@ -39,7 +38,7 @@ namespace AtiehJobCore.Web.Framework.UI
         /// <param name="addDefaultTitle">A value indicating whether to insert a default title</param>
         /// <param name="part">Title part</param>
         /// <returns>Generated string</returns>
-        public static IHtmlContent GrandTitle(this IHtmlHelper html, bool addDefaultTitle = true, string part = "")
+        public static IHtmlContent AtiehJobTitle(this IHtmlHelper html, bool addDefaultTitle = true, string part = "")
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
             html.AppendTitleParts(part);
@@ -73,7 +72,7 @@ namespace AtiehJobCore.Web.Framework.UI
         /// <param name="html">HTML helper</param>
         /// <param name="part">Meta description part</param>
         /// <returns>Generated string</returns>
-        public static IHtmlContent GrandMetaDescription(this IHtmlHelper html, string part = "")
+        public static IHtmlContent AtiehJobMetaDescription(this IHtmlHelper html, string part = "")
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
             html.AppendMetaDescriptionParts(part);
@@ -107,7 +106,7 @@ namespace AtiehJobCore.Web.Framework.UI
         /// <param name="html">HTML helper</param>
         /// <param name="part">Meta keyword part</param>
         /// <returns>Generated string</returns>
-        public static IHtmlContent GrandMetaKeywords(this IHtmlHelper html, string part = "")
+        public static IHtmlContent AtiehJobMetaKeywords(this IHtmlHelper html, string part = "")
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
             html.AppendMetaKeywordParts(part);
@@ -179,7 +178,7 @@ namespace AtiehJobCore.Web.Framework.UI
         /// <param name="location">A location of the script element</param>
         /// <param name="bundleFiles">A value indicating whether to bundle script elements</param>
         /// <returns>Generated string</returns>
-        public static IHtmlContent GrandScripts(this IHtmlHelper html, IUrlHelper urlHelper, ResourceLocation location, bool? bundleFiles = null)
+        public static IHtmlContent AtiehJobScripts(this IHtmlHelper html, IUrlHelper urlHelper, ResourceLocation location, bool? bundleFiles = null)
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
             return new HtmlString(pageHeadBuilder.GenerateScripts(urlHelper, location, bundleFiles));
@@ -244,7 +243,7 @@ namespace AtiehJobCore.Web.Framework.UI
         /// <param name="location">A location of the script element</param>
         /// <param name="bundleFiles">A value indicating whether to bundle script elements</param>
         /// <returns>Generated string</returns>
-        public static IHtmlContent GrandCssFiles(this IHtmlHelper html, IUrlHelper urlHelper, ResourceLocation location, bool? bundleFiles = null)
+        public static IHtmlContent AtiehJobCssFiles(this IHtmlHelper html, IUrlHelper urlHelper, ResourceLocation location, bool? bundleFiles = null)
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
             return new HtmlString(pageHeadBuilder.GenerateCssFiles(urlHelper, location, bundleFiles));
@@ -276,7 +275,7 @@ namespace AtiehJobCore.Web.Framework.UI
         /// <param name="html">HTML helper</param>
         /// <param name="part">Canonical URL part</param>
         /// <returns>Generated string</returns>
-        public static IHtmlContent GrandCanonicalUrls(this IHtmlHelper html, string part = "")
+        public static IHtmlContent AtiehJobCanonicalUrls(this IHtmlHelper html, string part = "")
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
             html.AppendCanonicalUrlParts(part);
@@ -309,7 +308,7 @@ namespace AtiehJobCore.Web.Framework.UI
         /// </summary>
         /// <param name="html">HTML helper</param>
         /// <returns>Generated string</returns>
-        public static IHtmlContent GrandHeadCustom(this IHtmlHelper html)
+        public static IHtmlContent AtiehJobHeadCustom(this IHtmlHelper html)
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
             return new HtmlString(pageHeadBuilder.GenerateHeadCustom());
@@ -343,7 +342,7 @@ namespace AtiehJobCore.Web.Framework.UI
         /// <param name="part">CSS class</param>
         /// <param name="includeClassElement">A value indicating whether to include "class" attributes</param>
         /// <returns>Generated string</returns>
-        public static IHtmlContent GrandPageCssClasses(this IHtmlHelper html, string part = "", bool includeClassElement = true)
+        public static IHtmlContent AtiehJobPageCssClasses(this IHtmlHelper html, string part = "", bool includeClassElement = true)
         {
             var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
             html.AppendPageCssClassParts(part);

@@ -5,12 +5,12 @@
       "source/customs/style.css",
       "source/bootstrap/bootstrap.min.css"
     ],
-    "minify": { 
+    "minify": {
       "enabled": false,
       "renameLocals": false,
       "adjustRelativePaths": false
     }
-  }, 
+  },
   {
     "outputFileName": "wwwroot/js/install.min.js",
     "inputFiles": [
@@ -34,8 +34,8 @@
       "source/font-awesome/fa-solid.min.css",
       "source/font-awesome/fontawesome-all.min.css",
       "source/sweetalert2/sweetalert2.min.css",
-      "source/customs/custom.min.css" 
-    ],     
+      "source/customs/custom.min.css"
+    ],
     "minify": {
       "enabled": true,
       "renameLocals": false,
@@ -62,7 +62,8 @@
       "source/font-awesome/fontawesome-all.min.css",
       "source/core-ui/simple-line-icons/css/simple-line-icons.min.css",
       "source/core-ui/css/coreui.min.css",
-      "source/core-ui/pace/pace.min.css"
+      "source/core-ui/pace/pace.min.css",
+      "source/customs/admin/admin.custom.min.css" 
     ],
     "minify": {
       "enabled": false,
@@ -121,6 +122,24 @@
     "outputFileName": "source/customs/custom.min.css",
     "inputFiles": [
       "source/customs/custom.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/admin/kendo/kendo.ui.core.min.js",
+    "inputFiles": [
+      "wwwroot/js/admin/kendo/kendo.ui.core.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/admin/admin.search.min.js",
+    "inputFiles": [
+      "wwwroot/js/admin/admin.search.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/admin/admin.common.min.js",
+    "inputFiles": [
+      "wwwroot/js/admin/admin.common.js"
     ]
   }
 ]

@@ -8,7 +8,7 @@ namespace AtiehJobCore.Web.Areas.Admin.Controllers
     [Area(AreaNames.Admin)]
     [Authorize]
     [BreadCrumb(Title = "بخش مدیریت", UseDefaultRouteUrl = true, Order = 0)]
-    public class HomeController : Controller
+    public class HomeController : BaseAdminController
     {
         [BreadCrumb(Title = "صفحه اصلی", Order = 1)]
         public IActionResult Index()

@@ -134,6 +134,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
             builder.RegisterType<UserRegistrationService>().As<IUserRegistrationService>().InstancePerLifetimeScope();
             builder.RegisterType<UserActivityService>().As<IUserActivityService>().InstancePerLifetimeScope();
             builder.RegisterType<PageHeadBuilder>().As<IPageHeadBuilder>().InstancePerLifetimeScope();
+            builder.RegisterType<PermissionService>().As<IPermissionService>().InstancePerLifetimeScope();
+
             builder.RegisterType<EncryptionService>().As<IEncryptionService>().InstancePerLifetimeScope();
             var databaseInstalled = DataSettingsHelper.DatabaseIsInstalled();
             if (!databaseInstalled)

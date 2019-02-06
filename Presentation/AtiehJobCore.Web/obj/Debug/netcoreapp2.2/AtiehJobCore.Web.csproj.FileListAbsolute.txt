@@ -340,3 +340,5 @@ D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcorea
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Account\Views\User\Login.g.cshtml.cs
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Account\Views\User\_ExternalAuthentication.Errors.g.cshtml.cs
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\EuCookieLaw\Default.g.cshtml.cs
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Language\List.g.cshtml.cs
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Shared\EditorTemplates\_CkEditor.g.cshtml.cs
