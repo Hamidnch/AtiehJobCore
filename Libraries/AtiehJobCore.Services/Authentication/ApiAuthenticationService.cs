@@ -1,6 +1,6 @@
-﻿using AtiehJobCore.Common.Configuration;
-using AtiehJobCore.Common.MongoDb.Domain.Users;
-using AtiehJobCore.Services.MongoDb.Users;
+﻿using AtiehJobCore.Core.Configuration;
+using AtiehJobCore.Core.Domain.Users;
+using AtiehJobCore.Services.Users;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;

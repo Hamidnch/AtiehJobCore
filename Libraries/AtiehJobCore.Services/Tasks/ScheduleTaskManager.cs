@@ -1,5 +1,5 @@
-﻿using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb.Domain.Tasks;
+﻿using AtiehJobCore.Core.Domain.Tasks;
+using AtiehJobCore.Core.Infrastructure;
 using System.Collections.Generic;
 using System.Linq;
 

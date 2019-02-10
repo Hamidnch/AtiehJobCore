@@ -1,6 +1,6 @@
-﻿using AtiehJobCore.Common.Contracts;
-using AtiehJobCore.Common.Extensions;
-using AtiehJobCore.Common.Plugins;
+﻿using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Extensions;
+using AtiehJobCore.Core.Plugins;
 using Microsoft.AspNetCore.Routing;
 using System;
 using System.Linq;

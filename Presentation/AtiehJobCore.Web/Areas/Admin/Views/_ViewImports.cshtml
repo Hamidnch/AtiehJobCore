@@ -4,9 +4,14 @@
 @using System.Globalization
 @using System.Threading.Tasks
 @using DNTPersianUtils.Core
-@using AtiehJobCore.Services.Constants
+@using AtiehJobCore.Web.Framework.Models.Admin
+@using AtiehJobCore.Services.Events
+@using AtiehJobCore.Web.Framework.Events
+@using AtiehJobCore.Web.Framework.Infrastructure.Extensions
+@using AtiehJobCore.Web.Framework.Models
 @inherits AtiehJobCore.Web.Framework.Web.Razor.BaseView<TModel>
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, DNTBreadCrumb.Core
 @addTagHelper *, AtiehJobCore.Web
+@addTagHelper *, AtiehJobCore.Web.Framework

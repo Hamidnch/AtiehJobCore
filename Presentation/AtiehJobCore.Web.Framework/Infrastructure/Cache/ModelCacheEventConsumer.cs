@@ -1,9 +1,9 @@
-﻿using AtiehJobCore.Common.Caching;
-using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb.Domain.Common;
-using AtiehJobCore.Common.MongoDb.Domain.Localization;
-using AtiehJobCore.Common.MongoDb.Events;
-using AtiehJobCore.Services.MongoDb.Events;
+﻿using AtiehJobCore.Core.Caching;
+using AtiehJobCore.Core.Domain.Common;
+using AtiehJobCore.Core.Domain.Localization;
+using AtiehJobCore.Core.Events;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Services.Events;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Cache
 {

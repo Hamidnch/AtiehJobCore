@@ -1,14 +1,14 @@
-﻿using AtiehJobCore.Common.Enums.MongoDb;
-using AtiehJobCore.Common.Infrastructure.MongoDb;
-using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Common.MongoDb.Domain.Users;
-using AtiehJobCore.Common.Plugins;
-using AtiehJobCore.Common.Utilities;
+﻿using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Domain.Users;
+using AtiehJobCore.Core.Enums;
+using AtiehJobCore.Core.MongoDb.Data;
+using AtiehJobCore.Core.Plugins;
+using AtiehJobCore.Core.Utilities;
 using AtiehJobCore.Services.Common;
-using AtiehJobCore.Services.MongoDb.Events;
-using AtiehJobCore.Services.MongoDb.Localization;
-using AtiehJobCore.Services.MongoDb.Logging;
-using AtiehJobCore.Services.MongoDb.Users;
+using AtiehJobCore.Services.Events;
+using AtiehJobCore.Services.Localization;
+using AtiehJobCore.Services.Logging;
+using AtiehJobCore.Services.Users;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -242,12 +242,13 @@ namespace AtiehJobCore.Services.Authentication.External
 
         #region External authentication methods
 
-        /// <inheritdoc />
+        /// <inheritdoc>
+        ///     <cref></cref>
+        /// </inheritdoc>
         /// <summary>
         /// Load active external authentication methods
         /// </summary>
         /// <param name="user">Load records allowed only to a specified user; pass null to ignore ACL permissions</param>
-
         /// <returns>Payment methods</returns>
         public virtual IList<IExternalAuthenticationMethod> LoadActiveExternalAuthenticationMethods(User user = null)
         {
@@ -323,7 +324,7 @@ namespace AtiehJobCore.Services.Authentication.External
 
         #endregion
 
-        /// <inheritdoc />
+        /// <inheritdoc cref="" />
         /// <summary>
         /// Associate external account with user
         /// </summary>

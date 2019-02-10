@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using AtiehJobCore.Common.Enums.MongoDb;
+﻿using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Web.Framework.Mvc.ModelBinding;
 using AtiehJobCore.Web.Framework.Validators.Account;
 using FluentValidation.Attributes;
+using System.ComponentModel.DataAnnotations;
 
 namespace AtiehJobCore.Web.Framework.Models.Account
 {

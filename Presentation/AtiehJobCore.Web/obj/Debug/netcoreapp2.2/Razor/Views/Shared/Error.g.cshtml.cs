@@ -43,27 +43,22 @@ using DNTPersianUtils.Core;
 #line default
 #line hidden
 #line 7 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
-using AtiehJobCore.Services.Constants;
-
-#line default
-#line hidden
-#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
 using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
-#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
-using AtiehJobCore.Common.Contracts;
+#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Core.Contracts;
 
 #line default
 #line hidden
-#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
 using AtiehJobCore.Web.Framework.Models.Account;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"715b953644013812f80d9c6a89ca174b1f913fa2", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3b579ab313573b725426803737e39b391ee186af", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"910e6c74a464292d19aea2b885b2bf5495068ea8", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("card-header"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -103,12 +98,12 @@ using AtiehJobCore.Web.Framework.Models.Account;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(175, 495, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715b953644013812f80d9c6a89ca174b1f913fa25871", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715b953644013812f80d9c6a89ca174b1f913fa25698", async() => {
                 BeginContext(211, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(217, 93, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715b953644013812f80d9c6a89ca174b1f913fa26255", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715b953644013812f80d9c6a89ca174b1f913fa26082", async() => {
                     BeginContext(242, 33, true);
                     WriteLiteral("\r\n        <h5 class=\"card-title\">");
                     EndContext();
@@ -139,7 +134,7 @@ using AtiehJobCore.Web.Framework.Models.Account;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(316, 346, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715b953644013812f80d9c6a89ca174b1f913fa28022", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "715b953644013812f80d9c6a89ca174b1f913fa27849", async() => {
                     BeginContext(339, 68, true);
                     WriteLiteral("\r\n        متاسفانه در حین پردازش درخواست جاری خطایی رخ داده‌است.\r\n\r\n");
                     EndContext();

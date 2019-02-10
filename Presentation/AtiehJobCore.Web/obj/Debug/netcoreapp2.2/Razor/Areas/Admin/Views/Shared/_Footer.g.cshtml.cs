@@ -43,12 +43,32 @@ using DNTPersianUtils.Core;
 #line default
 #line hidden
 #line 7 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
-using AtiehJobCore.Services.Constants;
+using AtiehJobCore.Web.Framework.Models.Admin;
+
+#line default
+#line hidden
+#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using AtiehJobCore.Services.Events;
+
+#line default
+#line hidden
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Events;
+
+#line default
+#line hidden
+#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
+
+#line default
+#line hidden
+#line 11 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"86e7989c185c9586fb36a1710ff7bda40d883457", @"/Areas/Admin/Views/Shared/_Footer.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d92eb80d43aa3e081240d6bb84f926f55689c18", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"575cb792871ec30357c367140b6e04a5df57c40a", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Shared__Footer : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("clearfix"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -79,12 +99,12 @@ using AtiehJobCore.Services.Constants;
             WriteLiteral("<footer class=\"app-footer\">\r\n    ");
             EndContext();
             BeginContext(33, 251, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86e7989c185c9586fb36a1710ff7bda40d8834574910", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86e7989c185c9586fb36a1710ff7bda40d8834575670", async() => {
                 BeginContext(56, 188, true);
                 WriteLiteral("\r\n        <p>\r\n            تمامی حقوق مادی و معنوی این سایت متعلق به <a href=\"/\"> آتیه کار </a>\r\n            می باشد،  کپی برداری از منابع پیگرد قانونی خواهد داشت .\r\n        </p>\r\n        ");
                 EndContext();
                 BeginContext(244, 28, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86e7989c185c9586fb36a1710ff7bda40d8834575487", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86e7989c185c9586fb36a1710ff7bda40d8834576247", async() => {
                 }
                 );
                 __AtiehJobCore_Web_TagHelpers_VisibilityTagHelper = CreateTagHelper<global::AtiehJobCore.Web.TagHelpers.VisibilityTagHelper>();

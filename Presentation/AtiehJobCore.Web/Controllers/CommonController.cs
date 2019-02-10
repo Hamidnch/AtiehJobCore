@@ -1,11 +1,11 @@
-﻿using AtiehJobCore.Common.Infrastructure.MongoDb;
-using AtiehJobCore.Common.MongoDb.Domain.Localization;
-using AtiehJobCore.Services.MongoDb.Localization;
+﻿using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Domain.Localization;
+using AtiehJobCore.Services.Localization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AtiehJobCore.Web.Controllers
 {
-    public class CommonController : Controller
+    public class CommonController : BasePublicController
     {
         private readonly IWorkContext _workContext;
 

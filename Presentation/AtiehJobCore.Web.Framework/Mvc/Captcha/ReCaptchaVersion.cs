@@ -1,4 +1,4 @@
-﻿namespace AtiehJobCore.Web.Framework.Mvc.Filter
+﻿namespace AtiehJobCore.Web.Framework.Mvc.Captcha
 {
     /// <summary>
     /// Represents a reCAPTCHA version

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
-using AtiehJobCore.Common.Utilities;
-using AtiehJobCore.ViewModel.Models.Identity.Common;
+using AtiehJobCore.Core.Utilities;
+using AtiehJobCore.Core.ViewModel;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AtiehJobCore.Web.Controllers
 {
-    public class FileUploadController : BaseController
+    public class FileUploadController : BasePublicController
     {
         private readonly FileManager _fileManager;
         private readonly IHostingEnvironment _hostingEnvironment;

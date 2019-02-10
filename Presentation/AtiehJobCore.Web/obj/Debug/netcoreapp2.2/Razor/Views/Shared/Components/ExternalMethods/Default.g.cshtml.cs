@@ -43,27 +43,22 @@ using DNTPersianUtils.Core;
 #line default
 #line hidden
 #line 7 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
-using AtiehJobCore.Services.Constants;
-
-#line default
-#line hidden
-#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
 using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
-#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
-using AtiehJobCore.Common.Contracts;
+#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Core.Contracts;
 
 #line default
 #line hidden
-#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
 using AtiehJobCore.Web.Framework.Models.Account;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c6029220ed1c24d642b3e0706ea19e4a13144700", @"/Views/Shared/Components/ExternalMethods/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3b579ab313573b725426803737e39b391ee186af", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"910e6c74a464292d19aea2b885b2bf5495068ea8", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_ExternalMethods_Default : AtiehJobCore.Web.Framework.Web.Razor.BaseView<List<ExternalAuthenticationMethodModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("title"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -99,7 +94,7 @@ using AtiehJobCore.Web.Framework.Models.Account;
             WriteLiteral("    ");
             EndContext();
             BeginContext(74, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c6029220ed1c24d642b3e0706ea19e4a131447005267", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c6029220ed1c24d642b3e0706ea19e4a131447005094", async() => {
                 BeginContext(94, 38, false);
 #line 4 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\Shared\Components\ExternalMethods\Default.cshtml"
                   Write(T("Account.AssociatedExternalAuth.Or"));

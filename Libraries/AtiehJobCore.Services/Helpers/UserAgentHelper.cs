@@ -1,6 +1,6 @@
-﻿using AtiehJobCore.Common.Configuration;
-using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.Utilities;
+﻿using AtiehJobCore.Core.Configuration;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Core.Utilities;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Diagnostics;

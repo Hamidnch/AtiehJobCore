@@ -1,7 +1,7 @@
-﻿using AtiehJobCore.Common.Constants;
-using AtiehJobCore.Common.Enums.MongoDb;
-using AtiehJobCore.Common.MongoDb.Domain.Users;
-using AtiehJobCore.Services.MongoDb.Users;
+﻿using AtiehJobCore.Core.Constants;
+using AtiehJobCore.Core.Domain.Users;
+using AtiehJobCore.Core.Enums;
+using AtiehJobCore.Services.Users;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -45,7 +45,9 @@ namespace AtiehJobCore.Services.Authentication
 
         #region Methods
 
-        /// <inheritdoc />
+        /// <inheritdoc>
+        ///     <cref></cref>
+        /// </inheritdoc>
         /// <summary>
         /// Sign in
         /// </summary>
@@ -98,7 +100,9 @@ namespace AtiehJobCore.Services.Authentication
             _cachedUser = user;
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc>
+        ///     <cref></cref>
+        /// </inheritdoc>
         /// <summary>
         /// Sign out
         /// </summary>
@@ -111,7 +115,9 @@ namespace AtiehJobCore.Services.Authentication
             await _httpContextAccessor.HttpContext.SignOutAsync(AtiehJobCookieAuthenticationDefaults.AuthenticationScheme);
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc>
+        ///     <cref></cref>
+        /// </inheritdoc>
         /// <summary>
         /// Get authenticated user
         /// </summary>

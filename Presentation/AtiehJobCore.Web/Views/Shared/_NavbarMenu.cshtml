@@ -1,7 +1,4 @@
-﻿@using AtiehJobCore.Common.Extensions
-@using AtiehJobCore.Services.Identity.Interfaces
-
-@*@inject IUsersPhotoService UsersPhotoService;
+﻿@*@inject IUsersPhotoService UsersPhotoService;
     @{
         var displayName = User.Identity.GetUserDisplayName();
         var photoUrl = UsersPhotoService.GetCurrentUserPhotoUrl();
@@ -60,7 +57,7 @@
             </div>
             @if (IsAuthenticated())
             {
-                if (IsAdminRole())
+                if (IsAdminRole)
                 {
                     <div class="navbar-nav ml-2 right">
                         <a class="nav-item nav-link" asp-controller="Home" asp-action="Index" asp-area="Admin">
@@ -69,7 +66,7 @@
                     </div>
                 }
                 <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link" asp-controller="User" asp-action="LogOff" asp-area="Account">
+                    <a class="nav-item nav-link" asp-controller="User" asp-action="Logout" asp-area="Account">
                         <span class="fas fa-sign-out-alt" aria-hidden="true"></span> خروج
                     </a>
                 </div>

@@ -1,8 +1,8 @@
-﻿using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.Infrastructure.MongoDb;
-using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Common.MongoDb.Domain.Localization;
-using AtiehJobCore.Services.MongoDb.Events;
+﻿using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Domain.Localization;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Core.MongoDb.Data;
+using AtiehJobCore.Services.Events;
 using AtiehJobCore.Services.Seo;
 using AtiehJobCore.Web.Framework.Localization;
 using Microsoft.AspNetCore.Routing;

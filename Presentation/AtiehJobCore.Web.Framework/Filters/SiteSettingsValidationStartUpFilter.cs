@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using AtiehJobCore.Common.Contracts;
+﻿using AtiehJobCore.Core.Contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using System;
+using System.Collections.Generic;
 
 namespace AtiehJobCore.Web.Framework.Filters
 {

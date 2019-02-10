@@ -1,15 +1,15 @@
-﻿using AtiehJobCore.Common.Infrastructure.MongoDb;
-using AtiehJobCore.Common.MongoDb.Domain.Users;
-using AtiehJobCore.Services.MongoDb.Localization;
-using AtiehJobCore.Services.MongoDb.Logging;
-using AtiehJobCore.Services.MongoDb.Users;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Domain.Users;
+using AtiehJobCore.Services.Localization;
+using AtiehJobCore.Services.Logging;
 using AtiehJobCore.Services.Security;
+using AtiehJobCore.Services.Users;
 using AtiehJobCore.Web.Framework.Models.Admin;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace AtiehJobCore.Web.Areas.Admin.Controllers
 {
@@ -31,11 +31,11 @@ namespace AtiehJobCore.Web.Areas.Admin.Controllers
             IPermissionService permissionService,
             IUserService customerService, ILocalizationService localizationService)
         {
-            this._logger = logger;
-            this._workContext = workContext;
-            this._permissionService = permissionService;
-            this._customerService = customerService;
-            this._localizationService = localizationService;
+            _logger = logger;
+            _workContext = workContext;
+            _permissionService = permissionService;
+            _customerService = customerService;
+            _localizationService = localizationService;
         }
 
         #endregion

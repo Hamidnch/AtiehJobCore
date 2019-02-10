@@ -1,6 +1,5 @@
-﻿using AtiehJobCore.Common.Contracts;
-using AtiehJobCore.Common.MongoDb.Domain.Localization;
-using AtiehJobCore.Web.Framework.Models;
+﻿using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Domain.Localization;
 using AtiehJobCore.Web.Framework.Models.Admin;
 using AutoMapper;
 
@@ -14,7 +13,7 @@ namespace AtiehJobCore.Web.Areas.Admin.Infrastructure.Mapper
             CreateMap<Language, AdminLanguageModel>()
                 .ForMember(dest => dest.FlagFileNames, mo => mo.Ignore())
                 .ForMember(dest => dest.CustomProperties, mo => mo.Ignore());
-            CreateMap<LanguageModel, Language>()
+            CreateMap<AdminLanguageModel, Language>()
                 .ForMember(dest => dest.Id, mo => mo.Ignore());
         }
 

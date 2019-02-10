@@ -1,10 +1,14 @@
-﻿using AtiehJobCore.Common.Caching;
-using AtiehJobCore.Common.Configuration;
-using AtiehJobCore.Common.Contracts;
-using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Common.Utilities;
-using AtiehJobCore.Services.MongoDb.Installation;
+﻿using AtiehJobCore.Core.Caching;
+using AtiehJobCore.Core.Configuration;
+using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Enums;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Core.MongoDb.Data;
+using AtiehJobCore.Core.Plugins;
+using AtiehJobCore.Core.Utilities;
+using AtiehJobCore.Services.Installation;
+using AtiehJobCore.Services.Logging;
+using AtiehJobCore.Services.Security;
 using AtiehJobCore.Web.Framework.Models;
 using AtiehJobCore.Web.Framework.Security;
 using Microsoft.AspNetCore.Http;
@@ -13,6 +17,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Principal;
 
 namespace AtiehJobCore.Web.Controllers
@@ -33,9 +39,9 @@ namespace AtiehJobCore.Web.Controllers
         public InstallController(IInstallationLocalizationService locService,
             AtiehJobConfig config, ICacheManager cacheManager, IHttpContextAccessor contextAccessor)
         {
-            this._locService = locService;
-            this._config = config;
-            this._cacheManager = cacheManager;
+            _locService = locService;
+            _config = config;
+            _cacheManager = cacheManager;
             _contextAccessor = contextAccessor;
         }
 
@@ -137,7 +143,7 @@ namespace AtiehJobCore.Web.Controllers
                     var database = client.GetDatabase(databaseName);
                     database.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait();
 
-                    var filter = new BsonDocument("name", "CommonNodeVersion");
+                    var filter = new BsonDocument("name", "AtiehJobVersion");
                     var found = database.ListCollectionsAsync(new ListCollectionsOptions { Filter = filter }).Result;
 
                     if (found.Any())
@@ -193,51 +199,53 @@ namespace AtiehJobCore.Web.Controllers
                     //reset cache
                     DataSettingsHelper.ResetCache();
 
-                    ////install plugins
-                    //PluginManager.MarkAllPluginsAsUninstalled();
-                    //var pluginFinder = EngineContext.Current.Resolve<IPluginFinder>();
-                    //var plugins = pluginFinder.GetPlugins<IPlugin>(LoadPluginsMode.All)
-                    //    .ToList()
-                    //    .OrderBy(x => x.PluginDescriptor.Group)
-                    //    .ThenBy(x => x.PluginDescriptor.DisplayOrder)
-                    //    .ToList();
+                    //install plugins
+                    PluginManager.MarkAllPluginsAsUninstalled();
+                    var pluginFinder = EngineContext.Current.Resolve<IPluginFinder>();
+                    var plugins = pluginFinder.GetPlugins<IPlugin>(LoadPluginsMode.All)
+                        .ToList()
+                        .OrderBy(x => x.PluginDescriptor.Group)
+                        .ThenBy(x => x.PluginDescriptor.DisplayOrder)
+                        .ToList();
 
-                    //var pluginsIgnoredDuringInstallation = string.IsNullOrEmpty(_config.PluginsIgnoredDuringInstallation) ?
-                    //    new List<string>() :
-                    //    _config.PluginsIgnoredDuringInstallation
-                    //    .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                    //    .Select(x => x.Trim())
-                    //    .ToList();
+                    var pluginsIgnoredDuringInstallation = string.IsNullOrEmpty(_config.PluginsIgnoredDuringInstallation) ?
+                        new List<string>() :
+                        _config.PluginsIgnoredDuringInstallation
+                        .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                        .Select(x => x.Trim())
+                        .ToList();
 
-                    //foreach (var plugin in plugins)
-                    //{
-                    //    if (pluginsIgnoredDuringInstallation.Contains(plugin.PluginDescriptor.SystemName))
-                    //        continue;
+                    foreach (var plugin in plugins)
+                    {
+                        if (pluginsIgnoredDuringInstallation.Contains(plugin.PluginDescriptor.SystemName))
+                            continue;
 
-                    //    try
-                    //    {
-                    //        plugin.Install();
-                    //    }
-                    //    catch (Exception ex)
-                    //    {
-                    //        var logger = EngineContext.Current.Resolve<ILogger>();
-                    //        logger.InsertLog(MongoLogLevel.Error, 
-                    //            "Error during installing plugin " + plugin.PluginDescriptor.SystemName,
-                    //            ex.Message + " " + ex.InnerException?.Message);
-                    //    }
-                    //}
+                        try
+                        {
+                            plugin.Install();
+                        }
+                        catch (Exception ex)
+                        {
+                            var logger = EngineContext.Current.Resolve<ILogger>();
+                            logger.InsertLog(MongoLogLevel.Error,
+                                "Error during installing plugin " + plugin.PluginDescriptor.SystemName,
+                                ex.Message + " " + ex.InnerException?.Message);
+                        }
+                    }
 
-                    ////register default permissions
-                    //var permissionProviders = new List<Type>();
-                    //permissionProviders.Add(typeof(StandardPermissionProvider));
-                    //foreach (var providerType in permissionProviders)
-                    //{
-                    //    var provider = (IPermissionProvider)Activator.CreateInstance(providerType);
-                    //    EngineContext.Current.Resolve<IPermissionService>().InstallPermissions(provider);
-                    //}
+                    //register default permissions
+                    var permissionProviders = new List<Type>
+                    {
+                        typeof(StandardPermissionProvider)
+                    };
+                    foreach (var providerType in permissionProviders)
+                    {
+                        var provider = (IPermissionProvider)Activator.CreateInstance(providerType);
+                        EngineContext.Current.Resolve<IPermissionService>().InstallPermissions(provider);
+                    }
 
                     //restart application
-                    if (Common.Infrastructure.OperatingSystem.IsWindows())
+                    if (Core.Infrastructure.OperatingSystem.IsWindows())
                     {
                         webHelper.RestartAppDomain();
                         //Redirect to home page

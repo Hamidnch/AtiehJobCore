@@ -43,27 +43,22 @@ using DNTPersianUtils.Core;
 #line default
 #line hidden
 #line 7 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
-using AtiehJobCore.Services.Constants;
-
-#line default
-#line hidden
-#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
 using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
-#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
-using AtiehJobCore.Common.Contracts;
+#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Core.Contracts;
 
 #line default
 #line hidden
-#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
 using AtiehJobCore.Web.Framework.Models.Account;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d8ed9b7a3847504c7218f992d794467d87ec364c", @"/Views/Shared/AccessDenied.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3b579ab313573b725426803737e39b391ee186af", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"910e6c74a464292d19aea2b885b2bf5495068ea8", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_AccessDenied : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("card-header"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -106,12 +101,12 @@ using AtiehJobCore.Web.Framework.Models.Account;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(177, 248, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ed9b7a3847504c7218f992d794467d87ec364c6028", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ed9b7a3847504c7218f992d794467d87ec364c5855", async() => {
                 BeginContext(213, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(219, 93, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ed9b7a3847504c7218f992d794467d87ec364c6412", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ed9b7a3847504c7218f992d794467d87ec364c6239", async() => {
                     BeginContext(244, 33, true);
                     WriteLiteral("\r\n        <h5 class=\"card-title\">");
                     EndContext();
@@ -142,7 +137,7 @@ using AtiehJobCore.Web.Framework.Models.Account;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(318, 99, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ed9b7a3847504c7218f992d794467d87ec364c8186", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ed9b7a3847504c7218f992d794467d87ec364c8013", async() => {
                     BeginContext(341, 70, true);
                     WriteLiteral("\r\n        متاسفانه شما مجوز دسترسی به صفحه‌ی درخواستی را ندارید.\r\n    ");
                     EndContext();

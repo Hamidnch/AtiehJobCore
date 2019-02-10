@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Common.Infrastructure.MongoDb;
+﻿using AtiehJobCore.Core.Contracts;
 using DNTBreadCrumb.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Localization;
@@ -8,7 +8,7 @@ namespace AtiehJobCore.Web.Controllers
 {
     [BreadCrumb(Title = "آتیه کار", UseDefaultRouteUrl = true, Order = 0)]
     //[PermissionAuthorize(PermissionNames.Pages_Administration)]
-    public class HomeController : BaseController
+    public class HomeController : BasePublicController
     {
         private readonly IStringLocalizer _stringLocalizer;
         private readonly IHtmlLocalizer _htmlLocalizer;

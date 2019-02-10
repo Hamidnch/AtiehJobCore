@@ -1,5 +1,5 @@
-﻿using AtiehJobCore.Common.MongoDb.Domain.Security;
-using AtiehJobCore.Common.MongoDb.Domain.Users;
+﻿using AtiehJobCore.Core.Domain.Security;
+using AtiehJobCore.Core.Domain.Users;
 using System.Collections.Generic;
 
 namespace AtiehJobCore.Services.Security
@@ -12,7 +12,12 @@ namespace AtiehJobCore.Services.Security
     {
         //admin area permissions
         public static readonly PermissionRecord AccessAdminPanel =
-            new PermissionRecord { Name = "Access admin area", SystemName = PermissionSystemName.AccessAdminPanel, Category = "Standard" };
+            new PermissionRecord
+            {
+                Name = "Access admin area",
+                SystemName = PermissionSystemName.AccessAdminPanel,
+                Category = "Standard"
+            };
         public static readonly PermissionRecord ManageUsers = new PermissionRecord
         {
             Name = "Admin area. Manage Users",
@@ -76,6 +81,20 @@ namespace AtiehJobCore.Services.Security
             Category = "Configuration"
         };
 
+        public static readonly PermissionRecord SiteAllowNavigation = new PermissionRecord
+        {
+            Name = "Atieh job. Allow navigation",
+            SystemName = PermissionSystemName.SiteAllowNavigation,
+            Category = "Site"
+        };
+
+        public static readonly PermissionRecord AccessClosedSite = new PermissionRecord
+        {
+            Name = "Atieh job. Access a closed store",
+            SystemName = PermissionSystemName.AccessClosedSite,
+            Category = "Site"
+        };
+
         public virtual IEnumerable<PermissionRecord> GetPermissions()
         {
             return new[]
@@ -90,7 +109,9 @@ namespace AtiehJobCore.Services.Security
                 ManageAcl,
                 ManageEmailAccounts,
                 ManageSystemLog,
-                ManageMessageContactForm
+                ManageMessageContactForm,
+                SiteAllowNavigation,
+                AccessClosedSite
             };
         }
 
@@ -113,25 +134,27 @@ namespace AtiehJobCore.Services.Security
                         ManageAcl,
                         ManageEmailAccounts,
                         ManageSystemLog,
-                        ManageMessageContactForm
+                        ManageMessageContactForm,
+                        SiteAllowNavigation,
+                        AccessClosedSite
                     }
                 },
-                //new DefaultPermissionRecord
-                //{
-                //    UserRoleSystemName = SystemUserRoleNames.Guests,
-                //    PermissionRecords = new[]
-                //    {
-
-                //    }
-                //},
-                //new DefaultPermissionRecord
-                //{
-                //    UserRoleSystemName = SystemUserRoleNames.Registered,
-                //    PermissionRecords = new[]
-                //    {
-
-                //    }
-                //}
+                new DefaultPermissionRecord
+                {
+                    UserRoleSystemName = SystemUserRoleNames.Guests,
+                    PermissionRecords = new[]
+                    {
+                        SiteAllowNavigation
+                    }
+                },
+                new DefaultPermissionRecord
+                {
+                    UserRoleSystemName = SystemUserRoleNames.Registered,
+                    PermissionRecords = new[]
+                    {
+                        SiteAllowNavigation
+                    }
+                }
             };
         }
     }

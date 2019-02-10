@@ -1,4 +1,4 @@
-﻿//using AtiehJobCore.Common.Extensions;
+﻿//using AtiehJobCore.Core.Extensions;
 //using Microsoft.AspNetCore.Http;
 //using Microsoft.AspNetCore.Localization;
 //using Microsoft.AspNetCore.Razor.TagHelpers;

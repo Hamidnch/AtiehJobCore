@@ -11,7 +11,7 @@ namespace AtiehJobCore.Web.Framework.Models.Admin
         public AdminLanguageModel()
         {
             FlagFileNames = new List<string>();
-            Search = new LanguageResourceFilterModel();
+            Search = new AdminLanguageResourceFilterModel();
         }
         [AtiehJobResourceDisplayName("Admin.Configuration.Languages.Fields.Name")]
 
@@ -40,6 +40,6 @@ namespace AtiehJobCore.Web.Framework.Models.Admin
         [AtiehJobResourceDisplayName("Admin.Configuration.Languages.Fields.DisplayOrder")]
         public int DisplayOrder { get; set; }
 
-        public LanguageResourceFilterModel Search { get; set; }
+        public AdminLanguageResourceFilterModel Search { get; set; }
     }
 }

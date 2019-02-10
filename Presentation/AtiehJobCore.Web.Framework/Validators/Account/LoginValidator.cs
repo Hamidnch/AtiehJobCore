@@ -1,6 +1,6 @@
-﻿using AtiehJobCore.Common.Enums.MongoDb;
-using AtiehJobCore.Common.MongoDb.Domain.Users;
-using AtiehJobCore.Services.MongoDb.Localization;
+﻿using AtiehJobCore.Core.Domain.Users;
+using AtiehJobCore.Core.Enums;
+using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Web.Framework.Models.Account;
 using FluentValidation;
 

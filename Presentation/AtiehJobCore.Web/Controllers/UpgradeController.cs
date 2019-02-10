@@ -1,13 +1,13 @@
-﻿using AtiehJobCore.Common.Contracts;
-using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Services.MongoDb.Installation;
+﻿using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Core.MongoDb.Data;
+using AtiehJobCore.Services.Installation;
 using AtiehJobCore.Web.Framework.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AtiehJobCore.Web.Controllers
 {
-    public partial class UpgradeController : Controller
+    public partial class UpgradeController : BasePublicController
     {
         #region Fields
 
@@ -18,7 +18,7 @@ namespace AtiehJobCore.Web.Controllers
 
         public UpgradeController(IUpgradeService upgradeService)
         {
-            this._upgradeService = upgradeService;
+            _upgradeService = upgradeService;
         }
         #endregion
 

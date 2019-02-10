@@ -35,11 +35,7 @@ namespace AtiehJobCore.Web.Framework.KendoUi
 
         public static object ToDataSourceResult(this ModelStateDictionary modelState)
         {
-            if (!modelState.IsValid)
-            {
-                return modelState.SerializeErrors();
-            }
-            return null;
+            return !modelState.IsValid ? modelState.SerializeErrors() : null;
         }
     }
 }

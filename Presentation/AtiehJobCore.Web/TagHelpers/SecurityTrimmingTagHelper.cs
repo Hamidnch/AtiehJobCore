@@ -1,5 +1,5 @@
-﻿using AtiehJobCore.Common.Extensions;
-using AtiehJobCore.Services.Identity.Interfaces;
+﻿using AtiehJobCore.Core.Extensions;
+using AtiehJobCore.Services.Security;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;

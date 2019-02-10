@@ -1,6 +1,6 @@
-﻿using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Common.MongoDb.Domain.Localization;
+﻿using AtiehJobCore.Core.Domain.Localization;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Core.MongoDb.Data;
 using Microsoft.AspNetCore.Routing;
 using System;
 using System.Collections.Generic;

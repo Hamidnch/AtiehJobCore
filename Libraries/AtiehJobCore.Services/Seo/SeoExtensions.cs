@@ -1,10 +1,10 @@
-﻿using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.Infrastructure.MongoDb;
-using AtiehJobCore.Common.MongoDb;
-using AtiehJobCore.Common.MongoDb.Domain.Localization;
-using AtiehJobCore.Common.MongoDb.Domain.Seo;
-using AtiehJobCore.Common.Utilities;
-using AtiehJobCore.Services.MongoDb.Localization;
+﻿using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Domain.Localization;
+using AtiehJobCore.Core.Domain.Seo;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Core.MongoDb;
+using AtiehJobCore.Core.Utilities;
+using AtiehJobCore.Services.Localization;
 using System;
 using System.Collections.Generic;
 using System.Linq;

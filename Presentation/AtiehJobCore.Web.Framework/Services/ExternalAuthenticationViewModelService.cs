@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Common.Infrastructure.MongoDb;
+﻿using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Services.Authentication.External;
 using AtiehJobCore.Web.Framework.Models.Account;
 using System.Collections.Generic;

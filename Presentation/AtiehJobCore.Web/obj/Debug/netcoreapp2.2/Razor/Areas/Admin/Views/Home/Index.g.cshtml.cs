@@ -43,12 +43,32 @@ using DNTPersianUtils.Core;
 #line default
 #line hidden
 #line 7 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
-using AtiehJobCore.Services.Constants;
+using AtiehJobCore.Web.Framework.Models.Admin;
+
+#line default
+#line hidden
+#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using AtiehJobCore.Services.Events;
+
+#line default
+#line hidden
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Events;
+
+#line default
+#line hidden
+#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
+
+#line default
+#line hidden
+#line 11 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4938c7e7ef1faf84135e26f38d9ce18761c48156", @"/Areas/Admin/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d92eb80d43aa3e081240d6bb84f926f55689c18", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"575cb792871ec30357c367140b6e04a5df57c40a", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Home_Index : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         #pragma warning disable 1998

@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Common.MongoDb.Domain.Users;
+﻿using AtiehJobCore.Core.Domain.Users;
 using System;
 
 namespace AtiehJobCore.Services.Authentication.External

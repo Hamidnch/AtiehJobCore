@@ -1,11 +1,11 @@
-﻿using AtiehJobCore.Common.Infrastructure.MongoDb;
-using AtiehJobCore.Common.MongoDb.Domain.Localization;
-using AtiehJobCore.Common.MongoDb.Domain.Users;
+﻿using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Domain.Localization;
+using AtiehJobCore.Core.Domain.Users;
 using AtiehJobCore.Services.Authentication;
 using AtiehJobCore.Services.Common;
 using AtiehJobCore.Services.Helpers;
-using AtiehJobCore.Services.MongoDb.Localization;
-using AtiehJobCore.Services.MongoDb.Users;
+using AtiehJobCore.Services.Localization;
+using AtiehJobCore.Services.Users;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Net.Http.Headers;
@@ -83,7 +83,7 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
             _httpContextAccessor.HttpContext.Response.Cookies.Delete(UserCookieName);
 
             //get date of cookie expiration
-            var cookieExpires = 24 * 365; //TODO make configurable
+            const int cookieExpires = 24 * 365; //TODO make configurable
             var cookieExpiresDate = DateTime.Now.AddHours(cookieExpires);
 
             //if passed guid is empty set cookie as expired

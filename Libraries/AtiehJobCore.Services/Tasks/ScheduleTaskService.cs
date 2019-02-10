@@ -1,5 +1,5 @@
-﻿using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Common.MongoDb.Domain.Tasks;
+﻿using AtiehJobCore.Core.Domain.Tasks;
+using AtiehJobCore.Core.MongoDb.Data;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 using System;

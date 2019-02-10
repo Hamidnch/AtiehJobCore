@@ -1,12 +1,19 @@
-﻿using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb.Domain.Common;
+﻿using AtiehJobCore.Core.Constants;
+using AtiehJobCore.Core.Domain.Common;
+using AtiehJobCore.Core.Infrastructure;
 using AtiehJobCore.Web.Controllers;
+using AtiehJobCore.Web.Framework.Filters;
+using AtiehJobCore.Web.Framework.Security;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace AtiehJobCore.Web.Areas.Admin.Controllers
 {
-    public class BaseAdminController : BaseController
+    [ValidateIpAddress]
+    [AuthorizeAdmin]
+    [AdminAntiForgery()]
+    [Area(AreaNames.Admin)]
+    public class BaseAdminController : BasePublicController
     {
         /// <summary>
         /// Save selected TAB index
@@ -16,10 +23,10 @@ namespace AtiehJobCore.Web.Areas.Admin.Controllers
         protected void SaveSelectedTabIndex(int? index = null, bool persistForTheNextRequest = true)
         {
             //keep this method synchronized with
-            //"GetSelectedTabIndex" method of \Grand.Framework\ViewEngines\Razor\WebViewPage.cs
+            //"GetSelectedTabIndex" method of \AtiehJob.Framework\ViewEngines\Razor\WebViewPage.cs
             if (!index.HasValue)
             {
-                if (int.TryParse(this.Request.Form["selected-tab-index"], out var tmp))
+                if (int.TryParse(Request.Form["selected-tab-index"], out var tmp))
                 {
                     index = tmp;
                 }
@@ -30,7 +37,7 @@ namespace AtiehJobCore.Web.Areas.Admin.Controllers
                 return;
             }
 
-            const string dataKey = "Grand.selected-tab-index";
+            const string dataKey = "AtiehJob.selected-tab-index";
             if (persistForTheNextRequest)
             {
                 TempData[dataKey] = index;

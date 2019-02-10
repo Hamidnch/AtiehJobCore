@@ -1,7 +1,7 @@
-﻿using System.ComponentModel;
-using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.Infrastructure.MongoDb;
-using AtiehJobCore.Services.MongoDb.Localization;
+﻿using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Services.Localization;
+using System.ComponentModel;
 
 namespace AtiehJobCore.Web.Framework.Mvc.ModelBinding
 {

@@ -1,6 +1,6 @@
-﻿using AtiehJobCore.Common;
-using AtiehJobCore.Common.MongoDb;
-using AtiehJobCore.Common.MongoDb.Domain.Seo;
+﻿using AtiehJobCore.Core;
+using AtiehJobCore.Core.Domain.Seo;
+using AtiehJobCore.Core.MongoDb;
 
 namespace AtiehJobCore.Services.Seo
 {

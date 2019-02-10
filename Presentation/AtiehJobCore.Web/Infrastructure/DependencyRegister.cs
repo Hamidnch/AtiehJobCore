@@ -1,9 +1,8 @@
-﻿using AtiehJobCore.Common.Configuration;
-using AtiehJobCore.Common.Contracts;
-using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Services.MongoDb.Installation;
-using AtiehJobCore.Web.Framework.Models.Account;
+﻿using AtiehJobCore.Core.Configuration;
+using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Services.Installation;
 using AtiehJobCore.Web.Framework.Services;
+using AtiehJobCore.Web.Framework.Services.Admin;
 using Autofac;
 
 namespace AtiehJobCore.Web.Infrastructure
@@ -23,6 +22,10 @@ namespace AtiehJobCore.Web.Infrastructure
 
             //externalAuth service
             builder.RegisterType<ExternalAuthenticationViewModelService>().As<IExternalAuthenticationViewModelService>().InstancePerLifetimeScope();
+
+            //Language Service
+            builder.RegisterType<LanguageViewModelService>().As<ILanguageViewModelService>().InstancePerLifetimeScope();
+
         }
 
         public int Order => 2;

@@ -1,8 +1,8 @@
-﻿using AtiehJobCore.Common.MongoDb;
-using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Common.MongoDb.Domain.Common;
-using AtiehJobCore.Common.Utilities;
-using AtiehJobCore.Services.MongoDb.Events;
+﻿using AtiehJobCore.Core.Domain.Common;
+using AtiehJobCore.Core.MongoDb;
+using AtiehJobCore.Core.MongoDb.Data;
+using AtiehJobCore.Core.Utilities;
+using AtiehJobCore.Services.Events;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;

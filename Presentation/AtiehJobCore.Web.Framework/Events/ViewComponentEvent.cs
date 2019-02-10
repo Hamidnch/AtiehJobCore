@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Web.Framework.Components;
+﻿using AtiehJobCore.Web.Framework.ViewComponents;
 
 namespace AtiehJobCore.Web.Framework.Events
 {

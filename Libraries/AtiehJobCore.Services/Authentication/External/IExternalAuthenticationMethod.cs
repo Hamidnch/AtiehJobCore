@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Common.Plugins;
+﻿using AtiehJobCore.Core.Plugins;
 
 namespace AtiehJobCore.Services.Authentication.External
 {

@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Common.Extensions;
+﻿using AtiehJobCore.Core.Extensions;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Threading.Tasks;
 

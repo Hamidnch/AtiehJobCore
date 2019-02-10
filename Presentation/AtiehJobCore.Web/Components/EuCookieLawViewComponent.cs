@@ -1,6 +1,6 @@
-﻿//using AtiehJobCore.Common.Infrastructure.MongoDb;
-//using AtiehJobCore.Common.MongoDb.Domain;
-//using AtiehJobCore.Common.MongoDb.Domain.Users;
+﻿//using AtiehJobCore.Core.Infrastructure.MongoDb;
+//using AtiehJobCore.Core.MongoDb.Domain;
+//using AtiehJobCore.Core.MongoDb.Domain.Users;
 //using AtiehJobCore.Services.Common;
 //using AtiehJobCore.Web.Framework.Components;
 //using Microsoft.AspNetCore.Mvc;

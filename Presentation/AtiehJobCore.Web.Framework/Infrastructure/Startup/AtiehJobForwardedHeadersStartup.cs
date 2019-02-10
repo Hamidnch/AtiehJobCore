@@ -1,6 +1,7 @@
-﻿using AtiehJobCore.Common.Configuration;
-using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb.Data;
+﻿using AtiehJobCore.Core.Configuration;
+using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;

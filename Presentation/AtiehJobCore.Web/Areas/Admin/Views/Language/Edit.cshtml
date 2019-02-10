@@ -1,0 +1,161 @@
+﻿@model AdminLanguageModel
+@{
+    //page title
+    ViewBag.Title = T("Admin.Configuration.Languages.EditLanguageDetails").Text;
+}
+<form asp-controller="Language" asp-action="Edit" method="post">
+    <antiforgery-token />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light form-fit">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-language"></i>
+                        @T("Admin.Configuration.Languages.EditLanguageDetails") - @Model.Name
+                        <small>
+                            <i class="fa fa-arrow-circle-left"></i>
+                            @Html.ActionLink(T("Admin.Configuration.Languages.BackToList").Text, "List")
+                        </small>
+                    </div>
+                    <div class="actions">
+                        <div>
+                            <button class="btn btn-success" type="submit" name="save">
+                                <i class="fa fa-check"></i> @T("Admin.Common.Save")
+                            </button>
+                            <button class="btn btn-success" type="submit" name="save-continue">
+                                <i class="fa fa-check-circle"></i> @T("Admin.Common.SaveContinue")
+                            </button>
+                            <a href="@Url.Action("ExportXml", new {id = Model.Id})" class="btn btn-primary">
+                                @T("Admin.Configuration.Languages.Export")
+                            </a>
+                            <input type="button" id="importxml" class="btn btn-behance" data-toggle="modal" data-target="#importxml-window"
+                                   value="@T("Admin.Configuration.Languages.Import")" />
+                            <span id="language-delete" class="btn btn-danger"><i class="fa fa-trash-o"></i> @T("Admin.Common.Delete")</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <partial name="_CreateOrUpdate" model="Model" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@Html.DeleteConfirmation("language-delete")
+@*import resources form*@
+@*<div class="modal-dialog" id="importxml-window" style="display:none; padding: 0 10px;">
+        <form asp-controller="Language" asp-action="ImportXml" method="post" enctype="multipart/form-data" asp-route-id="id">
+            <input type="hidden" asp-for="Id" />
+            <antiforgery-token />
+            <ul class="common-list">
+                <li>
+                    <strong>NOTE: It can take up to several minutes.</strong>
+                </li>
+                <li>
+                    <strong>NOTE: DO NOT click twice.</strong>
+                </li>
+            </ul>
+            <div class="form-group">
+                <div class="col-md-2" style="margin-top: 7px; height: 34px; padding-left: 25px;">
+                    <label class="control-label">
+                        Xml file
+                    </label>
+                </div>
+                <div class="col-md-10">
+                    <input id="importxmlfile" name="importxmlfile" class="form-control" type="file">
+                </div>
+            </div>
+            <div class="form-group">
+                &nbsp;
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    &nbsp;
+                </div>
+                <div class="col-md-10 text-right mt-10">
+                    <input id="importxmlsubmit" class="btn blue" value="@T("Admin.Configuration.Languages.Import")" type="submit">
+                </div>
+            </div>
+        </form>
+    </div>*@
+
+<!-- Modal -->
+<form asp-controller="Language" asp-action="ImportXml" method="post" enctype="multipart/form-data" asp-route-id="id">
+    <div class="modal fade" id="importxml-window" tabindex="-1" role="dialog" aria-labelledby="importxml-window" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="importxml-window">Import xml resource file</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" asp-for="Id" />
+                    <antiforgery-token />
+                    <ul class="common-list">
+                        <li>
+                            <strong>NOTE: It can take up to several minutes.</strong>
+                        </li>
+                        <li>
+                            <strong>NOTE: DO NOT click twice.</strong>
+                        </li>
+                    </ul>
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <label class="control-label">Xml file</label>
+                        </div>
+                        @*<div class="col-md-10">
+                                <input id="importxmlfile" name="importxmlfile" class="form-control btn btn-primary" type="file">
+                            </div>*@
+                        <div class="col-md-12">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="importxmlfile" id="importxmlfile">
+                                <label class="custom-file-label" for="importxmlfile">choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            &nbsp;
+                        </div>
+                        <div class="col-md-10 text-right mt-10">
+                            <input id="importxmlsubmit" class="btn btn-primary" value="@T("Admin.Configuration.Languages.Import")" type="submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    $(document).ready(function () {
+        @*$("#importxml").click(function (e) {
+                e.preventDefault();
+                var window = $("#importxml-window");
+                if (!window.data("kendoWindow")) {
+                    window.kendoWindow({
+                        modal: true,
+                        title: "@T("Admin.Configuration.Languages.Import")",
+                        actions: ["Close"]
+                    });
+                }
+                window.data('kendoWindow').center().open();
+            });*@
+
+        $('#importxmlfile').on('change',
+            function() {
+                //get the file name
+                var fileName = $(this).val();
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            });
+        $('.modal-dialog').draggable({
+            cursor: 'move',
+            handle: '.modal-header'
+        });
+        $('.modal-dialog>.modal-content>.modal-header').css('cursor', 'move');
+    });
+</script>

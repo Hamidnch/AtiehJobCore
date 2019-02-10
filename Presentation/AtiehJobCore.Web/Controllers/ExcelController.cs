@@ -13,7 +13,7 @@ using NPOI.XSSF.UserModel;
 
 namespace AtiehJobCore.Web.Controllers
 {
-    public class ExcelController : BaseController
+    public class ExcelController : BasePublicController
     {
         private readonly IHostingEnvironment _hostingEnvironment;
 

@@ -1,13 +1,13 @@
-﻿using System;
+﻿using AtiehJobCore.Core.Caching;
+using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Domain.Security;
+using AtiehJobCore.Core.Domain.Users;
+using AtiehJobCore.Core.MongoDb.Data;
+using AtiehJobCore.Services.Localization;
+using AtiehJobCore.Services.Users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using AtiehJobCore.Common.Caching;
-using AtiehJobCore.Common.Infrastructure.MongoDb;
-using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Common.MongoDb.Domain.Security;
-using AtiehJobCore.Common.MongoDb.Domain.Users;
-using AtiehJobCore.Services.MongoDb.Localization;
-using AtiehJobCore.Services.MongoDb.Users;
 
 namespace AtiehJobCore.Services.Security
 {

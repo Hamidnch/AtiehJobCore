@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Common.Constants;
+﻿using AtiehJobCore.Core.Constants;
 using DNTBreadCrumb.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

@@ -14,5 +14,7 @@
         public const string EmailAccounts = "ManageEmailAccounts";
         public const string SystemLog = "ManageSystemLog";
         public const string MessageContactForm = "ManageMessageContactForm";
+        public const string SiteAllowNavigation = "SiteAllowNavigation";
+        public const string AccessClosedSite = "AccessClosedSite";
     }
 }

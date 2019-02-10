@@ -1,7 +1,7 @@
-﻿using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb.Data;
+﻿using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
-using AtiehJobCore.Web.Framework.Infrastructure.Middlewares;
+using AtiehJobCore.Web.Framework.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +21,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
         /// <param name="configuration">Configuration root of the application</param>
         public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
+            // add dynamic permission
+            services.AddDynamicPermissions();
             //add data protection
             services.AddAtiehJobDataProtectionService();
             //add authentication

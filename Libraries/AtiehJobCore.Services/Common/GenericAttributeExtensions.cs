@@ -1,5 +1,5 @@
-﻿using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb;
+﻿using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Core.MongoDb;
 using System;
 
 namespace AtiehJobCore.Services.Common

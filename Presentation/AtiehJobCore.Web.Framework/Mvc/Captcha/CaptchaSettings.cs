@@ -1,5 +1,4 @@
-﻿using AtiehJobCore.Common.Configuration;
-using AtiehJobCore.Web.Framework.Mvc.Filter;
+﻿using AtiehJobCore.Core.Configuration;
 
 namespace AtiehJobCore.Web.Framework.Mvc.Captcha
 {

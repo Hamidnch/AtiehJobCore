@@ -1,5 +1,5 @@
-﻿using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Services.MongoDb.Events;
+﻿using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Services.Events;
 using FluentValidation;
 
 namespace AtiehJobCore.Web.Framework.Validators

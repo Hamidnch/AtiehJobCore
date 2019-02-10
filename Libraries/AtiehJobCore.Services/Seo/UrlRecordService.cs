@@ -1,9 +1,9 @@
-﻿using AtiehJobCore.Common;
-using AtiehJobCore.Common.Caching;
-using AtiehJobCore.Common.MongoDb;
-using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Common.MongoDb.Domain.Localization;
-using AtiehJobCore.Common.MongoDb.Domain.Seo;
+﻿using AtiehJobCore.Core;
+using AtiehJobCore.Core.Caching;
+using AtiehJobCore.Core.Domain.Localization;
+using AtiehJobCore.Core.Domain.Seo;
+using AtiehJobCore.Core.MongoDb;
+using AtiehJobCore.Core.MongoDb.Data;
 using MongoDB.Driver.Linq;
 using System;
 using System.Collections.Generic;

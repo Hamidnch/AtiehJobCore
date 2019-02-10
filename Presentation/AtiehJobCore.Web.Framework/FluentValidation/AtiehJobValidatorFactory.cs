@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Common.Infrastructure;
+﻿using AtiehJobCore.Core.Infrastructure;
 using FluentValidation;
 using FluentValidation.Attributes;
 using System;

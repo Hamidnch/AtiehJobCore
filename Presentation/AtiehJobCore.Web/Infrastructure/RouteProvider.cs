@@ -47,11 +47,6 @@ namespace AtiehJobCore.Web.Infrastructure
                             new { controller = "Common", action = "SetLanguage" });
 
 
-            //login page for checkout as guest
-            routeBuilder.MapLocalizedRoute("LoginCheckoutAsGuest",
-                            "login/checkoutasguest",
-                            new { controller = "User", action = "Login", checkoutAsGuest = true });
-
             //register result page
             routeBuilder.MapLocalizedRoute("RegisterResult",
                             "registerresult/{resultId}",
@@ -74,6 +69,7 @@ namespace AtiehJobCore.Web.Infrastructure
             routeBuilder.MapLocalizedRoute("UserChangePassword",
                             "user/changepassword",
                             new { controller = "User", action = "ChangePassword" });
+
             routeBuilder.MapLocalizedRoute("UserDeleteAccount",
                             "user/deleteaccount",
                             new { controller = "User", action = "DeleteAccount" });
@@ -93,6 +89,10 @@ namespace AtiehJobCore.Web.Infrastructure
             routeBuilder.MapLocalizedRoute("UserProfilePaged",
                             "profile/{id}/page/{pageNumber}",
                             new { controller = "Profile", action = "Index" });
+
+            //site closed
+            routeBuilder.MapLocalizedRoute("SiteClosed", "siteclosed",
+                new { controller = "Common", action = "SiteClosed" });
 
             ////EU Cookie law accept button handler (AJAX link)
             //routeBuilder.MapRoute("EuCookieLawAccept",

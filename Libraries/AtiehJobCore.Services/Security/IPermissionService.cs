@@ -1,5 +1,5 @@
-﻿using AtiehJobCore.Common.MongoDb.Domain.Security;
-using AtiehJobCore.Common.MongoDb.Domain.Users;
+﻿using AtiehJobCore.Core.Domain.Security;
+using AtiehJobCore.Core.Domain.Users;
 using System.Collections.Generic;
 
 namespace AtiehJobCore.Services.Security

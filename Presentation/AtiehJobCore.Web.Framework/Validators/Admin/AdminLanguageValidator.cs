@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Services.MongoDb.Localization;
+﻿using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Web.Framework.Models.Admin;
 using FluentValidation;
 using System.Globalization;

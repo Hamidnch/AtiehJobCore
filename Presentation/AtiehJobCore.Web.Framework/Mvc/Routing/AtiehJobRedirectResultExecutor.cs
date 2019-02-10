@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Common.MongoDb.Domain.Security;
+﻿using AtiehJobCore.Core.Domain.Security;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;

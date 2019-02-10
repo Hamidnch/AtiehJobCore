@@ -1,5 +1,4 @@
-﻿using AtiehJobCore.Services.MongoDb.Localization;
-using AtiehJobCore.Web.Framework.Mvc.Filter;
+﻿using AtiehJobCore.Services.Localization;
 
 namespace AtiehJobCore.Web.Framework.Mvc.Captcha
 {

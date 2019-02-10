@@ -1,5 +1,5 @@
-﻿using AtiehJobCore.Services.MongoDb.Events;
-using AtiehJobCore.Web.Framework.Components;
+﻿using AtiehJobCore.Services.Events;
+using AtiehJobCore.Web.Framework.ViewComponents;
 
 namespace AtiehJobCore.Web.Framework.Events
 {

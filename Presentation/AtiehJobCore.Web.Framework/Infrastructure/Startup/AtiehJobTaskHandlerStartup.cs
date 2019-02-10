@@ -1,12 +1,13 @@
-﻿using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Services.MongoDb.Logging;
+﻿using System;
+using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Core.MongoDb.Data;
+using AtiehJobCore.Services.Logging;
 using AtiehJobCore.Services.Tasks;
 using FluentScheduler;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
 {
@@ -42,7 +43,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
             try
             {
                 JobManager.UseUtcTime();
-                JobManager.JobException += info => logger.Fatal("An error just happened with a scheduled job: " + info.Exception);
+                JobManager.JobException += info =>
+                    logger.Fatal("An error just happened with a scheduled job: " + info.Exception);
                 var scheduleTasks = ScheduleTaskManager.Instance.LoadScheduleTasks();       //load records from db to collection
                 JobManager.Initialize(new RegistryAtiehJobNode(scheduleTasks));                //init registry and start scheduled tasks
             }

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using AtiehJobCore.Common.Constants;
+﻿using AtiehJobCore.Core.Constants;
 using AtiehJobCore.Web.Framework.Constants;
 using LewisTech.Utils.Collections;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
+using System;
+using System.Threading.Tasks;
 
 namespace AtiehJobCore.Web.Framework.AuthorizationHandler
 {

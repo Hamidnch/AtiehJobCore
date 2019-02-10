@@ -1,8 +1,8 @@
-﻿using System;
+﻿using AtiehJobCore.Core.Domain.Security;
+using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using AtiehJobCore.Common.MongoDb.Domain.Security;
 
 namespace AtiehJobCore.Services.Security
 {

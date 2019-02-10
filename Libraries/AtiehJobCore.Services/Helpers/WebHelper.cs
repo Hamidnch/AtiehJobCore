@@ -1,6 +1,6 @@
-﻿using AtiehJobCore.Common.Configuration;
-using AtiehJobCore.Common.Contracts;
-using AtiehJobCore.Common.Utilities;
+﻿using AtiehJobCore.Core.Configuration;
+using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Utilities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
@@ -198,10 +198,9 @@ namespace AtiehJobCore.Services.Helpers
                 return _httpContextAccessor.HttpContext.Request.Headers["HTTP_CLUSTER_HTTPS"].ToString().Equals("on", StringComparison.OrdinalIgnoreCase);
 
             //use HTTP_X_FORWARDED_PROTO?
-            if (_hostingConfig.UseHttpXForwardedProto)
-                return _httpContextAccessor.HttpContext.Request.Headers["X-Forwarded-Proto"].ToString().Equals("https", StringComparison.OrdinalIgnoreCase);
-
-            return _httpContextAccessor.HttpContext.Request.IsHttps;
+            return _hostingConfig.UseHttpXForwardedProto
+                ? _httpContextAccessor.HttpContext.Request.Headers["X-Forwarded-Proto"].ToString().Equals("https", StringComparison.OrdinalIgnoreCase)
+                : _httpContextAccessor.HttpContext.Request.IsHttps;
         }
 
         /// <inheritdoc />
@@ -495,7 +494,7 @@ namespace AtiehJobCore.Services.Helpers
         /// </summary>
         public virtual void RestartAppDomain()
         {
-            if (AtiehJobCore.Common.Infrastructure.OperatingSystem.IsWindows())
+            if (AtiehJobCore.Core.Infrastructure.OperatingSystem.IsWindows())
                 File.SetLastWriteTimeUtc(CommonHelper.MapPath("~/web.config"), DateTime.UtcNow);
             else
                 _applicationLifetime.StopApplication();

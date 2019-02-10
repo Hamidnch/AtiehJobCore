@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-using AtiehJobCore.ViewModel.Models.Identity.Settings;
+﻿using AtiehJobCore.Core.Domain.Common;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using System;
+using System.Threading.Tasks;
 
 namespace AtiehJobCore.Web.Framework.Middleware
 {

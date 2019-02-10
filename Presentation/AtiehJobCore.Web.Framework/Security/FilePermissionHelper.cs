@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using AtiehJobCore.Core.Utilities;
+using System.Collections.Generic;
 using System.IO;
 using System.Security.AccessControl;
 using System.Security.Principal;
-using AtiehJobCore.Common.Utilities;
 
 namespace AtiehJobCore.Web.Framework.Security
 {
@@ -23,7 +23,7 @@ namespace AtiehJobCore.Web.Framework.Security
         public static bool CheckPermissions(string path, bool checkRead, bool checkWrite,
             bool checkModify, bool checkDelete)
         {
-            if (!Common.Infrastructure.OperatingSystem.IsWindows())
+            if (!Core.Infrastructure.OperatingSystem.IsWindows())
             {
                 return true;
             }
@@ -40,7 +40,7 @@ namespace AtiehJobCore.Web.Framework.Security
             AuthorizationRuleCollection rules;
             try
             {
-                rules = new DirectorySecurity(path, 
+                rules = new DirectorySecurity(path,
                     AccessControlSections.Access).GetAccessRules(true, true, typeof(SecurityIdentifier));
             }
             catch
@@ -58,41 +58,41 @@ namespace AtiehJobCore.Web.Framework.Security
                     switch (rule.AccessControlType)
                     {
                         case AccessControlType.Deny:
-                        {
-                            if ((FileSystemRights.Delete & rule.FileSystemRights) == FileSystemRights.Delete)
-                                flag4 = true;
-                            if ((FileSystemRights.Modify & rule.FileSystemRights) == FileSystemRights.Modify)
-                                flag3 = true;
+                            {
+                                if ((FileSystemRights.Delete & rule.FileSystemRights) == FileSystemRights.Delete)
+                                    flag4 = true;
+                                if ((FileSystemRights.Modify & rule.FileSystemRights) == FileSystemRights.Modify)
+                                    flag3 = true;
 
-                            if ((FileSystemRights.Read & rule.FileSystemRights) == FileSystemRights.Read)
-                                flag = true;
+                                if ((FileSystemRights.Read & rule.FileSystemRights) == FileSystemRights.Read)
+                                    flag = true;
 
-                            if ((FileSystemRights.Write & rule.FileSystemRights) == FileSystemRights.Write)
-                                flag2 = true;
+                                if ((FileSystemRights.Write & rule.FileSystemRights) == FileSystemRights.Write)
+                                    flag2 = true;
 
-                            continue;
-                        }
+                                continue;
+                            }
                         case AccessControlType.Allow:
-                        {
-                            if ((FileSystemRights.Delete & rule.FileSystemRights) == FileSystemRights.Delete)
                             {
-                                flag8 = true;
-                            }
-                            if ((FileSystemRights.Modify & rule.FileSystemRights) == FileSystemRights.Modify)
-                            {
-                                flag7 = true;
-                            }
-                            if ((FileSystemRights.Read & rule.FileSystemRights) == FileSystemRights.Read)
-                            {
-                                flag5 = true;
-                            }
-                            if ((FileSystemRights.Write & rule.FileSystemRights) == FileSystemRights.Write)
-                            {
-                                flag6 = true;
-                            }
+                                if ((FileSystemRights.Delete & rule.FileSystemRights) == FileSystemRights.Delete)
+                                {
+                                    flag8 = true;
+                                }
+                                if ((FileSystemRights.Modify & rule.FileSystemRights) == FileSystemRights.Modify)
+                                {
+                                    flag7 = true;
+                                }
+                                if ((FileSystemRights.Read & rule.FileSystemRights) == FileSystemRights.Read)
+                                {
+                                    flag5 = true;
+                                }
+                                if ((FileSystemRights.Write & rule.FileSystemRights) == FileSystemRights.Write)
+                                {
+                                    flag6 = true;
+                                }
 
-                            break;
-                        }
+                                break;
+                            }
                     }
                 }
                 foreach (var reference in current.Groups)
@@ -106,29 +106,29 @@ namespace AtiehJobCore.Web.Framework.Security
                         switch (rule2.AccessControlType)
                         {
                             case AccessControlType.Deny:
-                            {
-                                if ((FileSystemRights.Delete & rule2.FileSystemRights) == FileSystemRights.Delete)
-                                    flag4 = true;
-                                if ((FileSystemRights.Modify & rule2.FileSystemRights) == FileSystemRights.Modify)
-                                    flag3 = true;
-                                if ((FileSystemRights.Read & rule2.FileSystemRights) == FileSystemRights.Read)
-                                    flag = true;
-                                if ((FileSystemRights.Write & rule2.FileSystemRights) == FileSystemRights.Write)
-                                    flag2 = true;
-                                continue;
-                            }
+                                {
+                                    if ((FileSystemRights.Delete & rule2.FileSystemRights) == FileSystemRights.Delete)
+                                        flag4 = true;
+                                    if ((FileSystemRights.Modify & rule2.FileSystemRights) == FileSystemRights.Modify)
+                                        flag3 = true;
+                                    if ((FileSystemRights.Read & rule2.FileSystemRights) == FileSystemRights.Read)
+                                        flag = true;
+                                    if ((FileSystemRights.Write & rule2.FileSystemRights) == FileSystemRights.Write)
+                                        flag2 = true;
+                                    continue;
+                                }
                             case AccessControlType.Allow:
-                            {
-                                if ((FileSystemRights.Delete & rule2.FileSystemRights) == FileSystemRights.Delete)
-                                    flag8 = true;
-                                if ((FileSystemRights.Modify & rule2.FileSystemRights) == FileSystemRights.Modify)
-                                    flag7 = true;
-                                if ((FileSystemRights.Read & rule2.FileSystemRights) == FileSystemRights.Read)
-                                    flag5 = true;
-                                if ((FileSystemRights.Write & rule2.FileSystemRights) == FileSystemRights.Write)
-                                    flag6 = true;
-                                break;
-                            }
+                                {
+                                    if ((FileSystemRights.Delete & rule2.FileSystemRights) == FileSystemRights.Delete)
+                                        flag8 = true;
+                                    if ((FileSystemRights.Modify & rule2.FileSystemRights) == FileSystemRights.Modify)
+                                        flag7 = true;
+                                    if ((FileSystemRights.Read & rule2.FileSystemRights) == FileSystemRights.Read)
+                                        flag5 = true;
+                                    if ((FileSystemRights.Write & rule2.FileSystemRights) == FileSystemRights.Write)
+                                        flag6 = true;
+                                    break;
+                                }
                         }
                     }
                 }
@@ -196,7 +196,7 @@ namespace AtiehJobCore.Web.Framework.Security
             {
                 Path.Combine(rootDir, "web.config")
             };
-            if (Common.Infrastructure.OperatingSystem.IsWindows())
+            if (Core.Infrastructure.OperatingSystem.IsWindows())
             {
                 filesToCheck.Add(Path.Combine(rootDir, "App_Data\\InstalledPlugins.txt"));
                 filesToCheck.Add(Path.Combine(rootDir, "App_Data\\Settings.txt"));

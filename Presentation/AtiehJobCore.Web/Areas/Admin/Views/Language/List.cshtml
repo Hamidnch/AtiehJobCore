@@ -4,7 +4,7 @@
     Layout = "_AdminLayout";
 }
 <antiforgery-token />
-<div class="row paddingAll">
+<div class="row">
     <div class="col-md-12">
         <div class="portlet light form-fit">
             <div class="portlet-title">
@@ -12,13 +12,7 @@
                     <i class="fa fa-language"></i>
                     @T("Admin.Configuration.Languages")
                 </div>
-                <div class="actions btn-group btn-group-devided">
-                    <a href="@Url.Action("Create")" class="btn green">
-                        <i class="fa fa-plus"></i>
-                        <span class="hidden-xs"> @T("Admin.Common.AddNew") </span>
-                    </a>
-                    <vc:admin-widget widget-zone="language_list_buttons" additional-data="null" />
-                </div>
+
             </div>
             <div class="portlet-body form">
                 <div class="form-horizontal">
@@ -29,7 +23,19 @@
                     </div>
                 </div>
             </div>
+            <br />
+            <div class="btn btn-primary">
+                <a href="@Url.Action("Create")" class="btn text-white">
+                    <i class="fa fa-plus"></i>
+                    <span class="hidden-xs"> @T("Admin.Common.AddNew") </span>
+                </a>
+            </div>
         </div>
+        @*<a href="@Url.Action("Create")" class="shine-button">
+                <span class="shine"></span>
+                <i class="fa fa-plus"></i>
+                <span class="text hidden-xs"> @T("Admin.Common.AddNew") </span>
+            </a>*@
     </div>
 </div>
 
@@ -62,7 +68,7 @@
             pageable: {
                 refresh: true,
                 numeric: false,
-                previousNext: false,
+                previousNext: true,
                 info: false
             },
             editable: {
@@ -70,27 +76,52 @@
                 mode: "inline"
             },
             scrollable: false,
-            columns: [{
-                field: "Name",
-                title: "@T("Admin.Configuration.Languages.Fields.Name")",
-                template: '<a class="k-link" href="Edit/#=Id#">#=Name#</a>',
-            },{
+            columns: [
+            {
                 field: "FlagImageFileName",
                 title: "@T("Admin.Configuration.Languages.Fields.FlagImage")",
                 width: 22,
                 attributes: { style: "text-align:center" },
+                headerAttributes: {
+                    style: "text-align:center"
+                },
                 template: '<img src="@Url.Content("~/img/flags/")#=FlagImageFileName#" />'
             },
             {
+                field: "Name",
+                width: 150,
+    		    headerAttributes: {
+					style: "text-align:center"
+                },
+                attributes: { style: "text-align:center" },
+				//attributes: {
+				//	"class": "table-cell",
+				//style: "text-align:center"
+				//},
+                title: "@T("Admin.Configuration.Languages.Fields.Name")",
+                template: '<a class="k-link" href="Edit/#=Id#">#=Name#</a>',
+            },
+            {
                 field: "LanguageCulture",
+                headerAttributes: {
+                    style: "text-align:center"
+                },
+                attributes: { style: "text-align:center" },
                 title: "@T("Admin.Configuration.Languages.Fields.LanguageCulture")",
                 width: 200
             },{
                 field: "DisplayOrder",
+                headerAttributes: {
+                    style: "text-align:center"
+                },
+                attributes: { style: "text-align:center" },
                 title: "@T("Admin.Configuration.Languages.Fields.DisplayOrder")",
                 width: 100
             }, {
                 field: "Published",
+                headerAttributes: {
+                    style: "text-align:center"
+                },
                 title: "@T("Admin.Configuration.Languages.Fields.Published")",
                 width: 100,
                 headerAttributes: { style: "text-align:center" },

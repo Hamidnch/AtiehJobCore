@@ -23,8 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AtiehJobCore.Common\AtiehJobCore.Common.csproj" />
-    <ProjectReference Include="..\AtiehJobCore.ViewModel\AtiehJobCore.ViewModel.csproj" />
+    <ProjectReference Include="..\AtiehJobCore.Core\AtiehJobCore.Core.csproj" />
   </ItemGroup>
 
 </Project>

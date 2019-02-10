@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AtiehJobCore.Common.Http;
-using AtiehJobCore.Common.Infrastructure;
+﻿using AtiehJobCore.Core.Http;
+using AtiehJobCore.Core.Infrastructure;
 using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 
 namespace AtiehJobCore.Services.Authentication.External
 {

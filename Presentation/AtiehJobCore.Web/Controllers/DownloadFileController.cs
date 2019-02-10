@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AtiehJobCore.Web.Controllers
 {
-    public class DownloadFileController : BaseController
+    public class DownloadFileController : BasePublicController
     {
         public IActionResult Index()
         {

@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Common.MongoDb.Domain.Seo;
+﻿using AtiehJobCore.Core.Domain.Seo;
 using AtiehJobCore.Services.Seo;
 using AtiehJobCore.Web.Framework.UI;
 using BundlerMinifier;
@@ -272,7 +272,7 @@ namespace AtiehJobCore.Web.Framework.Services
                         src = urlHelper.Content(src);
                         //check whether this file exists. 
                         srcPath = Path.Combine(_hostingEnvironment.ContentRootPath,
-                            Common.Infrastructure.OperatingSystem.IsWindows()
+                            Core.Infrastructure.OperatingSystem.IsWindows()
                                 ? src.Remove(0, 1).Replace("/", "\\") : src.Remove(0, 1));
 
                         if (File.Exists(srcPath))
@@ -286,7 +286,7 @@ namespace AtiehJobCore.Web.Framework.Services
                         {
                             //if not, it should be stored into /wwwroot directory
                             src = "wwwroot/" + src;
-                            srcPath = Path.Combine(_hostingEnvironment.ContentRootPath, Common.Infrastructure.OperatingSystem.IsWindows()
+                            srcPath = Path.Combine(_hostingEnvironment.ContentRootPath, Core.Infrastructure.OperatingSystem.IsWindows()
                                 ? src.Replace("/", "\\").Replace("\\\\", "\\") : src);
                             if (File.Exists(srcPath))
                                 item.FilePath = srcPath;
@@ -298,13 +298,13 @@ namespace AtiehJobCore.Web.Framework.Services
                     bundle.OutputFileName = "wwwroot/bundles/" + outputFileName + ".js";
 
                     //save
-                    var configFilePath = _hostingEnvironment.ContentRootPath + (Common.Infrastructure.OperatingSystem.IsWindows()
+                    var configFilePath = _hostingEnvironment.ContentRootPath + (Core.Infrastructure.OperatingSystem.IsWindows()
                                              ? "\\" : "/") + outputFileName + ".json";
                     bundle.FileName = configFilePath;
 
                     var bundleDirectory = Path.Combine(_hostingEnvironment.WebRootPath, "bundles");
                     var filePaths = Directory.EnumerateFiles(bundleDirectory);
-                    var fileNames = filePaths.Select(x => x.Substring(x.LastIndexOf((Common.Infrastructure.OperatingSystem.IsWindows()
+                    var fileNames = filePaths.Select(x => x.Substring(x.LastIndexOf((Core.Infrastructure.OperatingSystem.IsWindows()
                                                                           ? "\\" : "/"), StringComparison.Ordinal) + 1));
 
                     if (!fileNames.Any(x => x.Contains(outputFileName)))
@@ -318,7 +318,7 @@ namespace AtiehJobCore.Web.Framework.Services
 
                     //render
                     result.AppendFormat("<script src=\"{0}\"></script>",
-                        File.Exists(bundleDirectory + (Common.Infrastructure.OperatingSystem.IsWindows() ? "\\" : "/") +
+                        File.Exists(bundleDirectory + (Core.Infrastructure.OperatingSystem.IsWindows() ? "\\" : "/") +
                                     outputFileName + ".min.js")
                             ? urlHelper.Content("~/bundles/" + outputFileName + ".min.js")
                             : urlHelper.Content("~/bundles/" + outputFileName + ".js"));
@@ -431,7 +431,7 @@ namespace AtiehJobCore.Web.Framework.Services
                         var src = debugModel ? item.DebugSrc : item.Src;
                         src = urlHelper.Content(src);
                         //check whether this file exists 
-                        var srcPath = Common.Infrastructure.OperatingSystem.IsWindows() ?
+                        var srcPath = Core.Infrastructure.OperatingSystem.IsWindows() ?
                             Path.Combine(_hostingEnvironment.ContentRootPath, src.Remove(0, 1).Replace("/", "\\")) :
                             Path.Combine(_hostingEnvironment.ContentRootPath, src.Remove(0, 1));
 
@@ -446,7 +446,7 @@ namespace AtiehJobCore.Web.Framework.Services
                         {
                             //if not, it should be stored into /wwwroot directory
                             src = "wwwroot" + src;
-                            srcPath = Path.Combine(_hostingEnvironment.ContentRootPath, Common.Infrastructure.OperatingSystem.IsWindows()
+                            srcPath = Path.Combine(_hostingEnvironment.ContentRootPath, Core.Infrastructure.OperatingSystem.IsWindows()
                                 ? src.Replace("/", "\\").Replace("\\\\", "\\") : src);
 
                             if (File.Exists(srcPath))
@@ -460,13 +460,13 @@ namespace AtiehJobCore.Web.Framework.Services
                     bundle.OutputFileName = "wwwroot/bundles/" + outputFileName + ".css";
 
                     //save
-                    var configFilePath = _hostingEnvironment.ContentRootPath + (Common.Infrastructure.OperatingSystem.IsWindows()
+                    var configFilePath = _hostingEnvironment.ContentRootPath + (Core.Infrastructure.OperatingSystem.IsWindows()
                                              ? "\\" : "/") + outputFileName + ".json";
                     bundle.FileName = configFilePath;
 
                     var bundleDirectory = Path.Combine(_hostingEnvironment.WebRootPath, "bundles");
                     var filePaths = Directory.EnumerateFiles(bundleDirectory);
-                    var fileNames = filePaths.Select(x => x.Substring(x.LastIndexOf((Common.Infrastructure.OperatingSystem.IsWindows()
+                    var fileNames = filePaths.Select(x => x.Substring(x.LastIndexOf((Core.Infrastructure.OperatingSystem.IsWindows()
                                                                           ? "\\" : "/"), StringComparison.Ordinal) + 1));
 
                     if (!fileNames.Any(x => x.Contains(outputFileName)))
@@ -479,7 +479,7 @@ namespace AtiehJobCore.Web.Framework.Services
                     }
                     //render
                     result.AppendFormat("<link href=\"{0}\" rel=\"stylesheet\" type=\"{1}\" />",
-                        File.Exists(bundleDirectory + (Common.Infrastructure.OperatingSystem.IsWindows()
+                        File.Exists(bundleDirectory + (Core.Infrastructure.OperatingSystem.IsWindows()
                                         ? "\\"
                                         : "/") + outputFileName + ".min.css")
                             ? urlHelper.Content("~/bundles/" + outputFileName + ".min.css")

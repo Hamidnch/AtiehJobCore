@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Net.Http;
-using AtiehJobCore.Web.Framework.Mvc.Filter;
 using Newtonsoft.Json.Linq;
 
 namespace AtiehJobCore.Web.Framework.Mvc.Captcha

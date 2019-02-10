@@ -1,5 +1,5 @@
-﻿using AtiehJobCore.Common.Contracts;
-using AtiehJobCore.Common.MongoDb.Domain.Users;
+﻿using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Domain.Users;
 using AtiehJobCore.Web.Framework.Models.Admin;
 using AutoMapper;
 

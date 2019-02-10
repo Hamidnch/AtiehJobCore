@@ -1,6 +1,6 @@
-﻿using System.Linq;
-using AtiehJobCore.Common;
+﻿using AtiehJobCore.Core;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
+using System.Linq;
 
 namespace AtiehJobCore.Web.Framework.Mvc.ModelBinding
 {
@@ -24,7 +24,7 @@ namespace AtiehJobCore.Web.Framework.Mvc.ModelBinding
             foreach (var additionalValue in additionalValues)
             {
                 if (context.DisplayMetadata.AdditionalValues.ContainsKey(additionalValue.Name))
-                    throw new CustomException($"There is already an attribute with the name {additionalValue.Name} on this model");
+                    throw new AtiehJobException($"There is already an attribute with the name {additionalValue.Name} on this model");
 
                 context.DisplayMetadata.AdditionalValues.Add(additionalValue.Name, additionalValue);
             }

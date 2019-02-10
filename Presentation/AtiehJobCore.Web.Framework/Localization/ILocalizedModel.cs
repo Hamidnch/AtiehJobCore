@@ -5,8 +5,8 @@ namespace AtiehJobCore.Web.Framework.Localization
     public interface ILocalizedModel
     {
     }
-    public interface ILocalizedModel<TLocalizedModel> : ILocalizedModel
+    public interface ILocalizedModel<T> : ILocalizedModel
     {
-        IList<TLocalizedModel> Locales { get; set; }
+        IList<T> Locales { get; set; }
     }
 }

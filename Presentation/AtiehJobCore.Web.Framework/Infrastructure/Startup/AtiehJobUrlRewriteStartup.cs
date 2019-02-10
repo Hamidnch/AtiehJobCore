@@ -1,10 +1,11 @@
-﻿using System.IO;
-using AtiehJobCore.Common.Configuration;
-using AtiehJobCore.Common.Infrastructure;
+﻿using AtiehJobCore.Core.Configuration;
+using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.IO;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
 {

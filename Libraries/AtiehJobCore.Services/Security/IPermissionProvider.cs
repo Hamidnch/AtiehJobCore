@@ -1,7 +1,5 @@
-﻿using System;
+﻿using AtiehJobCore.Core.Domain.Security;
 using System.Collections.Generic;
-using System.Text;
-using AtiehJobCore.Common.MongoDb.Domain.Security;
 
 namespace AtiehJobCore.Services.Security
 {

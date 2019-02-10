@@ -1,5 +1,4 @@
 ﻿using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
-using AtiehJobCore.Web.Framework.Mvc.Filter;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Linq;

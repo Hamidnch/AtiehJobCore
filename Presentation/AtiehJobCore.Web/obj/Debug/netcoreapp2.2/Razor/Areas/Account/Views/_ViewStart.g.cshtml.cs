@@ -19,7 +19,7 @@ using System.Net;
 #line default
 #line hidden
 #line 2 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Account\Views\_ViewImports.cshtml"
-using AtiehJobCore.Common.Contracts;
+using AtiehJobCore.Core.Contracts;
 
 #line default
 #line hidden
@@ -39,7 +39,7 @@ using AtiehJobCore.Services.Authentication.External;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8fded87516b8a3a8d67de8a2d8bfa18a192c6161", @"/Areas/Account/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3e80a0608bf6cdb0e8f91d4bcb8655d463527eeb", @"/Areas/Account/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"17dfa6624d2fb8b2a7aaaab4b5d0412011c58646", @"/Areas/Account/Views/_ViewImports.cshtml")]
     public class Areas_Account_Views__ViewStart : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         #pragma warning disable 1998

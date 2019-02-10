@@ -2,7 +2,7 @@
 
 namespace AtiehJobCore.Web.Framework.Models.Admin
 {
-    public partial class LanguageResourceFilterModel : BaseMongoEntityModel
+    public partial class AdminLanguageResourceFilterModel : BaseMongoEntityModel
     {
         [AtiehJobResourceDisplayName("Admin.Configuration.Languages.ResourcesFilter.Fields.ResourceName")]
         public string ResourceName { get; set; }

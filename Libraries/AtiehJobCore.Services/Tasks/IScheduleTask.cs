@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Common.MongoDb.Domain.Tasks;
+﻿using AtiehJobCore.Core.Domain.Tasks;
 using FluentScheduler;
 using System;
 

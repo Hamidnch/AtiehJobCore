@@ -1,11 +1,11 @@
-﻿using System.Linq;
-using AtiehJobCore.Common.MongoDb.Domain.Security;
+﻿using AtiehJobCore.Core.Domain.Security;
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 
 namespace AtiehJobCore.Web.Framework.Security
 {

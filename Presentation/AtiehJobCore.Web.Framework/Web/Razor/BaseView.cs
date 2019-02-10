@@ -1,7 +1,7 @@
-﻿using AtiehJobCore.Common.Constants;
-using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.Infrastructure.MongoDb;
-using AtiehJobCore.Services.MongoDb.Localization;
+﻿using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Domain.Users;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Web.Framework.Localization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Razor;
@@ -27,10 +27,7 @@ namespace AtiehJobCore.Web.Framework.Web.Razor
             return Context.User.Identity.IsAuthenticated;
         }
 
-        public bool IsAdminRole()
-        {
-            return Context.User.IsInRole(AreaNames.Admin);
-        }
+        public bool IsAdminRole => WorkContext.CurrentUser.IsAdmin();
 
         //public bool IsRtl()
         //{
@@ -66,6 +63,32 @@ namespace AtiehJobCore.Web.Framework.Web.Razor
                         : string.Format(resFormat, args));
                 });
             }
+        }
+
+        /// <summary>
+        /// Gets a selected tab index (used in admin area to store selected tab index)
+        /// </summary>
+        /// <returns>Index</returns>
+        public int GetSelectedTabIndex()
+        {
+            //keep this method synchronized with
+            //"SetSelectedTabIndex" method of \Administration\Controllers\BaseAdminController.cs
+            var index = 0;
+            const string dataKey = "AtiehJob.selected-tab-index";
+            if (ViewData[dataKey] is int)
+            {
+                index = (int)ViewData[dataKey];
+            }
+            if (TempData[dataKey] is int)
+            {
+                index = (int)TempData[dataKey];
+            }
+
+            //ensure it's not negative
+            if (index < 0)
+                index = 0;
+
+            return index;
         }
     }
 

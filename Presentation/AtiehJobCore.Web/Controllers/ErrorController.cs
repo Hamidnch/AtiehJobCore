@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AtiehJobCore.Web.Controllers
 {
-    public class ErrorController : BaseController
+    public class ErrorController : BasePublicController
     {
         private readonly ILogger _logger;
 

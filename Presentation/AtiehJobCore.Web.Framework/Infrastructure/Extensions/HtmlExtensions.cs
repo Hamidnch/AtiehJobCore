@@ -1,5 +1,12 @@
-﻿using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Services.MongoDb.Localization;
+﻿using System;
+using System.Globalization;
+using System.IO;
+using System.Linq.Expressions;
+using System.Net;
+using System.Text;
+using System.Text.Encodings.Web;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Web.Framework.Localization;
 using AtiehJobCore.Web.Framework.Models;
 using Microsoft.AspNetCore.Html;
@@ -7,13 +14,6 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using System;
-using System.Globalization;
-using System.IO;
-using System.Linq.Expressions;
-using System.Net;
-using System.Text;
-using System.Text.Encodings.Web;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 {
@@ -90,7 +90,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
             }
         }
 
-        public static IHtmlContent DeleteConfirmation<T>(this IHtmlHelper<T> helper, string buttonsSelector) where T : BaseMongoEntityModel
+        public static IHtmlContent DeleteConfirmation<T>(this IHtmlHelper<T> helper,
+            string buttonsSelector) where T : BaseMongoEntityModel
         {
             return DeleteConfirmation(helper, "", buttonsSelector);
         }
@@ -98,15 +99,16 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
         public static IHtmlContent DeleteConfirmation<T>(this IHtmlHelper<T> helper, string actionName,
                     string buttonsSelector) where T : BaseMongoEntityModel
         {
-            if (String.IsNullOrEmpty(actionName))
+            if (string.IsNullOrEmpty(actionName))
                 actionName = "Delete";
 
-            var modalId = new HtmlString(helper.ViewData.ModelMetadata.ModelType.Name.ToLower() + "-delete-confirmation").ToHtmlString();
+            var modalId = new HtmlString(helper.ViewData.ModelMetadata.ModelType.Name.ToLower()
+                                       + "-delete-confirmation").ToHtmlString();
 
 
             var deleteConfirmationModel = new DeleteConfirmationModel
             {
-                Id = helper.ViewData.Model.Id.ToString(),
+                Id = helper.ViewData.Model.Id,
                 ControllerName = helper.ViewContext.RouteData.Values["controller"].ToString(),
                 ActionName = actionName,
                 WindowId = modalId
@@ -114,7 +116,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 
             var window = new StringBuilder();
             window.AppendLine($"<div id='{modalId}' style='display:none;'>");
-            window.AppendLine(helper.PartialAsync("Delete", deleteConfirmationModel).Result.ToHtmlString());
+            window.AppendLine(helper.PartialAsync("Delete",
+                deleteConfirmationModel).Result.ToHtmlString());
             window.AppendLine("</div>");
             window.AppendLine("<script>");
             window.AppendLine("$(document).ready(function() {");
@@ -138,7 +141,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
             return new HtmlString(window.ToString());
         }
 
-        public static string FieldIdFor<T, TResult>(this IHtmlHelper<T> html, Expression<Func<T, TResult>> expression)
+        public static string FieldIdFor<T, TResult>(this IHtmlHelper<T> html,
+            Expression<Func<T, TResult>> expression)
         {
             //TO DO remove this method and use in cshtml files
             return html.IdFor(expression);

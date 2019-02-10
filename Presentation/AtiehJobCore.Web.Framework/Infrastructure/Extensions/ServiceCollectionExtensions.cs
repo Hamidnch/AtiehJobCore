@@ -1,20 +1,16 @@
-﻿using System;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using AtiehJobCore.Common.Configuration;
-using AtiehJobCore.Common.Contracts;
-using AtiehJobCore.Common.Extensions;
-using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb.Data;
-using AtiehJobCore.Common.Plugins;
-using AtiehJobCore.Common.Securities;
-using AtiehJobCore.Common.Utilities;
+﻿using AtiehJobCore.Core.Configuration;
+using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Domain.Common;
+using AtiehJobCore.Core.Extensions;
+using AtiehJobCore.Core.Infrastructure;
+using AtiehJobCore.Core.MongoDb.Data;
+using AtiehJobCore.Core.Plugins;
+using AtiehJobCore.Core.Securities;
+using AtiehJobCore.Core.Utilities;
 using AtiehJobCore.Services.Authentication;
 using AtiehJobCore.Services.Authentication.External;
-using AtiehJobCore.Services.MongoDb.Configuration;
-using AtiehJobCore.Services.MongoDb.Logging;
-using AtiehJobCore.ViewModel.Models.Identity.Settings;
+using AtiehJobCore.Services.Configuration;
+using AtiehJobCore.Services.Logging;
 using AtiehJobCore.Web.Framework.AuthorizationHandler;
 using AtiehJobCore.Web.Framework.Filters;
 using AtiehJobCore.Web.Framework.FluentValidation;
@@ -38,6 +34,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 {
@@ -57,19 +57,9 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 
             //add accessor to HttpContext
             services.AddHttpContextAccessor();
+
             services.AddAtiehJobElmahService();
             AddStartupFilterServices(services);
-
-            //services.AddAntiForgeryService();
-            //services.AddHttpSessionService();
-            //services.AddAtiehJobDataProtectionService();
-            //services.AddLocalizationService();
-            //services.AddAtiehJobAuthenticationService();
-            //services.AddSettingsService();
-            //services.AddGrandRedirectResultExecutorService();
-            //services.AddAtiehJobHealthChecksService();
-            //services.AddAtiehJobMvcService();
-
             services.AddDNTCommonWeb();
             services.AddDNTCaptcha();
             services.AddCloudscribePagination();
@@ -82,44 +72,14 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
             engine.Initialize(services);
             var serviceProvider = engine.ConfigureServices(services, configuration);
 
-            if (DataSettingsHelper.DatabaseIsInstalled())
+            if (!DataSettingsHelper.DatabaseIsInstalled())
             {
-                //log application start
-                var logger = EngineContext.Current.Resolve<ILogger>();
-                logger.Information("Application started", null, null);
+                return serviceProvider;
             }
 
-            // Adds all of the ASP.NET Core Identity related services and configurations at once.
-            //services.AddCustomIdentityServices();
-
-            //var siteSettings = GetSiteSettings(services);
-
-            //services.AddIdentityOptions(siteSettings);
-
-            //services.RegisterAllCustomServices();
-
-            //services.AddScoped<IPrincipal>(provider =>
-            //    provider.GetService<IHttpContextAccessor>()?.HttpContext?.User ?? ClaimsPrincipal.Current);
-
-            //services.AddCustomTicketStore(siteSettings);
-            //services.AddDynamicPermissions();
-            //services.AddCustomDataProtection(siteSettings);
-
-            //var siteSettings = services.GetSiteSettings();
-
-            // It's added to access services from the dbContext,
-            // remove it if you are using the normal `AddDbContext`
-            // and normal constructor dependency injection.
-            //services.AddEntityFrameworkByActiveDatabase(siteSettings.ActiveDatabase);
-
-            //services.AddDbContextPool<AtiehJobCoreDbContext>((provider, optionsBuilder) =>
-            //{
-            //    optionsBuilder.SetDbContextOptions(siteSettings);
-            //    // It's added to access services from the dbContext,
-            //    // remove it if you are using the normal `AddDbContext`
-            //    // and normal constructor dependency injection.
-            //    optionsBuilder.UseInternalServiceProvider(provider);
-            //});
+            //log application start
+            var logger = EngineContext.Current.Resolve<ILogger>();
+            logger.Information("Application started", null, null);
 
             return serviceProvider;
         }

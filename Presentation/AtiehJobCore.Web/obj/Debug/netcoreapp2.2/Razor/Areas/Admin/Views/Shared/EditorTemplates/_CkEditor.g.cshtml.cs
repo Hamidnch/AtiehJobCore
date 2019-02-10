@@ -43,7 +43,27 @@ using DNTPersianUtils.Core;
 #line default
 #line hidden
 #line 7 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
-using AtiehJobCore.Services.Constants;
+using AtiehJobCore.Web.Framework.Models.Admin;
+
+#line default
+#line hidden
+#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using AtiehJobCore.Services.Events;
+
+#line default
+#line hidden
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Events;
+
+#line default
+#line hidden
+#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
+
+#line default
+#line hidden
+#line 11 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Admin\Views\_ViewImports.cshtml"
+using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
@@ -53,7 +73,7 @@ using AtiehJobCore.Web.Framework.UI;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3bfb55adcdfea6dd3fd672ad2012625dc857c7a7", @"/Areas/Admin/Views/Shared/EditorTemplates/_CkEditor.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d92eb80d43aa3e081240d6bb84f926f55689c18", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"575cb792871ec30357c367140b6e04a5df57c40a", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Shared_EditorTemplates__CkEditor : AtiehJobCore.Web.Framework.Web.Razor.BaseView<string>
     {
         #pragma warning disable 1998

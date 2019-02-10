@@ -43,27 +43,22 @@ using DNTPersianUtils.Core;
 #line default
 #line hidden
 #line 7 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
-using AtiehJobCore.Services.Constants;
-
-#line default
-#line hidden
-#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
 using AtiehJobCore.Web.Framework.Models;
 
 #line default
 #line hidden
-#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
-using AtiehJobCore.Common.Contracts;
+#line 8 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+using AtiehJobCore.Core.Contracts;
 
 #line default
 #line hidden
-#line 10 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
+#line 9 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Views\_ViewImports.cshtml"
 using AtiehJobCore.Web.Framework.Models.Account;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f868c7683fb34e65384016e51d209b335b1b7350", @"/Views/Excel/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3b579ab313573b725426803737e39b391ee186af", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"910e6c74a464292d19aea2b885b2bf5495068ea8", @"/Views/_ViewImports.cshtml")]
     public class Views_Excel_Index : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("col-md-4"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -111,17 +106,17 @@ using AtiehJobCore.Web.Framework.Models.Account;
 #line default
 #line hidden
             BeginContext(43, 600, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b73508400", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b73508227", async() => {
                 BeginContext(141, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(147, 274, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b73508786", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b73508613", async() => {
                     BeginContext(164, 10, true);
                     WriteLiteral("\r\n        ");
                     EndContext();
                     BeginContext(174, 120, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b73509196", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b73509023", async() => {
                         BeginContext(196, 92, true);
                         WriteLiteral("\r\n            <input type=\"file\" id=\"fUpload\" name=\"files\" class=\"form-control\" />\r\n        ");
                         EndContext();
@@ -142,7 +137,7 @@ using AtiehJobCore.Web.Framework.Models.Account;
                     WriteLiteral("\r\n        ");
                     EndContext();
                     BeginContext(304, 105, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b735010713", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b735010540", async() => {
                         BeginContext(326, 77, true);
                         WriteLiteral("\r\n            <input type=\"button\" id=\"btnUpload\" value=\"Upload\" />\r\n        ");
                         EndContext();
@@ -179,17 +174,17 @@ using AtiehJobCore.Web.Framework.Models.Account;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(427, 166, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b735013135", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b735012962", async() => {
                     BeginContext(444, 10, true);
                     WriteLiteral("\r\n        ");
                     EndContext();
                     BeginContext(454, 127, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b735013546", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b735013373", async() => {
                         BeginContext(502, 14, true);
                         WriteLiteral("\r\n            ");
                         EndContext();
                         BeginContext(516, 49, false);
-                        __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b735013980", async() => {
+                        __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b735013807", async() => {
                             BeginContext(550, 6, true);
                             WriteLiteral("Export");
                             EndContext();
@@ -244,7 +239,7 @@ using AtiehJobCore.Web.Framework.Models.Account;
                 WriteLiteral("\r\n    <br />\r\n    ");
                 EndContext();
                 BeginContext(611, 23, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b735017671", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f868c7683fb34e65384016e51d209b335b1b735017498", async() => {
                 }
                 );
                 __AtiehJobCore_Web_TagHelpers_VisibilityTagHelper = CreateTagHelper<global::AtiehJobCore.Web.TagHelpers.VisibilityTagHelper>();

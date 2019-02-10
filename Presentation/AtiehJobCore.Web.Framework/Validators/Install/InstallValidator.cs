@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Services.MongoDb.Installation;
+﻿using AtiehJobCore.Services.Installation;
 using AtiehJobCore.Web.Framework.Models;
 using FluentValidation;
 

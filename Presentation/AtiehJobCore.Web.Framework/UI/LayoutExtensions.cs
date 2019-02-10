@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Common.Infrastructure;
+﻿using AtiehJobCore.Core.Infrastructure;
 using AtiehJobCore.Web.Framework.Services;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;

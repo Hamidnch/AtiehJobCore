@@ -53,7 +53,7 @@ namespace AtiehJobCore.Web.Controllers
     }
 
     [Route("api/[controller]")]
-    public class CspReportController : BaseController
+    public class CspReportController : BasePublicController
     {
         private readonly ILogger<CspReportController> _logger;
 

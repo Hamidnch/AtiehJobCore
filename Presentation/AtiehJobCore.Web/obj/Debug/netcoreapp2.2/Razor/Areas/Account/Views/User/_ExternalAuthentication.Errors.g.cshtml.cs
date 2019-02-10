@@ -19,7 +19,7 @@ using System.Net;
 #line default
 #line hidden
 #line 2 "D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\Areas\Account\Views\_ViewImports.cshtml"
-using AtiehJobCore.Common.Contracts;
+using AtiehJobCore.Core.Contracts;
 
 #line default
 #line hidden
@@ -39,7 +39,7 @@ using AtiehJobCore.Services.Authentication.External;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1dd731a9beb1cc619b6d7190e01b034463d97ccd", @"/Areas/Account/Views/User/_ExternalAuthentication.Errors.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3e80a0608bf6cdb0e8f91d4bcb8655d463527eeb", @"/Areas/Account/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"17dfa6624d2fb8b2a7aaaab4b5d0412011c58646", @"/Areas/Account/Views/_ViewImports.cshtml")]
     public class Areas_Account_Views_User__ExternalAuthentication_Errors : AtiehJobCore.Web.Framework.Web.Razor.BaseView<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("external-auth-errors"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -81,7 +81,7 @@ using AtiehJobCore.Services.Authentication.External;
             WriteLiteral("    ");
             EndContext();
             BeginContext(126, 182, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1dd731a9beb1cc619b6d7190e01b034463d97ccd4896", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1dd731a9beb1cc619b6d7190e01b034463d97ccd4894", async() => {
                 BeginContext(160, 16, true);
                 WriteLiteral("\r\n        <ul>\r\n");
                 EndContext();

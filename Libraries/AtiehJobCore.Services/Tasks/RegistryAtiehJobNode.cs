@@ -1,8 +1,8 @@
-﻿using AtiehJobCore.Common.Configuration;
-using AtiehJobCore.Common.Infrastructure;
-using AtiehJobCore.Common.MongoDb.Domain.Tasks;
+﻿using AtiehJobCore.Core.Configuration;
+using AtiehJobCore.Core.Domain.Tasks;
+using AtiehJobCore.Core.Infrastructure;
 using AtiehJobCore.Services.Infrastructure;
-using AtiehJobCore.Services.MongoDb.Logging;
+using AtiehJobCore.Services.Logging;
 using FluentScheduler;
 using System;
 using System.Collections.Generic;

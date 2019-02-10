@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Common.MongoDb;
+﻿using AtiehJobCore.Core.MongoDb;
 
 namespace AtiehJobCore.Services.Common
 {

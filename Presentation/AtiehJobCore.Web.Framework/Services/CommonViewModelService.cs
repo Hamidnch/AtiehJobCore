@@ -1,10 +1,10 @@
-﻿using System.Linq;
-using AtiehJobCore.Common.Caching;
-using AtiehJobCore.Common.Infrastructure.MongoDb;
-using AtiehJobCore.Common.MongoDb.Domain.Localization;
-using AtiehJobCore.Services.MongoDb.Localization;
+﻿using AtiehJobCore.Core.Caching;
+using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Domain.Localization;
+using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Web.Framework.Infrastructure.Cache;
 using AtiehJobCore.Web.Framework.Models;
+using System.Linq;
 
 namespace AtiehJobCore.Web.Framework.Services
 {

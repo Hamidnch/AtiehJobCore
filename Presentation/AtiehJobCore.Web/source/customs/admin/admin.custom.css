@@ -1,8 +1,10 @@
 ﻿
-.box {
+/*.box {
     width: 100%;
     background: #FFF;
     margin: 40px auto;
+    min-height: 480px;
+    padding: 20px;
 }
 
 .effect1 {
@@ -43,8 +45,136 @@
         transform: rotate(3deg);
         right: 10px;
         left: auto;
+    }*/
+
+    /*.paddingAll {
+        padding: 20px;
+    }*/
+
+.portlet.light > .portlet-title > .caption {
+    color: #666;
+    padding: 10px 0;
+}
+
+.portlet > .portlet-title > .caption {
+    /*float: left;*/
+    display: inline-block;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 300;
+    padding: 10px 0;
+}
+
+a.k-link {
+    color: darkgray !important;
+}
+a.k-link:hover {
+    text-decoration: underline !important;
+    color: white !important;
+}
+
+.breadcrumb {
+    padding: 0.5rem 0.5rem 0 0.5rem !important;
+    border-bottom: 0 none #c8ced3 !important;
+    margin-bottom: 1.1rem !important;
+}
+
+.modal-header .close {
+    padding: 1rem 1rem;
+    margin: -1rem -1rem -1rem 0;
+}
+
+.custom-file-label {
+    text-align: left;
+}
+
+.modal-header {
+    background-color: darkgray;
+}
+
+.navbar-toggler:not(:disabled):not(.disabled) {
+    outline: 0 !important;
+}
+
+/*.shine-button {
+    width: 200px;
+    height: 50px;
+    background: #333;
+    display: block;
+    position: relative;
+    margin: 50px auto 0;
+    overflow: hidden;
+    border: 1px solid #333333;
+    color: white;
+    text-decoration: none;
+    -webkit-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+    -moz-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+    box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,.4);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    background-image: -webkit-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+    background-image: -moz-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+    background-image: -ms-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+    background-image: -o-linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+    background-image: linear-gradient(bottom, #383838 0%, #444444 49%, #555 50%, #555 100%);
+}
+
+    a.shine-button span.text {
+        position: absolute;
+        top: 16px;
+        left: 65px;
+        font: 15px Arial;
     }
 
-    .paddingAll {
-        padding: 20px;
+    a.shine-button span.shine {
+        content: '';
+        position: absolute;
+        height: 400px;
+        width: 20px;
+        background: white;
+        top: -80px;
+        left: -20px;
+        display: block;
+        opacity: 0.8;
+        -webkit-box-shadow: 0px 0px 20px 10px white;
+        -moz-box-shadow: 0px 0px 20px 10px white;
+        box-shadow: 0px 0px 20px 10px white;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -ms-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        transition: all 0.4s ease;
     }
+
+    a.shine-button:hover {
+        -webkit-box-shadow: inset 0px 1px 10px 0px rgba(255,255,255,.4), 0px 3px 3px 0px rgba(0,0,0,0.4);
+        -moz-box-shadow: inset 0px 1px 10px 0px rgba(255,255,255,.4), 0px 3px 3px 0px rgba(0,0,0,0.4);
+        box-shadow: inset 0px 1px 10px 0px rgba(255,255,255,.4), 0px 3px 3px 0px rgba(0,0,0,0.4);
+    }
+
+    a.shine-button:active {
+        -webkit-box-shadow: inset 0px 1px 15px 0px rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(0,0,0,.2), 0px 1px 1px 0 rgba(255,255,255,.5);
+        -moz-box-shadow: inset 0px 1px 15px 0px rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(0,0,0,.2), 0px 1px 1px 0 rgba(255,255,255,.5);
+        box-shadow: inset 0px 1px 15px 0px rgba(0,0,0,.4), inset 0px 1px 1px 1px rgba(0,0,0,.2), 0px 1px 1px 0 rgba(255,255,255,.5);
+    }
+
+    a.shine-button:hover span.shine {
+        left: 170px;
+        top: -300px;
+    }*/
+
+
+
+
+

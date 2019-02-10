@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="App_Data\Settings.txt" />
     <None Remove="Views\Home\Index.cshtml~RF56fc6cc.TMP" />
     <None Remove="Views\Home\Index.cshtml~RF5d1237b.TMP" />
   </ItemGroup>
@@ -839,11 +840,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Libraries\AtiehJobCore.Common\AtiehJobCore.Common.csproj" />
+    <ProjectReference Include="..\..\Libraries\AtiehJobCore.Core\AtiehJobCore.Core.csproj" />
     <ProjectReference Include="..\..\Libraries\AtiehJobCore.Data\AtiehJobCore.Data.csproj" />
-    <ProjectReference Include="..\..\Libraries\AtiehJobCore.Domain\AtiehJobCore.Domain.csproj" />
+    <ProjectReference Include="..\..\Libraries\AtiehJobCore.Resources\AtiehJobCore.Resources.csproj" />
     <ProjectReference Include="..\..\Libraries\AtiehJobCore.Services\AtiehJobCore.Services.csproj" />
-    <ProjectReference Include="..\..\Libraries\AtiehJobCore.ViewModel\AtiehJobCore.ViewModel.csproj" />
     <ProjectReference Include="..\AtiehJobCore.Web.Framework\AtiehJobCore.Web.Framework.csproj" />
   </ItemGroup>
 
@@ -852,8 +852,7 @@
     <Folder Include="App_Data\Localization\Upgrade\" />
     <Folder Include="Areas\Account\Data\" />
     <Folder Include="Areas\Account\Models\" />
-    <Folder Include="Areas\Identity\Data\" />
-    <Folder Include="Areas\Identity\Models\" />
+    <Folder Include="Areas\Admin\Extensions\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="wwwroot\css\admin\jquery-ui\" />
@@ -861,18 +860,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Areas\Identity\Views\DynamicRoleClaimsManager\Index.cshtml" />
-    <None Include="Areas\Identity\Views\EmailTemplates\_ChangePasswordNotification.cshtml" />
-    <None Include="Areas\Identity\Views\EmailTemplates\_EmailsLayout.cshtml" />
-    <None Include="Areas\Identity\Views\EmailTemplates\_PasswordReset.cshtml" />
-    <None Include="Areas\Identity\Views\EmailTemplates\_RegisterEmailConfirmation.cshtml" />
-    <None Include="Areas\Identity\Views\EmailTemplates\_TwoFactorSendCode.cshtml" />
-    <None Include="Areas\Identity\Views\EmailTemplates\_UserProfileUpdateNotification.cshtml" />
-    <None Include="Areas\Identity\Views\TwoFactor\Lockout.cshtml" />
-    <None Include="Areas\Identity\Views\TwoFactor\VerifyCode.cshtml" />
-    <None Include="Areas\Identity\Views\UsersManager\Index.cshtml" />
-    <None Include="Areas\Identity\Views\UsersManager\_SearchUsers.cshtml" />
-    <None Include="Areas\Identity\Views\UsersManager\_UsersList.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="Views\FileUpload\Index.cshtml" />
     <None Include="Views\Home\ColumnsOne.cshtml" />
