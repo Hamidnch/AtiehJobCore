@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AtiehJobCore.Web.Framework.Mvc.Captcha;
+﻿using AtiehJobCore.Web.Framework.Mvc.Captcha;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using System;
 
 namespace AtiehJobCore.Web.Framework.TagHelpers
 {
@@ -47,7 +45,7 @@ namespace AtiehJobCore.Web.Framework.TagHelpers
             var captchaControl = new GRecaptchaControl(_captchaSettings.ReCaptchaVersion)
             {
                 Theme = _captchaSettings.ReCaptchaTheme,
-                Id = "recaptcha",
+                Id = "g-recaptcha-response-value-" + Guid.NewGuid().ToString("N"),
                 PublicKey = _captchaSettings.ReCaptchaPublicKey,
                 Language = _captchaSettings.ReCaptchaLanguage
             };

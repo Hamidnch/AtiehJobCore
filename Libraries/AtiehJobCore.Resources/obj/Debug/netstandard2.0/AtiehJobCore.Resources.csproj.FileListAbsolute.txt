@@ -53,3 +53,4 @@ D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netst
 D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.pdb
 D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.Resources.Controllers.HomeController.fa.en.resources
 D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.Resources.SharedResource.fa.en.resources
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.csprojAssemblyReference.cache

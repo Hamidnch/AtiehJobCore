@@ -1,7 +1,7 @@
 ﻿using AtiehJobCore.Core.Constants;
 using AtiehJobCore.Core.Domain.Common;
 using AtiehJobCore.Core.Infrastructure;
-using AtiehJobCore.Web.Controllers;
+using AtiehJobCore.Web.Framework.Controllers;
 using AtiehJobCore.Web.Framework.Filters;
 using AtiehJobCore.Web.Framework.Security;
 using Microsoft.AspNetCore.Mvc;
@@ -13,7 +13,7 @@ namespace AtiehJobCore.Web.Areas.Admin.Controllers
     [AuthorizeAdmin]
     [AdminAntiForgery()]
     [Area(AreaNames.Admin)]
-    public class BaseAdminController : BasePublicController
+    public class BaseAdminController : BaseController
     {
         /// <summary>
         /// Save selected TAB index

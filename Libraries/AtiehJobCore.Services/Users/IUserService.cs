@@ -245,5 +245,36 @@ namespace AtiehJobCore.Services.Users
         void DeleteUserRoleInUser(Role userRole);
 
         #endregion
+
+        #region User note
+
+        /// <summary>
+        /// Get note for user
+        /// </summary>
+        /// <param name="id">Note identifier</param>
+        /// <returns>UserNote</returns>
+        UserNote GetUserNote(string id);
+
+        /// <summary>
+        /// Deletes an user note
+        /// </summary>
+        /// <param name="userNote">The user note</param>
+        void DeleteUserNote(UserNote userNote);
+
+        /// <summary>
+        /// Insert an user note
+        /// </summary>
+        /// <param name="userNote">The user note</param>
+        void InsertUserNote(UserNote userNote);
+
+        /// <summary>
+        /// Get notes for user
+        /// </summary>
+        /// <param name="userId">User identifier</param>
+        /// <param name="displaytoUser">Display to user</param>
+        /// <returns>OrderNote</returns>
+        IList<UserNote> GetUserNotes(string userId, bool? displaytoUser = null);
+
+        #endregion
     }
 }

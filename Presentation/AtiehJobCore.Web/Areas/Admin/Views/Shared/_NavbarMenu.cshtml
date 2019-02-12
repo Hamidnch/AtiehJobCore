@@ -72,8 +72,10 @@
         </div>
     </li>
 </ul>
-<ul class="nav navbar-nav @(IsRtl ?"ml-auto" : "mr-auto")">
-    <li>
-        @await Html.PartialAsync("_SelectLanguagePartial")
-    </li>
-</ul>
+<div class="top-menu">
+    <ul class="nav navbar-nav pull-right @(IsRtl ?"ml-auto" : "mr-auto")">
+        <li>
+            @await Component.InvokeAsync("CommonLanguageSelector")
+        </li>
+    </ul>
+</div>

@@ -1,7 +1,7 @@
-﻿using AtiehJobCore.Web.Framework.Services;
+﻿using System.Threading.Tasks;
+using AtiehJobCore.Web.Framework.Services;
 using AtiehJobCore.Web.Framework.ViewComponents;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace AtiehJobCore.Web.Components
 {

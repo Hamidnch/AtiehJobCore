@@ -1,0 +1,48 @@
+﻿@using AtiehJobCore.Web.Framework.Models.Admin
+@model IList<AtiehJobCore.Web.Framework.Models.Admin.SystemWarningModel>
+@{
+    //page title
+    ViewBag.Title = T("Admin.System.Warnings").Text;
+}
+<antiforgery-token />
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light form-fit">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-tasks"></i>
+                    @T("Admin.System.Warnings")
+                </div>
+            </div>
+            @foreach (var warning in Model)
+            {
+                switch (warning.Level)
+                {
+                    case SystemWarningLevel.Pass:
+                        {
+                            <div class="note note-success">
+                                @warning.Text
+                            </div>
+                        }
+                        break;
+                    case SystemWarningLevel.Warning:
+                        {
+                            <div class="note note-warning">
+                                @warning.Text
+                            </div>
+                        }
+                        break;
+                    case SystemWarningLevel.Fail:
+                        {
+                            <div class="note note-danger">
+                                @warning.Text
+                            </div>
+                        }
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+        </div>
+    </div>
+</div>

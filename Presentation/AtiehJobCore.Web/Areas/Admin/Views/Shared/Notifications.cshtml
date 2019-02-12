@@ -1,0 +1,38 @@
+﻿@using AtiehJobCore.Web.Framework.UI.Notification
+
+@{
+    //success messages
+    var successMessages = new List<string>();
+    if (TempData[$"AtiehJob.notifications.{NotifyType.Success}"] != null)
+    {
+        successMessages.AddRange(TempData[$"AtiehJob.notifications.{NotifyType.Success}"] as IList<string>);
+    }
+    if (ViewData[$"AtiehJob.notifications.{NotifyType.Success}"] != null)
+    {
+        successMessages.AddRange(ViewData[$"AtiehJob.notifications.{NotifyType.Success}"] as IList<string>);
+    }
+
+
+    //error messages
+    var errorMessages = new List<string>();
+    if (TempData[$"AtiehJob.notifications.{NotifyType.Error}"] != null)
+    {
+        errorMessages.AddRange(TempData[$"AtiehJob.notifications.{NotifyType.Error}"] as IList<string>);
+    }
+    if (ViewData[$"AtiehJob.notifications.{NotifyType.Error}"] != null)
+    {
+        errorMessages.AddRange(ViewData[$"AtiehJob.notifications.{NotifyType.Error}"] as IList<string>);
+    }
+}
+@foreach (var message in successMessages)
+{
+    <div class="note note-success">
+        <p> @message </p>
+    </div>
+}
+@foreach (var message in errorMessages)
+{
+    <div class="note note-warning">
+        <p> @message </p>
+    </div>
+}

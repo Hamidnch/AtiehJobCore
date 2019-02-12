@@ -10,19 +10,18 @@ namespace AtiehJobCore.Web.Framework.Mvc.Captcha
     /// </summary>
     public class ValidateCaptchaAttribute : TypeFilterAttribute
     {
+        /// <inheritdoc />
         /// <summary>
         /// Create instance of the filter attribute 
         /// </summary>
         /// <param name="actionParameterName">The name of the action parameter to which the result will be passed</param>
-        public ValidateCaptchaAttribute(string actionParameterName = "captchaValid")
-            : base(typeof(ValidateCaptchaFilter))
+        public ValidateCaptchaAttribute(string actionParameterName = "captchaValid") : base(typeof(ValidateCaptchaFilter))
         {
-            Arguments = new object[] { actionParameterName };
+            this.Arguments = new object[] { actionParameterName };
         }
 
         #region Nested filter
 
-        /// <inheritdoc />
         /// <summary>
         /// Represents a filter enabling CAPTCHA validation
         /// </summary>
@@ -32,7 +31,8 @@ namespace AtiehJobCore.Web.Framework.Mvc.Captcha
 
             private const string ChallengeFieldKey = "recaptcha_challenge_field";
             private const string ResponseFieldKey = "recaptcha_response_field";
-            private const string GResponseFieldKey = "g-recaptcha-response";
+            private const string GResponseFieldKeyV3 = "g-recaptcha-response-value";
+            private const string GResponseFieldKeyV2 = "g-recaptcha-response";
 
             #endregion
 
@@ -47,8 +47,8 @@ namespace AtiehJobCore.Web.Framework.Mvc.Captcha
 
             public ValidateCaptchaFilter(string actionParameterName, CaptchaSettings captchaSettings)
             {
-                _actionParameterName = actionParameterName;
-                _captchaSettings = captchaSettings;
+                this._actionParameterName = actionParameterName;
+                this._captchaSettings = captchaSettings;
             }
 
             #endregion
@@ -62,36 +62,57 @@ namespace AtiehJobCore.Web.Framework.Mvc.Captcha
             /// <returns>True if CAPTCHA is valid; otherwise false</returns>
             private bool ValidateCaptcha(ActionExecutingContext context)
             {
-                var isValid = false;
+                bool isValid;
 
                 //get form values
                 var captchaChallengeValue = context.HttpContext.Request.Form[ChallengeFieldKey];
                 var captchaResponseValue = context.HttpContext.Request.Form[ResponseFieldKey];
-                var gCaptchaResponseValue = context.HttpContext.Request.Form[GResponseFieldKey];
-
-                if ((!StringValues.IsNullOrEmpty(captchaChallengeValue) && !StringValues.IsNullOrEmpty(captchaResponseValue)) || !StringValues.IsNullOrEmpty(gCaptchaResponseValue))
+                var gCaptchaResponseValue = string.Empty;
+                foreach (var item in context.HttpContext.Request.Form.Keys)
                 {
-                    //create CAPTCHA validator
-                    var captchaValidator = new GReCaptchaValidator(_captchaSettings.ReCaptchaVersion)
-                    {
-                        SecretKey = _captchaSettings.ReCaptchaPrivateKey,
-                        RemoteIp = context.HttpContext.Connection.RemoteIpAddress?.ToString(),
-                        Response = !StringValues.IsNullOrEmpty(captchaResponseValue) ? captchaResponseValue : gCaptchaResponseValue,
-                        Challenge = captchaChallengeValue
-                    };
-
-                    //validate request
-                    var recaptchaResponse = captchaValidator.Validate();
-                    isValid = recaptchaResponse.IsValid;
+                    if (item.Contains(GResponseFieldKeyV3))
+                        gCaptchaResponseValue = context.HttpContext.Request.Form[item];
                 }
 
-                return isValid;
+                if (string.IsNullOrEmpty(gCaptchaResponseValue))
+                    gCaptchaResponseValue = context.HttpContext.Request.Form[GResponseFieldKeyV2];
+
+                if ((StringValues.IsNullOrEmpty(captchaChallengeValue) ||
+                     StringValues.IsNullOrEmpty(captchaResponseValue)) && string.IsNullOrEmpty(gCaptchaResponseValue))
+                {
+                    return false;
+                }
+
+                //create CAPTCHA validator
+                var captchaValidator = new GReCaptchaValidator(_captchaSettings.ReCaptchaVersion)
+                {
+                    SecretKey = _captchaSettings.ReCaptchaPrivateKey,
+                    RemoteIp = context.HttpContext.Connection.RemoteIpAddress?.ToString(),
+                    Response = !StringValues.IsNullOrEmpty(captchaResponseValue) ? captchaResponseValue.ToString() : gCaptchaResponseValue,
+                    Challenge = captchaChallengeValue
+                };
+
+                //validate request
+                var recaptchaResponse = captchaValidator.Validate();
+                isValid = recaptchaResponse.IsValid;
+                if (isValid)
+                {
+                    return true;
+                }
+
+                foreach (var error in recaptchaResponse.ErrorCodes)
+                {
+                    context.ModelState.AddModelError("", error);
+                }
+
+                return false;
             }
 
             #endregion
 
             #region Methods
 
+            /// <inheritdoc />
             /// <summary>
             /// Called before the action executes, after model binding is complete
             /// </summary>
@@ -102,7 +123,7 @@ namespace AtiehJobCore.Web.Framework.Mvc.Captcha
                     return;
 
                 //whether CAPTCHA is enabled
-                if (_captchaSettings.Enabled && context.HttpContext != null && context.HttpContext.Request != null)
+                if (_captchaSettings.Enabled && context.HttpContext?.Request != null)
                 {
                     //push the validation result as an action parameter
                     context.ActionArguments[_actionParameterName] = ValidateCaptcha(context);

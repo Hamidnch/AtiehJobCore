@@ -1,4 +1,6 @@
-﻿using AtiehJobCore.Core.Caching;
+﻿using System;
+using System.Linq;
+using AtiehJobCore.Core.Caching;
 using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain.Catalog;
 using AtiehJobCore.Core.Domain.Security;
@@ -6,8 +8,6 @@ using AtiehJobCore.Core.Domain.Users;
 using AtiehJobCore.Core.MongoDb;
 using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Services.Events;
-using System;
-using System.Linq;
 
 namespace AtiehJobCore.Services.Security
 {
@@ -60,11 +60,11 @@ namespace AtiehJobCore.Services.Security
             IEventPublisher eventPublisher,
             CatalogSettings catalogSettings)
         {
-            this._cacheManager = cacheManager;
-            this._workContext = workContext;
-            this._aclRecordRepository = aclRecordRepository;
-            this._eventPublisher = eventPublisher;
-            this._catalogSettings = catalogSettings;
+            _cacheManager = cacheManager;
+            _workContext = workContext;
+            _aclRecordRepository = aclRecordRepository;
+            _eventPublisher = eventPublisher;
+            _catalogSettings = catalogSettings;
         }
 
         #endregion
@@ -174,14 +174,9 @@ namespace AtiehJobCore.Services.Security
             if (_catalogSettings.IgnoreAcl)
                 return true;
 
-            foreach (var role1 in user.Roles.Where(cr => cr.Active))
-                foreach (var role2Id in entity.UserRoles)
-                    if (role1.Id == role2Id)
-                        //yes, we have such permission
-                        return true;
+            return user.Roles.Where(cr => cr.Active).Any(role1 => entity.UserRoles.Any(role2Id => role1.Id == role2Id));
 
             //no permission found
-            return false;
         }
         #endregion
     }

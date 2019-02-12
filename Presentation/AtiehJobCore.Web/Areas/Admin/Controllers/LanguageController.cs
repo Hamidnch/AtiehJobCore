@@ -75,7 +75,7 @@ namespace AtiehJobCore.Web.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var language = _languageViewModelService.InsertLanguageModel(model);
-                //SuccessNotification(_localizationService.GetResource("Admin.Configuration.Languages.Added"));
+                SuccessNotification(_localizationService.GetResource("Admin.Configuration.Languages.Added"));
                 return continueEditing ? RedirectToAction("Edit", new { id = language.Id }) : RedirectToAction("List");
             }
 
@@ -116,21 +116,22 @@ namespace AtiehJobCore.Web.Areas.Admin.Controllers
                 if (allLanguages.Count == 1 && allLanguages[0].Id == language.Id &&
                     !model.Published)
                 {
-                    //ErrorNotification("At least one published language is required.");
+                    ErrorNotification("At least one published language is required.");
                     return RedirectToAction("Edit", new { id = language.Id });
                 }
 
                 language = _languageViewModelService.UpdateLanguageModel(language, model);
                 //notification
-                //SuccessNotification(_localizationService.GetResource("Admin.Configuration.Languages.Updated"));
-                if (continueEditing)
+                SuccessNotification(_localizationService.GetResource("Admin.Configuration.Languages.Updated"));
+                if (!continueEditing)
                 {
-                    //selected tab
-                    SaveSelectedTabIndex();
-
-                    return RedirectToAction("Edit", new { id = language.Id });
+                    return RedirectToAction("List");
                 }
-                return RedirectToAction("List");
+
+                //selected tab
+                SaveSelectedTabIndex();
+
+                return RedirectToAction("Edit", new { id = language.Id });
             }
             //If we got this far, something failed, redisplay form
 
@@ -152,22 +153,21 @@ namespace AtiehJobCore.Web.Areas.Admin.Controllers
             var allLanguages = _languageService.GetAllLanguages();
             if (allLanguages.Count == 1 && allLanguages[0].Id == language.Id)
             {
-                //ErrorNotification("At least one published language is required.");
+                ErrorNotification("At least one published language is required.");
                 return RedirectToAction("Edit", new { id = language.Id });
             }
 
             //delete
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Edit", new { id = language.Id });
+                _languageService.DeleteLanguage(language);
+
+                //notification
+                SuccessNotification(_localizationService.GetResource("Admin.Configuration.Languages.Deleted"));
+                return RedirectToAction("List");
             }
-
-            _languageService.DeleteLanguage(language);
-
-            //notification
-            //SuccessNotification(_localizationService.GetResource("Admin.Configuration.Languages.Deleted"));
-            return RedirectToAction("List");
-            //ErrorNotification(ModelState);
+            ErrorNotification(ModelState);
+            return RedirectToAction("Edit", new { id = language.Id });
         }
 
         #region Resources
@@ -244,7 +244,7 @@ namespace AtiehJobCore.Web.Areas.Admin.Controllers
             }
             catch (Exception exc)
             {
-                //ErrorNotification(exc);
+                ErrorNotification(exc);
                 _logger.InsertLog(MongoLogLevel.Error, exc.Message, exc.StackTrace);
                 return RedirectToAction("List");
             }
@@ -270,16 +270,16 @@ namespace AtiehJobCore.Web.Areas.Admin.Controllers
                 }
                 else
                 {
-                    //ErrorNotification(_localizationService.GetResource("Admin.Common.UploadFile"));
+                    ErrorNotification(_localizationService.GetResource("Admin.Common.UploadFile"));
                     return RedirectToAction("Edit", new { id = language.Id });
                 }
 
-                //SuccessNotification(_localizationService.GetResource("Admin.Configuration.Languages.Imported"));
+                SuccessNotification(_localizationService.GetResource("Admin.Configuration.Languages.Imported"));
                 return RedirectToAction("Edit", new { id = language.Id });
             }
             catch (Exception exc)
             {
-                //ErrorNotification(exc);
+                ErrorNotification(exc);
                 _logger.InsertLog(MongoLogLevel.Error, exc.Message, exc.StackTrace);
                 return RedirectToAction("Edit", new { id = language.Id });
             }

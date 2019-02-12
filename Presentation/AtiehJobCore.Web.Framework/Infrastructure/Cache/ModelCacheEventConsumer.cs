@@ -37,6 +37,38 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Cache
         public const string AvailableLanguagesModelKey = "AtiehJob.pres.languages.all";
         public const string AvailableLanguagesPatternKey = "AtiehJob.pres.languages";
 
+        /// <summary>
+        /// Key for TopicModel caching
+        /// </summary>
+        /// <remarks>
+        /// {0} : topic system name
+        /// {1} : language id
+        /// {2} : store id
+        /// </remarks>
+        public const string TopicSeNameBySystemName = "AtiehJob.pres.topic.sename.bysystemname-{0}-{1}";
+
+        /// <summary>
+        /// Key for TopicModel caching
+        /// </summary>
+        /// <remarks>
+        /// {0} : topic id
+        /// {1} : language id
+        /// {2} : store id
+        /// {3} : comma separated list of user roles
+        /// </remarks>
+        public const string TopicModelByIdKey = "AtiehJob.pres.topic.details.byid-{0}-{1}-{2}";
+
+        /// <summary>
+        /// Key for TopicModel caching
+        /// </summary>
+        /// <remarks>
+        /// {0} : topic system name
+        /// {1} : language id
+        /// {2} : store id
+        /// {3} : comma separated list of user roles
+        /// </remarks>
+        public const string TopicModelBySystemNameKey = "AtiehJob.pres.topic.details.bysystemname-{0}-{1}-{2}";
+
         private readonly ICacheManager _cacheManager;
 
         public ModelCacheEventConsumer()

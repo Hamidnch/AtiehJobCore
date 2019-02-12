@@ -16,5 +16,6 @@
         public const string MessageContactForm = "ManageMessageContactForm";
         public const string SiteAllowNavigation = "SiteAllowNavigation";
         public const string AccessClosedSite = "AccessClosedSite";
+        public const string Maintenance = "ManageMaintenance";
     }
 }

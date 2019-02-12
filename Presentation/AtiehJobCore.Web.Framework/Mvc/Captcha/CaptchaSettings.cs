@@ -21,6 +21,10 @@ namespace AtiehJobCore.Web.Framework.Mvc.Captcha
         /// </summary>
         public bool ShowOnRegistrationPage { get; set; }
         /// <summary>
+        /// A value indicating whether CAPTCHA should be displayed on the contacts page
+        /// </summary>
+        public bool ShowOnContactUsPage { get; set; }
+        /// <summary>
         /// reCAPTCHA public key
         /// </summary>
         public string ReCaptchaPublicKey { get; set; }

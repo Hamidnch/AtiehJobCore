@@ -10,7 +10,7 @@
       "renameLocals": false,
       "adjustRelativePaths": false
     }
-  }, 
+  },
   {
     "outputFileName": "wwwroot/js/install.min.js",
     "inputFiles": [
@@ -51,11 +51,11 @@
       "enabled": true,
       "renameLocals": false,
       "adjustRelativePaths": false
-    } 
+    }
   },
   {
     "outputFileName": "wwwroot/css/admin/admin.min.css",
-    "inputFiles": [ 
+    "inputFiles": [
       "source/core-ui/coreui-icons/css/coreui-icons.min.css",
       "source/core-ui/flag-icons/css/flag-icon.min.css",
       "source/font-awesome/fa-solid.min.css",
@@ -68,9 +68,20 @@
     "minify": {
       "enabled": false,
       "adjustRelativePaths": false,
-      "renameLocals": false
+      "renameLocals": false 
     }
   },
+  //{
+  //  "outputFileName": "wwwroot/css/admin/admin.note-rtl.min.css",
+  //  "inputFiles": [
+  //    "source/customs/admin/admin.note-rtl.min.css"
+  //  ],
+  //  "minify": {
+  //    "enabled": false,
+  //    "adjustRelativePaths": false,
+  //    "renameLocals": false
+  //  }
+  //},
   {
     "outputFileName": "wwwroot/js/jqueryAll.min.js",
     "inputFiles": [
@@ -85,7 +96,7 @@
       "enabled": true,
       "adjustRelativePaths": false,
       "renameLocals": false
-    } 
+    }
   },
   {
     "outputFileName": "wwwroot/js/web.min.js",
@@ -95,7 +106,7 @@
       "source/jquery/jquery.bootstrap-modal-ajax-form.min.js",
       "source/sweetalert2/sweetalert2.all.min.js",
       "source/customs/custom.min.js"
-    ], 
+    ],
     "minify": {
       "enabled": true,
       "adjustRelativePaths": false,
@@ -146,6 +157,24 @@
     "outputFileName": "source/customs/admin/admin.custom.min.css",
     "inputFiles": [
       "source/customs/admin/admin.custom.css"
+    ]
+  },
+  {
+    "outputFileName": "source/customs/admin/admin.dropdown.min.css",
+    "inputFiles": [
+      "source/customs/admin/admin.dropdown.css"
+    ]
+  },
+  {
+    "outputFileName": "source/customs/admin/admin.note.min.css",
+    "inputFiles": [
+      "source/customs/admin/admin.note.css"
+    ]
+  },
+  {
+    "outputFileName": "source/customs/admin/admin.note-rtl.min.css",
+    "inputFiles": [
+      "source/customs/admin/admin.note-rtl.css"
     ]
   }
 ]

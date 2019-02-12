@@ -1,12 +1,12 @@
-﻿using AtiehJobCore.Core.Constants;
+﻿using System;
+using System.Collections.Generic;
+using System.Security.Claims;
+using AtiehJobCore.Core.Constants;
 using AtiehJobCore.Core.Domain.Users;
 using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Services.Users;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Security.Claims;
 
 namespace AtiehJobCore.Services.Authentication
 {
@@ -36,9 +36,9 @@ namespace AtiehJobCore.Services.Authentication
         public AtiehJobCookieAuthenticationService(UserSettings userSettings,
             IUserService userService, IHttpContextAccessor httpContextAccessor)
         {
-            this._userSettings = userSettings;
-            this._userService = userService;
-            this._httpContextAccessor = httpContextAccessor;
+            _userSettings = userSettings;
+            _userService = userService;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         #endregion
@@ -129,47 +129,57 @@ namespace AtiehJobCore.Services.Authentication
                 return _cachedUser;
 
             //try to get authenticated user identity
-            var authenticateResult = _httpContextAccessor.HttpContext.AuthenticateAsync(AtiehJobCookieAuthenticationDefaults.AuthenticationScheme).Result;
+            var authenticateResult =
+                _httpContextAccessor.HttpContext.AuthenticateAsync(AtiehJobCookieAuthenticationDefaults.AuthenticationScheme).Result;
 
             if (!authenticateResult.Succeeded) return null;
 
             User user = null;
             var userLoginType = _userSettings.UserLoginType;
-            if (userLoginType == UserLoginType.MobileNumber)
+            switch (userLoginType)
             {
-                //try to get user by mobile number
-                var mobileNumberClaim = authenticateResult.Principal.FindFirst(
-                    claim => claim.Type == CustomClaimTypes.MobileNumber
-                    && claim.Issuer.Equals(AtiehJobCookieAuthenticationDefaults.ClaimsIssuer,
-                                 StringComparison.InvariantCultureIgnoreCase));
-                if (mobileNumberClaim != null)
-                    user = _userService.GetUserByMobileNumber(mobileNumberClaim.Value);
-            }
-            else if (userLoginType == UserLoginType.NationalCode)
-            {
-                //try to get user by mobile number
-                var nationalCodeClaim = authenticateResult.Principal.FindFirst(
-                    claim => claim.Type == CustomClaimTypes.NationalCode
-                             && claim.Issuer.Equals(AtiehJobCookieAuthenticationDefaults.ClaimsIssuer,
-                                 StringComparison.InvariantCultureIgnoreCase));
-                if (nationalCodeClaim != null)
-                    user = _userService.GetUserByNationalCode(nationalCodeClaim.Value);
-            }
-            else if (userLoginType == UserLoginType.Username)
-            {
-                //try to get user by username
-                var usernameClaim = authenticateResult.Principal.FindFirst(claim => claim.Type == ClaimTypes.Name
-                    && claim.Issuer.Equals(AtiehJobCookieAuthenticationDefaults.ClaimsIssuer, StringComparison.InvariantCultureIgnoreCase));
-                if (usernameClaim != null)
-                    user = _userService.GetUserByUsername(usernameClaim.Value);
-            }
-            else if (userLoginType == UserLoginType.Email)
-            {
-                //try to get user by email
-                var emailClaim = authenticateResult.Principal.FindFirst(claim => claim.Type == ClaimTypes.Email
-                    && claim.Issuer.Equals(AtiehJobCookieAuthenticationDefaults.ClaimsIssuer, StringComparison.InvariantCultureIgnoreCase));
-                if (emailClaim != null)
-                    user = _userService.GetUserByEmail(emailClaim.Value);
+                case UserLoginType.MobileNumber:
+                    {
+                        //try to get user by mobile number
+                        var mobileNumberClaim = authenticateResult.Principal.FindFirst(
+                            claim => claim.Type == CustomClaimTypes.MobileNumber
+                                  && claim.Issuer.Equals(AtiehJobCookieAuthenticationDefaults.ClaimsIssuer,
+                                         StringComparison.InvariantCultureIgnoreCase));
+                        if (mobileNumberClaim != null)
+                            user = _userService.GetUserByMobileNumber(mobileNumberClaim.Value);
+                        break;
+                    }
+                case UserLoginType.NationalCode:
+                    {
+                        //try to get user by mobile number
+                        var nationalCodeClaim = authenticateResult.Principal.FindFirst(
+                            claim => claim.Type == CustomClaimTypes.NationalCode
+                                  && claim.Issuer.Equals(AtiehJobCookieAuthenticationDefaults.ClaimsIssuer,
+                                         StringComparison.InvariantCultureIgnoreCase));
+                        if (nationalCodeClaim != null)
+                            user = _userService.GetUserByNationalCode(nationalCodeClaim.Value);
+                        break;
+                    }
+                case UserLoginType.Username:
+                    {
+                        //try to get user by username
+                        var usernameClaim = authenticateResult.Principal.FindFirst(claim => claim.Type == ClaimTypes.Name
+                                                                                         && claim.Issuer.Equals(AtiehJobCookieAuthenticationDefaults.ClaimsIssuer, StringComparison.InvariantCultureIgnoreCase));
+                        if (usernameClaim != null)
+                            user = _userService.GetUserByUsername(usernameClaim.Value);
+                        break;
+                    }
+                case UserLoginType.Email:
+                    {
+                        //try to get user by email
+                        var emailClaim = authenticateResult.Principal.FindFirst(claim => claim.Type == ClaimTypes.Email
+                                                                                      && claim.Issuer.Equals(AtiehJobCookieAuthenticationDefaults.ClaimsIssuer, StringComparison.InvariantCultureIgnoreCase));
+                        if (emailClaim != null)
+                            user = _userService.GetUserByEmail(emailClaim.Value);
+                        break;
+                    }
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
 
             //whether the found user is available

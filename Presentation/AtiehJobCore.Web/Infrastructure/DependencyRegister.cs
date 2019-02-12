@@ -26,6 +26,9 @@ namespace AtiehJobCore.Web.Infrastructure
             //Language Service
             builder.RegisterType<LanguageViewModelService>().As<ILanguageViewModelService>().InstancePerLifetimeScope();
 
+            // Topic service
+            builder.RegisterType<TopicViewModelService>().As<ITopicViewModelService>().InstancePerLifetimeScope();
+
         }
 
         public int Order => 2;

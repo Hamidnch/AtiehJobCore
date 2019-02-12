@@ -1,6 +1,6 @@
-﻿using AtiehJobCore.Core.Domain.Security;
+﻿using System.Collections.Generic;
+using AtiehJobCore.Core.Domain.Security;
 using AtiehJobCore.Core.Domain.Users;
-using System.Collections.Generic;
 
 namespace AtiehJobCore.Services.Security
 {
@@ -95,6 +95,13 @@ namespace AtiehJobCore.Services.Security
             Category = "Site"
         };
 
+        public static readonly PermissionRecord ManageMaintenance = new PermissionRecord
+        {
+            Name = "Admin area. Manage Maintenance",
+            SystemName = PermissionSystemName.Maintenance,
+            Category = "Configuration"
+        };
+
         public virtual IEnumerable<PermissionRecord> GetPermissions()
         {
             return new[]
@@ -111,7 +118,8 @@ namespace AtiehJobCore.Services.Security
                 ManageSystemLog,
                 ManageMessageContactForm,
                 SiteAllowNavigation,
-                AccessClosedSite
+                AccessClosedSite,
+                ManageMaintenance
             };
         }
 
@@ -136,7 +144,8 @@ namespace AtiehJobCore.Services.Security
                         ManageSystemLog,
                         ManageMessageContactForm,
                         SiteAllowNavigation,
-                        AccessClosedSite
+                        AccessClosedSite,
+                        ManageMaintenance
                     }
                 },
                 new DefaultPermissionRecord

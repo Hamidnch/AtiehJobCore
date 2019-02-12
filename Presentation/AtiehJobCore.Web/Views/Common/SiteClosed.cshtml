@@ -1,0 +1,11 @@
+﻿@using AtiehJobCore.Web.Framework.UI
+@{
+    Layout = "_ColumnsOneLayout";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.SiteClosed").Text);
+}
+<div class="page store-closed-page">
+    <h1 class="h2 generalTitle">@T("SiteClosed")</h1>
+    @T("SiteClosed.Hint")
+</div>

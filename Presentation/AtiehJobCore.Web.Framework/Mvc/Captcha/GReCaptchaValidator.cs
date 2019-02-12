@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Linq;
 using System.Net.Http;
-using Newtonsoft.Json.Linq;
 
 namespace AtiehJobCore.Web.Framework.Mvc.Captcha
 {
     public class GReCaptchaValidator
     {
-        private const string RecaptchaVerifyUrlVersion2 = "https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}&remoteip={2}";
+        private const string RecaptchaVerifyUrl = "https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}&remoteip={2}";
 
         public string SecretKey { get; set; }
         public string RemoteIp { get; set; }
@@ -23,21 +23,10 @@ namespace AtiehJobCore.Web.Framework.Mvc.Captcha
 
         public GReCaptchaResponse Validate()
         {
-            GReCaptchaResponse result = null;
+            GReCaptchaResponse result;
             var httpClient = new HttpClient();
-            string requestUri;
 
-            switch (_version)
-            {
-                case ReCaptchaVersion.Version2:
-                    requestUri = string.Format(RecaptchaVerifyUrlVersion2,
-                        SecretKey, Response, RemoteIp);
-                    break;
-                default:
-                    requestUri = string.Format(RecaptchaVerifyUrlVersion2,
-                        SecretKey, Response, RemoteIp);
-                    break;
-            }
+            var requestUri = string.Format(RecaptchaVerifyUrl, SecretKey, Response, RemoteIp);
 
             try
             {
@@ -48,6 +37,7 @@ namespace AtiehJobCore.Web.Framework.Mvc.Captcha
                 var taskString = response.Content.ReadAsStringAsync();
                 taskString.Wait();
                 result = ParseResponseResult(taskString.Result);
+
             }
             catch (Exception exc)
             {
@@ -62,19 +52,15 @@ namespace AtiehJobCore.Web.Framework.Mvc.Captcha
             return result;
         }
 
-        private GReCaptchaResponse ParseResponseResult(string responseString)
+        private static GReCaptchaResponse ParseResponseResult(string responseString)
         {
             var result = new GReCaptchaResponse();
 
-            if (_version != ReCaptchaVersion.Version2)
-            {
-                return result;
-            }
-
             var resultObject = JObject.Parse(responseString);
             result.IsValid = resultObject.Value<bool>("success");
+
             if (resultObject.Value<JToken>("error-codes") != null &&
-                resultObject.Value<JToken>("error-codes").Values<string>().Any())
+                    resultObject.Value<JToken>("error-codes").Values<string>().Any())
                 result.ErrorCodes = resultObject.Value<JToken>("error-codes").Values<string>().ToList();
 
             return result;

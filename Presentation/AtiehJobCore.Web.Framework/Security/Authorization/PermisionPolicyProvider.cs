@@ -10,6 +10,7 @@ namespace AtiehJobCore.Web.Framework.Security.Authorization
         public string Permission { get; private set; }
         public PermissionRequirement(string permission) { Permission = permission; }
     }
+
     internal class PermissionPolicyProvider : IAuthorizationPolicyProvider
     {
         private const string PolicyPrefix = "Permission";
@@ -24,13 +25,14 @@ namespace AtiehJobCore.Web.Framework.Security.Authorization
 
         public Task<AuthorizationPolicy> GetPolicyAsync(string policyName)
         {
-            if (policyName.StartsWith(PolicyPrefix, StringComparison.OrdinalIgnoreCase))
+            if (!policyName.StartsWith(PolicyPrefix, StringComparison.OrdinalIgnoreCase))
             {
-                var policy = new AuthorizationPolicyBuilder();
-                policy.AddRequirements(new PermissionRequirement(policyName.Replace(PolicyPrefix, "")));
-                return Task.FromResult(policy.Build());
+                return FallbackPolicyProvider.GetPolicyAsync(policyName);
             }
-            return FallbackPolicyProvider.GetPolicyAsync(policyName);
+
+            var policy = new AuthorizationPolicyBuilder();
+            policy.AddRequirements(new PermissionRequirement(policyName.Replace(PolicyPrefix, "")));
+            return Task.FromResult(policy.Build());
         }
     }
 }

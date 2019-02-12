@@ -8,7 +8,6 @@ using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Services.Logging;
 using AtiehJobCore.Web.Framework.Middleware;
 using AtiehJobCore.Web.Framework.Mvc.Routing;
-using Ben.Diagnostics;
 using ElmahCore.Mvc;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
@@ -217,7 +216,7 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
         {
             // app.UseNoBrowserCache();
 
-            application.UseBlockingDetection();
+            //application.UseBlockingDetection();
 
             application.UseMvc(routeBuilder =>
             {

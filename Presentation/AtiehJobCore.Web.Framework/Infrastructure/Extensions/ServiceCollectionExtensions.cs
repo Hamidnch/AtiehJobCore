@@ -1,4 +1,8 @@
-﻿using AtiehJobCore.Core.Configuration;
+﻿using System;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using AtiehJobCore.Core.Configuration;
 using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain.Common;
 using AtiehJobCore.Core.Extensions;
@@ -34,10 +38,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using System;
-using System.Globalization;
-using System.IO;
-using System.Linq;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 {
@@ -289,7 +289,7 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
                 instance.Configure(authenticationBuilder);
 
             services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
-            //services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
+            services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
         }
         public static void AddAtiehJobLocalizationService(this IServiceCollection services)
         {

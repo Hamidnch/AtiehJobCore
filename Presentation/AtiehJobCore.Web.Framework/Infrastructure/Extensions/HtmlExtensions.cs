@@ -5,10 +5,17 @@ using System.Linq.Expressions;
 using System.Net;
 using System.Text;
 using System.Text.Encodings.Web;
+using AtiehJobCore.Core.Caching;
+using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Infrastructure;
 using AtiehJobCore.Services.Localization;
+using AtiehJobCore.Services.Seo;
+using AtiehJobCore.Services.Topics;
+using AtiehJobCore.Web.Framework.Infrastructure.Cache;
 using AtiehJobCore.Web.Framework.Localization;
 using AtiehJobCore.Web.Framework.Models;
+using AtiehJobCore.Web.Framework.Models.Common;
+using AtiehJobCore.Web.Framework.UI.Paging;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -279,5 +286,218 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 
         }
         #endregion
+
+        /// <summary>
+        /// BBCode editor
+        /// </summary>
+        /// <typeparam name="TModel">Model</typeparam>
+        /// <param name="html">HTML Helper</param>
+        /// <param name="name">Name</param>
+        /// <returns>Editor</returns>
+        public static IHtmlContent BbCodeEditor<TModel>(this IHtmlHelper<TModel> html, string name)
+        {
+            var sb = new StringBuilder();
+
+            var storeLocation = EngineContext.Current.Resolve<IWebHelper>().GetLocation();
+            var bbEditorWebRoot = $"{storeLocation}content/";
+
+            sb.AppendFormat("<script src=\"{0}content/bbeditor/ed.js\" ></script>", storeLocation);
+            sb.Append(Environment.NewLine);
+            sb.Append("<script language=\"javascript\" type=\"text/javascript\">");
+            sb.Append(Environment.NewLine);
+            sb.AppendFormat("edToolbar('{0}','{1}');", name, bbEditorWebRoot);
+            sb.Append(Environment.NewLine);
+            sb.Append("</script>");
+            sb.Append(Environment.NewLine);
+
+            return new HtmlString(sb.ToString());
+        }
+
+        //we have two pagers:
+        //The first one can have custom routes
+        //The second one just adds query string parameter
+        public static IHtmlContent Pager<TModel>(this IHtmlHelper<TModel> html, PagerModel model)
+        {
+            if (model.TotalRecords == 0)
+                return null;
+
+            var localizationService = EngineContext.Current.Resolve<ILocalizationService>();
+
+            var links = new StringBuilder();
+            if (model.ShowTotalSummary && (model.TotalPages > 0))
+            {
+                links.Append("<li class=\"total-summary page-item\">");
+                links.Append(string.Format(model.CurrentPageText, model.PageIndex + 1, model.TotalPages, model.TotalRecords));
+                links.Append("</li>");
+            }
+            if (model.ShowPagerItems && (model.TotalPages > 1))
+            {
+                if (model.ShowFirst)
+                {
+                    //first page
+                    if ((model.PageIndex >= 3) && (model.TotalPages > model.IndividualPagesDisplayedCount))
+                    {
+                        model.RouteValues.PageNumber = 1;
+
+                        links.Append("<li class=\"first-page page-item\">");
+                        links.Append(model.UseRouteLinks
+                            ? html.RouteLink(model.FirstButtonText, model.RouteActionName, model.RouteValues,
+                                new
+                                {
+                                    title = localizationService.GetResource("Pager.FirstPageTitle"),
+                                    @class = "page-link"
+                                }).ToHtmlString()
+                            : html.ActionLink(model.FirstButtonText, model.RouteActionName, model.RouteValues,
+                                new
+                                {
+                                    title = localizationService.GetResource("Pager.FirstPageTitle"),
+                                    @class = "page-link"
+                                }).ToHtmlString());
+                        links.Append("</li>");
+                    }
+                }
+                if (model.ShowPrevious)
+                {
+                    //previous page
+                    if (model.PageIndex > 0)
+                    {
+                        model.RouteValues.PageNumber = (model.PageIndex);
+
+                        links.Append("<li class=\"previous-page page-item\">");
+                        links.Append(model.UseRouteLinks
+                            ? html.RouteLink(model.PreviousButtonText, model.RouteActionName, model.RouteValues,
+                                new
+                                {
+                                    title = localizationService.GetResource("Pager.PreviousPageTitle"),
+                                    @class = "page-link"
+                                }).ToHtmlString()
+                            : html.ActionLink(model.PreviousButtonText, model.RouteActionName, model.RouteValues,
+                                new
+                                {
+                                    title = localizationService.GetResource("Pager.PreviousPageTitle"),
+                                    @class = "page-link"
+                                }).ToHtmlString());
+                        links.Append("</li>");
+                    }
+                }
+                if (model.ShowIndividualPages)
+                {
+                    //individual pages
+                    int firstIndividualPageIndex = model.GetFirstIndividualPageIndex();
+                    int lastIndividualPageIndex = model.GetLastIndividualPageIndex();
+                    for (var i = firstIndividualPageIndex; i <= lastIndividualPageIndex; i++)
+                    {
+                        if (model.PageIndex == i)
+                        {
+                            links.AppendFormat("<li class=\"current-page page-item\"><a class=\"page-link\">{0}</a></li>", (i + 1));
+                        }
+                        else
+                        {
+                            model.RouteValues.PageNumber = (i + 1);
+
+                            links.Append("<li class=\"individual-page page-item\">");
+                            links.Append(model.UseRouteLinks
+                                ? html.RouteLink((i + 1).ToString(), model.RouteActionName, model.RouteValues,
+                                    new
+                                    {
+                                        title = string.Format(localizationService.GetResource("Pager.PageLinkTitle"),
+                                            (i + 1)),
+                                        @class = "page-link"
+                                    }).ToHtmlString()
+                                : html.ActionLink((i + 1).ToString(), model.RouteActionName, model.RouteValues,
+                                    new
+                                    {
+                                        title = string.Format(localizationService.GetResource("Pager.PageLinkTitle"),
+                                            (i + 1)),
+                                        @class = "page-link"
+                                    }).ToHtmlString());
+                            links.Append("</li>");
+                        }
+                    }
+                }
+                if (model.ShowNext)
+                {
+                    //next page
+                    if ((model.PageIndex + 1) < model.TotalPages)
+                    {
+                        model.RouteValues.PageNumber = (model.PageIndex + 2);
+
+                        links.Append("<li class=\"next-page page-item\">");
+                        links.Append(model.UseRouteLinks
+                            ? html.RouteLink(model.NextButtonText, model.RouteActionName, model.RouteValues,
+                                new
+                                {
+                                    title = localizationService.GetResource("Pager.NextPageTitle"),
+                                    @class = "page-link"
+                                }).ToHtmlString()
+                            : html.ActionLink(model.NextButtonText, model.RouteActionName, model.RouteValues,
+                                new
+                                {
+                                    title = localizationService.GetResource("Pager.NextPageTitle"),
+                                    @class = "page-link"
+                                }).ToHtmlString());
+                        links.Append("</li>");
+                    }
+                }
+                if (model.ShowLast)
+                {
+                    //last page
+                    if (((model.PageIndex + 3) < model.TotalPages) && (model.TotalPages > model.IndividualPagesDisplayedCount))
+                    {
+                        model.RouteValues.PageNumber = model.TotalPages;
+
+                        links.Append("<li class=\"last-page page-item\">");
+                        links.Append(model.UseRouteLinks
+                            ? html.RouteLink(model.LastButtonText, model.RouteActionName, model.RouteValues,
+                                new
+                                {
+                                    title = localizationService.GetResource("Pager.LastPageTitle"),
+                                    @class = "page-link"
+                                }).ToHtmlString()
+                            : html.ActionLink(model.LastButtonText, model.RouteActionName, model.RouteValues,
+                                new
+                                {
+                                    title = localizationService.GetResource("Pager.LastPageTitle"),
+                                    @class = "page-link"
+                                }).ToHtmlString());
+                        links.Append("</li>");
+                    }
+                }
+            }
+            var result = links.ToString();
+            if (!string.IsNullOrEmpty(result))
+            {
+                result = "<ul class=\"pagination\">" + result + "</ul>";
+            }
+            return new HtmlString(result);
+        }
+
+        public static Pager Pager(this IHtmlHelper helper, IPageableModel pagination)
+        {
+            return new Pager(pagination, helper.ViewContext);
+        }
+
+        /// <summary>
+        /// Get topic system name
+        /// </summary>
+        /// <typeparam name="T">T</typeparam>
+        /// <param name="html">HTML helper</param>
+        /// <param name="systemName">System name</param>
+        /// <returns>Topic SEO Name</returns>
+        public static string GetTopicSeName<T>(this IHtmlHelper<T> html, string systemName)
+        {
+            var workContext = EngineContext.Current.Resolve<IWorkContext>();
+
+            //static cache manager
+            var cacheManager = EngineContext.Current.Resolve<ICacheManager>();
+            var cacheKey = string.Format(ModelCacheEventConsumer.TopicSeNameBySystemName, systemName, workContext.WorkingLanguage.Id);
+            var cachedSeName = cacheManager.Get(cacheKey, () =>
+            {
+                var topicService = EngineContext.Current.Resolve<ITopicService>();
+                var topic = topicService.GetTopicBySystemName(systemName);
+                return topic == null ? "" : topic.GetSeName();
+            });
+            return cachedSeName;
+        }
     }
 }

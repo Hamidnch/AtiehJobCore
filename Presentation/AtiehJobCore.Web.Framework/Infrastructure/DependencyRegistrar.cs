@@ -17,6 +17,8 @@ using AtiehJobCore.Services.Helpers;
 using AtiehJobCore.Services.Installation;
 using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Logging;
+using AtiehJobCore.Services.Media;
+using AtiehJobCore.Services.Messages;
 using AtiehJobCore.Services.Security;
 using AtiehJobCore.Services.Seo;
 using AtiehJobCore.Services.Tasks;
@@ -132,6 +134,7 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
             builder.RegisterType<PageHeadBuilder>().As<IPageHeadBuilder>().InstancePerLifetimeScope();
             builder.RegisterType<PermissionService>().As<IPermissionService>().InstancePerLifetimeScope();
             builder.RegisterType<AclService>().As<IAclService>().InstancePerLifetimeScope();
+            builder.RegisterType<DateTimeHelper>().As<IDateTimeHelper>().InstancePerLifetimeScope();
 
             builder.RegisterType<EncryptionService>().As<IEncryptionService>().InstancePerLifetimeScope();
             var databaseInstalled = DataSettingsHelper.DatabaseIsInstalled();
@@ -167,6 +170,14 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
             builder.RegisterType<EventPublisher>().As<IEventPublisher>().SingleInstance();
             builder.RegisterType<SubscriptionService>().As<ISubscriptionService>().SingleInstance();
             builder.RegisterType<TopicService>().As<ITopicService>().InstancePerLifetimeScope();
+            builder.RegisterType<DownloadService>().As<IDownloadService>().InstancePerLifetimeScope();
+            builder.RegisterType<MessageTemplateService>().As<IMessageTemplateService>().InstancePerLifetimeScope();
+            builder.RegisterType<PopupService>().As<IPopupService>().InstancePerLifetimeScope();
+            builder.RegisterType<EmailAccountService>().As<IEmailAccountService>().InstancePerLifetimeScope();
+            builder.RegisterType<ContactAttributeFormatter>().As<IContactAttributeFormatter>().InstancePerLifetimeScope();
+            builder.RegisterType<ContactAttributeParser>().As<IContactAttributeParser>().InstancePerLifetimeScope();
+            builder.RegisterType<ContactAttributeService>().As<IContactAttributeService>().InstancePerLifetimeScope();
+
         }
 
         /// <inheritdoc />

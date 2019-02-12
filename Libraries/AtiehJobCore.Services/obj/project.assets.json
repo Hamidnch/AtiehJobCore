@@ -117,6 +117,20 @@
           "lib/netstandard2.0/DNTPersianUtils.Core.dll": {}
         }
       },
+      "DotLiquid/2.0.298": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.3/DotLiquid.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/DotLiquid.dll": {}
+        },
+        "resource": {
+          "lib/netstandard1.3/it/DotLiquid.resources.dll": {
+            "locale": "it"
+          }
+        }
+      },
       "FluentScheduler/5.3.0": {
         "type": "package",
         "compile": {
@@ -3930,6 +3944,7 @@
           "Autofac.Extensions.DependencyInjection": "4.3.1",
           "DNTCommon.Web.Core": "1.3.3",
           "DNTPersianUtils.Core": "3.2.0",
+          "DotLiquid": "2.0.298",
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Razor": "2.2.0",
@@ -4091,6 +4106,25 @@
         "lib/netstandard1.3/DNTPersianUtils.Core.xml",
         "lib/netstandard2.0/DNTPersianUtils.Core.dll",
         "lib/netstandard2.0/DNTPersianUtils.Core.xml"
+      ]
+    },
+    "DotLiquid/2.0.298": {
+      "sha512": "9ok+3DlIpwmEEw2OmRs/cbn+d6JMDOS1DJakgAR4XQMLIJB3YFTY3EBDf5JlTZYTYUp/WxsCnflTRmot9f0O/A==",
+      "type": "package",
+      "path": "dotliquid/2.0.298",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "dotliquid.2.0.298.nupkg.sha512",
+        "dotliquid.nuspec",
+        "lib/net45/DotLiquid.dll",
+        "lib/net45/DotLiquid.xml",
+        "lib/net45/it/DotLiquid.resources.dll",
+        "lib/netstandard1.3/DotLiquid.dll",
+        "lib/netstandard1.3/DotLiquid.xml",
+        "lib/netstandard1.3/it/DotLiquid.resources.dll",
+        "readme.txt"
       ]
     },
     "FluentScheduler/5.3.0": {
@@ -11479,6 +11513,7 @@
     ".NETStandard,Version=v2.0": [
       "AtiehJobCore.Core >= 1.0.0",
       "AtiehJobCore.Data >= 1.0.0",
+      "DotLiquid >= 2.0.298",
       "FluentScheduler >= 5.3.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 2.2.0",
       "Microsoft.AspNetCore.StaticFiles >= 2.2.0",
@@ -11533,6 +11568,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "DotLiquid": {
+            "target": "Package",
+            "version": "[2.0.298, )"
+          },
           "FluentScheduler": {
             "target": "Package",
             "version": "[5.3.0, )"

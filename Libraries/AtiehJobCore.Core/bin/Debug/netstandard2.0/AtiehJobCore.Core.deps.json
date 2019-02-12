@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "35deb8f8fbbbfb9e4e13030f2896e1f381467e36"
+    "signature": "3f309075dd6d1656dd6c139e729c67b553a36bf0"
   },
   "compilationOptions": {},
   "targets": {
@@ -15,6 +15,7 @@
           "Autofac.Extensions.DependencyInjection": "4.3.1",
           "DNTCommon.Web.Core": "1.3.3",
           "DNTPersianUtils.Core": "3.2.0",
+          "DotLiquid": "2.0.298",
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Razor": "2.2.0",
@@ -142,6 +143,19 @@
           "lib/netstandard2.0/DNTPersianUtils.Core.dll": {
             "assemblyVersion": "3.2.0.0",
             "fileVersion": "3.2.0.0"
+          }
+        }
+      },
+      "DotLiquid/2.0.298": {
+        "runtime": {
+          "lib/netstandard1.3/DotLiquid.dll": {
+            "assemblyVersion": "2.0.298.0",
+            "fileVersion": "2.0.298.0"
+          }
+        },
+        "resources": {
+          "lib/netstandard1.3/it/DotLiquid.resources.dll": {
+            "locale": "it"
           }
         }
       },
@@ -2876,6 +2890,13 @@
       "sha512": "sha512-BMdGhn5qRj2SinQMn/5ZNh3I2P/V12jdJZz3Q6BQF1iFAHZtimy8hHf/UXpfJa5qN7KafNj8ujUw9RjYKXI89A==",
       "path": "dntpersianutils.core/3.2.0",
       "hashPath": "dntpersianutils.core.3.2.0.nupkg.sha512"
+    },
+    "DotLiquid/2.0.298": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9ok+3DlIpwmEEw2OmRs/cbn+d6JMDOS1DJakgAR4XQMLIJB3YFTY3EBDf5JlTZYTYUp/WxsCnflTRmot9f0O/A==",
+      "path": "dotliquid/2.0.298",
+      "hashPath": "dotliquid.2.0.298.nupkg.sha512"
     },
     "HtmlAgilityPack/1.8.11": {
       "type": "package",

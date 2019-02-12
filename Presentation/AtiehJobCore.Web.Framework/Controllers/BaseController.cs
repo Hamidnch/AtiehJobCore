@@ -1,10 +1,17 @@
-﻿using AtiehJobCore.Core.Contracts;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.Encodings.Web;
+using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Infrastructure;
 using AtiehJobCore.Services.Events;
 using AtiehJobCore.Services.Localization;
+using AtiehJobCore.Services.Logging;
 using AtiehJobCore.Web.Framework.Filters;
 using AtiehJobCore.Web.Framework.KendoUi;
 using AtiehJobCore.Web.Framework.Localization;
+using AtiehJobCore.Web.Framework.Services;
+using AtiehJobCore.Web.Framework.UI.Notification;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -14,10 +21,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Mvc.ViewFeatures.Internal;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Encodings.Web;
 
 namespace AtiehJobCore.Web.Framework.Controllers
 {
@@ -44,6 +47,7 @@ namespace AtiehJobCore.Web.Framework.Controllers
 
         //    return LocalRedirect(returnUrl);
         //}
+
         #region Rendering
 
         /// <summary>
@@ -58,11 +62,10 @@ namespace AtiehJobCore.Web.Framework.Controllers
             //we customized it to allow running from controllers
 
             //TODO add support for parameters (pass ViewComponent as input parameter)
-            if (String.IsNullOrEmpty(componentName))
+            if (string.IsNullOrEmpty(componentName))
                 throw new ArgumentNullException(nameof(componentName));
 
-            var actionContextAccessor = HttpContext.RequestServices.GetService(typeof(IActionContextAccessor)) as IActionContextAccessor;
-            if (actionContextAccessor == null)
+            if (!(HttpContext.RequestServices.GetService(typeof(IActionContextAccessor)) is IActionContextAccessor actionContextAccessor))
                 throw new Exception("IActionContextAccessor cannot be resolved");
 
             var context = new ActionContext(HttpContext, RouteData, ControllerContext.ActionDescriptor, ModelState);
@@ -168,13 +171,157 @@ namespace AtiehJobCore.Web.Framework.Controllers
 
             using (var stringWriter = new StringWriter())
             {
-                var viewContext = new ViewContext(actionContext, viewResult.View,
-                    ViewData, TempData, stringWriter, new HtmlHelperOptions());
+                var viewContext = new ViewContext(actionContext, viewResult.View, ViewData, TempData, stringWriter, new HtmlHelperOptions());
 
                 var t = viewResult.View.RenderAsync(viewContext);
                 t.Wait();
                 return stringWriter.GetStringBuilder().ToString();
             }
+        }
+
+        #endregion
+
+        #region Notifications
+
+        /// <summary>
+        /// Display success notification
+        /// </summary>
+        /// <param name="message">Message</param>
+        /// <param name="persistForTheNextRequest">A value indicating whether a message should be persisted for the next request</param>
+        protected virtual void SuccessNotification(string message, bool persistForTheNextRequest = true)
+        {
+            AddNotification(NotifyType.Success, message, persistForTheNextRequest);
+        }
+
+        /// <summary>
+        /// Display warning notification
+        /// </summary>
+        /// <param name="message">Message</param>
+        /// <param name="persistForTheNextRequest">A value indicating whether a message should be persisted for the next request</param>
+        protected virtual void WarningNotification(string message, bool persistForTheNextRequest = true)
+        {
+            AddNotification(NotifyType.Warning, message, persistForTheNextRequest);
+        }
+
+        /// <summary>
+        /// Display error notification
+        /// </summary>
+        /// <param name="message">Message</param>
+        /// <param name="persistForTheNextRequest">A value indicating whether a message should be persisted for the next request</param>
+        protected virtual void ErrorNotification(string message, bool persistForTheNextRequest = true)
+        {
+            AddNotification(NotifyType.Error, message, persistForTheNextRequest);
+        }
+
+        /// <summary>
+        /// Display error notification
+        /// </summary>
+        /// <param name="modelState"></param>
+        /// <param name="persistForTheNextRequest">A value indicating whether a message should be persisted for the next request</param>
+        protected virtual void ErrorNotification(ModelStateDictionary modelState, bool persistForTheNextRequest = true)
+        {
+            var modelErrors = new List<string>();
+            foreach (var state in modelState.Values)
+            {
+                foreach (var modelError in state.Errors)
+                {
+                    modelErrors.Add(modelError.ErrorMessage);
+                }
+            }
+            AddNotification(NotifyType.Error, string.Join(",", modelErrors), persistForTheNextRequest);
+        }
+
+        /// <summary>
+        /// Display error notification
+        /// </summary>
+        /// <param name="exception">Exception</param>
+        /// <param name="persistForTheNextRequest">A value indicating whether a message should be persisted for the next request</param>
+        /// <param name="logException">A value indicating whether exception should be logged</param>
+        protected virtual void ErrorNotification(Exception exception, bool persistForTheNextRequest = true, bool logException = true)
+        {
+            if (logException)
+                LogException(exception);
+
+            AddNotification(NotifyType.Error, exception.Message, persistForTheNextRequest);
+        }
+
+        /// <summary>
+        /// Log exception
+        /// </summary>
+        /// <param name="exception">Exception</param>
+        protected void LogException(Exception exception)
+        {
+            var workContext = EngineContext.Current.Resolve<IWorkContext>();
+            var logger = EngineContext.Current.Resolve<ILogger>();
+
+            var customer = workContext.CurrentUser;
+            logger.Error(exception.Message, exception, customer);
+        }
+
+        /// <summary>
+        /// Display notification
+        /// </summary>
+        /// <param name="type">Notification type</param>
+        /// <param name="message">Message</param>
+        /// <param name="persistForTheNextRequest">A value indicating whether a message should be persisted for the next request</param>
+        protected virtual void AddNotification(NotifyType type, string message, bool persistForTheNextRequest)
+        {
+            var dataKey = $"atiehJob.notifications.{type}";
+
+            if (persistForTheNextRequest)
+            {
+                //1. Compare with null (first usage)
+                //2. For some unknown reasons sometimes List<string> is converted to string[]. And it throws exceptions. That's why we reset it
+                if (TempData[dataKey] == null || !(TempData[dataKey] is List<string>))
+                    TempData[dataKey] = new List<string>();
+                ((List<string>)TempData[dataKey]).Add(message);
+            }
+            else
+            {
+                //1. Compare with null (first usage)
+                //2. For some unknown reasons sometimes List<string> is converted to string[]. And it throws exceptions. That's why we reset it
+                if (ViewData[dataKey] == null || !(ViewData[dataKey] is List<string>))
+                    ViewData[dataKey] = new List<string>();
+                ((List<string>)ViewData[dataKey]).Add(message);
+            }
+        }
+
+        /// <summary>
+        /// Error's json data for kendo grid
+        /// </summary>
+        /// <param name="errorMessage">Error message</param>
+        /// <returns>Error's json data</returns>
+        protected JsonResult ErrorForKendoGridJson(string errorMessage)
+        {
+            var gridModel = new DataSourceResult
+            {
+                Errors = errorMessage
+            };
+
+            return Json(gridModel);
+        }
+        /// <summary>
+        /// Error's json data for kendo grid
+        /// </summary>
+        /// <param name="modelState">Model state</param>
+        /// <returns>Error's json data</returns>
+        protected JsonResult ErrorForKendoGridJson(ModelStateDictionary modelState)
+        {
+            var gridModel = new DataSourceResult
+            {
+                Errors = ModelState.SerializeErrors()
+            };
+            return Json(gridModel);
+        }
+        /// <summary>
+        /// Display "Edit" (manage) link (in public store)
+        /// </summary>
+        /// <param name="editPageUrl">Edit page URL</param>
+        protected virtual void DisplayEditLink(string editPageUrl)
+        {
+            var pageHeadBuilder = EngineContext.Current.Resolve<IPageHeadBuilder>();
+
+            pageHeadBuilder.AddEditPageUrl(editPageUrl);
         }
 
         #endregion
@@ -217,36 +364,6 @@ namespace AtiehJobCore.Web.Framework.Controllers
 
 
         #endregion
-
-        #region Notification
-        /// <summary>
-        /// Error's json data for kendo grid
-        /// </summary>
-        /// <param name="errorMessage">Error message</param>
-        /// <returns>Error's json data</returns>
-        protected JsonResult ErrorForKendoGridJson(string errorMessage)
-        {
-            var gridModel = new DataSourceResult
-            {
-                Errors = errorMessage
-            };
-
-            return Json(gridModel);
-        }
-        /// <summary>
-        /// Error's json data for kendo grid
-        /// </summary>
-        /// <param name="modelState">Model state</param>
-        /// <returns>Error's json data</returns>
-        protected JsonResult ErrorForKendoGridJson(ModelStateDictionary modelState)
-        {
-            var gridModel = new DataSourceResult
-            {
-                Errors = ModelState.SerializeErrors()
-            };
-            return Json(gridModel);
-        }
-        #endregion Notification
 
         #region Security
 

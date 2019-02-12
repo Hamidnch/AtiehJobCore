@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using System;
+﻿using System;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AtiehJobCore.Web.Framework.Security.Authorization
 {
@@ -16,7 +16,7 @@ namespace AtiehJobCore.Web.Framework.Security.Authorization
                 Policy.StartsWith(PolicyPrefix, StringComparison.OrdinalIgnoreCase)
                     ? Policy.Replace(PolicyPrefix, "")
                     : string.Empty;
-            set => Policy = $"{PolicyPrefix}{value}";
+            set => Policy = $"{PolicyPrefix}{value.ToString()}";
         }
     }
 }

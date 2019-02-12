@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="App_Data\Settings.txt" />
     <None Remove="Views\Home\Index.cshtml~RF56fc6cc.TMP" />
     <None Remove="Views\Home\Index.cshtml~RF5d1237b.TMP" />
   </ItemGroup>

@@ -41,19 +41,22 @@ namespace AtiehJobCore.Services.Users
         private readonly IRepository<User> _userRepository;
         private readonly IRepository<Role> _roleRepository;
         private readonly IRepository<UserHistoryPassword> _userHistoryPasswordRepository;
+        private readonly IRepository<UserNote> _userNoteRepository;
         private readonly ICacheManager _cacheManager;
         private readonly IEventPublisher _eventPublisher;
 
         public UserService(IRepository<User> userRepository,
             IRepository<Role> roleRepository, ICacheManager cacheManager,
             IEventPublisher eventPublisher,
-            IRepository<UserHistoryPassword> userHistoryPasswordRepository)
+            IRepository<UserHistoryPassword> userHistoryPasswordRepository,
+            IRepository<UserNote> userNoteRepository)
         {
             _userRepository = userRepository;
             _roleRepository = roleRepository;
             _cacheManager = cacheManager;
             _eventPublisher = eventPublisher;
             _userHistoryPasswordRepository = userHistoryPasswordRepository;
+            _userNoteRepository = userNoteRepository;
         }
 
         public IPagedList<User> GetAllUsers(DateTime? createdFromUtc = null,
@@ -511,6 +514,50 @@ namespace AtiehJobCore.Services.Users
             var update = updateBuilder.Pull(p => p.Roles, userRole);
             _userRepository.Collection.UpdateOneAsync(
                 new BsonDocument("_id", userRole.UserId), update);
+        }
+
+        public UserNote GetUserNote(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                throw new ArgumentNullException(nameof(id));
+
+            return _userNoteRepository.Table.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void DeleteUserNote(UserNote userNote)
+        {
+            if (userNote == null)
+                throw new ArgumentNullException(nameof(userNote));
+
+            _userNoteRepository.Delete(userNote);
+
+            //event notification
+            _eventPublisher.EntityDeleted(userNote);
+        }
+
+        public void InsertUserNote(UserNote userNote)
+        {
+            if (userNote == null)
+                throw new ArgumentNullException(nameof(userNote));
+
+            _userNoteRepository.Insert(userNote);
+
+            //event notification
+            _eventPublisher.EntityInserted(userNote);
+        }
+
+        public IList<UserNote> GetUserNotes(string userId, bool? displayToUser = null)
+        {
+            var query = from userNote in _userNoteRepository.Table
+                        where userNote.UserId == userId
+                        select userNote;
+
+            if (displayToUser.HasValue)
+                query = query.Where(x => x.DisplayToUser == displayToUser.Value);
+
+            query = query.OrderByDescending(x => x.CreatedOnUtc);
+
+            return query.ToList();
         }
     }
 }

@@ -90,6 +90,7 @@ namespace AtiehJobCore.Web.Infrastructure
                             "profile/{id}/page/{pageNumber}",
                             new { controller = "Profile", action = "Index" });
 
+
             //site closed
             routeBuilder.MapLocalizedRoute("SiteClosed", "siteclosed",
                 new { controller = "Common", action = "SiteClosed" });

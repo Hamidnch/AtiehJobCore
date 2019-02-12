@@ -22,7 +22,7 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
         public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
             // add dynamic permission
-            services.AddDynamicPermissions();
+            //services.AddDynamicPermissions();
             //add data protection
             services.AddAtiehJobDataProtectionService();
             //add authentication
