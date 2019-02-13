@@ -63,7 +63,8 @@
       "source/core-ui/simple-line-icons/css/simple-line-icons.min.css",
       "source/core-ui/css/coreui.min.css",
       "source/core-ui/pace/pace.min.css",
-      "source/customs/admin/admin.custom.min.css" 
+      "source/customs/admin/admin.custom.min.css",
+      "source/customs/admin/admin.note.min.css"
     ],
     "minify": {
       "enabled": false,
@@ -71,17 +72,17 @@
       "renameLocals": false 
     }
   },
-  //{
-  //  "outputFileName": "wwwroot/css/admin/admin.note-rtl.min.css",
-  //  "inputFiles": [
-  //    "source/customs/admin/admin.note-rtl.min.css"
-  //  ],
-  //  "minify": {
-  //    "enabled": false,
-  //    "adjustRelativePaths": false,
-  //    "renameLocals": false
-  //  }
-  //},
+  {
+    "outputFileName": "wwwroot/css/admin/admin.note-rtl.min.css",
+    "inputFiles": [
+      "source/customs/admin/admin.note-rtl.min.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "adjustRelativePaths": false,
+      "renameLocals": false
+    }
+  },
   {
     "outputFileName": "wwwroot/js/jqueryAll.min.js",
     "inputFiles": [

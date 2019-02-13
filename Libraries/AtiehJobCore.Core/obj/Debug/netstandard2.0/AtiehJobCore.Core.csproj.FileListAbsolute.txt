@@ -6,4 +6,3 @@ D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandar
 D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.AssemblyInfo.cs
 D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.dll
 D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.pdb
-D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.csprojAssemblyReference.cache

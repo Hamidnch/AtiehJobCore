@@ -274,10 +274,10 @@ namespace AtiehJobCore.Services.Installation
             settingService.SaveSetting(new StoreInformationSettings
             {
                 SiteClosed = false,
-                DefaultStoreTheme = "DefaultClean",
-                AllowCustomerToSelectTheme = false,
+                DefaultSiteTheme = "DefaultClean",
+                AllowUserToSelectTheme = false,
                 DisplayMiniProfilerInPublicStore = false,
-                DisplayEuCookieLawWarning = false,
+                DisplayEuCookieLawWarning = true,
                 FacebookLink = "https://www.facebook.com/atiehjobcom",
                 TwitterLink = "https://twitter.com/atiehjob",
                 YoutubeLink = "http://www.youtube.com/user/atiehjob",

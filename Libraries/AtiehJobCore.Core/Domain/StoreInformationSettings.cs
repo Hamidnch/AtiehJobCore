@@ -17,12 +17,12 @@ namespace AtiehJobCore.Core.Domain
         /// <summary>
         /// Gets or sets a default store theme
         /// </summary>
-        public string DefaultStoreTheme { get; set; }
+        public string DefaultSiteTheme { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether customers are allowed to select a theme
         /// </summary>
-        public bool AllowCustomerToSelectTheme { get; set; }
+        public bool AllowUserToSelectTheme { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether mini profiler should be displayed in public store (used for debugging)

@@ -1,4 +1,4 @@
-﻿<Language Name="English" IsDefault="false" IsRightToLeft="false">
+﻿<Language Name="انگلیسی" IsDefault="false" IsRightToLeft="false">
   <LocaleResource Name="AdminEmail">
     <Value>Admin user email</Value>
   </LocaleResource>
@@ -62,12 +62,6 @@
   <LocaleResource Name="DataProviderRequired">
     <Value>Select data provider</Value>
   </LocaleResource>
-  <LocaleResource Name="Documentation1">
-    <Value>If you need information on how to use grandnode, visit</Value>
-  </LocaleResource>
-  <LocaleResource Name="Documentation2">
-    <Value>the documentation section on grandnode.com</Value>
-  </LocaleResource>
   <LocaleResource Name="Example">
     <Value>Example</Value>
   </LocaleResource>
@@ -75,7 +69,7 @@
     <Value>Install</Value>
   </LocaleResource>
   <LocaleResource Name="Installing">
-    <Value>Installing grandnode...</Value>
+    <Value>Installing ...</Value>
   </LocaleResource>
   <LocaleResource Name="PasswordsDoNotMatch">
     <Value>The passwords do not match</Value>
@@ -120,13 +114,13 @@
     <Value>Use MongoDB Server database</Value>
   </LocaleResource>
   <LocaleResource Name="StoreInformation">
-    <Value>Store information</Value>
+    <Value>Site information</Value>
   </LocaleResource>
   <LocaleResource Name="Title">
-    <Value>grandnode installation</Value>
+    <Value>AtiehJob installation</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip1">
-    <Value>grandnode is the leading ASP.NET online shop e-commerce solution. This wizard will guide you through the process of configuring grandnode</Value>
+    <Value>AtiehJob</Value>
   </LocaleResource>
   <LocaleResource Name="Tooltip2">
     <Value>To complete this wizard, you must know some information regarding your database server ("connection string"). Please contact your ISP if necessary. If you're installing on a local machine or server, you might need information from your System Admin.</Value>
@@ -138,6 +132,6 @@
     <Value>Application has been installed successfully, please restart application.</Value>
   </LocaleResource>
   <LocaleResource Name="AlreadyInstalled">
-    <Value>This database already exists and has GrandNode installed on it. Choose different database.</Value>
+    <Value>This database already exists and has AtiehJobCore installed on it. Choose different database.</Value>
   </LocaleResource>
 </Language>

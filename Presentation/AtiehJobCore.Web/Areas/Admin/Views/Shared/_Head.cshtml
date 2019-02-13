@@ -28,6 +28,7 @@
     if (isRtl)
     {
         Html.AddCssFileParts("/css/admin/kendo/kendo.rtl.min.css", excludeFromBundle: false);
+        Html.AddCssFileParts("/css/admin/admin.note-rtl.min.css", excludeFromBundle: false);
     }
     Html.AddCssFileParts($"/css/admin/kendo/kendo.{kendoLayout}.min.css", excludeFromBundle: false);
     Html.AddCssFileParts("/css/admin/kendo/kendo.common.min.css", excludeFromBundle: false);
@@ -43,18 +44,8 @@
     Html.AppendScriptParts(ResourceLocation.Footer, "/js/admin/admin.common.min.js", excludeFromBundle: false);
     Html.AppendScriptParts(ResourceLocation.Footer, "/js/admin/jquery-ui/jquery-ui.min.js", excludeFromBundle: false);
 
-    //Html.AddScriptParts("~/scripts/jquery.validate.unobtrusive.min.js", excludeFromBundle: false);
-    //Html.AddScriptParts("~/scripts/jquery.validate.min.js", excludeFromBundle: false);
     Html.AppendScriptParts(ResourceLocation.Footer, "/js/admin/admin.search.min.js", excludeFromBundle: false);
 
-    //Html.AddScriptParts("~/scripts/typeahead.js", excludeFromBundle: false);
-    //Html.AddScriptParts("~/administration/layout/js/layout.js", excludeFromBundle: false);
-    //Html.AddScriptParts("~/administration/global/js/jquery.cookieBar.min.js", excludeFromBundle: false);
-    //Html.AddScriptParts("~/administration/global/js/app.js", excludeFromBundle: false);
-    //Html.AddScriptParts("~/administration/bootstrap/js/daterangepicker.min.js", excludeFromBundle: false);
-    //Html.AddScriptParts("~/administration/global/js/moment.min.js", excludeFromBundle: false);
-    //Html.AddScriptParts("~/administration/bootstrap/js/bootstrap.min.js", excludeFromBundle: false);
-    //Html.AddScriptParts("~/administration/global/js/jquery.min.js", excludeFromBundle: false);
 
     Html.AppendScriptParts(ResourceLocation.Head, "/js/jqueryAll.min.js", excludeFromBundle: false);
     Html.AppendScriptParts(ResourceLocation.Footer, "/js/admin/admin.min.js", excludeFromBundle: false);
