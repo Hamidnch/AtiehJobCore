@@ -1,4 +1,4 @@
-﻿<Language Name="فارسی" IsDefault="true" IsRightToLeft="true">
+﻿<Language Name="Persian" IsDefault="true" IsRightToLeft="true">
   <LocaleResource Name="AdminEmail">
     <Value>ایمیل مدیر سیستم</Value>
   </LocaleResource>

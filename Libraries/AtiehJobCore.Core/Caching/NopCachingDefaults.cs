@@ -14,6 +14,6 @@ namespace AtiehJobCore.Core.Caching
         /// <summary>
         /// Gets the key used to store the protection key list to Redis (used with the PersistDataProtectionKeysToRedis option enabled)
         /// </summary>
-        public static string RedisDataProtectionKey => "Nch.DataProtectionKeys";
+        public static string RedisDataProtectionKey => "AtiehJob.DataProtectionKeys";
     }
 }

@@ -3,6 +3,7 @@ using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain.Catalog;
 using AtiehJobCore.Core.Domain.Security;
 using AtiehJobCore.Core.Domain.Topics;
+using AtiehJobCore.Core.Extensions;
 using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Services.Events;
 using AtiehJobCore.Services.Extensions;

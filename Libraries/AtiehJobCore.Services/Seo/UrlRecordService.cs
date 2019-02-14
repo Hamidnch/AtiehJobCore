@@ -2,6 +2,7 @@
 using AtiehJobCore.Core.Caching;
 using AtiehJobCore.Core.Domain.Localization;
 using AtiehJobCore.Core.Domain.Seo;
+using AtiehJobCore.Core.Extensions;
 using AtiehJobCore.Core.MongoDb;
 using AtiehJobCore.Core.MongoDb.Data;
 using MongoDB.Driver.Linq;

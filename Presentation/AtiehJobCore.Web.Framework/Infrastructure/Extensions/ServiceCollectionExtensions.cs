@@ -1,11 +1,4 @@
-﻿using System;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using AtiehJobCore.Core.Configuration;
-using AtiehJobCore.Core.Contracts;
-using AtiehJobCore.Core.Domain.Common;
-using AtiehJobCore.Core.Extensions;
+﻿using AtiehJobCore.Core.Configuration;
 using AtiehJobCore.Core.Infrastructure;
 using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Core.Plugins;
@@ -38,6 +31,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 {
@@ -47,7 +44,7 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
             this IServiceCollection services, IConfiguration configuration)
         {
             //add SiteSettingsConfig configuration parameters
-            services.ConfigureStartupConfig<SiteSettings>(configuration.GetSection("SiteSettings"));
+            //services.ConfigureStartupConfig<SiteSettings>(configuration.GetSection("SiteSettings"));
             //add CommonConfig configuration parameters
             services.ConfigureStartupConfig<AtiehJobConfig>(configuration.GetSection("AtiehJobConfig"));
             //add hosting configuration parameters
@@ -112,16 +109,16 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
             return config;
         }
 
-        private static SiteSettings GetSiteSettings(this IServiceCollection services)
-        {
-            var siteSettings = EngineContext.Current.Resolve<SiteSettings>();
-            //var provider = services.BuildServiceProvider();
-            //var siteSettingsOptions = provider.GetService<IOptionsSnapshot<SiteSettings>>();
-            //siteSettingsOptions.CheckArgumentIsNull(nameof(siteSettingsOptions));
-            //var siteSettings = siteSettingsOptions.Value;
-            siteSettings.CheckArgumentIsNull(nameof(siteSettings));
-            return siteSettings;
-        }
+        //private static SiteSettings GetSiteSettings(this IServiceCollection services)
+        //{
+        //    var siteSettings = EngineContext.Current.Resolve<SiteSettings>();
+        //    //var provider = services.BuildServiceProvider();
+        //    //var siteSettingsOptions = provider.GetService<IOptionsSnapshot<SiteSettings>>();
+        //    //siteSettingsOptions.CheckArgumentIsNull(nameof(siteSettingsOptions));
+        //    //var siteSettings = siteSettingsOptions.Value;
+        //    siteSettings.CheckArgumentIsNull(nameof(siteSettings));
+        //    return siteSettings;
+        //}
 
         private static void AddHttpContextAccessor(this IServiceCollection services)
         {
@@ -133,8 +130,6 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
             services.AddTransient<IStartupFilter, SiteSettingsValidationStartUpFilter>();
             //services.AddSingleton<IValidatable>(resolver =>
             //    resolver.GetRequiredService<IOptions<SiteSettings>>().Value);
-            services.AddSingleton<IValidatable>(resolver =>
-                EngineContext.Current.Resolve<SiteSettings>());
         }
         public static void AddAtiehJobAntiForgeryService(this IServiceCollection services)
         {

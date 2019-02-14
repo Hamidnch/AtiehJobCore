@@ -1,12 +1,6 @@
-﻿using System;
-using System.Globalization;
-using System.IO;
-using System.Linq.Expressions;
-using System.Net;
-using System.Text;
-using System.Text.Encodings.Web;
-using AtiehJobCore.Core.Caching;
+﻿using AtiehJobCore.Core.Caching;
 using AtiehJobCore.Core.Contracts;
+using AtiehJobCore.Core.Extensions;
 using AtiehJobCore.Core.Infrastructure;
 using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Seo;
@@ -21,6 +15,13 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using System;
+using System.Globalization;
+using System.IO;
+using System.Linq.Expressions;
+using System.Net;
+using System.Text;
+using System.Text.Encodings.Web;
 
 namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
 {

@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Core.Domain.Common;
+﻿using AtiehJobCore.Core.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -10,18 +10,18 @@ namespace AtiehJobCore.Web.Framework.Middleware
     {
         private readonly RequestDelegate _next;
         private readonly string _contentSecurityPolicyValue;
-        private readonly SiteSettings _siteSettings;
+        private readonly AtiehJobConfig _atiehJobConfig;
 
-        public ContentSecurityPolicyMiddleware(RequestDelegate next, SiteSettings siteSettings)
+        public ContentSecurityPolicyMiddleware(RequestDelegate next, AtiehJobConfig atiehJobConfig)
         {
             _next = next;
-            _siteSettings = siteSettings;
+            _atiehJobConfig = atiehJobConfig;
             _contentSecurityPolicyValue = GetContentSecurityPolicyValue();
         }
 
         private string GetContentSecurityPolicyValue()
         {
-            var contentSecurityPolicyErrorLogUri = _siteSettings.ContentSecurityPolicyErrorLogUri;
+            var contentSecurityPolicyErrorLogUri = _atiehJobConfig.ContentSecurityPolicyErrorLogUri;
             if (string.IsNullOrWhiteSpace(contentSecurityPolicyErrorLogUri))
             {
                 throw new NullReferenceException("Please set the `ContentSecurityPolicyErrorLogUri` value in `appsettings.json` file.");

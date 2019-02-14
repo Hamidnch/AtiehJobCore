@@ -16265,11 +16265,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web\\AtiehJobCore.Web.csproj",
+      "projectUniqueName": "H:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web\\AtiehJobCore.Web.csproj",
       "projectName": "AtiehJobCore.Web",
-      "projectPath": "D:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web\\AtiehJobCore.Web.csproj",
+      "projectPath": "H:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web\\AtiehJobCore.Web.csproj",
       "packagesPath": "C:\\Users\\Chegini-pc\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web\\obj\\",
+      "outputPath": "H:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -16288,20 +16288,20 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\AtiehJobCore.Core.csproj": {
-              "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\AtiehJobCore.Core.csproj"
+            "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\AtiehJobCore.Core.csproj": {
+              "projectPath": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\AtiehJobCore.Core.csproj"
             },
-            "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\AtiehJobCore.Data.csproj": {
-              "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\AtiehJobCore.Data.csproj"
+            "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\AtiehJobCore.Data.csproj": {
+              "projectPath": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\AtiehJobCore.Data.csproj"
             },
-            "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Resources\\AtiehJobCore.Resources.csproj": {
-              "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Resources\\AtiehJobCore.Resources.csproj"
+            "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Resources\\AtiehJobCore.Resources.csproj": {
+              "projectPath": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Resources\\AtiehJobCore.Resources.csproj"
             },
-            "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Services\\AtiehJobCore.Services.csproj": {
-              "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Services\\AtiehJobCore.Services.csproj"
+            "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Services\\AtiehJobCore.Services.csproj": {
+              "projectPath": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Services\\AtiehJobCore.Services.csproj"
             },
-            "D:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web.Framework\\AtiehJobCore.Web.Framework.csproj": {
-              "projectPath": "D:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web.Framework\\AtiehJobCore.Web.Framework.csproj"
+            "H:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web.Framework\\AtiehJobCore.Web.Framework.csproj": {
+              "projectPath": "H:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web.Framework\\AtiehJobCore.Web.Framework.csproj"
             }
           }
         }

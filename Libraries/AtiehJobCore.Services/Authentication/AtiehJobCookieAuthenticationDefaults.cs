@@ -27,12 +27,12 @@ namespace AtiehJobCore.Services.Authentication
         /// <summary>
         /// The default value for the login path
         /// </summary>
-        public static readonly PathString LoginPath = new PathString("/login");
+        public static readonly PathString LoginPath = new PathString("/account/user/login");
 
         /// <summary>
         /// The default value used for the logout path
         /// </summary>
-        public static readonly PathString LogoutPath = new PathString("/logout");
+        public static readonly PathString LogoutPath = new PathString("/account/user/logout");
 
         /// <summary>
         /// The default value for the access denied path

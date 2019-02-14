@@ -137,5 +137,7 @@
         /// Gets or sets a value indicating whether ignore IgnoreUsePoweredByMiddleware
         /// </summary>
         public bool IgnoreUsePoweredByMiddleware { get; set; }
+
+        public string ContentSecurityPolicyErrorLogUri { get; set; }
     }
 }

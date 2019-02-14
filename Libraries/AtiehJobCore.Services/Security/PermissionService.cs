@@ -2,6 +2,7 @@
 using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain.Security;
 using AtiehJobCore.Core.Domain.Users;
+using AtiehJobCore.Core.Extensions;
 using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Users;

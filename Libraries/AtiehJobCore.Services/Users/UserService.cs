@@ -2,6 +2,7 @@
 using AtiehJobCore.Core.Caching;
 using AtiehJobCore.Core.Domain.Users;
 using AtiehJobCore.Core.Enums;
+using AtiehJobCore.Core.Extensions;
 using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Services.Events;
 using MongoDB.Bson;

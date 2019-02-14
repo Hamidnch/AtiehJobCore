@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Resources\\AtiehJobCore.Resources.csproj",
+      "projectUniqueName": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Resources\\AtiehJobCore.Resources.csproj",
       "projectName": "AtiehJobCore.Resources",
-      "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Resources\\AtiehJobCore.Resources.csproj",
+      "projectPath": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Resources\\AtiehJobCore.Resources.csproj",
       "packagesPath": "C:\\Users\\Chegini-pc\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Resources\\obj\\",
+      "outputPath": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Resources\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

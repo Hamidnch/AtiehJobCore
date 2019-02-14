@@ -1,34 +1,30 @@
-using System;
-
-namespace AtiehJobCore.Core.Caching
+﻿namespace AtiehJobCore.Core.Caching
 {
     /// <inheritdoc />
     /// <summary>
-    /// Represents a null cache (caches nothing)
+    /// Represents a NullCache (caches nothing)
     /// </summary>
-    public partial class NullCache : IStaticCacheManager
+    public partial class NullCache : ICacheManager
     {
         /// <inheritdoc />
         /// <summary>
-        /// Get a cached item. If it's not in the cache yet, then load and cache it
+        /// Gets or sets the value associated with the specified key.
         /// </summary>
-        /// <typeparam name="T">Type of cached item</typeparam>
-        /// <param name="key">Cache key</param>
-        /// <param name="acquire">Function to load item if it's not in the cache yet</param>
-        /// <param name="cacheTime">Cache time in minutes; pass 0 to do not cache; pass null to use the default time</param>
-        /// <returns>The cached value associated with the specified key</returns>
-        public virtual T Get<T>(string key, Func<T> acquire, int? cacheTime = null)
+        /// <typeparam name="T">Type</typeparam>
+        /// <param name="key">The key of the value to get.</param>
+        /// <returns>The value associated with the specified key.</returns>
+        public virtual T Get<T>(string key)
         {
             return default(T);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Adds the specified key and object to the cache
+        /// Adds the specified key and object to the cache.
         /// </summary>
-        /// <param name="key">Key of cached item</param>
-        /// <param name="data">Value for caching</param>
-        /// <param name="cacheTime">Cache time in minutes</param>
+        /// <param name="key">key</param>
+        /// <param name="data">Data</param>
+        /// <param name="cacheTime">Cache time</param>
         public virtual void Set(string key, object data, int cacheTime)
         {
         }
@@ -37,8 +33,8 @@ namespace AtiehJobCore.Core.Caching
         /// <summary>
         /// Gets a value indicating whether the value associated with the specified key is cached
         /// </summary>
-        /// <param name="key">Key of cached item</param>
-        /// <returns>True if item already is in cache; otherwise false</returns>
+        /// <param name="key">key</param>
+        /// <returns>Result</returns>
         public bool IsSet(string key)
         {
             return false;
@@ -48,16 +44,16 @@ namespace AtiehJobCore.Core.Caching
         /// <summary>
         /// Removes the value with the specified key from the cache
         /// </summary>
-        /// <param name="key">Key of cached item</param>
+        /// <param name="key">/key</param>
         public virtual void Remove(string key)
         {
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Removes items by key pattern
+        /// Removes items by pattern
         /// </summary>
-        /// <param name="pattern">String key pattern</param>
+        /// <param name="pattern">pattern</param>
         public virtual void RemoveByPattern(string pattern)
         {
         }
@@ -72,11 +68,10 @@ namespace AtiehJobCore.Core.Caching
 
         /// <inheritdoc />
         /// <summary>
-        /// Dispose cache manager
+        /// Dispose
         /// </summary>
         public virtual void Dispose()
         {
-            //nothing special
         }
     }
 }

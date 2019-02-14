@@ -7,6 +7,7 @@ using AtiehJobCore.Services.Events;
 using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Logging;
 using AtiehJobCore.Services.Users;
+using AtiehJobCore.Web.Framework.Filters;
 using AtiehJobCore.Web.Framework.Models.Account;
 using AtiehJobCore.Web.Framework.Mvc.Captcha;
 using AtiehJobCore.Web.Framework.Security;
@@ -48,6 +49,8 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
 
         #region Login / logout
 
+        [CheckAccessSite(true)]
+        [CheckAccessClosedSite(true)]
         public virtual IActionResult Login()
         {
             var model = _userViewModelService.PrepareLogin();
@@ -57,6 +60,8 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
         [HttpPost]
         [ValidateCaptcha]
         [PublicAntiForgery]
+        [CheckAccessSite(true)]
+        [CheckAccessClosedSite(true)]
         public virtual IActionResult Login(LoginModel model, string returnUrl, bool captchaValid, string man)
         {
             //validate CAPTCHA
@@ -174,6 +179,8 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
         }
 
 
+        [CheckAccessSite(true)]
+        [CheckAccessClosedSite(true)]
         public virtual IActionResult Logout([FromServices] StoreInformationSettings storeInformationSettings)
         {
             //activity log

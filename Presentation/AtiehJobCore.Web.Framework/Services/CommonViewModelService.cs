@@ -3,6 +3,7 @@ using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain.Common;
 using AtiehJobCore.Core.Domain.Localization;
 using AtiehJobCore.Core.Enums;
+using AtiehJobCore.Core.Extensions;
 using AtiehJobCore.Core.Infrastructure;
 using AtiehJobCore.Services.Extensions;
 using AtiehJobCore.Services.Localization;

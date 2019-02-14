@@ -11,7 +11,7 @@ namespace AtiehJobCore.Web.Areas.Admin.Controllers
 {
     [ValidateIpAddress]
     [AuthorizeAdmin]
-    [AdminAntiForgery()]
+    [AdminAntiForgery]
     [Area(AreaNames.Admin)]
     public class BaseAdminController : BaseController
     {

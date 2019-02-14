@@ -2,6 +2,7 @@
 using AtiehJobCore.Core.Configuration;
 using AtiehJobCore.Core.Domain.Common;
 using AtiehJobCore.Core.Enums;
+using AtiehJobCore.Core.Extensions;
 using AtiehJobCore.Core.Infrastructure;
 using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Core.Utilities;

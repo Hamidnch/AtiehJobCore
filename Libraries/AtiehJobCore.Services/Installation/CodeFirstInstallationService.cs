@@ -1,8 +1,11 @@
 ﻿using AtiehJobCore.Core;
 using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain;
+using AtiehJobCore.Core.Domain.Catalog;
 using AtiehJobCore.Core.Domain.Common;
 using AtiehJobCore.Core.Domain.Localization;
+using AtiehJobCore.Core.Domain.Logging;
+using AtiehJobCore.Core.Domain.News;
 using AtiehJobCore.Core.Domain.Security;
 using AtiehJobCore.Core.Domain.Seo;
 using AtiehJobCore.Core.Domain.Users;
@@ -14,7 +17,9 @@ using AtiehJobCore.Core.Utilities;
 using AtiehJobCore.Data.Context;
 using AtiehJobCore.Services.Common;
 using AtiehJobCore.Services.Configuration;
+using AtiehJobCore.Services.Helpers;
 using AtiehJobCore.Services.Localization;
+using AtiehJobCore.Services.Users;
 using Microsoft.AspNetCore.Hosting;
 using MongoDB.Driver;
 using System;
@@ -26,17 +31,39 @@ namespace AtiehJobCore.Services.Installation
 {
     public class CodeFirstInstallationService : IInstallationService
     {
-        private readonly IRepository<AtiehJobCoreVersion> _versionRepository;
+        #region Fields
+        private readonly IRepository<AtiehJobVersion> _versionRepository;
         private readonly IRepository<Role> _roleRepository;
         private readonly IRepository<User> _userRepository;
         private readonly IRepository<Language> _languageRepository;
         private readonly IHostingEnvironment _hostingEnvironment;
         private readonly IGenericAttributeService _genericAttributeService;
+        private readonly IRepository<ActivityLogType> _activityLogTypeRepository;
+        private readonly IRepository<LocaleStringResource> _lsrRepository;
+        private readonly IRepository<UrlRecord> _urlRecordRepository;
+        private readonly IRepository<NewsItem> _newsItemRepository;
+        private readonly IRepository<Log> _logRepository;
+        private readonly IRepository<UserHistoryPassword> _userHistoryPasswordRepository;
+        private readonly IRepository<UserNote> _userNoteRepository;
+        private readonly IRepository<UserApi> _userApiRepository;
+        private readonly IRepository<Setting> _settingRepository;
+        private readonly IRepository<PermissionRecord> _permissionRepository;
+        private readonly IRepository<ExternalAuthenticationRecord> _externalAuthenticationRepository;
+        #endregion Fields
 
-        public CodeFirstInstallationService(IRepository<AtiehJobCoreVersion> versionRepository,
+        #region Ctor
+        public CodeFirstInstallationService(IRepository<AtiehJobVersion> versionRepository,
             IHostingEnvironment hostingEnvironment, IRepository<Language> languageRepository,
             IRepository<Role> roleRepository, IRepository<User> userRepository,
-            IGenericAttributeService genericAttributeService)
+            IGenericAttributeService genericAttributeService,
+            IRepository<ActivityLogType> activityLogTypeRepository,
+            IRepository<LocaleStringResource> lsrRepository,
+            IRepository<UserHistoryPassword> userHistoryPasswordRepository,
+            IRepository<UserNote> userNoteRepository, IRepository<UserApi> userApiRepository,
+            IRepository<UrlRecord> urlRecordRepository, IRepository<NewsItem> newsItemRepository,
+            IRepository<Log> logRepository, IRepository<Setting> settingRepository,
+            IRepository<PermissionRecord> permissionRepository,
+            IRepository<ExternalAuthenticationRecord> externalAuthenticationRepository)
         {
             _versionRepository = versionRepository;
             _hostingEnvironment = hostingEnvironment;
@@ -44,7 +71,19 @@ namespace AtiehJobCore.Services.Installation
             _roleRepository = roleRepository;
             _userRepository = userRepository;
             _genericAttributeService = genericAttributeService;
+            _activityLogTypeRepository = activityLogTypeRepository;
+            _lsrRepository = lsrRepository;
+            _userHistoryPasswordRepository = userHistoryPasswordRepository;
+            _userNoteRepository = userNoteRepository;
+            _userApiRepository = userApiRepository;
+            _urlRecordRepository = urlRecordRepository;
+            _newsItemRepository = newsItemRepository;
+            _logRepository = logRepository;
+            _settingRepository = settingRepository;
+            _permissionRepository = permissionRepository;
+            _externalAuthenticationRepository = externalAuthenticationRepository;
         }
+        #endregion Ctor
 
         protected virtual string GetSamplesPath()
         {
@@ -53,7 +92,7 @@ namespace AtiehJobCore.Services.Installation
         private static void CreateTables(string local)
         {
             if (string.IsNullOrEmpty(local))
-                local = "en";
+                local = "fa"; //en
 
             try
             {
@@ -65,15 +104,23 @@ namespace AtiehJobCore.Services.Installation
                 var mongoDbContext = new MongoDbContext(connectionString);
                 var typeFinder = EngineContext.Current.Resolve<ITypeFinder>();
                 var q = typeFinder.GetAssemblies().FirstOrDefault(x => x.GetName().Name == "AtiehJobCore.Core");
-                foreach (var item in q.GetTypes().Where(x => x.Namespace != null && x.Namespace.StartsWith("AtiehJobCore.Core.Domain")))
+                if (q == null)
                 {
-                    if (item.BaseType == null)
-                    {
-                        continue;
-                    }
+                    return;
+                }
 
-                    if (item.IsClass && item.BaseType == typeof(BaseMongoEntity))
-                        mongoDbContext.Database().CreateCollection(item.Name, options);
+                {
+                    foreach (var item in q.GetTypes().Where(x =>
+                        x.Namespace != null && x.Namespace.StartsWith("AtiehJobCore.Core.Domain")))
+                    {
+                        if (item.BaseType == null)
+                        {
+                            continue;
+                        }
+
+                        if (item.IsClass && item.BaseType == typeof(BaseMongoEntity))
+                            mongoDbContext.Database().CreateCollection(item.Name, options);
+                    }
                 }
             }
             catch (Exception ex)
@@ -83,16 +130,100 @@ namespace AtiehJobCore.Services.Installation
         }
         private void CreateIndexes()
         {
-            var indexOptionId = new CreateIndexOptions
-            {
-                Name = "db",
-                Unique = true
-            };
-            var atiehJobVersionIndex =
-                new CreateIndexModel<AtiehJobCoreVersion>(
-                    (Builders<AtiehJobCoreVersion>.IndexKeys.Ascending(x => x.DataBaseVersion)), indexOptionId);
+            _versionRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<AtiehJobVersion>(
+                (Builders<AtiehJobVersion>.IndexKeys.Ascending(x => x.DataBaseVersion)),
+                new CreateIndexOptions() { Name = "Version", Unique = true }));
 
-            _versionRepository.Collection.Indexes.CreateOne(atiehJobVersionIndex);
+            //Language
+            _lsrRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<LocaleStringResource>((Builders<LocaleStringResource>
+                .IndexKeys.Ascending(x => x.LanguageId)
+                .Ascending(x => x.ResourceName)), new CreateIndexOptions() { Name = "Language" }));
+
+            _lsrRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<LocaleStringResource>((Builders<LocaleStringResource>
+                    .IndexKeys.Ascending(x => x.ResourceName)), new CreateIndexOptions() { Name = "ResourceName" }));
+
+            //user
+            _userRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<User>((Builders<User>
+                    .IndexKeys.Descending(x => x.CreatedOnUtc)
+                    .Ascending(x => x.Deleted).Ascending("Roles._id")),
+                    new CreateIndexOptions() { Name = "CreatedOnUtc_1_Roles._id_1", Unique = false }));
+
+            _userRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<User>((Builders<User>
+                    .IndexKeys.Ascending(x => x.LastActivityDateUtc)),
+                    new CreateIndexOptions() { Name = "LastActivityDateUtc_1", Unique = false }));
+
+            _userRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<User>((Builders<User>
+                    .IndexKeys.Ascending(x => x.UserGuid)),
+                    new CreateIndexOptions() { Name = "UserGuid_1", Unique = false }));
+
+            _userRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<User>((Builders<User>
+                    .IndexKeys.Ascending(x => x.Email)),
+                    new CreateIndexOptions() { Name = "Email_1", Unique = false }));
+
+            //user history password
+            _userHistoryPasswordRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<UserHistoryPassword>(
+                    (Builders<UserHistoryPassword>.IndexKeys.Ascending(x => x.UserId).Descending(x => x.CreatedOnUtc)),
+                    new CreateIndexOptions() { Name = "UserId", Unique = false }));
+
+            //user note
+            _userNoteRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<UserNote>(
+                    (Builders<UserNote>.IndexKeys.Ascending(x => x.UserId).Descending(x => x.CreatedOnUtc)),
+                    new CreateIndexOptions() { Name = "UserId", Unique = false, Background = true }));
+
+            //user api
+            _userApiRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<UserApi>((Builders<UserApi>.IndexKeys.Ascending(x => x.Email)),
+                    new CreateIndexOptions() { Name = "Email", Unique = true, Background = true }));
+
+            //url record
+            _urlRecordRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<UrlRecord>
+                    ((Builders<UrlRecord>.IndexKeys.Ascending(x => x.Slug).Ascending(x => x.IsActive)),
+                    new CreateIndexOptions() { Name = "Slug" }));
+            _urlRecordRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<UrlRecord>(
+                    (Builders<UrlRecord>.IndexKeys.Ascending(x => x.EntityId)
+                        .Ascending(x => x.EntityName).Ascending(x => x.LanguageId).Ascending(x => x.IsActive)),
+                    new CreateIndexOptions() { Name = "UrlRecord" }));
+
+            //news
+            _newsItemRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<NewsItem>(
+                    (Builders<NewsItem>.IndexKeys.Descending(x => x.CreatedOnUtc)),
+                    new CreateIndexOptions() { Name = "CreatedOnUtc", Unique = false }));
+
+            //Log
+            _logRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<Log>(
+                    (Builders<Log>.IndexKeys.Descending(x => x.CreatedOnUtc)),
+                    new CreateIndexOptions() { Name = "CreatedOnUtc", Unique = false }));
+
+            //setting
+            _settingRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<Setting>(
+                    (Builders<Setting>.IndexKeys.Ascending(x => x.Name)),
+                    new CreateIndexOptions() { Name = "Name", Unique = false }));
+
+            //permission
+            _permissionRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<PermissionRecord>(
+                    (Builders<PermissionRecord>.IndexKeys.Ascending(x => x.SystemName)),
+                    new CreateIndexOptions() { Name = "SystemName", Unique = true }));
+
+            //externalAuth
+            _externalAuthenticationRepository.Collection.Indexes
+                .CreateOne(new CreateIndexModel<ExternalAuthenticationRecord>(
+                    (Builders<ExternalAuthenticationRecord>.IndexKeys.Ascending(x => x.UserId)),
+                    new CreateIndexOptions() { Name = "UserId" }));
         }
         public void InstallData(string defaultUserEmail, string defaultUserPassword, string collation, bool installSampleData = true)
         {
@@ -104,6 +235,8 @@ namespace AtiehJobCore.Services.Installation
             InstallLocaleResources();
             InstallSettings(installSampleData);
             InstallUsers(defaultUserEmail, defaultUserPassword);
+            HashDefaultUserPassword(defaultUserEmail, defaultUserPassword);
+            InstallActivityLogTypes();
         }
 
         protected virtual void InstallSettings(bool installSampleData)
@@ -135,7 +268,7 @@ namespace AtiehJobCore.Services.Installation
                 UserLoginType = UserLoginType.Email,
                 CheckUsernameAvailabilityEnabled = false,
                 AllowUsersToChangeUsernames = false,
-                DefaultPasswordFormat = PasswordFormat.Clear,
+                DefaultPasswordFormat = PasswordFormat.Hashed,
                 HashedPasswordFormat = "SHA1",
                 PasswordMinLength = 6,
                 PasswordRecoveryLinkDaysValid = 7,
@@ -287,10 +420,40 @@ namespace AtiehJobCore.Services.Installation
                 PinterestLink = "",
                 HidePoweredByAtiehJob = false
             });
+            settingService.SaveSetting(new CatalogSettings
+            {
+                DefaultViewMode = "grid",
+                ShowShareButton = false,
+                PageShareCode = "<!-- AddThis Button BEGIN --><div class=\"addthis_inline_share_toolbox\"></div><script type=\"text/javascript\" src=\"//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bbf4b026e74abf6\"></script><!-- AddThis Button END -->",
+                EmailAFriendEnabled = true,
+                AskQuestionEnabled = false,
+                AllowAnonymousUsersToEmailAFriend = false,
+                SearchPageProductsPerPage = 6,
+                SearchPageAllowUsersToSelectPageSize = true,
+                SearchPagePageSizeOptions = "6, 3, 9, 18",
+                AjaxProcessAttributeChange = true,
+                IgnoreAcl = true,
+                IgnoreFilterableAvailableStartEndDateTime = true
+            });
+            settingService.SaveSetting(new DateTimeSettings
+            {
+                DefaultStoreTimeZoneId = "",
+                AllowUsersToSetTimeZone = false
+            });
+            settingService.SaveSetting(new NewsSettings
+            {
+                Enabled = true,
+                AllowNotRegisteredUsersToLeaveComments = true,
+                NotifyAboutNewNewsComments = false,
+                ShowNewsOnMainPage = true,
+                MainPageNewsCount = 3,
+                NewsArchivePageSize = 10,
+                ShowHeaderRssUrl = false,
+            });
         }
         protected virtual void InstallVersion()
         {
-            var version = new AtiehJobCoreVersion
+            var version = new AtiehJobVersion
             {
                 DataBaseVersion = SiteVersion.CurrentVersion
             };
@@ -423,5 +586,39 @@ namespace AtiehJobCore.Services.Installation
             backgroundTaskUser.Roles.Add(crGuests);
             _userRepository.Insert(backgroundTaskUser);
         }
+        protected virtual void HashDefaultUserPassword(string defaultUserEmail, string defaultUserPassword)
+        {
+            var userRegistrationService = EngineContext.Current.Resolve<IUserRegistrationService>();
+            userRegistrationService.ChangePassword(new ChangePasswordRequest(defaultUserEmail, false,
+                PasswordFormat.Hashed, defaultUserPassword));
+        }
+        protected virtual void InstallActivityLogTypes()
+        {
+            var activityLogTypes = new List<ActivityLogType>
+                                      {
+                                          //admin area activities
+                                          new ActivityLogType
+                                              {
+                                                  SystemKeyword = "AddNewUser",
+                                                  Enabled = true,
+                                                  Name = "Add a new user"
+                                              },
+                                          new ActivityLogType
+                                              {
+                                                  SystemKeyword = "AddNewUserRole",
+                                                  Enabled = true,
+                                                  Name = "Add a new user role"
+                                              },
+                                          new ActivityLogType
+                                              {
+                                                  SystemKeyword = "AddNewSetting",
+                                                  Enabled = true,
+                                                  Name = "Add a new setting"
+                                              }
+                                      };
+            _activityLogTypeRepository.Insert(activityLogTypes);
+        }
+
+
     }
 }

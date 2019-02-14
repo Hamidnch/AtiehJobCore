@@ -2,7 +2,7 @@
 
 namespace AtiehJobCore.Core.Domain.Common
 {
-    public class AtiehJobCoreVersion : BaseMongoEntity
+    public class AtiehJobVersion : BaseMongoEntity
     {
         public string DataBaseVersion { get; set; }
     }

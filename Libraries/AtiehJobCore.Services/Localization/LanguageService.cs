@@ -1,5 +1,6 @@
 ﻿using AtiehJobCore.Core.Caching;
 using AtiehJobCore.Core.Domain.Localization;
+using AtiehJobCore.Core.Extensions;
 using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Services.Configuration;
 using AtiehJobCore.Services.Events;

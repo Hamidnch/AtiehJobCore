@@ -76,7 +76,7 @@ namespace AtiehJobCore.Web.Framework.Filters
                 if (!DataSettingsHelper.DatabaseIsInstalled())
                     return;
 
-                //check whether current customer has access to a Atieh job site
+                //check whether current user has access to a Atieh job site
                 if (_permissionService.Authorize(StandardPermissionProvider.SiteAllowNavigation))
                     return;
 

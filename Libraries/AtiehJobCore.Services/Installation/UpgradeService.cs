@@ -13,7 +13,7 @@ namespace AtiehJobCore.Services.Installation
     {
         #region Fields
 
-        private readonly IRepository<AtiehJobCoreVersion> _versionRepository;
+        private readonly IRepository<AtiehJobVersion> _versionRepository;
         //private readonly ILocalizationService _localizationService;
 
         private const string Version100 = "1.00";
@@ -22,7 +22,7 @@ namespace AtiehJobCore.Services.Installation
         #endregion
 
         #region Ctor
-        public UpgradeService(IRepository<AtiehJobCoreVersion> versionRepository
+        public UpgradeService(IRepository<AtiehJobVersion> versionRepository
             //, ILocalizationService localizationService
             )
         {
@@ -61,7 +61,7 @@ namespace AtiehJobCore.Services.Installation
             }
             else
             {
-                databaseVersion = new AtiehJobCoreVersion
+                databaseVersion = new AtiehJobVersion
                 {
                     DataBaseVersion = SiteVersion.CurrentVersion
                 };

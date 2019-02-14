@@ -3,6 +3,7 @@ using AtiehJobCore.Core.Caching;
 using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain.Logging;
 using AtiehJobCore.Core.Domain.Users;
+using AtiehJobCore.Core.Extensions;
 using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Core.Utilities;
 using MongoDB.Driver;

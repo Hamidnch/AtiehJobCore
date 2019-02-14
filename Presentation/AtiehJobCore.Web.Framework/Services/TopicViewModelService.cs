@@ -1,6 +1,7 @@
 ﻿using AtiehJobCore.Core.Caching;
 using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain.Topics;
+using AtiehJobCore.Core.Extensions;
 using AtiehJobCore.Services.Extensions;
 using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Security;

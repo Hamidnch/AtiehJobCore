@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using AtiehJobCore.Core.Domain.Common;
+﻿using AtiehJobCore.Core.Domain.Common;
 using AtiehJobCore.Core.Domain.Employers;
 using AtiehJobCore.Core.Domain.Jobseekers;
 using AtiehJobCore.Core.Domain.Payments;
 using AtiehJobCore.Core.Domain.Placements;
 using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Core.MongoDb;
+using System;
+using System.Collections.Generic;
 
 namespace AtiehJobCore.Core.Domain.Users
 {
@@ -59,18 +59,42 @@ namespace AtiehJobCore.Core.Domain.Users
         #region Navigation Properties
 
         private ICollection<Role> _roles;
+        private ICollection<Jobseeker> _jobseekers;
+        private ICollection<Employer> _employers;
+        private ICollection<Placement> _placements;
+        private ICollection<Attachment> _attachments;
+        private ICollection<UserAccountCharge> _userAccountCharges;
+
         public virtual ICollection<Role> Roles
         {
             get => _roles ?? (_roles = new List<Role>());
             protected set => _roles = value;
         }
-
-        //public virtual ICollection<UserHistoryPassword> UserHistoryPasswords { get; set; }
-        public virtual ICollection<Attachment> Attachments { get; set; }
-        public virtual ICollection<Jobseeker> Jobseekers { get; set; }
-        public virtual ICollection<Employer> Employers { get; set; }
-        public virtual ICollection<Placement> Placements { get; set; }
-        public virtual ICollection<UserAccountCharge> UserAccountCharges { get; set; }
+        public virtual ICollection<Jobseeker> Jobseekers
+        {
+            get => _jobseekers ?? (_jobseekers = new List<Jobseeker>());
+            protected set => _jobseekers = value;
+        }
+        public virtual ICollection<Employer> Employers
+        {
+            get => _employers ?? (_employers = new List<Employer>());
+            protected set => _employers = value;
+        }
+        public virtual ICollection<Placement> Placements
+        {
+            get => _placements ?? (_placements = new List<Placement>());
+            protected set => _placements = value;
+        }
+        public virtual ICollection<Attachment> Attachments
+        {
+            get => _attachments ?? (_attachments = new List<Attachment>());
+            protected set => _attachments = value;
+        }
+        public virtual ICollection<UserAccountCharge> UserAccountCharges
+        {
+            get => _userAccountCharges ?? (_userAccountCharges = new List<UserAccountCharge>());
+            protected set => _userAccountCharges = value;
+        }
 
         #endregion Navigation Property
     }

@@ -282,12 +282,8 @@ D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcorea
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\_ViewImports.g.cshtml.cs
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\_ViewStart.g.cshtml.cs
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Common\ContactUs.g.cshtml.cs
-D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Common\Maintenance.g.cshtml.cs
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Common\PageNotFound.g.cshtml.cs
-D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Common\Roslyn.g.cshtml.cs
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Common\SiteClosed.g.cshtml.cs
-D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Common\SystemInfo.g.cshtml.cs
-D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Common\Warnings.g.cshtml.cs
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Excel\Index.g.cshtml.cs
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\FileUpload\Index.g.cshtml.cs
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\ColumnsOne.g.cshtml.cs
@@ -325,3 +321,4 @@ D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcorea
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.csproj.CopyComplete
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.dll
 D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.pdb
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Security\AccessDenied.g.cshtml.cs

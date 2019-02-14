@@ -1,9 +1,10 @@
-using System;
-using System.Linq;
-using System.Net;
+﻿using AtiehJobCore.Core.Configuration;
 using RedLockNet.SERedis;
 using RedLockNet.SERedis.Configuration;
 using StackExchange.Redis;
+using System;
+using System.Linq;
+using System.Net;
 
 namespace AtiehJobCore.Core.Caching
 {
@@ -17,7 +18,7 @@ namespace AtiehJobCore.Core.Caching
     {
         #region Fields
 
-        private readonly CacheConfig _config;
+        private readonly AtiehJobConfig _config;
 
         private readonly object _lock = new object();
         private volatile ConnectionMultiplexer _connection;
@@ -28,7 +29,7 @@ namespace AtiehJobCore.Core.Caching
 
         #region Ctor
 
-        public RedisConnectionWrapper(CacheConfig config)
+        public RedisConnectionWrapper(AtiehJobConfig config)
         {
             this._config = config;
             this._connectionString = new Lazy<string>(GetConnectionString);
