@@ -1,0 +1,109 @@
+Hosting environment: Development
+Content root path: D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.2708ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 1614.3543ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 3035.2832ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4225.4395ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/changelanguage/5c670dd548737f3668f9c931?returnurl=%2f  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "SetLanguage", controller = "Common", area = ""}. Executing action AtiehJobCore.Web.Controllers.CommonController.SetLanguage (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.CommonController.SetLanguage (AtiehJobCore.Web) with arguments (AtiehJobCore.Services.Localization.LanguageService, AtiehJobCore.Core.Domain.Localization.LocalizationSettings, 5c670dd548737f3668f9c931, /) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.CommonController.SetLanguage (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 54.9713ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor[1]
+      Executing RedirectResult, redirecting to /.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.CommonController.SetLanguage (AtiehJobCore.Web) in 210.1639ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 265.3043ms 302 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+fail: Microsoft.AspNetCore.Server.IIS.Core.IISHttpServer[2]
+      Connection ID "18086456113720459273", Request ID "(null)": An unhandled exception was thrown by the application.
+System.ObjectDisposedException: The CancellationTokenSource has been disposed.
+   at System.Threading.CancellationTokenSource.ThrowObjectDisposedException()
+   at System.Threading.CancellationTokenSource.Cancel()
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.<>c__DisplayClass313_0.<AbortIO>b__0(Object t)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0484ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 26.395ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 80.9639ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 104.0019ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.1831ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 410.8937ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 459.4669ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 483.5752ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/account-rtl.min.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/account-rtl.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\account-rtl.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 83.6948ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/account/user/register  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "PageNotFound", controller = "Common", area = ""}. Executing action AtiehJobCore.Web.Controllers.CommonController.PageNotFound (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.CommonController.PageNotFound (AtiehJobCore.Web) with arguments (AtiehJobCore.Services.Logging.DefaultLogger) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.CommonController.PageNotFound (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.1505ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view PageNotFound.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view PageNotFound executed in 65.73ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.CommonController.PageNotFound (AtiehJobCore.Web) in 114.1323ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 152.0497ms 404 text/html
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1414ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 8385.7507ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 8422.9017ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 8436.3352ms 200 text/html; charset=utf-8

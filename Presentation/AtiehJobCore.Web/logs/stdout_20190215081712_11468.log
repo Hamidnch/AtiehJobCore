@@ -1,0 +1,1185 @@
+Hosting environment: Development
+Content root path: D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/images/yuna.jpg  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2241.8335ms 404 
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4478ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 5250.9974ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 6634.8098ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 9928.5843ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8425ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 606.3869ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 615.7811ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 631.0415ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/images/yuna.jpg  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.6148ms 404 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/api/CspReport/Log application/csp-report 613
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/api/CspReport/Log application/csp-report 725
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/api/CspReport/Log application/csp-report 608
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Log", controller = "CspReport", area = ""}. Executing action AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Log", controller = "CspReport", area = ""}. Executing action AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Log", controller = "CspReport", area = ""}. Executing action AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web) - Validation state: Valid
+fail: AtiehJobCore.Web.Controllers.CspReportController[0]
+      Content Security Policy Error: {"csp-report":{"document-uri":"https://localhost:44344/Account/User/Login","referrer":"https://localhost:44344/","violated-directive":"style-src-elem","effective-directive":"style-src-elem","original-policy":"default-src 'self' blob:; style-src 'self' 'unsafe-inline'; script-src 'self' https://freegeoip.net/ 'unsafe-inline' 'unsafe-eval' ; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; media-src 'self'; object-src 'self' blob:; report-uri /api/CspReport/Log","disposition":"enforce","blocked-uri":"https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css","line-number":3,"source-file":"https://localhost:44344/Account/User/Login","status-code":0,"script-sample":""}}
+fail: AtiehJobCore.Web.Controllers.CspReportController[0]
+      Content Security Policy Error: {"csp-report":{"document-uri":"https://localhost:44344/Account/User/Login","referrer":"https://localhost:44344/","violated-directive":"script-src-elem","effective-directive":"script-src-elem","original-policy":"default-src 'self' blob:; style-src 'self' 'unsafe-inline'; script-src 'self' https://freegeoip.net/ 'unsafe-inline' 'unsafe-eval' ; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; media-src 'self'; object-src 'self' blob:; report-uri /api/CspReport/Log","disposition":"enforce","blocked-uri":"https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js","status-code":0,"script-sample":""}}
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web) - Validation state: Valid
+fail: AtiehJobCore.Web.Controllers.CspReportController[0]
+      Content Security Policy Error: {"csp-report":{"document-uri":"https://localhost:44344/Account/User/Login","referrer":"https://localhost:44344/","violated-directive":"script-src-elem","effective-directive":"script-src-elem","original-policy":"default-src 'self' blob:; style-src 'self' 'unsafe-inline'; script-src 'self' https://freegeoip.net/ 'unsafe-inline' 'unsafe-eval' ; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; media-src 'self'; object-src 'self' blob:; report-uri /api/CspReport/Log","disposition":"enforce","blocked-uri":"https://code.jquery.com/jquery-3.2.1.slim.min.js","status-code":0,"script-sample":""}}
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.OkResult in 26.1686ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.OkResult in 143.1308ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.OkResult in 143.509ms.
+info: Microsoft.AspNetCore.Mvc.StatusCodeResult[1]
+      Executing HttpStatusCodeResult, setting HTTP status code 200
+info: Microsoft.AspNetCore.Mvc.StatusCodeResult[1]
+      Executing HttpStatusCodeResult, setting HTTP status code 200
+info: Microsoft.AspNetCore.Mvc.StatusCodeResult[1]
+      Executing HttpStatusCodeResult, setting HTTP status code 200
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web) in 177.9275ms
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web) in 177.9278ms
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web) in 177.8248ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 203.8145ms 200 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 205.7231ms 200 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 204.7869ms 200 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/api/CspReport/Log application/csp-report 646
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Log", controller = "CspReport", area = ""}. Executing action AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web) - Validation state: Valid
+fail: AtiehJobCore.Web.Controllers.CspReportController[0]
+      Content Security Policy Error: {"csp-report":{"document-uri":"https://localhost:44344/Account/User/Login","referrer":"https://localhost:44344/","violated-directive":"script-src-elem","effective-directive":"script-src-elem","original-policy":"default-src 'self' blob:; style-src 'self' 'unsafe-inline'; script-src 'self' https://freegeoip.net/ 'unsafe-inline' 'unsafe-eval' ; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; media-src 'self'; object-src 'self' blob:; report-uri /api/CspReport/Log","disposition":"enforce","blocked-uri":"https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js","status-code":0,"script-sample":""}}
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.OkResult in 0.134ms.
+info: Microsoft.AspNetCore.Mvc.StatusCodeResult[1]
+      Executing HttpStatusCodeResult, setting HTTP status code 200
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web) in 2.3222ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4.8548ms 200 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/api/CspReport/Log application/csp-report 650
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Log", controller = "CspReport", area = ""}. Executing action AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web) - Validation state: Valid
+fail: AtiehJobCore.Web.Controllers.CspReportController[0]
+      Content Security Policy Error: {"csp-report":{"document-uri":"https://localhost:44344/Account/User/Login","referrer":"https://localhost:44344/","violated-directive":"style-src-elem","effective-directive":"style-src-elem","original-policy":"default-src 'self' blob:; style-src 'self' 'unsafe-inline'; script-src 'self' https://freegeoip.net/ 'unsafe-inline' 'unsafe-eval' ; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; media-src 'self'; object-src 'self' blob:; report-uri /api/CspReport/Log","disposition":"enforce","blocked-uri":"https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css","status-code":0,"script-sample":""}}
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.OkResult in 0.1669ms.
+info: Microsoft.AspNetCore.Mvc.StatusCodeResult[1]
+      Executing HttpStatusCodeResult, setting HTTP status code 200
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.CspReportController.Log (AtiehJobCore.Web) in 2.7187ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 5.5917ms 200 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0461ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 15849.1866ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 15849.936ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 15858.7695ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/ghpages-materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/images/yuna.jpg  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.9517ms 404 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 46.3504ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 105.3729ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 125.5036ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/ghpages-materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\ghpages-materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 160.6953ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 160.3183ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 162.686ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 11.8027ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 29.5076ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0183ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 887.8528ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 888.5743ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 896.4306ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/ghpages-materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/images/yuna.jpg  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.024ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4.0356ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/ghpages-materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\ghpages-materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 5.9357ms 404 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 7.3688ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.571ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 10.4305ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 61.6003ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.1905ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.0738ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0165ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 406.9749ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 407.5647ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 416.325ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/ghpages-materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.315ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/ghpages-materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\ghpages-materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.6093ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7618ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.8358ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 7.2406ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.4417ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.162ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0218ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 343.5116ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 344.0614ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 351.2556ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/ghpages-materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.2329ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.8194ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.991ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.6287ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/ghpages-materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\ghpages-materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 7.2654ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.9649ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.134ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0166ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 429.2993ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 429.807ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 436.7461ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/ghpages-materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.3833ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7457ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/ghpages-materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\ghpages-materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.5101ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.2716ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.4825ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.9182ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7858ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0217ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 377.8947ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 378.6626ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 391.3777ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.0878ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0163ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 409.5746ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 410.1068ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 417.1996ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7842ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0188ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 336.3631ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 337.186ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 352.0976ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/ghpages-materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.9391ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/ghpages-materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\ghpages-materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.5276ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.4378ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 9.1149ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 6.4728ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.6547ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.6957ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0169ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 372.6524ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 373.1717ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 381.1468ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/ghpages-materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.0194ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/ghpages-materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\ghpages-materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.8783ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.7652ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.2061ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.7791ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 7.3459ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.9997ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0157ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 350.1172ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 350.6275ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 357.8818ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/ghpages-materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.9652ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.1053ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.0148ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4.1897ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/ghpages-materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\ghpages-materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 6.5408ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 5.8856ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7583ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0167ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 363.1361ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 363.7218ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 378.5823ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/ghpages-materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.6315ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.0862ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/ghpages-materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\ghpages-materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.7508ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.277ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7479ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.5951ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.1619ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0176ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 489.3978ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 490.0436ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 498.2652ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/ghpages-materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.0328ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.964ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/ghpages-materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\ghpages-materialize.min.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4.3608ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 6.2352ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 5.4122ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 18.974ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.258ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0153ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 261.199ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 261.6502ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 268.3023ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.4454ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.4249ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.492ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4.1058ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.1609ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0171ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 334.5561ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 335.1291ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 338.0239ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 207.3053ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 376.7808ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 541.5189ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1554.5314ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 193.4026ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0181ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 3.5925ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 4.2443ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 13.1458ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0193ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 385.5803ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 386.0902ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 392.852ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.3712ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 6.1013ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 9.9101ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 8.4967ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.0922ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login?optionsRadios=option2  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0341ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 3.5103ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 4.5785ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 10.5216ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login?optionsRadios=option1  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0349ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 3.2106ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 4.3216ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 8.3243ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login?optionsRadios=option1  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0187ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 323.4287ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 323.9547ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 331.6636ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/bootstrap-material-design.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.0972ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.4455ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 5.485ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/bootstrap-material-design.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\bootstrap-material-design.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 7.0507ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.6487ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login?optionsRadios=option1  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0216ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 952.3057ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 953.4017ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1076.3943ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/images/yuna.jpg  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/materialize.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.7592ms 404 
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 125.5341ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 467.6619ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 563.1989ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/materialize.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\materialize.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 822.5707ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 906.8126ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 614.3006ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 192.3547ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login?optionsRadios=option1  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0158ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 457.1298ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 457.6959ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 465.3762ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7374ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/images/yuna.jpg  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.4547ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.9853ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.1864ms 404 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/materialize.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.0851ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.0259ms 200 font/woff2
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/materialize.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\materialize.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.468ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.9197ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login?optionsRadios=option1  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0167ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 502.8548ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 503.5092ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 511.3838ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/materialize.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/icon.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/jquery.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/icon.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\icon.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.1971ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/materialize.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\materialize.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.2914ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/images/yuna.jpg  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/jquery.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\jquery.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.5753ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.0357ms 404 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/materialize.min.js  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/popper.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/popper.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.4467ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/materialize.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\materialize.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.5711ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/temp/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/temp/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\temp\flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7885ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.1591ms 200 image/x-icon

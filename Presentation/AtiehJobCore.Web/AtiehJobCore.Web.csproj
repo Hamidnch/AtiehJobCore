@@ -15,6 +15,17 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
+    <Content Remove="wwwroot\temp\bootstrap-material-design.min.js" />
+    <Content Remove="wwwroot\temp\floating-label.min.css" />
+    <Content Remove="wwwroot\temp\ghpages-materialize.min.css" />
+    <Content Remove="wwwroot\temp\icon.min.css" />
+    <Content Remove="wwwroot\temp\material.min.css" />
+    <Content Remove="wwwroot\temp\material.min.css.map" />
+    <Content Remove="wwwroot\temp\material.min.js" />
+    <Content Remove="wwwroot\temp\material.min.js.map" />
+    <Content Remove="wwwroot\temp\materialize.min.css" />
+    <Content Remove="wwwroot\temp\materialize.min.js" />
+    <Content Remove="wwwroot\webfonts\materialize.woff2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1141,6 +1152,17 @@
     <None Include="wwwroot\css\admin\ckeditor\styles.js" />
     <None Include="wwwroot\img\brand\logo.svg" />
     <None Include="wwwroot\img\brand\sygnet.svg" />
+    <None Include="wwwroot\temp\bootstrap-material-design.min.js" />
+    <None Include="wwwroot\temp\floating-label.min.css" />
+    <None Include="wwwroot\temp\ghpages-materialize.min.css" />
+    <None Include="wwwroot\temp\icon.min.css" />
+    <None Include="wwwroot\temp\material.min.css" />
+    <None Include="wwwroot\temp\material.min.css.map" />
+    <None Include="wwwroot\temp\material.min.js" />
+    <None Include="wwwroot\temp\material.min.js.map" />
+    <None Include="wwwroot\temp\materialize.min.css" />
+    <None Include="wwwroot\temp\materialize.min.js" />
+    <None Include="wwwroot\webfonts\materialize\materialize.woff2" />
   </ItemGroup>
 
 </Project>

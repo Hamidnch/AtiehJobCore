@@ -1,0 +1,864 @@
+Hosting environment: Development
+Content root path: D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3393ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 462.4896ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 851.2211ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1582.9596ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.2611ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 259.8993ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 270.2312ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 282.6861ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0702ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 11.9688ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 13.0091ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 16.2321ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/account.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/account-rtl.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/js/jqueryAll.min.js?v=XW6yr5crmRky0ij53VOAb7CvfKcNtd1yunsOMEpx_W8  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/js/web.min.js?v=svzKX7Z4zzkDh0IRqBQDmiSf7Ylgx_HGXL7NQeMTQUI  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/account-rtl.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\account-rtl.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 14.0826ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/account.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\account.min.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/jqueryAll.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\js\jqueryAll.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/web.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\js\web.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 32.834ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 32.4513ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 32.4529ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim-Bold.woff  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim.woff  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim.woff'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim.woff'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim-Bold.woff'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim-Bold.woff'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.9106ms 200 application/font-woff
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.0189ms 200 application/font-woff
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.71ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 259
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Account.LoginModel, , False, ) - Validation state: Invalid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.8755ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 9.1738ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 133.3573ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 170.6255ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 270
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Account.LoginModel, , False, ) - Validation state: Valid
+info: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[10]
+      AuthenticationScheme: Authentication signed in.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.RedirectToRouteResult in 49.747ms.
+info: Microsoft.AspNetCore.Mvc.RedirectToRouteResult[1]
+      Executing RedirectToRouteResult, redirecting to / from route HomePage.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 58.7514ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 62.2625ms 302 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0395ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 14.6594ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 20.567ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 23.5407ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Admin  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Index", controller = "Home"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1557ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 441.9838ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.HomeController.Index (AtiehJobCore.Web) in 496.5432ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 510.2863ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Admin/Language/Edit/5c670dd548737f3668f9c931  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Edit", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Edit (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Edit (AtiehJobCore.Web) with arguments (5c670dd548737f3668f9c931) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Edit (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.4384ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Edit.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Edit executed in 412.204ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Edit (AtiehJobCore.Web) in 424.3224ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 439.9688ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.2219ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Admin/Language/Resources?languageId=5c670dd548737f3668f9c931 application/x-www-form-urlencoded; charset=UTF-8 288
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Resources", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) with arguments (5c670dd548737f3668f9c931, AtiehJobCore.Web.Framework.KendoUi.DataSourceRequest, AtiehJobCore.Web.Framework.Models.Admin.AdminLanguageResourceFilterModel) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.JsonResult in 8.6092ms.
+info: Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'AtiehJobCore.Web.Framework.KendoUi.DataSourceResult'.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) in 36.4523ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 43.0778ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Admin/Language/ResourceAdd?languageId=5c670dd548737f3668f9c931 application/x-www-form-urlencoded; charset=UTF-8 573
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "ResourceAdd", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.ResourceAdd (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.ResourceAdd (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Admin.AdminLanguageResourceModel) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.ResourceAdd (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.JsonResult in 62.4706ms.
+info: Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'AtiehJobCore.Web.Framework.KendoUi.DataSourceResult'.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.ResourceAdd (AtiehJobCore.Web) in 79.8868ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 94.3384ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Admin/Language/Resources?languageId=5c670dd548737f3668f9c931 application/x-www-form-urlencoded; charset=UTF-8 288
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Resources", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) with arguments (5c670dd548737f3668f9c931, AtiehJobCore.Web.Framework.KendoUi.DataSourceRequest, AtiehJobCore.Web.Framework.Models.Admin.AdminLanguageResourceFilterModel) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.JsonResult in 2.255ms.
+info: Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'AtiehJobCore.Web.Framework.KendoUi.DataSourceResult'.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) in 6.6942ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 8.8384ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Admin/Language/Resources?languageId=5c670dd548737f3668f9c931 application/x-www-form-urlencoded; charset=UTF-8 345
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Resources", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) with arguments (5c670dd548737f3668f9c931, AtiehJobCore.Web.Framework.KendoUi.DataSourceRequest, AtiehJobCore.Web.Framework.Models.Admin.AdminLanguageResourceFilterModel) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.JsonResult in 3.3116ms.
+info: Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'AtiehJobCore.Web.Framework.KendoUi.DataSourceResult'.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) in 8.0416ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 10.0519ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 290
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Account.LoginModel, , False, ) - Validation state: Invalid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0175ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 11.6078ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 18.0285ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 21.4348ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 284
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Account.LoginModel, , False, ) - Validation state: Invalid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0149ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 7.9276ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 13.9092ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 16.1234ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Admin/Language/ResourceAdd?languageId=5c670dd548737f3668f9c931 application/x-www-form-urlencoded; charset=UTF-8 554
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "ResourceAdd", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.ResourceAdd (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.ResourceAdd (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Admin.AdminLanguageResourceModel) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.ResourceAdd (AtiehJobCore.Web), returned result AtiehJobCore.Web.Framework.Mvc.NullJsonResult in 23.518ms.
+info: Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'null'.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.ResourceAdd (AtiehJobCore.Web) in 34.3473ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 36.1958ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Admin/Language/Resources?languageId=5c670dd548737f3668f9c931 application/x-www-form-urlencoded; charset=UTF-8 288
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Resources", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) with arguments (5c670dd548737f3668f9c931, AtiehJobCore.Web.Framework.KendoUi.DataSourceRequest, AtiehJobCore.Web.Framework.Models.Admin.AdminLanguageResourceFilterModel) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.JsonResult in 2.0959ms.
+info: Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'AtiehJobCore.Web.Framework.KendoUi.DataSourceResult'.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) in 6.9292ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 9.4472ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 284
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Account.LoginModel, , False, ) - Validation state: Invalid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0203ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 9.8247ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 19.721ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 22.6503ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/account.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/account-rtl.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/js/jqueryAll.min.js?v=XW6yr5crmRky0ij53VOAb7CvfKcNtd1yunsOMEpx_W8  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/js/web.min.js?v=svzKX7Z4zzkDh0IRqBQDmiSf7Ylgx_HGXL7NQeMTQUI  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/account-rtl.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\account-rtl.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.0663ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/account.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\account.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.8365ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/jqueryAll.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\js\jqueryAll.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.4353ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/web.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\js\web.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.4026ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim.woff  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim-Bold.woff  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim.woff'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim.woff'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim-Bold.woff'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim-Bold.woff'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.9413ms 200 application/font-woff
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.884ms 200 application/font-woff
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7878ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 284
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Account.LoginModel, , False, ) - Validation state: Invalid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0154ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 8.8482ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 14.9661ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 17.8797ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/account.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/account-rtl.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/js/jqueryAll.min.js?v=XW6yr5crmRky0ij53VOAb7CvfKcNtd1yunsOMEpx_W8  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/js/web.min.js?v=svzKX7Z4zzkDh0IRqBQDmiSf7Ylgx_HGXL7NQeMTQUI  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/account-rtl.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\account-rtl.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.8887ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/account.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\account.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.6391ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/jqueryAll.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\js\jqueryAll.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.5419ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/web.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\js\web.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.1047ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim-Bold.woff  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim.woff  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim.woff'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim.woff'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim-Bold.woff'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim-Bold.woff'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.0966ms 200 application/font-woff
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.1174ms 200 application/font-woff
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7869ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0278ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 15.6411ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 16.4311ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 20.459ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 289
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Account.LoginModel, , False, ) - Validation state: Invalid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0208ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 10.0157ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 16.1517ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 18.0888ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Admin/Language/Resources?languageId=5c670dd548737f3668f9c931 application/x-www-form-urlencoded; charset=UTF-8 327
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Resources", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) with arguments (5c670dd548737f3668f9c931, AtiehJobCore.Web.Framework.KendoUi.DataSourceRequest, AtiehJobCore.Web.Framework.Models.Admin.AdminLanguageResourceFilterModel) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.JsonResult in 2.4528ms.
+info: Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'AtiehJobCore.Web.Framework.KendoUi.DataSourceResult'.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) in 6.81ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 8.852ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Admin/Language/Resources?languageId=5c670dd548737f3668f9c931 application/x-www-form-urlencoded; charset=UTF-8 288
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Resources", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) with arguments (5c670dd548737f3668f9c931, AtiehJobCore.Web.Framework.KendoUi.DataSourceRequest, AtiehJobCore.Web.Framework.Models.Admin.AdminLanguageResourceFilterModel) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.JsonResult in 1.5794ms.
+info: Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'AtiehJobCore.Web.Framework.KendoUi.DataSourceResult'.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) in 6.5306ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 9.5762ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Admin/Language/ResourceAdd?languageId=5c670dd548737f3668f9c931 application/x-www-form-urlencoded; charset=UTF-8 279
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "ResourceAdd", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.ResourceAdd (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.ResourceAdd (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Admin.AdminLanguageResourceModel) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.ResourceAdd (AtiehJobCore.Web), returned result AtiehJobCore.Web.Framework.Mvc.NullJsonResult in 11.8743ms.
+info: Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'null'.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.ResourceAdd (AtiehJobCore.Web) in 21.5636ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 23.8705ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Admin/Language/Resources?languageId=5c670dd548737f3668f9c931 application/x-www-form-urlencoded; charset=UTF-8 288
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Resources", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) with arguments (5c670dd548737f3668f9c931, AtiehJobCore.Web.Framework.KendoUi.DataSourceRequest, AtiehJobCore.Web.Framework.Models.Admin.AdminLanguageResourceFilterModel) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.JsonResult in 1.6026ms.
+info: Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'AtiehJobCore.Web.Framework.KendoUi.DataSourceResult'.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) in 6.7758ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 9.5648ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Admin/Language/Edit/5c670dd548737f3668f9c931  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Edit", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Edit (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Edit (AtiehJobCore.Web) with arguments (5c670dd548737f3668f9c931) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Edit (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.3158ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Edit.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Edit executed in 66.6935ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Edit (AtiehJobCore.Web) in 74.2364ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 78.8547ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.9015ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/Admin/Language/Resources?languageId=5c670dd548737f3668f9c931 application/x-www-form-urlencoded; charset=UTF-8 288
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Admin", action = "Resources", controller = "Language"}. Executing action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) with arguments (5c670dd548737f3668f9c931, AtiehJobCore.Web.Framework.KendoUi.DataSourceRequest, AtiehJobCore.Web.Framework.Models.Admin.AdminLanguageResourceFilterModel) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.JsonResult in 1.7758ms.
+info: Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor[1]
+      Executing JsonResult, writing value of type 'AtiehJobCore.Web.Framework.KendoUi.DataSourceResult'.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Admin.Controllers.LanguageController.Resources (AtiehJobCore.Web) in 6.1165ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 8.0551ms 200 application/json; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 289
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Account.LoginModel, , False, ) - Validation state: Invalid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0172ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 7.9336ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 14.1785ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 16.4876ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/account.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/account-rtl.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/js/jqueryAll.min.js?v=XW6yr5crmRky0ij53VOAb7CvfKcNtd1yunsOMEpx_W8  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/js/web.min.js?v=svzKX7Z4zzkDh0IRqBQDmiSf7Ylgx_HGXL7NQeMTQUI  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/account-rtl.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\account-rtl.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.7793ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/jqueryAll.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\js\jqueryAll.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.1121ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/web.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\js\web.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.4235ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/account.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\account.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3.1723ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim.woff  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim-Bold.woff  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim-Bold.woff'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim-Bold.woff'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim.woff'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim.woff'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.0453ms 200 application/font-woff
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.1738ms 200 application/font-woff
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.022ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0146ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 9.8914ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 10.3109ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 12.5346ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 309
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Account.LoginModel, , False, ) - Validation state: Invalid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0217ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 7.2451ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 13.3782ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 15.8013ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 303
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Account.LoginModel, , False, ) - Validation state: Invalid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0218ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 8.1321ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 14.0104ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 16.3186ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 303
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: AtiehJobCore.Web.Framework.Security.PublicAntiForgeryAttribute.PublicAntiForgeryFilter[1]
+      Antiforgery token validation failed. The required antiforgery cookie ".AtiehJob.Antiforgery" is not present.
+Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The required antiforgery cookie ".AtiehJob.Antiforgery" is not present.
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgery.ValidateRequestAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ValidateAntiforgeryTokenAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[3]
+      Authorization failed for the request at filter 'AtiehJobCore.Web.Framework.Security.PublicAntiForgeryAttribute+PublicAntiForgeryFilter'.
+info: Microsoft.AspNetCore.Mvc.StatusCodeResult[1]
+      Executing HttpStatusCodeResult, setting HTTP status code 400
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 38.5019ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 141.9918ms 400 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0223ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 14.3664ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 20.9162ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 23.4014ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/js/jqueryAll.min.js?v=XW6yr5crmRky0ij53VOAb7CvfKcNtd1yunsOMEpx_W8  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/web.min.css?v=afSwdgq2OTudoaR1w-BphxesGOrr4KUBU1NZxboj-6g  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/img/slide7.jpg  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/jqueryAll.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\js\jqueryAll.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/web.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\web.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4.7984ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4.7969ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/img/slide7.jpg'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\img\slide7.jpg'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 4.9173ms 200 image/jpeg
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/js/web.min.js?v=svzKX7Z4zzkDh0IRqBQDmiSf7Ylgx_HGXL7NQeMTQUI  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/js/web.min.js'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\js\web.min.js'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.3872ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim-Bold.woff  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/samim/Samim.woff  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/webfonts/fontAwesome/fa-solid-900.woff2  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim.woff'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim.woff'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/samim/Samim-Bold.woff'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\samim\Samim-Bold.woff'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.1683ms 200 application/font-woff
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.1807ms 200 application/font-woff
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/webfonts/fontAwesome/fa-solid-900.woff2'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\webfonts\fontAwesome\fa-solid-900.woff2'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 1.5012ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/favicon.ico  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/favicon.ico'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\favicon.ico'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.9025ms 200 image/x-icon
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/changelanguage/5c670dd548737f3668f9c931?returnurl=%2f  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "SetLanguage", controller = "Common", area = ""}. Executing action AtiehJobCore.Web.Controllers.CommonController.SetLanguage (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.CommonController.SetLanguage (AtiehJobCore.Web) with arguments (AtiehJobCore.Services.Localization.LanguageService, AtiehJobCore.Core.Domain.Localization.LocalizationSettings, 5c670dd548737f3668f9c931, /) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.CommonController.SetLanguage (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 21.7626ms.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor[1]
+      Executing RedirectResult, redirecting to /.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.CommonController.SetLanguage (AtiehJobCore.Web) in 28.8056ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 42.0208ms 302 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0104ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 6.661ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 8.5451ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 10.8634ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/web-rtl.min.css?v=rjFQjJBldtmRqjCji6OOcc8d6VROjTTrLwAcJ4S-4n4  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/web-rtl.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\web-rtl.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.6773ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 303
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: AtiehJobCore.Web.Framework.Security.PublicAntiForgeryAttribute.PublicAntiForgeryFilter[1]
+      Antiforgery token validation failed. The required antiforgery cookie ".AtiehJob.Antiforgery" is not present.
+Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The required antiforgery cookie ".AtiehJob.Antiforgery" is not present.
+   at Microsoft.AspNetCore.Antiforgery.Internal.DefaultAntiforgery.ValidateRequestAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ValidateAntiforgeryTokenAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[3]
+      Authorization failed for the request at filter 'AtiehJobCore.Web.Framework.Security.PublicAntiForgeryAttribute+PublicAntiForgeryFilter'.
+info: Microsoft.AspNetCore.Mvc.StatusCodeResult[1]
+      Executing HttpStatusCodeResult, setting HTTP status code 400
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 0.5841ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 6.2187ms 400 
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.021ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 10.275ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 12.6634ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 15.2634ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/Account/User/Login  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) - Validation state: Valid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.019ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 15.4684ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 16.0033ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 18.9877ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/account.min.css  
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/css/account-rtl.min.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/account-rtl.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\account-rtl.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 0.8219ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/account.min.css'. Physical path: 'D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\wwwroot\css\account.min.css'
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.1821ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 POST https://localhost:44344/account/user/login application/x-www-form-urlencoded 240
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {area = "Account", action = "Login", controller = "User"}. Executing action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) with arguments (AtiehJobCore.Web.Framework.Models.Account.LoginModel, , False, ) - Validation state: Invalid
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0153ms.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+info: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 9.9929ms.
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Areas.Account.Controllers.UserController.Login (AtiehJobCore.Web) in 42.5925ms
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 44.7864ms 200 text/html; charset=utf-8
+Application is shutting down...

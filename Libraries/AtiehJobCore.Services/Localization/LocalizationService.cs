@@ -1,16 +1,17 @@
-﻿using AtiehJobCore.Core.Caching;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Xml;
+using AtiehJobCore.Core.Caching;
+using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain.Localization;
 using AtiehJobCore.Core.Extensions;
 using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Services.Events;
 using AtiehJobCore.Services.Logging;
 using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Xml;
 
 namespace AtiehJobCore.Services.Localization
 {
@@ -48,6 +49,7 @@ namespace AtiehJobCore.Services.Localization
 
         private readonly IRepository<LocaleStringResource> _lsrRepository;
         private readonly ILogger _logger;
+        private readonly IWorkContext _workContext;
         private readonly ILanguageService _languageService;
         private readonly IEventPublisher _eventPublisher;
         private readonly ICacheManager _cacheManager;
@@ -70,7 +72,7 @@ namespace AtiehJobCore.Services.Localization
             ILogger logger, IRepository<LocaleStringResource> lsrRepository,
             ILanguageService languageService,
             LocalizationSettings localizationSettings,
-            IEventPublisher eventPublisher)
+            IEventPublisher eventPublisher, IWorkContext workContext)
         {
             _cacheManager = cacheManager;
             _logger = logger;
@@ -78,6 +80,7 @@ namespace AtiehJobCore.Services.Localization
             _languageService = languageService;
             _localizationSettings = localizationSettings;
             _eventPublisher = eventPublisher;
+            _workContext = workContext;
         }
 
         #endregion
@@ -208,8 +211,8 @@ namespace AtiehJobCore.Services.Localization
         /// <returns>A string representing the requested resource string.</returns>
         public virtual string GetResource(string resourceKey)
         {
-            var languageId = _languageService.GetAllLanguages().FirstOrDefault()?.Id;
-            return GetResource(resourceKey: resourceKey, languageId: languageId);
+            return _workContext.WorkingLanguage != null
+                ? GetResource(resourceKey, _workContext.WorkingLanguage.Id) : "";
         }
 
         /// <inheritdoc />

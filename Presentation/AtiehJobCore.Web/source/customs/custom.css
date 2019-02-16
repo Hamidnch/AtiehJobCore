@@ -188,6 +188,11 @@ ul.nav.navbar-nav {
     margin-right: 7px;
 }
 
+.message-error,
+.message-error ul li {
+    color: #dc3545;
+}
+
 .top5 {
     margin-top: 5px;
 }
@@ -443,7 +448,7 @@ ul.nav.navbar-nav {
     left: auto;
 }
 
-/** The Magic **/
+/** The Magic ****/
 .breadcrumb .btn:not(:last-child):after {
     content: " ";
     display: block;
@@ -508,4 +513,9 @@ ul.nav.navbar-nav {
 
 .breadcrumb-item.active {
     color: #6c757d
+}
+
+.field-validation-error {
+    color: red;
+    font-weight: bold;
 }

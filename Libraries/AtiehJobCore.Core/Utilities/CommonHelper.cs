@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using AtiehJobCore.Core.Contracts;
+using DNTPersianUtils.Core;
 using Microsoft.AspNetCore.Hosting;
 
 namespace AtiehJobCore.Core.Utilities
@@ -16,12 +17,14 @@ namespace AtiehJobCore.Core.Utilities
     /// <summary>
     /// Represents a common helper
     /// </summary>
-    public partial class CommonHelper
+    public static partial class CommonHelper
     {
         #region Fields
 
         //we use EmailValidator from FluentValidation. So let's keep them sync - https://github.com/JeremySkinner/FluentValidation/blob/master/src/FluentValidation/Validators/EmailValidator.cs
         private const string EmailExpression = @"^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-||_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+([a-z]+|\d|-|\.{0,1}|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])?([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$";
+        public const string MobileNumberMatch =
+            @"^(0|\+98)?([ ]|,|-|[()]){0,2}9[0|1|2|3|4|5|6|7|8|9]([ ]|,|-|[()]){0,3}(?:[0-9]([ ]|,|-|[()]){0,2}){8}$";
 
         private static readonly Regex EmailRegex;
 
@@ -38,12 +41,15 @@ namespace AtiehJobCore.Core.Utilities
 
         #region Methods
 
+
+        #region Custom
+
         /// <summary>
         /// Verifies that a string is in valid e-mail format
         /// </summary>
         /// <param name="email">Email to verify</param>
         /// <returns>true if the string is a valid e-mail address and false if it's not</returns>
-        public static bool IsValidEmail(string email)
+        public static bool IsValidEmail(this string email)
         {
             if (string.IsNullOrEmpty(email))
                 return false;
@@ -52,6 +58,43 @@ namespace AtiehJobCore.Core.Utilities
             var result = Regex.IsMatch(email, "^(?:[\\w\\!\\#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^\\`\\{\\|\\}\\~]+\\.)*[\\w\\!\\#\\$\\%\\&\\'\\*\\+\\-\\/\\=\\?\\^\\`\\{\\|\\}\\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\\-](?!\\.)){0,61}[a-zA-Z0-9]?\\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\\[(?:(?:[01]?\\d{1,2}|2[0-4]\\d|25[0-5])\\.){3}(?:[01]?\\d{1,2}|2[0-4]\\d|25[0-5])\\]))$", RegexOptions.IgnoreCase);
             return result;
         }
+
+        public static bool IsValidMobileNumber(this string mobileNumber)
+        {
+            if (string.IsNullOrEmpty(mobileNumber))
+                return false;
+
+            mobileNumber = mobileNumber.Trim();
+            //var result = Regex.IsMatch(mobileNumber, @"^(0|\+98)?([ ]|,|-|[()]){0,2}9[0|1|2|3|4|5|6|7|8|9]([ ]|,|-|[()]){0,3}(?:[0-9]([ ]|,|-|[()]){0,2}){8}$", RegexOptions.IgnoreCase);
+            //return result;
+
+            return Regex.IsMatch(mobileNumber, @"^(0|\+98)?([ ]|,|-|[()]){0,2}9[0|1|2|3|4|5|6|7|8|9]([ ]|,|-|[()]){0,3}(?:[0-9]([ ]|,|-|[()]){0,2}){8}$", RegexOptions.IgnoreCase);
+        }
+
+        public static bool IsValidNationalCode(this string nationalCode)
+        {
+            return !string.IsNullOrEmpty(nationalCode)
+                && nationalCode.IsValidIranianNationalCode();
+        }
+
+        public static bool IsValidMobileNumberOrEmail(this string mobileNumberOrEmail)
+        {
+            return mobileNumberOrEmail.IsValidMobileNumber() || mobileNumberOrEmail.IsValidEmail();
+        }
+
+        public static bool IsValidMobileNumberOrEmailOrNationalCode(this string mobileNumberOrEmailOrNationalCode)
+        {
+            return mobileNumberOrEmailOrNationalCode.IsValidMobileNumber()
+                || mobileNumberOrEmailOrNationalCode.IsValidEmail()
+                || mobileNumberOrEmailOrNationalCode.IsValidNationalCode();
+        }
+
+        public static string TrimDouble(this string temp)
+        {
+            var value = temp.IndexOf('.') == -1 ? temp : temp.TrimEnd('.', '0');
+            return value == string.Empty ? "0" : value;
+        }
+        #endregion
 
         /// <summary>
         /// Maps a virtual path to a physical disk path.
@@ -410,15 +453,5 @@ namespace AtiehJobCore.Core.Utilities
         public static ICustomFileProvider DefaultFileProvider { get; set; }
 
         #endregion
-
-        public static bool IsValidMobileNumber(string newMobileNumber)
-        {
-            return true;
-        }
-
-        public static bool IsValidNationalCode(string newNationalCode)
-        {
-            return true;
-        }
     }
 }

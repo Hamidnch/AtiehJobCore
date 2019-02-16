@@ -1,4 +1,8 @@
-﻿using AtiehJobCore.Core;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using AtiehJobCore.Core;
 using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain;
 using AtiehJobCore.Core.Domain.Catalog;
@@ -22,10 +26,6 @@ using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Users;
 using Microsoft.AspNetCore.Hosting;
 using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 
 namespace AtiehJobCore.Services.Installation
 {
@@ -265,7 +265,10 @@ namespace AtiehJobCore.Services.Installation
             });
             settingService.SaveSetting(new UserSettings
             {
-                UserLoginType = UserLoginType.Email,
+                UsernamesEnabled = false,
+                ForceEmailValidation = true,
+                AllowDuplicateEmail = false,
+                IsOptionalEmail = true,
                 CheckUsernameAvailabilityEnabled = false,
                 AllowUsersToChangeUsernames = false,
                 DefaultPasswordFormat = PasswordFormat.Hashed,

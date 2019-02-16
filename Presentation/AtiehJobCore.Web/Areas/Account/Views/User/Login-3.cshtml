@@ -1,0 +1,183 @@
+﻿@using AtiehJobCore.Core.Enums
+@model LoginModel
+
+@{
+    Layout = "_AccountLayout";
+
+    //title
+    Html.AddTitleParts(T("PageTitle.Login").Text);
+
+    //register URL with return URL (if specified)
+    var registerUrl = Url.RouteUrl("Register");
+    if (!string.IsNullOrEmpty(this.Context.Request.Query["returnUrl"]))
+    {
+        registerUrl = WebHelper.ModifyQueryString(registerUrl, "returnurl=" + WebUtility.UrlEncode(this.Context.Request.Query["returnUrl"]), null);
+    }
+    //var userLoginType = Model.UserLoginType;
+}
+
+<div class="row">
+    <h2 class="generalTitle">@T("Account.Login.Welcome")</h2>
+    <partial name="_ExternalAuthentication.Errors" />
+
+    <form asp-route="Login" asp-route-returnurl="@Context.Request.Query["ReturnUrl"]" method="post">
+        <h5 class="card-header"><strong>@T("Account.Login.ReturningUser")</strong></h5>
+        @*<input asp-for="UserLoginType" type="hidden" value="@Model.UserLoginType" />*@
+
+        <div class="col-12">
+            <div asp-validation-summary="ModelOnly" class="message-error">@T("Account.Login.Unsuccessful")</div>
+            <div>
+
+                <div class="card">
+                    <p>
+                        <label>
+                            <input class="with-gap" name="loginType" type="radio" value="userName" />
+                            <span>User name</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="loginType" type="radio" value="email" checked />
+                            <span>Email</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="loginType" value="mobileNumber" type="radio" />
+                            <span>Mobile number</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="loginType" value="nationalCode" type="radio" />
+                            <span>National code</span>
+                        </label>
+                    </p>
+                </div>
+
+                <div class="row" id="usernameDiv">
+                    <div class="input-field col s12">
+                        <input type="text" asp-for="Username" class="validate" autofocus="autofocus" />
+                        <label asp-for="Username">@T("Account.Login.Fields.UserName"):</label>
+                        <span asp-validation-for="Username"></span>
+                    </div>
+                </div>
+
+
+                @*<div class="row" id="emailDiv">
+                        <div class="input-field col s12">
+                            <input type="email" asp-for="Email" class="validate" autofocus="autofocus" />
+                            <label asp-for="Email">@T("Account.Login.Fields.Email"):</label>
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="row" id="mobileNumberDiv">
+                        <div class="input-field col s12">
+                            <input type="text" asp-for="MobileNumber" class="validate"
+                                   placeholder="please enter valid mobile number" autofocus="autofocus" />
+                            <label asp-for="MobileNumber">@T("Account.Login.Fields.MobileNumber"):</label>
+                            <span asp-validation-for="MobileNumber"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="row" id="nationalCodeDiv">
+                        <div class="input-field col s12">
+                            <input type="text" asp-for="NationalCode" class="validate" autofocus="autofocus" />
+                            <label asp-for="NationalCode">@T("Account.Login.Fields.NationalCode"):</label>
+                            <span asp-validation-for="NationalCode"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="password" asp-for="Password" class="validate" />
+                            <label asp-for="Password">@T("Account.Login.Fields.Password"):</label>
+                            <span asp-validation-for="Email"></span>
+                        </div>
+                    </div>*@
+
+                <div class="row">
+                    <label>
+                        <input asp-for="RememberMe" type="checkbox" />
+                        <span>@T("Account.Login.Fields.RememberMe")</span>
+                    </label>
+                </div>
+                <div class="row">
+                    <span>
+                        <a asp-route="PasswordRecovery">@T("Account.Login.ForgotPassword")</a>
+                    </span>
+                </div>
+                @if (Model.DisplayCaptcha)
+                {
+                    <div class="captcha-box">
+                        <captcha />
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <div class="buttons">
+                <input class="btn btn-info login-button" type="submit" value="@T("Account.Login.LoginButton")" />
+            </div>
+        </div>
+    </form>
+</div>
+@section Scripts {
+    <script>
+        function toggleDiv(element)
+        {
+            if (element == "userName")
+            {
+                $("#usernameDiv").show();
+                $("#emailDiv").hide();
+                $("#mobileNumberDiv").hide();
+                $("#nationalCodeDiv").hide();
+            }
+            else if (element == "email")
+            {
+                $("#emailDiv").show();
+                $("#usernameDiv").hide();
+                $("#mobileNumberDiv").hide();
+                $("#nationalCodeDiv").hide();
+            }
+            else if (element == "mobileNumber")
+            {
+                $("#mobileNumberDiv").show();
+                $("#usernameDiv").hide();
+                $("#emailDiv").hide();
+                $("#nationalCodeDiv").hide();
+            }
+            else if (element == "nationalCode")
+            {
+                $("#nationalCodeDiv").show();
+                $("#usernameDiv").hide();
+                $("#emailDiv").hide();
+                $("#mobileNumberDiv").hide();
+            }
+        }
+
+        $(document).ready(function ()
+        {
+            //$('.modal').modal();
+            //$('input#input_text, textarea#textarea2').characterCounter();
+
+            toggleDiv("email");
+
+            $("input[name='loginType']").click(function ()
+            {
+                var radioValue = $("input[name='loginType']:checked").val();
+                if (radioValue)
+                {
+                    //alert(parseInt(radioValue));
+                    toggleDiv(radioValue);
+                }
+            });
+        });
+    </script>
+}
+
+

@@ -10,7 +10,7 @@
       "renameLocals": false,
       "adjustRelativePaths": false
     }
-  },
+  }, 
   {
     "outputFileName": "wwwroot/js/install.min.js",
     "inputFiles": [
@@ -28,16 +28,59 @@
     }
   },
   {
+    "outputFileName": "wwwroot/css/account.min.css",
+    "inputFiles": [
+      "source/materialize/materialize.min.css",
+      "source/materialize/materialize-icons.min.css",
+      "source/customs/custom.min.css"
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": false,
+      "adjustRelativePaths": false
+    }
+  },
+  { 
+    "outputFileName": "wwwroot/css/account-rtl.min.css",
+    "inputFiles": [
+      "source/materialize/materialize-rtl.min.css" 
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": false,
+      "adjustRelativePaths": false
+    }
+  }, 
+  {
+    "outputFileName": "wwwroot/js/account.min.js",
+    "inputFiles": [
+      "source/jquery/jquery.min.js",
+      "source/popper/popper.min.js",
+      "source/jquery/jquery.validate.min.js",
+      "source/jquery/jquery.validate.unobtrusive.min.js",
+      "source/jquery/jquery.unobtrusive-ajax.min.js",
+      "source/materialize/materialize.min.js",
+      "source/customs/custom.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "adjustRelativePaths": false,
+      "renameLocals": false
+    }
+  },
+  {
     "outputFileName": "wwwroot/css/web.min.css",
     "inputFiles": [
       "source/bootstrap/bootstrap.min.css",
+      "source/materialize/materialize.min.css",
+      "source/materialize/materialize-icons.min.css",
       "source/font-awesome/fa-solid.min.css",
       "source/font-awesome/fontawesome-all.min.css",
       "source/sweetalert2/sweetalert2.min.css",
       "source/customs/custom.min.css"
     ],
     "minify": {
-      "enabled": true,
+      "enabled": false,
       "renameLocals": false,
       "adjustRelativePaths": false
     }
@@ -54,28 +97,14 @@
     }
   },
   {
-    "outputFileName": "wwwroot/css/admin/admin.min.css",
+    "outputFileName": "wwwroot/js/web.min.js",
     "inputFiles": [
-      "source/core-ui/coreui-icons/css/coreui-icons.min.css",
-      "source/core-ui/flag-icons/css/flag-icon.min.css",
-      "source/font-awesome/fa-solid.min.css",
-      "source/font-awesome/fontawesome-all.min.css",
-      "source/core-ui/simple-line-icons/css/simple-line-icons.min.css",
-      "source/core-ui/css/coreui.min.css",
-      "source/core-ui/pace/pace.min.css",
-      "source/customs/admin/admin.custom.min.css",
-      "source/customs/admin/admin.note.min.css"
-    ],
-    "minify": {
-      "enabled": false,
-      "adjustRelativePaths": false,
-      "renameLocals": false 
-    }
-  },
-  {
-    "outputFileName": "wwwroot/css/admin/admin.note-rtl.min.css",
-    "inputFiles": [
-      "source/customs/admin/admin.note-rtl.min.css"
+      "source/materialize/materialize.min.js",
+      "source/jquery/jquery.bootstrap-modal-confirm.min.js",
+      "source/jquery/jquery.bootstrap-modal-alert.min.js",
+      "source/jquery/jquery.bootstrap-modal-ajax-form.min.js",
+      "source/sweetalert2/sweetalert2.all.min.js",
+      "source/customs/custom.min.js"
     ],
     "minify": {
       "enabled": true,
@@ -100,13 +129,28 @@
     }
   },
   {
-    "outputFileName": "wwwroot/js/web.min.js",
+    "outputFileName": "wwwroot/css/admin/admin.min.css",
     "inputFiles": [
-      "source/jquery/jquery.bootstrap-modal-confirm.min.js",
-      "source/jquery/jquery.bootstrap-modal-alert.min.js",
-      "source/jquery/jquery.bootstrap-modal-ajax-form.min.js",
-      "source/sweetalert2/sweetalert2.all.min.js",
-      "source/customs/custom.min.js"
+      "source/core-ui/coreui-icons/css/coreui-icons.min.css",
+      "source/core-ui/flag-icons/css/flag-icon.min.css",
+      "source/font-awesome/fa-solid.min.css",
+      "source/font-awesome/fontawesome-all.min.css",
+      "source/core-ui/simple-line-icons/css/simple-line-icons.min.css",
+      "source/core-ui/css/coreui.min.css",
+      "source/core-ui/pace/pace.min.css",
+      "source/customs/admin/admin.custom.min.css",
+      "source/customs/admin/admin.note.min.css"
+    ],
+    "minify": {
+      "enabled": false,
+      "adjustRelativePaths": false,
+      "renameLocals": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/admin/admin.note-rtl.min.css",
+    "inputFiles": [
+      "source/customs/admin/admin.note-rtl.min.css"
     ],
     "minify": {
       "enabled": true,
@@ -137,45 +181,9 @@
     ]
   },
   {
-    "outputFileName": "wwwroot/js/admin/kendo/kendo.ui.core.min.js",
+    "outputFileName": "source/materialize/materialize-rtl.min.css",
     "inputFiles": [
-      "wwwroot/js/admin/kendo/kendo.ui.core.js"
-    ]
-  },
-  {
-    "outputFileName": "wwwroot/js/admin/admin.search.min.js",
-    "inputFiles": [
-      "wwwroot/js/admin/admin.search.js"
-    ]
-  },
-  {
-    "outputFileName": "wwwroot/js/admin/admin.common.min.js",
-    "inputFiles": [
-      "wwwroot/js/admin/admin.common.js"
-    ]
-  },
-  {
-    "outputFileName": "source/customs/admin/admin.custom.min.css",
-    "inputFiles": [
-      "source/customs/admin/admin.custom.css"
-    ]
-  },
-  {
-    "outputFileName": "source/customs/admin/admin.dropdown.min.css",
-    "inputFiles": [
-      "source/customs/admin/admin.dropdown.css"
-    ]
-  },
-  {
-    "outputFileName": "source/customs/admin/admin.note.min.css",
-    "inputFiles": [
-      "source/customs/admin/admin.note.css"
-    ]
-  },
-  {
-    "outputFileName": "source/customs/admin/admin.note-rtl.min.css",
-    "inputFiles": [
-      "source/customs/admin/admin.note-rtl.css"
+      "source/materialize/materialize-rtl.css"
     ]
   }
 ]

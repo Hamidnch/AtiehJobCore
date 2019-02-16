@@ -1,0 +1,40 @@
+﻿@using AtiehJobCore.Web.Framework.UI
+@{
+    Layout = null;
+    var pageTitle = ViewData["Title"] ?? "کاریابی آتیه کار";
+    Html.AddCssFileParts("/css/account.min.css", excludeFromBundle: false);
+    Html.AppendScriptParts(ResourceLocation.Footer, "/js/account.min.js", excludeFromBundle: false);
+    if (this.IsRtl)
+    {
+        Html.AddCssFileParts("/css/account-rtl.min.css", excludeFromBundle: false);
+    }
+}
+<!DOCTYPE html>
+<html lang="@(this.WorkingLanguage)" dir="@(this.IsRtl ? "rtl": "ltr")">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@pageTitle</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, shrink-to-fit=no, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    @Html.AtiehJobHeadCustom()
+    @Html.AtiehJobCssFiles(this.Url, ResourceLocation.Head, false)
+    @Html.AtiehJobScripts(this.Url, ResourceLocation.Head, false)
+
+</head>
+<body>
+    @*@await Html.PartialAsync("_BreadCrumb")*@
+
+    <main role="main" class="container">
+        <div id="content" class="row">
+            @RenderBody()
+        </div>
+    </main>
+
+    @await Html.PartialAsync("_Foot")
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

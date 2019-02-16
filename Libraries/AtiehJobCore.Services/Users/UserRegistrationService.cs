@@ -1,12 +1,12 @@
-﻿using AtiehJobCore.Core;
+﻿using System;
+using System.Linq;
+using AtiehJobCore.Core;
 using AtiehJobCore.Core.Domain.Users;
 using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Core.Utilities;
 using AtiehJobCore.Services.Events;
 using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Security;
-using System;
-using System.Linq;
 
 namespace AtiehJobCore.Services.Users
 {
@@ -83,26 +83,16 @@ namespace AtiehJobCore.Services.Users
         /// <returns>Result</returns>
         public virtual UserLoginResults ValidateUser(string userInput, string password)
         {
-            var userLoginType = _userSettings.UserLoginType;
-
             User user;
-            switch (userLoginType)
+            if (_userSettings.UsernamesEnabled)
             {
-                case UserLoginType.Username:
-                    user = _userService.GetUserByUsername(userInput);
-                    break;
-                case UserLoginType.Email:
-                    user = _userService.GetUserByEmail(userInput);
-                    break;
-                case UserLoginType.MobileNumber:
-                    user = _userService.GetUserByMobileNumber(userInput);
-                    break;
-                case UserLoginType.NationalCode:
-                    user = _userService.GetUserByNationalCode(userInput);
-                    break;
-                default:
-                    user = _userService.GetUserByEmail(userInput);
-                    break;
+                user = _userService.GetUserByUsername(userInput);
+            }
+            else
+            {
+                user = (_userService.GetUserByEmail(userInput)
+                     ?? _userService.GetUserByMobileNumber(userInput))
+                    ?? _userService.GetUserByNationalCode(userInput);
             }
 
             if (user == null)
@@ -193,7 +183,7 @@ namespace AtiehJobCore.Services.Users
                 return result;
             }
 
-            if (_userSettings.UserLoginType == UserLoginType.Email)
+            if (!_userSettings.IsOptionalEmail)
             {
                 if (string.IsNullOrEmpty(request.Email))
                 {
@@ -201,12 +191,9 @@ namespace AtiehJobCore.Services.Users
                         _localizationService.GetResource("Account.Register.Errors.EmailIsNotProvided"));
                     return result;
                 }
-
-                if (!CommonHelper.IsValidEmail(request.Email))
-                {
-                    result.AddError(_localizationService.GetResource("Common.WrongEmail"));
-                    return result;
-                }
+            }
+            if (!_userSettings.AllowDuplicateEmail && !string.IsNullOrEmpty(request.Email))
+            {
                 //validate unique user
                 if (_userService.GetUserByEmail(request.Email) != null)
                 {
@@ -216,7 +203,16 @@ namespace AtiehJobCore.Services.Users
                 }
             }
 
-            if (_userSettings.UserLoginType == UserLoginType.Username)
+            if (_userSettings.ForceEmailValidation && !string.IsNullOrEmpty(request.Email))
+            {
+                if (!request.Email.IsValidEmail())
+                {
+                    result.AddError(_localizationService.GetResource("Common.WrongEmail"));
+                    return result;
+                }
+            }
+
+            if (_userSettings.UsernamesEnabled)
             {
                 if (string.IsNullOrEmpty(request.Username))
                 {
@@ -232,36 +228,30 @@ namespace AtiehJobCore.Services.Users
                 }
             }
 
-            if (_userSettings.UserLoginType == UserLoginType.MobileNumber)
+            if (string.IsNullOrEmpty(request.MobileNumber))
             {
-                if (string.IsNullOrEmpty(request.MobileNumber))
-                {
-                    result.AddError(
-                        _localizationService.GetResource("Account.Register.Errors.MobileNumberIsNotProvided"));
-                    return result;
-                }
-                if (_userService.GetUserByMobileNumber(request.MobileNumber) != null)
-                {
-                    result.AddError(
-                        _localizationService.GetResource("Account.Register.Errors.MobileNumberAlreadyExists"));
-                    return result;
-                }
+                result.AddError(
+                    _localizationService.GetResource("Account.Register.Errors.MobileNumberIsNotProvided"));
+                return result;
+            }
+            if (_userService.GetUserByMobileNumber(request.MobileNumber) != null)
+            {
+                result.AddError(
+                    _localizationService.GetResource("Account.Register.Errors.MobileNumberAlreadyExists"));
+                return result;
             }
 
-            if (_userSettings.UserLoginType == UserLoginType.NationalCode)
+            if (string.IsNullOrEmpty(request.NationalCode))
             {
-                if (string.IsNullOrEmpty(request.NationalCode))
-                {
-                    result.AddError(
-                        _localizationService.GetResource("Account.Register.Errors.NationalCodeIsNotProvided"));
-                    return result;
-                }
-                if (_userService.GetUserByNationalCode(request.NationalCode) != null)
-                {
-                    result.AddError(
-                        _localizationService.GetResource("Account.Register.Errors.NationalCodeAlreadyExists"));
-                    return result;
-                }
+                result.AddError(
+                    _localizationService.GetResource("Account.Register.Errors.NationalCodeIsNotProvided"));
+                return result;
+            }
+            if (_userService.GetUserByNationalCode(request.NationalCode) != null)
+            {
+                result.AddError(
+                    _localizationService.GetResource("Account.Register.Errors.NationalCodeAlreadyExists"));
+                return result;
             }
 
             if (string.IsNullOrWhiteSpace(request.Password))
@@ -460,7 +450,7 @@ namespace AtiehJobCore.Services.Users
             newEmail = newEmail.Trim();
             var oldEmail = user.Email;
 
-            if (!CommonHelper.IsValidEmail(newEmail))
+            if (!newEmail.IsValidEmail())
                 throw new AtiehJobException(
                     _localizationService.GetResource("Account.EmailUsernameErrors.NewEmailIsNotValid"));
 
@@ -519,7 +509,7 @@ namespace AtiehJobCore.Services.Users
             newMobileNumber = newMobileNumber.Trim();
             //var oldMobileNumber = user.MobileNumber;
 
-            if (!CommonHelper.IsValidMobileNumber(newMobileNumber))
+            if (!newMobileNumber.IsValidMobileNumber())
                 throw new AtiehJobException(
                     _localizationService.GetResource("Account.Errors.MobileNumberIsNotValid"));
 
@@ -547,7 +537,7 @@ namespace AtiehJobCore.Services.Users
             newNationalCode = newNationalCode.Trim();
             //var oldNationalCode = user.NationalCode;
 
-            if (!CommonHelper.IsValidNationalCode(newNationalCode))
+            if (!newNationalCode.IsValidNationalCode())
                 throw new AtiehJobException(
                     _localizationService.GetResource("Account.Errors.NationalCodeIsNotValid"));
 

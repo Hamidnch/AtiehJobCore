@@ -1,2 +1,2 @@
 DataProvider: mongodb
-DataConnectionString: mongodb://localhost:27017/AtiehJobCoreDb
+DataConnectionString: mongodb://localhost:27017/AtiehJobCore

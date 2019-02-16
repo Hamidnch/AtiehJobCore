@@ -1,7 +1,6 @@
 ﻿using AtiehJobCore.Core.Constants;
 using AtiehJobCore.Core.Domain;
 using AtiehJobCore.Core.Domain.Users;
-using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Services.Authentication;
 using AtiehJobCore.Services.Events;
 using AtiehJobCore.Services.Localization;
@@ -73,57 +72,26 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
 
             if (ModelState.IsValid)
             {
-                //if (_userSettings.UserLoginType == UserLoginType.Username && model.Username != null)
-                //{
-                //    model.Username = model.Username.Trim();
-                //}
-
-                string userInput;
-                var userLoginType = _userSettings.UserLoginType;
-                switch (userLoginType)
+                if (_userSettings.UsernamesEnabled && model.Username != null)
                 {
-                    case UserLoginType.Username:
-                        userInput = model.Username.Trim();
-                        break;
-                    case UserLoginType.Email:
-                        userInput = model.Email.Trim();
-                        break;
-                    case UserLoginType.MobileNumber:
-                        userInput = model.MobileNumber.Trim();
-                        break;
-                    case UserLoginType.NationalCode:
-                        userInput = model.NationalCode.Trim();
-                        break;
-                    default:
-                        userInput = model.Email.Trim();
-                        break;
+                    model.Username = model.Username.Trim();
+                }
+                else
+                {
+                    model.EmailOrMobileOrNationalCode = model.EmailOrMobileOrNationalCode.Trim();
                 }
 
-                var loginResult = _userRegistrationService.ValidateUser(userInput, model.Password);
+                var loginResult = _userRegistrationService.ValidateUser(_userSettings.UsernamesEnabled
+                    ? model.Username : model.EmailOrMobileOrNationalCode, model.Password);
                 switch (loginResult)
                 {
                     case UserLoginResults.Successful:
                         {
-                            User user;
-
-                            switch (userLoginType)
-                            {
-                                case UserLoginType.Username:
-                                    user = _userService.GetUserByUsername(model.Username);
-                                    break;
-                                case UserLoginType.Email:
-                                    user = _userService.GetUserByEmail(model.Email);
-                                    break;
-                                case UserLoginType.MobileNumber:
-                                    user = _userService.GetUserByMobileNumber(model.MobileNumber);
-                                    break;
-                                case UserLoginType.NationalCode:
-                                    user = _userService.GetUserByNationalCode(model.NationalCode);
-                                    break;
-                                default:
-                                    user = _userService.GetUserByEmail(model.Email);
-                                    break;
-                            }
+                            var user = _userSettings.UsernamesEnabled
+                                ? _userService.GetUserByUsername(model.Username)
+                                : _userService.GetUserByEmail(model.EmailOrMobileOrNationalCode)
+                               ?? _userService.GetUserByMobileNumber(model.EmailOrMobileOrNationalCode)
+                               ?? _userService.GetUserByNationalCode(model.EmailOrMobileOrNationalCode);
 
                             //sign in new user
                             _atiehJobAuthenticationService.SignIn(user, model.RememberMe);

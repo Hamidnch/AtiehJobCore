@@ -19,7 +19,7 @@ namespace AtiehJobCore.Web.Framework.Services
         {
             var model = new LoginModel
             {
-                UserLoginType = _userSettings.UserLoginType,
+                UsernamesEnabled = _userSettings.UsernamesEnabled,
                 DisplayCaptcha = _captchaSettings.Enabled && _captchaSettings.ShowOnLoginPage
             };
             return model;
