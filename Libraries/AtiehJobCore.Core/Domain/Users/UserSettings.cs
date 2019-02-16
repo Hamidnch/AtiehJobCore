@@ -12,9 +12,25 @@ namespace AtiehJobCore.Core.Domain.Users
         //public UserLoginType UserLoginType { get; set; } = UserLoginType.Email;
 
         public bool UsernamesEnabled { get; set; }
+
+        public bool IsDisplayEmail { get; set; }
+        public bool IsDisplayMobileNumber { get; set; }
+        public bool IsDisplayNationalCode { get; set; }
+
+        public bool IsDisplayPassword { get; set; }
+
         public bool IsOptionalEmail { get; set; }
+        public bool IsOptionalMobileNumber { get; set; }
+        public bool IsOptionalNationalCode { get; set; }
+
         public bool ForceEmailValidation { get; set; }
+        public bool ForceMobileNumberValidation { get; set; }
+        public bool ForceNationalCodeValidation { get; set; }
+
         public bool AllowDuplicateEmail { get; set; }
+        public bool AllowDuplicateMobileNumber { get; set; }
+        public bool AllowDuplicateNationalCode { get; set; }
+
         /// <summary>
         /// Gets or sets a value indicating whether users can check the availability of usernames (when registering or changing in 'My Account')
         /// </summary>

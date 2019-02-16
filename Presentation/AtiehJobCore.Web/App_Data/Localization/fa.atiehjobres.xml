@@ -3,4 +3,184 @@
  <LocaleResource Name="Account.Login.Fields.UserName">
     <Value>نام کاربری</Value>
   </LocaleResource>
+  <LocaleResource Name="account.login.fields.emailormobileornationalcode">
+    <Value>ایمیل یا شماره موبایل یا کد ملی</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.fields.emailormobileornationalcode.required">
+    <Value>ایمیل یا شماره موبایل یا کد ملی نیاز هست</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.fields.password">
+    <Value>کلمه عبور</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.fields.rememberme">
+    <Value>مرا بخاطر بسپار</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.forgotpassword">
+    <Value>رمز عبورم را فراموش کرده ام</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.loginbutton">
+    <Value>ورود</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.newuser">
+    <Value>کاربر جدید</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.newusertext">
+    <Value>جهت ورود به صفحه ثبت نام بر روی دکمه ثبت نام کلیک کنید.</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.returninguser">
+    <Value>ورود به سیستم</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.unsuccessful">
+    <Value>ورود ناموفق بود.</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.welcome">
+    <Value>خوش آمدید</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.wrongcredentials">
+    <Value>اطلاعات نامعتبر است</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.register">
+    <Value>ثبت نام</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.addnew">
+    <Value>افزودن زبان جدید</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.addnewrecord">
+    <Value>افزودن رکورد جدید</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.cancel">
+    <Value>لغو</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.delete">
+    <Value>حذف</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.edit">
+    <Value>ویرایش</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.save">
+    <Value>ذخیره</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.savecontinue">
+    <Value>ذخیره و ادامه</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.search">
+    <Value>جستجو</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.update">
+    <Value>بروزرسانی</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages">
+    <Value>زبان ها</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.backtolist">
+    <Value>برگشت به لیست اصلی</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.editlanguagedetails">
+    <Value>جزئیات ویرایش زبان</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.export">
+    <Value>ذخیره کردن ریسورسها</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.displayorder">
+    <Value>ترتیب نمایش</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.flagimage">
+    <Value>تصویر پرچم</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.flagimagefilename">
+    <Value>نام فایل تصویر پرچم</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.languageculture">
+    <Value>فرهنگ زبان</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.name">
+    <Value>نام زبان</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.published">
+    <Value>منتشر شود؟</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.rtl">
+    <Value>راست به چپ؟</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.uniqueseocode">
+    <Value>کد سئو</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.import">
+    <Value>وارد کردن ریسورسها</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.info">
+    <Value>اطلاعات کلی</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.resources">
+    <Value>ریسورس ها</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.resources.fields.name">
+    <Value>نام منبع</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.resources.fields.value">
+    <Value>مقدار منبع</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.resourcesfilter.fields.resourcename">
+    <Value>نام منبع</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.resourcesfilter.fields.resourcevalue">
+    <Value>مقدار منبع</Value>
+  </LocaleResource>
+  <LocaleResource Name="common.wrongemailormobileornationalcode">
+    <Value>لطفا ایمیل یا شماره موبایل یا کدملی معتبر وارد نمایید</Value>
+  </LocaleResource>
+  <LocaleResource Name="error.pagenotfound.description">
+    <Value>صفحه ای که به دنبال آن هستید یافت نشد.</Value>
+  </LocaleResource>
+  <LocaleResource Name="error.pagenotfound.homepage">
+    <Value>برگشت به صفحه اول</Value>
+  </LocaleResource>
+  <LocaleResource Name="error.pagenotfound.oops">
+    <Value>اوه!</Value>
+  </LocaleResource>
+  <LocaleResource Name="pagetitle.pagenotfound">
+    <Value>صفحه یافت نشد.</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.accessadminpanel">
+    <Value>Access admin area</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.accessclosedsite">
+    <Value>Atieh job. Access a closed store</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.manageacl">
+    <Value>Admin area. Manage ACL</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.manageactivitylog">
+    <Value>Admin area. Manage Activity Log</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managecountries">
+    <Value>Admin area. Manage Countries</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.manageemailaccounts">
+    <Value>Admin area. Manage Email Accounts</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managelanguages">
+    <Value>Admin area. Manage Languages</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managemaintenance">
+    <Value>Admin area. Manage Maintenance</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managemessagecontactform">
+    <Value>Admin area. Manage Message Contact form</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managenews">
+    <Value>Admin area. Manage News</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managesettings">
+    <Value>Admin area. Manage Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managesystemlog">
+    <Value>Admin area. Manage System Log</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.manageusers">
+    <Value>Admin area. Manage Users</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.siteallownavigation">
+    <Value>Atieh job. Allow navigation</Value>
+  </LocaleResource>
 </Language>

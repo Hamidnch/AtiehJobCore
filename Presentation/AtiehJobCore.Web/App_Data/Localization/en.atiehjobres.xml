@@ -1,6 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Language Name="English">
- <LocaleResource Name="Account.Login.Fields.UserName">
-    <Value>User name</Value>
+  <LocaleResource Name="Account.Login.Fields.UserName">
+    <Value>Username</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.fields.emailormobileornationalcode">
+    <Value>Email or mobile number or nationalCode</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.fields.emailormobileornationalcode.required">
+    <Value>Email or mobile number or national code is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.fields.password">
+    <Value>Password</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.fields.rememberme">
+    <Value>Remember me</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.forgotpassword">
+    <Value>Forgot my password!</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.loginbutton">
+    <Value>Log in</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.newuser">
+    <Value>New user</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.newusertext">
+    <Value>Click on Register button for going to registeration page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.returninguser">
+    <Value>Returning user</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.unsuccessful">
+    <Value>Login unsuccessful.</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.welcome">
+    <Value>Welcome</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.login.wrongcredentials">
+    <Value>Wrong credentials.</Value>
+  </LocaleResource>
+  <LocaleResource Name="account.register">
+    <Value>Register</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.addnew">
+    <Value>Add new language</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.addnewrecord">
+    <Value>Add new record</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.cancel">
+    <Value>Cancel</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.delete">
+    <Value>Delete</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.edit">
+    <Value>Edit</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.save">
+    <Value>Save</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.savecontinue">
+    <Value>Save and continue</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.search">
+    <Value>search</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.common.update">
+    <Value>Update</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages">
+    <Value>Languages</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.backtolist">
+    <Value>Back to list</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.editlanguagedetails">
+    <Value>Edit language details</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.export">
+    <Value>Export resources</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.displayorder">
+    <Value>Display order</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.flagimage">
+    <Value>Flag image</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.flagimagefilename">
+    <Value>Flag image file name</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.languageculture">
+    <Value>Language culture</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.name">
+    <Value>Language name</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.published">
+    <Value>Published?</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.rtl">
+    <Value>Rtl?</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.fields.uniqueseocode">
+    <Value>Unique seo code</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.import">
+    <Value>Import resources</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.info">
+    <Value>Info</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.resources">
+    <Value>Resources</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.resources.fields.name">
+    <Value>Resource name</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.resources.fields.value">
+    <Value>Resource value</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.resourcesfilter.fields.resourcename">
+    <Value>resource name</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.configuration.languages.resourcesfilter.fields.resourcevalue">
+    <Value>Resource value</Value>
+  </LocaleResource>
+  <LocaleResource Name="common.wrongemailormobileornationalcode">
+    <Value>please enter valid email or mobile number or national code.</Value>
+  </LocaleResource>
+  <LocaleResource Name="error.pagenotfound.description">
+    <Value>A page that you are looking for could not be found</Value>
+  </LocaleResource>
+  <LocaleResource Name="error.pagenotfound.homepage">
+    <Value>Go to home page</Value>
+  </LocaleResource>
+  <LocaleResource Name="error.pagenotfound.oops">
+    <Value>Oops!</Value>
+  </LocaleResource>
+  <LocaleResource Name="pagetitle.pagenotfound">
+    <Value>Page not found.</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.accessadminpanel">
+    <Value>Access admin area</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.accessclosedsite">
+    <Value>Atieh job. Access a closed store</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.manageacl">
+    <Value>Admin area. Manage ACL</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.manageactivitylog">
+    <Value>Admin area. Manage Activity Log</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managecountries">
+    <Value>Admin area. Manage Countries</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.manageemailaccounts">
+    <Value>Admin area. Manage Email Accounts</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managelanguages">
+    <Value>Admin area. Manage Languages</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managemaintenance">
+    <Value>Admin area. Manage Maintenance</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managemessagecontactform">
+    <Value>Admin area. Manage Message Contact form</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managenews">
+    <Value>Admin area. Manage News</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managesettings">
+    <Value>Admin area. Manage Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.managesystemlog">
+    <Value>Admin area. Manage System Log</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.manageusers">
+    <Value>Admin area. Manage Users</Value>
+  </LocaleResource>
+  <LocaleResource Name="permission.siteallownavigation">
+    <Value>Atieh job. Allow navigation</Value>
   </LocaleResource>
 </Language>

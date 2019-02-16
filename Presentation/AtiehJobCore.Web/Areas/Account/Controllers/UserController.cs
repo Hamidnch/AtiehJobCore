@@ -1,6 +1,7 @@
 ﻿using AtiehJobCore.Core.Constants;
 using AtiehJobCore.Core.Domain;
 using AtiehJobCore.Core.Domain.Users;
+using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Services.Authentication;
 using AtiehJobCore.Services.Events;
 using AtiehJobCore.Services.Localization;
@@ -8,6 +9,7 @@ using AtiehJobCore.Services.Logging;
 using AtiehJobCore.Services.Users;
 using AtiehJobCore.Web.Framework.Filters;
 using AtiehJobCore.Web.Framework.Models.Account;
+using AtiehJobCore.Web.Framework.Models.Account.Jobseeker;
 using AtiehJobCore.Web.Framework.Mvc.Captcha;
 using AtiehJobCore.Web.Framework.Security;
 using AtiehJobCore.Web.Framework.Services;
@@ -146,31 +148,48 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
             return View(model);
         }
 
-
         [CheckAccessSite(true)]
         [CheckAccessClosedSite(true)]
         public virtual IActionResult Logout([FromServices] StoreInformationSettings storeInformationSettings)
         {
             //activity log
             _userActivityService.InsertActivity("AtiehJob.Logout", "",
-                _localizationService.GetResource("ActivityLog.PublicStore.Logout"));
+                _localizationService.GetResource("ActivityLog.AtiehJob.Logout"));
             //standard logout 
             _atiehJobAuthenticationService.SignOut();
 
-            ////EU Cookie
-            //if (storeInformationSettings.DisplayEuCookieLawWarning)
-            //{
-            //    //the cookie law message should not pop up immediately after logout.
-            //    //otherwise, the user will have to click it again...
-            //    //and thus next visitor will not click it... so violation for that cookie law..
-            //    //the only good solution in this case is to store a temporary variable
-            //    //indicating that the EU cookie popup window should not be displayed on the next page open (after logout redirection to homepage)
-            //    //but it'll be displayed for further page loads
-            //    TempData["AtiehJob.IgnoreEuCookieLawWarning"] = true;
-            //}
+            //EU Cookie
+            if (storeInformationSettings.DisplayEuCookieLawWarning)
+            {
+                //the cookie law message should not pop up immediately after logout.
+                //otherwise, the user will have to click it again...
+                //and thus next visitor will not click it... so violation for that cookie law..
+                //the only good solution in this case is to store a temporary variable
+                //indicating that the EU cookie popup window should not be displayed on the next page open (after logout redirection to homepage)
+                //but it'll be displayed for further page loads
+                TempData["AtiehJob.IgnoreEuCookieLawWarning"] = true;
+            }
             return RedirectToRoute("HomePage");
         }
 
         #endregion
+
+        #region Register
+        //available even when navigation is not allowed
+        [CheckAccessSite(true)]
+        public virtual IActionResult RegisterJobseeker()
+        {
+            //check whether registration is allowed
+            if (_userSettings.UserRegistrationType == UserRegistrationType.Disabled)
+                return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.Disabled });
+
+            var model = new RegisterSimpleJobseekerModel();
+            model = _userViewModelService.PrepareRegisterModel(model, false);
+            //enable newsletter by default
+            model.Newsletter = _userSettings.NewsletterTickedByDefault;
+
+            return View(model);
+        }
+        #endregion Register
     }
 }
