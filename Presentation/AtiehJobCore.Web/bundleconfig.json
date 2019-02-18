@@ -10,8 +10,8 @@
       "renameLocals": false,
       "adjustRelativePaths": false
     }
-  }, 
-  {
+  },      
+  { 
     "outputFileName": "wwwroot/js/install.min.js",
     "inputFiles": [
       "source/jquery/jquery.min.js",

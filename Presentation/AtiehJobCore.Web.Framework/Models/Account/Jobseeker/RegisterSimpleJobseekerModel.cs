@@ -1,7 +1,9 @@
 ﻿using AtiehJobCore.Core.Enums;
+using AtiehJobCore.Web.Framework.Models.User;
 using AtiehJobCore.Web.Framework.Mvc.ModelBinding;
 using AtiehJobCore.Web.Framework.Validators.Account.Jobseeker;
 using FluentValidation.Attributes;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace AtiehJobCore.Web.Framework.Models.Account.Jobseeker
@@ -9,6 +11,10 @@ namespace AtiehJobCore.Web.Framework.Models.Account.Jobseeker
     [Validator(typeof(RegisterSimpleJobseekerModelValidator))]
     public partial class RegisterSimpleJobseekerModel : BaseMongoModel
     {
+        public RegisterSimpleJobseekerModel()
+        {
+            UserAttributes = new List<UserAttributeModel>();
+        }
         /// <summary>
         /// First name
         /// </summary>
@@ -77,5 +83,9 @@ namespace AtiehJobCore.Web.Framework.Models.Account.Jobseeker
         /// </summary>
         [AtiehJobResourceDisplayName("Account.Jobseeker.Fields.Gender")]
         public GenderType? Gender { get; set; }
+        public bool DisplayCaptcha { get; set; }
+        public IList<UserAttributeModel> UserAttributes { get; set; }
+        public bool HoneypotEnabled { get; set; }
+        public bool AcceptPrivacyPolicyEnabled { get; set; }
     }
 }

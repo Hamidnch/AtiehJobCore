@@ -19,10 +19,15 @@ namespace AtiehJobCore.Web.Infrastructure
             routeBuilder.MapLocalizedRoute("Login",
                             "account/user/login/",
                             new { controller = "User", action = "Login" });
-            //register
-            routeBuilder.MapLocalizedRoute("Register",
-                            "account/user/register/",
-                            new { controller = "User", action = "Register" });
+            //register jobseeker
+            routeBuilder.MapLocalizedRoute("RegisterJobseeker",
+                            "account/user/registerjobseeker/",
+                            new { controller = "User", action = "RegisterJobseeker" });
+            //register result page
+            routeBuilder.MapLocalizedRoute("RegisterResult",
+                "account/user/registerresult/{resultId}",
+                new { controller = "User", action = "RegisterResult" });
+
             //logout
             routeBuilder.MapLocalizedRoute("Logout",
                             "account/user/logout/",
@@ -47,10 +52,6 @@ namespace AtiehJobCore.Web.Infrastructure
                             new { controller = "Common", action = "SetLanguage" });
 
 
-            //register result page
-            routeBuilder.MapLocalizedRoute("RegisterResult",
-                            "registerresult/{resultId}",
-                            new { controller = "User", action = "RegisterResult" });
             //check username availability
             routeBuilder.MapLocalizedRoute("CheckUsernameAvailability",
                             "user/checkusernameavailability",

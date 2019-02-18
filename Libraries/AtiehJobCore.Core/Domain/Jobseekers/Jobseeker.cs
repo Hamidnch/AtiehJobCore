@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using AtiehJobCore.Core.Domain.Address;
+﻿using AtiehJobCore.Core.Domain.Address;
 using AtiehJobCore.Core.Domain.JobOpportunities;
 using AtiehJobCore.Core.Domain.Users;
 using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Core.MongoDb;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AtiehJobCore.Core.Domain.Jobseekers
 {
@@ -275,7 +275,7 @@ namespace AtiehJobCore.Core.Domain.Jobseekers
         /// <summary>
         /// وضعیت جاری
         /// </summary>
-        public string CurrentState { get; set; }
+        public JobseekerState CurrentState { get; set; }
         /// <summary>
         /// نام کاریابی
         /// </summary>
@@ -381,7 +381,7 @@ namespace AtiehJobCore.Core.Domain.Jobseekers
         /// <summary>
         /// شناسه کاربری
         /// </summary>
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public virtual User User { get; set; }
         /***************** ارتباط با جدول کاربر ********************/
         #endregion Property

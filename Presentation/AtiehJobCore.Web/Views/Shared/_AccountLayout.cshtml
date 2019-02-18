@@ -2,6 +2,7 @@
 @{
     Layout = null;
     var pageTitle = ViewData["Title"] ?? "کاریابی آتیه کار";
+
     Html.AddCssFileParts("/css/account.min.css", excludeFromBundle: false);
     Html.AppendScriptParts(ResourceLocation.Footer, "/js/account.min.js", excludeFromBundle: false);
     if (this.IsRtl)

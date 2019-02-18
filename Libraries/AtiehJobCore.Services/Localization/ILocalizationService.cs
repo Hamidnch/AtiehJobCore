@@ -96,5 +96,7 @@ namespace AtiehJobCore.Services.Localization
         /// <param name="language">Language</param>
         /// <param name="xml">XML</param>
         void ImportResourcesFromXmlInstall(Language language, string xml);
+
+        string GetLanguageFromXml(string xml);
     }
 }

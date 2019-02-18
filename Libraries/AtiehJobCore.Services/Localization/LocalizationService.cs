@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Xml;
-using AtiehJobCore.Core.Caching;
+﻿using AtiehJobCore.Core.Caching;
 using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain.Localization;
 using AtiehJobCore.Core.Extensions;
@@ -12,6 +6,12 @@ using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Services.Events;
 using AtiehJobCore.Services.Logging;
 using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Xml;
 
 namespace AtiehJobCore.Services.Localization
 {
@@ -450,6 +450,18 @@ namespace AtiehJobCore.Services.Localization
 
             //clear cache
             _cacheManager.RemoveByPattern(pattern: LocalStringResourcesPatternKey);
+        }
+
+        public virtual string GetLanguageFromXml(string xml)
+        {
+            if (string.IsNullOrEmpty(value: xml))
+                return null;
+            //stored procedures aren't supported
+            var xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml: xml);
+            var langNode = xmlDoc.SelectSingleNode("/Language/@Name")?.Value;
+
+            return langNode;
         }
 
         #endregion

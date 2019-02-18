@@ -24,6 +24,7 @@ using AtiehJobCore.Services.Seo;
 using AtiehJobCore.Services.Tasks;
 using AtiehJobCore.Services.Topics;
 using AtiehJobCore.Services.Users;
+using AtiehJobCore.Services.Users.Jobseekers;
 using AtiehJobCore.Web.Framework.Mvc.Routing;
 using AtiehJobCore.Web.Framework.Services;
 using Autofac;
@@ -122,6 +123,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
             builder.RegisterType<DefaultLogger>().As<ILogger>().InstancePerLifetimeScope();
             builder.RegisterType<GenericAttributeService>().As<IGenericAttributeService>().InstancePerLifetimeScope();
             builder.RegisterType<UserApiService>().As<IUserApiService>().InstancePerLifetimeScope();
+            builder.RegisterType<UserAttributeService>().As<IUserAttributeService>().InstancePerLifetimeScope();
+            builder.RegisterType<UserAttributeParser>().As<IUserAttributeParser>().InstancePerLifetimeScope();
             builder.RegisterType<AtiehJobCookieAuthenticationService>().As<IAtiehJobAuthenticationService>().InstancePerLifetimeScope();
             builder.RegisterType<ApiAuthenticationService>().As<IApiAuthenticationService>().InstancePerLifetimeScope();
             builder.RegisterType<UrlRecordService>().As<IUrlRecordService>().InstancePerLifetimeScope();
@@ -135,6 +138,8 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
             builder.RegisterType<PermissionService>().As<IPermissionService>().InstancePerLifetimeScope();
             builder.RegisterType<AclService>().As<IAclService>().InstancePerLifetimeScope();
             builder.RegisterType<DateTimeHelper>().As<IDateTimeHelper>().InstancePerLifetimeScope();
+
+            builder.RegisterType<JobseekerService>().As<IJobseekerService>().InstancePerLifetimeScope();
 
             builder.RegisterType<EncryptionService>().As<IEncryptionService>().InstancePerLifetimeScope();
             var databaseInstalled = DataSettingsHelper.DatabaseIsInstalled();

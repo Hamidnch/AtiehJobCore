@@ -7,7 +7,7 @@
     Html.AddTitleParts(T("PageTitle.Login").Text);
 
     //register URL with return URL (if specified)
-    var registerUrl = Url.RouteUrl("Register");
+    var registerUrl = Url.RouteUrl("RegisterJobseeker");
     if (!string.IsNullOrEmpty(this.Context.Request.Query["returnUrl"]))
     {
         registerUrl = WebHelper.ModifyQueryString(registerUrl,
@@ -39,7 +39,7 @@
                 {
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="text" asp-for="EmailOrMobileOrNationalCode"
+                            <input type="text" asp-for="EmailOrMobileOrNationalCode" autocomplete="off"
                                    class="validate" autofocus="autofocus" />
                             <label asp-for="EmailOrMobileOrNationalCode">@T("Account.Login.Fields.EmailOrMobileOrNationalCode"):</label>
                             <span asp-validation-for="EmailOrMobileOrNationalCode"></span>

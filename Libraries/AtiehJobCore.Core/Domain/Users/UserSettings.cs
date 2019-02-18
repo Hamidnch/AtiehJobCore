@@ -31,6 +31,11 @@ namespace AtiehJobCore.Core.Domain.Users
         public bool AllowDuplicateMobileNumber { get; set; }
         public bool AllowDuplicateNationalCode { get; set; }
 
+        public bool IsSendRegisterationSms { get; set; }
+        public bool IsSendRegisterationEmail { get; set; }
+        public bool IsSendPasswordSms { get; set; }
+        public bool IsSendPasswordEmail { get; set; }
+
         /// <summary>
         /// Gets or sets a value indicating whether users can check the availability of usernames (when registering or changing in 'My Account')
         /// </summary>

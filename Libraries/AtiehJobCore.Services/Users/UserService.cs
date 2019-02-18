@@ -260,14 +260,17 @@ namespace AtiehJobCore.Services.Users
             var builder = Builders<User>.Filter;
             var filter = builder.Eq(x => x.Id, user.Id);
             var update = Builders<User>.Update
-               .Set(x => x.Email, string.IsNullOrEmpty(user.Email) ? "" : user.Email.ToLower())
-               .Set(x => x.PasswordFormatId, user.PasswordFormatId)
-               .Set(x => x.PasswordSalt, user.PasswordSalt)
-               .Set(x => x.Active, user.Active)
-               .Set(x => x.Password, user.Password)
-               .Set(x => x.PasswordChangeDateUtc, user.PasswordChangeDateUtc)
-               .Set(x => x.Username, string.IsNullOrEmpty(user.Username) ? "" : user.Username.ToLower())
-               .Set(x => x.Deleted, user.Deleted);
+                .Set(x => x.Email, string.IsNullOrEmpty(user.Email) ? "" : user.Email.ToLower())
+                .Set(x => x.PasswordFormatId, user.PasswordFormatId)
+                .Set(x => x.PasswordSalt, user.PasswordSalt)
+                .Set(x => x.Active, user.Active)
+                .Set(x => x.Password, user.Password)
+                .Set(x => x.PasswordChangeDateUtc, user.PasswordChangeDateUtc)
+                .Set(x => x.Username, string.IsNullOrEmpty(user.Username) ? "" : user.Username.ToLower())
+                .Set(x => x.Deleted, user.Deleted)
+                .Set(x => x.Jobseekers, user.Jobseekers)
+                .Set(x => x.MobileNumber, user.MobileNumber)
+                .Set(x => x.NationalCode, user.NationalCode);
 
             var result = _userRepository.Collection.UpdateOneAsync(filter, update).Result;
 

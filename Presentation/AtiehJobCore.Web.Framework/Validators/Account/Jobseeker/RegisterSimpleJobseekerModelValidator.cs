@@ -74,6 +74,7 @@ namespace AtiehJobCore.Web.Framework.Validators.Account.Jobseeker
                 RuleFor(x => x.MobileNumber).Must(x => x.IsValidMobileNumber())
                     .WithMessage(localizationService.GetResource("Common.WrongMobileNumber"));
             }
+
             #endregion Mobile number
 
             #region National code

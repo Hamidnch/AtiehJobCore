@@ -1,0 +1,178 @@
+﻿@model AtiehJobCore.Web.Framework.Models.Account.Jobseeker.RegisterSimpleJobseekerModel
+@using System.Text.Encodings.Web
+@using AtiehJobCore.Core.Enums
+@using AtiehJobCore.Web.Framework.Security.Honeypot
+@{
+    Layout = "_AccountLayout";
+    //title
+    Html.AddTitleParts(T("PageTitle.Register").Text);
+}
+
+<form asp-route="RegisterJobseeker" asp-route-returnurl="@Context.Request.Query["ReturnUrl"]" method="post">
+    <div class="container">
+        <div asp-validation-summary="ModelOnly" class="message-error"></div>
+        <div class="">
+            <h3 class="h4 card-header">@T("Account.YourPersonalDetails")</h3>
+            <div class="">
+                @if (Model.GenderEnabled)
+                {
+                    @*<div class="col-lg-3 col-sm-12">
+                            <div class="d-flex row">
+                                <span>@T("Account.Fields.Gender"):</span>
+                            </div>
+                        </div>*@
+
+                    <fieldset class="col-lg-9 col-sm-12 gender">
+                        <legend class="sr-only">@T("Account.Fields.Gender")</legend>
+                        <div class="d-flex row">
+                            <label class="male custom-control custom-radio">
+                                <input id="gender-male" name="Gender" type="radio" value="Male"
+                                       checked="@(Model.Gender == GenderType.Male)" class="custom-control-input">
+                                <span class="custom-control-label"></span>
+                                <span class="forcheckbox custom-control-description">@T("Account.Fields.Gender.Male")</span>
+                            </label>
+                            <label class="female custom-control custom-radio ml-2">
+                                <input id="gender-female" name="Gender" type="radio" value="Female"
+                                       checked="@(Model.Gender == GenderType.Female)" class="custom-control-input">
+                                <span class="custom-control-label"></span>
+                                <span class="forcheckbox custom-control-description">@T("Account.Fields.Gender.Female")</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                }
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" asp-for="FirstName" autocomplete="off"
+                               class="validate" autofocus="autofocus" />
+                        <label asp-for="FirstName">@T("Account.Fields.FirstName"):</label>
+                        <span asp-validation-for="FirstName"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" asp-for="LastName" autocomplete="off"
+                               class="validate" autofocus="autofocus" />
+                        <label asp-for="LastName">@T("Account.Fields.LastName"):</label>
+                        <span asp-validation-for="LastName"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="email" asp-for="Email" autocomplete="off"
+                               class="validate" autofocus="autofocus" />
+                        <label asp-for="Email">@T("Account.Fields.Email"):</label>
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                </div>
+
+                @if (Model.UsernamesEnabled)
+                {
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" asp-for="Username" autocomplete="off"
+                                   class="validate" autofocus="autofocus" />
+                            <label asp-for="Username">@T("Account.Fields.Username"):</label>
+                            <span asp-validation-for="Username"></span>
+                            @if (Model.CheckUsernameAvailabilityEnabled)
+                            {
+                                <partial name="_CheckUsernameAvailability" />
+                            }
+                        </div>
+                    </div>
+                }
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" asp-for="MobileNumber" autocomplete="off"
+                               class="validate" autofocus="autofocus" />
+                        <label asp-for="MobileNumber">@T("Account.Fields.MobileNumber"):</label>
+                        <span asp-validation-for="MobileNumber"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" asp-for="NationalCode" autocomplete="off"
+                               class="validate" autofocus="autofocus" />
+                        <label asp-for="NationalCode">@T("Account.Fields.NationalCode"):</label>
+                        <span asp-validation-for="NationalCode"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        @if (Model.UserAttributes.Any())
+        {
+            <div class="">
+                <h3 class="h5 card-header">@T("Account.Options")</h3>
+                <div class="card-body">
+                    @if (Model.UserAttributes.Any())
+                    {
+                        <partial name="_UserAttributes" model="Model.UserAttributes" />
+                    }
+                </div>
+            </div>
+        }
+
+        <div class="">
+            <h3 class="h5 card-header">@T("Account.YourPassword")</h3>
+            <div class="card-body">
+                <div class="form-group col-12">
+                    <div class="row">
+                        <label asp-for="Password" class="col-form-label">@T("Account.Fields.Password"):</label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                </div>
+                <div class="form-group col-12">
+                    <div class="row">
+                        <label asp-for="ConfirmPassword" class="col-form-label">@T("Account.Fields.ConfirmPassword"):</label>
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="ConfirmPassword"></span>
+                    </div>
+                </div>
+                @if (Model.DisplayCaptcha)
+                {
+                    <div class="captcha-box form-group">
+                        <captcha />
+                    </div>
+                }
+                @if (Model.HoneypotEnabled)
+                {
+                    <div class="form-group">
+                        @Html.Raw(Html.GenerateHoneypotInput())
+                    </div>
+                }
+            </div>
+        </div>
+        @if (Model.AcceptPrivacyPolicyEnabled)
+        {
+            <script asp-location="Footer">
+                $(document).ready(function () {
+                    $('#register-button').click(function () {
+                        if ($('#accept-privacy-policy').is(':checked')) {
+                            //do some stuff
+                            return true;
+                        }
+                        else {
+                            //just show validation errors, dont post
+                            alert('@Html.Raw(JavaScriptEncoder.Default.Encode(T("Account.Fields.AcceptPrivacyPolicy.Required").Text))');
+                            return false;
+                        }
+                    });
+                });
+            </script>
+            <label class="custom-control custom-checkbox">
+                <input id="accept-privacy-policy" name="accept-privacy-policy" type="checkbox" class="custom-control-input">
+                <span class="custom-control-label"></span>
+                <span class="custom-control-description">@T("Account.Fields.AcceptPrivacyPolicy")</span>
+                <span class="read" onclick="javascript:OpenWindow('@Url.RouteUrl("TopicPopup",
+                                                                       new {SystemName = "privacyinfo"})', 450, 500, true)">
+                    @T("Account.Fields.AcceptPrivacyPolicy.Read")
+                </span>
+            </label>
+        }
+    </div>
+    <input type="submit" id="register-button" class="btn btn-secondary register-next-step-button mt-3 mb-3"
+           value="@T("Account.Register.Button")" name="register-button" />
+</form>

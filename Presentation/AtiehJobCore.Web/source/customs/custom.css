@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+.input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 body {
     /*background: linear-gradient(#fff, #e2e2e2) no-repeat;*/
     /*background: url(../images/bg.png) #f8f8ff;*/

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using AtiehJobCore.Core;
+﻿using AtiehJobCore.Core;
 using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain;
 using AtiehJobCore.Core.Domain.Catalog;
@@ -26,6 +22,10 @@ using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Users;
 using Microsoft.AspNetCore.Hosting;
 using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace AtiehJobCore.Services.Installation
 {
@@ -261,16 +261,35 @@ namespace AtiehJobCore.Services.Installation
                 EnableXsrfProtection = true,
                 HoneypotEnabled = false,
                 HoneypotInputName = "hpinput",
-                AllowNonAsciiCharInHeaders = true,
+                AllowNonAsciiCharInHeaders = true
             });
             settingService.SaveSetting(new UserSettings
             {
                 UsernamesEnabled = false,
-                ForceEmailValidation = true,
-                AllowDuplicateEmail = false,
-                IsOptionalEmail = true,
                 CheckUsernameAvailabilityEnabled = false,
                 AllowUsersToChangeUsernames = false,
+
+                IsDisplayEmail = true,
+                IsOptionalEmail = false,
+                ForceEmailValidation = true,
+                AllowDuplicateEmail = false,
+
+                IsDisplayMobileNumber = true,
+                IsOptionalMobileNumber = false,
+                ForceMobileNumberValidation = true,
+                AllowDuplicateMobileNumber = false,
+
+                IsDisplayNationalCode = true,
+                IsOptionalNationalCode = false,
+                ForceNationalCodeValidation = true,
+                AllowDuplicateNationalCode = false,
+
+                IsSendRegisterationSms = true,
+                IsSendRegisterationEmail = true,
+                IsSendPasswordSms = true,
+                IsSendPasswordEmail = true,
+
+                IsDisplayPassword = true,
                 DefaultPasswordFormat = PasswordFormat.Hashed,
                 HashedPasswordFormat = "SHA1",
                 PasswordMinLength = 6,
@@ -490,7 +509,7 @@ namespace AtiehJobCore.Services.Installation
         protected virtual void InstallLocaleResources()
         {
             //'English' language
-            var language = _languageRepository.Table.Single(l => l.Name == "English");
+            //var englishLanguage = _languageRepository.Table.Single(l => l.Name == "English");
 
             //save resources
             foreach (var filePath in Directory.EnumerateFiles(
@@ -498,9 +517,15 @@ namespace AtiehJobCore.Services.Installation
             {
                 var localesXml = File.ReadAllText(filePath);
                 var localizationService = EngineContext.Current.Resolve<ILocalizationService>();
-                localizationService.ImportResourcesFromXmlInstall(language, localesXml);
-            }
 
+                var langName = localizationService.GetLanguageFromXml(localesXml);
+                if (langName == null)
+                    continue;
+
+                var lang = _languageRepository.Table.SingleOrDefault(l => l.Name == langName);
+
+                localizationService.ImportResourcesFromXmlInstall(lang, localesXml);
+            }
         }
         protected virtual void InstallUsers(string defaultUserEmail, string defaultUserPassword)
         {
