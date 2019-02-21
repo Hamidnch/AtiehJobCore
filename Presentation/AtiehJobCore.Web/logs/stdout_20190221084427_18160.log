@@ -1,0 +1,45 @@
+Hosting environment: Development
+Content root path: H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web
+Application started. Press Ctrl+C to shut down.
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/2.0 GET https://localhost:44344/  
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home", area = ""}. Executing action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web)
+info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 1142.731ms
+fail: Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware[1]
+      An unhandled exception has occurred while executing the request.
+AtiehJobCore.Core.AtiehJobException: 'Guests' role could not be loaded
+   at AtiehJobCore.Services.Users.UserService.InsertGuestUser(String urlReferrer) in H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Services\Users\UserService.cs:line 231
+   at AtiehJobCore.Web.Framework.Infrastructure.WebWorkContext.get_CurrentUser() in H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\Infrastructure\WebWorkContext.cs:line 214
+   at AtiehJobCore.Services.Security.PermissionService.Authorize(PermissionRecord permission) in H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Services\Security\PermissionService.cs:line 282
+   at AtiehJobCore.Web.Framework.Filters.CheckAccessSiteAttribute.CheckAccessSiteFilter.OnAuthorization(AuthorizationFilterContext filterContext) in H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\Filters\CheckAccessSiteAttribute.cs:line 80
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at AtiehJobCore.Core.Http.InstallUrlMiddleware.Invoke(HttpContext context, IWebHelper webHelper) in H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\Http\InstallUrlMiddleware.cs:line 49
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+fail: Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware[3]
+      An exception was thrown attempting to execute the error handler.
+AtiehJobCore.Core.AtiehJobException: 'Guests' role could not be loaded
+   at AtiehJobCore.Web.Framework.Infrastructure.Extensions.ApplicationBuilderExtensions.<>c.<UseAtiehJobExceptionHandler>b__1_1(HttpContext context) in H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\Infrastructure\Extensions\ApplicationBuilderExtensions.cs:line 91
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+fail: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware[1]
+      An unhandled exception has occurred while executing the request.
+AtiehJobCore.Core.AtiehJobException: 'Guests' role could not be loaded
+   at AtiehJobCore.Web.Framework.Infrastructure.Extensions.ApplicationBuilderExtensions.<>c.<UseAtiehJobExceptionHandler>b__1_1(HttpContext context) in H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web.Framework\Infrastructure\Extensions\ApplicationBuilderExtensions.cs:line 91
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 3809.6835ms 500 text/html; charset=utf-8

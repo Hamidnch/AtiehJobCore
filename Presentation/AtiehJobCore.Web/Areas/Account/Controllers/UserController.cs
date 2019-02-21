@@ -76,6 +76,11 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
         public virtual IActionResult Login()
         {
             var model = _userViewModelService.PrepareLogin();
+            //if (Request.IsAjaxRequest())
+            //{
+            //return PartialView("_Login", model);
+            //}
+
             return View(model);
         }
 

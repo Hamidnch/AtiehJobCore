@@ -18,7 +18,7 @@
         </button>
         <div class="collapse navbar-collapse" id="myToggle">
             <div class="navbar-nav ml-2">
-                <a class="nav-item nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                <a class="nav-item nav-link waves-effect waves-light btn" asp-area="" asp-controller="Home" asp-action="Index">
                     <span class="fas fa-home" aria-hidden="true"></span>
                     خانه
                 </a>
@@ -26,7 +26,7 @@
 
             <div class="navbar-nav">
                 <div class="dropdown">
-                    <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown"
+                    <a class="nav-item nav-link waves-effect waves-light btn dropdown-toggle" data-toggle="dropdown"
                        id="userDropdown" aria-haspopup="true"
                        aria-expanded="false" href="#">
                         <img class="img-thumbnail userImage" src="" alt="" asp-append-version="true"
@@ -60,13 +60,13 @@
                 if (IsAdminRole)
                 {
                     <div class="navbar-nav ml-2 right">
-                        <a class="nav-item nav-link" asp-controller="Home" asp-action="Index" asp-area="Admin">
+                        <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="Home" asp-action="Index" asp-area="Admin">
                             <span class="fas fa-arrow-left" aria-hidden="true"></span> مدیر سیستم
                         </a>
                     </div>
                 }
                 <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link" asp-controller="User" asp-action="Logout" asp-area="Account">
+                    <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="User" asp-action="Logout" asp-area="Account">
                         <span class="fas fa-sign-out-alt" aria-hidden="true"></span> خروج
                     </a>
                 </div>
@@ -74,26 +74,37 @@
             else
             {
                 <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link" asp-controller="User" asp-action="Login" asp-area="Account">
+                    <a id="login-button" asp-action="Login" asp-controller="User" asp-area="Account"
+                       class="nav-item nav-link waves-effect waves-light btn">
                         <span class="fas fa-sign-in-alt" aria-hidden="true"></span>
                         ورود
                     </a>
                 </div>
+                @*<div class="navbar-nav ml-2">
+                        <!-- Modal Trigger -->
+                        <a class="nav-item nav-link modal-trigger waves-effect waves-light btn" data-target="#login-modal"
+                           data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace"
+                           data-toggle="modal" data-ajax-update="#login-modal" data-i-logon-link="true"
+                           asp-controller="User" asp-action="Login" asp-area="Account">
+                            ورود به سیستم
+                        </a>
+
+                    </div>*@
 
                 <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link" asp-controller="User" asp-action="RegisterJobseeker" asp-area="Account">
+                    <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="User" asp-action="RegisterJobseeker" asp-area="Account">
                         <span class="fas fa-plug"></span>
                         ثبت نام کارجو
                     </a>
                 </div>
                 <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link" asp-controller="User" asp-action="RegisterEmplyer" asp-area="Account">
+                    <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="User" asp-action="RegisterEmplyer" asp-area="Account">
                         <span class="fas fa-plug"></span>
                         ثبت نام کارفرما
                     </a>
                 </div>
                 <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link" asp-controller="User" asp-action="RegisterPlacement" asp-area="Account">
+                    <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="User" asp-action="RegisterPlacement" asp-area="Account">
                         <span class="fas fa-plug"></span>
                         ثبت نام کاریاب
                     </a>
@@ -106,7 +117,7 @@
                             <i class="fa fa-search"></i>
                         </button>
                     </span>
-                    <input type="text" class="form-control mr-sm-2"
+                    <input type="text" class="validate"
                            placeholder="جستجو ..." id="txtSearch" name="txtSearch">
                 </div>
             </form>

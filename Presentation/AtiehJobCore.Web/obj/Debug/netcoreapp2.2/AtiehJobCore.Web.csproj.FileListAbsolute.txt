@@ -436,3 +436,7 @@ H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcorea
 H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.csproj.CopyComplete
 H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.dll
 H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.pdb
+H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Login.g.cshtml.cs
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Account\Views\User\RegisterJobseeker.g.cshtml.cs
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Account\Views\User\RegisterResult.g.cshtml.cs
+D:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Login.g.cshtml.cs
