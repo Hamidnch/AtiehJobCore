@@ -16,11 +16,12 @@ namespace AtiehJobCore.Core.Domain.Users
         /// <param name="nationalCode"></param>
         /// <param name="password">Password</param>
         /// <param name="passwordFormat">Password format</param>
+        /// <param name="userType"></param>
         /// <param name="isApproved">Is approved</param>
         /// <param name="mobileNumber"></param>
         public UserRegistrationRequest(User user, string email, string username,
             string mobileNumber, string nationalCode,
-            string password, PasswordFormat passwordFormat, bool isApproved = true)
+            string password, PasswordFormat passwordFormat,UserType userType, bool isApproved = true)
         {
             User = user;
             Email = email;
@@ -29,6 +30,7 @@ namespace AtiehJobCore.Core.Domain.Users
             NationalCode = nationalCode;
             Password = password;
             PasswordFormat = passwordFormat;
+            UserType = userType;
             IsApproved = isApproved;
         }
 
@@ -65,5 +67,7 @@ namespace AtiehJobCore.Core.Domain.Users
         /// Is approved
         /// </summary>
         public bool IsApproved { get; set; }
+
+        public UserType UserType { get; set; }
     }
 }

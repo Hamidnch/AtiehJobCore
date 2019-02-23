@@ -47,7 +47,6 @@ namespace AtiehJobCore.Web.Framework.Models.Account.Jobseeker
         /// <summary>
         /// National code
         /// </summary>
-        //[Required(ErrorMessage = "Account.Jobseeker.Fields.NationalCode.Required")]
         [AtiehJobResourceDisplayName("Account.Jobseeker.Fields.NationalCode")]
         public string NationalCode { get; set; }
 
@@ -55,8 +54,6 @@ namespace AtiehJobCore.Web.Framework.Models.Account.Jobseeker
         /// Mobile number
         /// </summary>
         [AtiehJobResourceDisplayName("Account.Jobseeker.Fields.MobileNumber")]
-        //[RegularExpression("09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}",
-        //    ErrorMessage = "Account.Jobseeker.Fields.WrongMobileNumber")]
         public string MobileNumber { get; set; }
 
         /// <summary>

@@ -26,10 +26,9 @@ namespace AtiehJobCore.Web.Framework.Models.Account.Jobseeker
         public string Email { get; set; }
 
         public bool UsernamesEnabled { get; set; }
+        public bool CheckUsernameAvailabilityEnabled { get; set; }
         [AtiehJobResourceDisplayName("Account.Jobseeker.Fields.Username")]
         public string Username { get; set; }
-
-        public bool CheckUsernameAvailabilityEnabled { get; set; }
 
         [DataType(DataType.Password)]
         [AtiehJobResourceDisplayName("Account.Jobseeker.Fields.Password")]
@@ -39,7 +38,6 @@ namespace AtiehJobCore.Web.Framework.Models.Account.Jobseeker
         [AtiehJobResourceDisplayName("Account.Jobseeker.Fields.ConfirmPassword")]
         public string ConfirmPassword { get; set; }
 
-        //form fields & properties
         public bool GenderEnabled { get; set; }
         [AtiehJobResourceDisplayName("Account.Jobseeker.Fields.Gender")]
         public GenderType Gender { get; set; }

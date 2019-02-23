@@ -15,6 +15,7 @@ using AtiehJobCore.Services.Users;
 using AtiehJobCore.Services.Users.Jobseekers;
 using AtiehJobCore.Web.Framework.Filters;
 using AtiehJobCore.Web.Framework.Models.Account;
+using AtiehJobCore.Web.Framework.Models.Account.Employer;
 using AtiehJobCore.Web.Framework.Models.Account.Jobseeker;
 using AtiehJobCore.Web.Framework.Mvc.Captcha;
 using AtiehJobCore.Web.Framework.Security;
@@ -259,10 +260,11 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
                 }
 
                 var isApproved = _userSettings.UserRegistrationType == UserRegistrationType.Standard;
+
                 var registrationRequest = new UserRegistrationRequest(user, model.Email,
                     _userSettings.UsernamesEnabled ? model.Username : model.Email,
                     model.MobileNumber, model.NationalCode, model.Password,
-                    _userSettings.DefaultPasswordFormat, isApproved);
+                    _userSettings.DefaultPasswordFormat, UserType.Jobseeker, isApproved);
 
                 var registrationResult = _userRegistrationService.RegisterUser(registrationRequest);
 
@@ -358,6 +360,19 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
 
             //If we got this far, something failed, redisplay form
             model = _userViewModelService.PrepareRegisterSimpleJobseekerModel(model, true, userAttributesXml);
+            return View(model);
+        }
+
+        [CheckAccessSite(true)]
+        public virtual IActionResult RegisterEmployer()
+        {
+            //check whether registration is allowed
+            if (_userSettings.UserRegistrationType == UserRegistrationType.Disabled)
+                return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.Disabled });
+
+            var model = new RegisterSimpleEmployerModel();
+            model = _userViewModelService.PrepareRegisterSimpleEmployerModel(model, false);
+
             return View(model);
         }
 

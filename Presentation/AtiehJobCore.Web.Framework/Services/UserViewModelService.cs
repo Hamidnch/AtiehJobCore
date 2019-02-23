@@ -6,6 +6,7 @@ using AtiehJobCore.Services.Common;
 using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Users;
 using AtiehJobCore.Web.Framework.Models.Account;
+using AtiehJobCore.Web.Framework.Models.Account.Employer;
 using AtiehJobCore.Web.Framework.Models.Account.Jobseeker;
 using AtiehJobCore.Web.Framework.Models.User;
 using AtiehJobCore.Web.Framework.Mvc.Captcha;
@@ -70,6 +71,28 @@ namespace AtiehJobCore.Web.Framework.Services
 
             return model;
         }
+
+        public RegisterSimpleEmployerModel PrepareRegisterSimpleEmployerModel(RegisterSimpleEmployerModel model,
+            bool excludeProperties, string overrideCustomUserAttributesXml = "")
+        {
+            if (model == null)
+                throw new ArgumentNullException(nameof(model));
+
+            model.UsernamesEnabled = _userSettings.UsernamesEnabled;
+            model.CheckUsernameAvailabilityEnabled = _userSettings.CheckUsernameAvailabilityEnabled;
+            model.DisplayCaptcha = _captchaSettings.Enabled && _captchaSettings.ShowOnRegistrationPage;
+            model.AcceptPrivacyPolicyEnabled = _userSettings.AcceptPrivacyPolicyEnabled;
+            model.HoneypotEnabled = _securitySettings.HoneypotEnabled;
+            //custom user attributes
+            var customAttributes = PrepareCustomAttributes(_workContext.CurrentUser, overrideCustomUserAttributesXml);
+            foreach (var item in customAttributes)
+            {
+                model.UserAttributes.Add(item);
+            }
+
+            return model;
+        }
+
         public virtual IList<UserAttributeModel> PrepareCustomAttributes(User user, string overrideAttributesXml = "")
         {
             if (user == null)

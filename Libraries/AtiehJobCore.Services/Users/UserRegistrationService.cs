@@ -1,12 +1,12 @@
-﻿using System;
-using System.Linq;
-using AtiehJobCore.Core;
+﻿using AtiehJobCore.Core;
 using AtiehJobCore.Core.Domain.Users;
 using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Core.Utilities;
 using AtiehJobCore.Services.Events;
 using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Security;
+using System;
+using System.Linq;
 
 namespace AtiehJobCore.Services.Users
 {
@@ -274,6 +274,7 @@ namespace AtiehJobCore.Services.Users
             request.User.MobileNumber = request.MobileNumber;
             request.User.NationalCode = request.NationalCode;
             request.User.PasswordFormat = request.PasswordFormat;
+            request.User.UserType = request.UserType;
 
             switch (request.PasswordFormat)
             {
@@ -303,6 +304,53 @@ namespace AtiehJobCore.Services.Users
 
             request.User.Active = request.IsApproved;
             _userService.UpdateActive(request.User);
+
+            var userType = request.UserType;
+
+            switch (userType)
+            {
+                case UserType.Jobseeker:
+                    {
+                        //add to 'Jobseeker' role
+                        var jobseekerRole = _userService.GetUserRoleBySystemName(SystemUserRoleNames.Jobseeker);
+                        if (jobseekerRole == null)
+                            throw new AtiehJobException("'Jobseeker' role could not be loaded");
+                        request.User.Roles.Add(jobseekerRole);
+                        jobseekerRole.UserId = request.User.Id;
+                        _userService.InsertUserRoleInUser(jobseekerRole);
+                        break;
+                    }
+                case UserType.Employer:
+                    {
+                        //add to 'Employer' role
+                        var employerRole = _userService.GetUserRoleBySystemName(SystemUserRoleNames.Employer);
+                        if (employerRole == null)
+                            throw new AtiehJobException("'Employer' role could not be loaded");
+                        request.User.Roles.Add(employerRole);
+                        employerRole.UserId = request.User.Id;
+                        _userService.InsertUserRoleInUser(employerRole);
+                        break;
+                    }
+                case UserType.Placement:
+                    {
+                        //add to 'Placement' role
+                        var placementRole = _userService.GetUserRoleBySystemName(SystemUserRoleNames.Placement);
+                        if (placementRole == null)
+                            throw new AtiehJobException("'Placement' role could not be loaded");
+                        request.User.Roles.Add(placementRole);
+                        placementRole.UserId = request.User.Id;
+                        _userService.InsertUserRoleInUser(placementRole);
+                        break;
+                    }
+                case UserType.Admin:
+                    break;
+                case UserType.Other:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+
             //add to 'Registered' role
             var registeredRole = _userService.GetUserRoleBySystemName(SystemUserRoleNames.Registered);
             if (registeredRole == null)
@@ -310,6 +358,7 @@ namespace AtiehJobCore.Services.Users
             request.User.Roles.Add(registeredRole);
             registeredRole.UserId = request.User.Id;
             _userService.InsertUserRoleInUser(registeredRole);
+
             //remove from 'Guests' role
             var guestRole =
                 request.User.Roles.FirstOrDefault(cr => cr.SystemName == SystemUserRoleNames.Guests);
