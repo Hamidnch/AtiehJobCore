@@ -12,9 +12,11 @@ using AtiehJobCore.Services.Authentication;
 using AtiehJobCore.Services.Authentication.External;
 using AtiehJobCore.Services.Common;
 using AtiehJobCore.Services.Configuration;
+using AtiehJobCore.Services.Employers;
 using AtiehJobCore.Services.Events;
 using AtiehJobCore.Services.Helpers;
 using AtiehJobCore.Services.Installation;
+using AtiehJobCore.Services.Jobseekers;
 using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Logging;
 using AtiehJobCore.Services.Media;
@@ -24,7 +26,6 @@ using AtiehJobCore.Services.Seo;
 using AtiehJobCore.Services.Tasks;
 using AtiehJobCore.Services.Topics;
 using AtiehJobCore.Services.Users;
-using AtiehJobCore.Services.Users.Jobseekers;
 using AtiehJobCore.Web.Framework.Mvc.Routing;
 using AtiehJobCore.Web.Framework.Services;
 using Autofac;
@@ -140,6 +141,7 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
             builder.RegisterType<DateTimeHelper>().As<IDateTimeHelper>().InstancePerLifetimeScope();
 
             builder.RegisterType<JobseekerService>().As<IJobseekerService>().InstancePerLifetimeScope();
+            builder.RegisterType<EmployerService>().As<IEmployerService>().InstancePerLifetimeScope();
 
             builder.RegisterType<EncryptionService>().As<IEncryptionService>().InstancePerLifetimeScope();
             var databaseInstalled = DataSettingsHelper.DatabaseIsInstalled();

@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.IO;
 
-namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
+namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions.Startup.Middleware
 {
     /// <summary>
     /// Represents object for the configuring/load url rewrite rules from external file on application startup

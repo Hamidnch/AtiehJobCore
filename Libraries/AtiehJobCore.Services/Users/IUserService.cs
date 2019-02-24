@@ -276,5 +276,9 @@ namespace AtiehJobCore.Services.Users
         IList<UserNote> GetUserNotes(string userId, bool? displaytoUser = null);
 
         #endregion
+
+        bool IsDuplicateEmail(string email);
+        bool IsDuplicateMobileNumber(string mobileNumber);
+        bool IsDuplicateNationalCode(string nationalCode);
     }
 }

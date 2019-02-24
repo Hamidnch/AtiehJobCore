@@ -1,7 +1,11 @@
-﻿@model AtiehJobCore.Web.Framework.Models.Account.Jobseeker.RegisterSimpleJobseekerModel
+﻿@model AtiehJobCore.Web.Framework.Models.Account.Jobseeker.RegisterJobseekerModel
 @using System.Text.Encodings.Web
+@using AtiehJobCore.Core.Domain.Users
 @using AtiehJobCore.Core.Enums
 @using AtiehJobCore.Web.Framework.Security.Honeypot
+
+@inject UserSettings UserSettings
+
 @{
     Layout = "_AccountLayout";
     //title
@@ -40,31 +44,6 @@
                         </div>
                     </fieldset>
                 }
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" asp-for="FirstName" autocomplete="off"
-                               class="validate" autofocus="autofocus" />
-                        <label asp-for="FirstName">@T("Account.Fields.FirstName"):</label>
-                        <span asp-validation-for="FirstName"></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" asp-for="LastName" autocomplete="off"
-                               class="validate" autofocus="autofocus" />
-                        <label asp-for="LastName">@T("Account.Fields.LastName"):</label>
-                        <span asp-validation-for="LastName"></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="email" asp-for="Email" autocomplete="off"
-                               class="validate" autofocus="autofocus" />
-                        <label asp-for="Email">@T("Account.Fields.Email"):</label>
-                        <span asp-validation-for="Email"></span>
-                    </div>
-                </div>
-
                 @if (Model.UsernamesEnabled)
                 {
                     <div class="row">
@@ -82,21 +61,65 @@
                 }
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="text" asp-for="MobileNumber" autocomplete="off"
+                        <input type="text" asp-for="FirstName" autocomplete="off"
                                class="validate" autofocus="autofocus" />
-                        <label asp-for="MobileNumber">@T("Account.Fields.MobileNumber"):</label>
-                        <span asp-validation-for="MobileNumber"></span>
+                        <label asp-for="FirstName">@T("Account.Fields.FirstName"):</label>
+                        <span asp-validation-for="FirstName"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" asp-for="LastName" autocomplete="off"
+                               class="validate" autofocus="autofocus" />
+                        <label asp-for="LastName">@T("Account.Fields.LastName"):</label>
+                        <span asp-validation-for="LastName"></span>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" asp-for="NationalCode" autocomplete="off"
-                               class="validate" autofocus="autofocus" />
-                        <label asp-for="NationalCode">@T("Account.Fields.NationalCode"):</label>
-                        <span asp-validation-for="NationalCode"></span>
+                @if (UserSettings.IsDisplayEmail)
+                {
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="email" asp-for="Email" autocomplete="off"
+                                   class="validate" autofocus="autofocus" />
+                            <label asp-for="Email">@T("Account.Fields.Email"):</label>
+                            @if (UserSettings.ForceEmailValidation)
+                            {
+                                <span asp-validation-for="Email"></span>
+                            }
+                        </div>
                     </div>
-                </div>
+                }
+
+                @if (UserSettings.IsDisplayMobileNumber)
+                {
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" asp-for="MobileNumber" autocomplete="off"
+                                   class="validate" autofocus="autofocus" />
+                            <label asp-for="MobileNumber">@T("Account.Fields.MobileNumber"):</label>
+                            @if (UserSettings.ForceMobileNumberValidation)
+                            {
+                                <span asp-validation-for="MobileNumber"></span>
+                            }
+                        </div>
+                    </div>
+                }
+
+                @if (UserSettings.IsDisplayNationalCode)
+                {
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" asp-for="NationalCode" autocomplete="off"
+                                   class="validate" autofocus="autofocus" />
+                            <label asp-for="NationalCode">@T("Account.Fields.NationalCode"):</label>
+                            @if (UserSettings.ForceNationalCodeValidation)
+                            {
+                                <span asp-validation-for="NationalCode"></span>
+                            }
+                        </div>
+                    </div>
+                }
 
             </div>
         </div>

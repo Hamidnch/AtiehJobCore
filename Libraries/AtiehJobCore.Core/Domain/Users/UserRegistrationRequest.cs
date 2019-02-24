@@ -21,7 +21,7 @@ namespace AtiehJobCore.Core.Domain.Users
         /// <param name="mobileNumber"></param>
         public UserRegistrationRequest(User user, string email, string username,
             string mobileNumber, string nationalCode,
-            string password, PasswordFormat passwordFormat,UserType userType, bool isApproved = true)
+            string password, PasswordFormat passwordFormat, UserType userType, bool isApproved = true)
         {
             User = user;
             Email = email;

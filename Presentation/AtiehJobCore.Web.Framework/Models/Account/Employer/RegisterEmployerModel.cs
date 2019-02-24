@@ -2,16 +2,17 @@
 using AtiehJobCore.Core.MongoDb;
 using AtiehJobCore.Web.Framework.Models.User;
 using AtiehJobCore.Web.Framework.Mvc.ModelBinding;
+using AtiehJobCore.Web.Framework.Validators.Account.Employer;
 using FluentValidation.Attributes;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace AtiehJobCore.Web.Framework.Models.Account.Employer
 {
-    [Validator(typeof(RegisterSimpleEmployerModel))]
-    public class RegisterSimpleEmployerModel : BaseMongoEntity
+    [Validator(typeof(RegisterEmployerValidator))]
+    public class RegisterEmployerModel : BaseMongoEntity
     {
-        public RegisterSimpleEmployerModel()
+        public RegisterEmployerModel()
         {
             UserAttributes = new List<UserAttributeModel>();
         }
@@ -74,6 +75,9 @@ namespace AtiehJobCore.Web.Framework.Models.Account.Employer
         public bool Agreement { get; set; }
 
         public UserType UserType { get; set; }
+        //public bool InsuranceCodeEnabled { get; set; }
+        //public bool InsuranceCodeOptional { get; set; }
+        //public bool InsuranceCodeDuplicate { get; set; }
         public bool DisplayCaptcha { get; set; }
         public IList<UserAttributeModel> UserAttributes { get; set; }
         public bool HoneypotEnabled { get; set; }

@@ -148,8 +148,7 @@ namespace AtiehJobCore.Services.Authentication.External
             var registrationRequest = new UserRegistrationRequest(_workContext.CurrentUser,
                 parameters.Email, parameters.Email, parameters.Email, parameters.Email,
                 CommonHelper.GenerateRandomDigitCode(20),
-                PasswordFormat.Hashed,
-                registrationIsApproved);
+                PasswordFormat.Hashed, UserType.Other, registrationIsApproved);
 
             //whether registration request has been completed successfully
             var registrationResult = _userRegistrationService.RegisterUser(registrationRequest);
@@ -324,7 +323,9 @@ namespace AtiehJobCore.Services.Authentication.External
 
         #endregion
 
-        /// <inheritdoc cref="" />
+        /// <inheritdoc>
+        ///     <cref></cref>
+        /// </inheritdoc>
         /// <summary>
         /// Associate external account with user
         /// </summary>

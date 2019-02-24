@@ -1,12 +1,14 @@
 ﻿using AtiehJobCore.Core.Configuration;
 using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Infrastructure;
-using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Globalization;
+using System.Linq;
 
-namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
+namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions.Startup.Middleware
 {
     /// <summary>
     /// Represents object for the configuring common features and middleware on application startup
@@ -41,6 +43,9 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
 
             //add localization
             services.AddAtiehJobLocalizationService();
+
+            //add WebEncoderOptions
+            services.AddWebEncoder();
         }
 
         /// <inheritdoc />
@@ -84,9 +89,27 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
             if (!atiehJobConfig.IgnoreUsePoweredByMiddleware)
                 application.UseAtiehJobPoweredBy();
 
+            //Add webMarkupMin
+            if (atiehJobConfig.UseHtmlMinification)
+            {
+                application.UseHtmlMinification();
+            }
+
             //use request localization
-            //application.UseRequestLocalization();
-            application.UseAtiehJobLocalization();
+
+            if (!atiehJobConfig.UseRequestLocalization)
+                //application.UseRequestLocalization();
+                application.UseAtiehJobLocalization();
+            else
+            {
+                var supportedCultures = atiehJobConfig.SupportedCultures.Select(culture => new CultureInfo(culture)).ToList();
+                application.UseRequestLocalization(new RequestLocalizationOptions
+                {
+                    DefaultRequestCulture = new RequestCulture(atiehJobConfig.DefaultRequestCulture),
+                    SupportedCultures = supportedCultures,
+                    SupportedUICultures = supportedCultures
+                });
+            }
         }
 
         /// <inheritdoc />

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using AtiehJobCore.Core.Domain.JobOpportunities;
+﻿using AtiehJobCore.Core.Domain.JobOpportunities;
 using AtiehJobCore.Core.Domain.Users;
 using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Core.MongoDb;
+using System;
+using System.Collections.Generic;
 
 namespace AtiehJobCore.Core.Domain.Employers
 {
@@ -19,10 +19,10 @@ namespace AtiehJobCore.Core.Domain.Employers
         public Employer(string fileNumber, int organizationUnitCode,
             string humanApplicantUnit, DateTimeOffset enrollDate, string enrollTime,
             ActivityFields? activityField, string activityType, string unitCode,
-            string melliCode, string name, string family, bool? insuranceStatus,
-            string insuranceCode, string phone, string mobile, string webSite, string email,
-            PropertyTypes? propertyType, int? introductionMethodCode, Ranks? rank,
-            bool? beforeDispatchCoordination)
+            //string nationalCode, string mobile, string email,
+            bool? insuranceStatus, string insuranceCode, string phone,
+            string webSite, PropertyTypes? propertyType,
+            int? introductionMethodCode, Ranks? rank, bool? beforeDispatchCoordination)
         {
             FileNumber = fileNumber;
             OrganizationUnitCode = organizationUnitCode;
@@ -32,15 +32,13 @@ namespace AtiehJobCore.Core.Domain.Employers
             ActivityField = activityField;
             ActivityType = activityType;
             UnitCode = unitCode;
-            NationalCode = melliCode;
-            Name = name;
-            Family = family;
+            //NationalCode = nationalCode;
             InsuranceStatus = insuranceStatus;
             InsuranceCode = insuranceCode;
             Phone = phone;
-            MobileNumber = mobile;
+            //MobileNumber = mobile;
             WebSite = webSite;
-            Email = email;
+            //Email = email;
             PropertyType = propertyType;
             IntroductionMethodCode = introductionMethodCode;
             Rank = rank;
@@ -49,18 +47,15 @@ namespace AtiehJobCore.Core.Domain.Employers
         #endregion
 
         #region Property
+
+        //public string Email { get; set; }
+        //public string MobileNumber { get; set; }
+        //public string NationalCode { get; set; }
         /// <summary>
         /// شماره پرونده
         /// </summary>
         public string FileNumber { get; set; }
-        /// <summary>
-        /// تلفن همراه
-        /// </summary>
-        public string MobileNumber { get; set; }
-        /// <summary>
-        /// ایمیل
-        /// </summary>
-        public string Email { get; set; }
+
         /// <summary>
         /// کد نوع واحد سازمانی
         /// </summary>
@@ -93,20 +88,17 @@ namespace AtiehJobCore.Core.Domain.Employers
         /// کد واحد
         /// </summary>
         public string UnitCode { get; set; }
-        /// <summary>
-        /// کد ملی
-        /// </summary>
-        public string NationalCode { get; set; }
 
         /// <summary>
-        /// نام کارجو
+        /// نام شرکت/کارگاه
         /// </summary>
-        public string Name { get; set; }
+        public string CompanyName { get; set; }
 
         /// <summary>
-        /// نام خانوادگی
+        /// نام مدیر
         /// </summary>
-        public string Family { get; set; }
+        public string ManagerName { get; set; }
+
         /// <summary>
         /// وضعیت بیمه
         /// </summary>
@@ -145,7 +137,7 @@ namespace AtiehJobCore.Core.Domain.Employers
         /// <summary>
         /// وضعیت جاری
         /// </summary>
-        public string CurrentState { get; set; }
+        public EmployerState CurrentState { get; set; }
 
         public byte[] Timestamp { get; set; }
 
@@ -171,7 +163,7 @@ namespace AtiehJobCore.Core.Domain.Employers
         /// <summary>
         /// شناسه کاربری
         /// </summary>
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public virtual User User { get; set; }
         /***************** ارتباط با جدول کاربر ********************/
         #endregion

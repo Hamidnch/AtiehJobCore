@@ -3,7 +3,7 @@ using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Services.Events;
 using System;
 
-namespace AtiehJobCore.Services.Users.Jobseekers
+namespace AtiehJobCore.Services.Jobseekers
 {
     public class JobseekerService : IJobseekerService
     {

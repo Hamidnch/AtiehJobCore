@@ -1,15 +1,14 @@
-﻿using AtiehJobCore.Core.Configuration;
-using AtiehJobCore.Core.Contracts;
-using AtiehJobCore.Core.Infrastructure;
-using AtiehJobCore.Core.MongoDb.Data;
-using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
+﻿using AtiehJobCore.Core.Contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
+namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions.Startup.Middleware
 {
-    public class AtiehJobForwardedHeadersStartup : IAtiehJobStartup
+    /// <summary>
+    /// Represents object for the configuring exceptions and errors handling on application startup
+    /// </summary>
+    public class AtiehJobErrorHandlerStartup : IAtiehJobStartup
     {
         /// <inheritdoc />
         /// <summary>
@@ -19,7 +18,6 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
         /// <param name="configuration">Configuration root of the application</param>
         public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
-
         }
 
         /// <inheritdoc />
@@ -29,15 +27,14 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
         /// <param name="application">Builder for configuring an application's request pipeline</param>
         public void Configure(IApplicationBuilder application)
         {
-            //check whether database is installed
-            if (!DataSettingsHelper.DatabaseIsInstalled())
-                return;
+            //exception handling
+            application.UseAtiehJobExceptionHandler();
 
-            var hostingConfig = EngineContext.Current.Resolve<HostingConfig>();
+            //handle 400 errors (bad request)
+            application.UseAtiehJobBadRequestResult();
 
-            if (hostingConfig.UseForwardedHeaders)
-                application.UseAtiehJobForwardedHeaders();
-
+            //handle 404 errors
+            application.UseAtiehJobPageNotFound();
         }
 
         /// <inheritdoc />

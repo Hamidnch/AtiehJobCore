@@ -1,17 +1,14 @@
 ﻿using AtiehJobCore.Core.Contracts;
-using AtiehJobCore.Core.MongoDb.Data;
-using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
-using AtiehJobCore.Web.Framework.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
+namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions.Startup.Middleware
 {
     /// <summary>
-    /// Represents object for the configuring authentication middleware on application startup
+    /// Represents object for the configuring MVC on application startup
     /// </summary>
-    public class AtiehJobAuthenticationStartup : IAtiehJobStartup
+    public class AtiehJobMvcStartup : IAtiehJobStartup
     {
         /// <inheritdoc />
         /// <summary>
@@ -21,12 +18,23 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
         /// <param name="configuration">Configuration root of the application</param>
         public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
-            // add dynamic permission
-            //services.AddDynamicPermissions();
-            //add data protection
-            services.AddAtiehJobDataProtectionService();
-            //add authentication
-            services.AddAtiehJobAuthenticationService();
+            //add healthChecks
+            services.AddAtiehJobHealthChecksService();
+
+            //add miniProfiler
+            //services.AddAtiehJobMiniProfilerService();
+
+            //add WebMarkupMin
+            services.AddHtmlMinification();
+
+            //add and configure MVC feature
+            services.AddAtiehJobMvcService();
+
+            //add settings
+            services.AddAtiehJobSettingsService();
+
+            //add custom redirect result executor
+            services.AddAtiehJobRedirectResultExecutorService();
         }
 
         /// <inheritdoc />
@@ -36,19 +44,21 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
         /// <param name="application">Builder for configuring an application's request pipeline</param>
         public void Configure(IApplicationBuilder application)
         {
-            //check whether database is installed
-            if (!DataSettingsHelper.DatabaseIsInstalled())
-                return;
+            //add HealthChecks
+            application.UseAtiehJobHealthChecks();
 
-            //configure authentication
-            application.UseAtiehJobAuthentication();
-            application.UseMiddleware<CultureMiddleware>();
+            //add MiniProfiler
+            //application.UseAtiehJobProfiler();
+
+            //MVC routing
+            application.UseAtiehJobMvc();
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Gets order of this startup configuration implementation
+        /// //MVC should be loaded last
         /// </summary>
-        public int Order => 500;
+        public int Order => 1000;
     }
 }

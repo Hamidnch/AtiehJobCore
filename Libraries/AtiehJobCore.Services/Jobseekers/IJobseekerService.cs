@@ -1,6 +1,6 @@
 ﻿using AtiehJobCore.Core.Domain.Jobseekers;
 
-namespace AtiehJobCore.Services.Users.Jobseekers
+namespace AtiehJobCore.Services.Jobseekers
 {
     public interface IJobseekerService
     {

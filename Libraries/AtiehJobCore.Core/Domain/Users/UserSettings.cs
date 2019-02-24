@@ -36,6 +36,8 @@ namespace AtiehJobCore.Core.Domain.Users
         public bool IsSendPasswordSms { get; set; }
         public bool IsSendPasswordEmail { get; set; }
 
+        public bool IsAgreement { get; set; }
+
         /// <summary>
         /// Gets or sets a value indicating whether users can check the availability of usernames (when registering or changing in 'My Account')
         /// </summary>

@@ -54,5 +54,7 @@ namespace AtiehJobCore.Services.Users
         /// <param name="user">User</param>
         /// <param name="newNationalCode">New Username</param>
         void SetNationalCode(User user, string newNationalCode);
+
+        //bool IsDuplicateNationalCode(string nationalCode);
     }
 }

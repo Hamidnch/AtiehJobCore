@@ -23,13 +23,16 @@ namespace AtiehJobCore.Web.Framework.Services
         private readonly IUserAttributeService _userAttributeService;
         private readonly IUserAttributeParser _userAttributeParser;
         private readonly UserSettings _userSettings;
+        //private readonly EmployerSettings _employerSettings;
         private readonly SecuritySettings _securitySettings;
         private readonly CaptchaSettings _captchaSettings;
         public UserViewModelService(UserSettings userSettings
             , CaptchaSettings captchaSettings, IWorkContext workContext,
             IUserAttributeService userAttributeService,
             IUserAttributeParser userAttributeParser,
-            SecuritySettings securitySettings)
+            SecuritySettings securitySettings
+            //,EmployerSettings employerSettings
+            )
         {
             _userSettings = userSettings;
             _captchaSettings = captchaSettings;
@@ -37,9 +40,10 @@ namespace AtiehJobCore.Web.Framework.Services
             _userAttributeService = userAttributeService;
             _userAttributeParser = userAttributeParser;
             _securitySettings = securitySettings;
+            //_employerSettings = employerSettings;
         }
 
-        public virtual LoginModel PrepareLogin()
+        public virtual LoginModel PrepareLoginModel()
         {
             var model = new LoginModel
             {
@@ -49,7 +53,7 @@ namespace AtiehJobCore.Web.Framework.Services
             return model;
         }
 
-        public RegisterSimpleJobseekerModel PrepareRegisterSimpleJobseekerModel(RegisterSimpleJobseekerModel model, bool excludeProperties,
+        public RegisterJobseekerModel PrepareRegisterJobseekerModel(RegisterJobseekerModel model, bool excludeProperties,
             string overrideCustomUserAttributesXml = "")
         {
             if (model == null)
@@ -72,7 +76,7 @@ namespace AtiehJobCore.Web.Framework.Services
             return model;
         }
 
-        public RegisterSimpleEmployerModel PrepareRegisterSimpleEmployerModel(RegisterSimpleEmployerModel model,
+        public RegisterEmployerModel PrepareRegisterEmployerModel(RegisterEmployerModel model,
             bool excludeProperties, string overrideCustomUserAttributesXml = "")
         {
             if (model == null)
@@ -83,6 +87,11 @@ namespace AtiehJobCore.Web.Framework.Services
             model.DisplayCaptcha = _captchaSettings.Enabled && _captchaSettings.ShowOnRegistrationPage;
             model.AcceptPrivacyPolicyEnabled = _userSettings.AcceptPrivacyPolicyEnabled;
             model.HoneypotEnabled = _securitySettings.HoneypotEnabled;
+
+            //model.InsuranceCodeEnabled = _employerSettings.IsDisplayInsuranceCode;
+            //model.InsuranceCodeOptional = _employerSettings.IsOptionalInsuranceCode;
+            //model.InsuranceCodeDuplicate = _employerSettings.AllowDuplicateInsuranceCode;
+
             //custom user attributes
             var customAttributes = PrepareCustomAttributes(_workContext.CurrentUser, overrideCustomUserAttributesXml);
             foreach (var item in customAttributes)

@@ -1,7 +1,13 @@
-﻿namespace AtiehJobCore.Core.Configuration
+﻿using System.Collections.Generic;
+
+namespace AtiehJobCore.Core.Configuration
 {
     public partial class AtiehJobConfig
     {
+        public AtiehJobConfig()
+        {
+            SupportedCultures = new List<string>();
+        }
         /// <summary>
         /// Indicates whether we should ignore startup tasks
         /// </summary>
@@ -128,6 +134,14 @@
         public int HttpsRedirectionRedirect { get; set; }
         public int? HttpsRedirectionHttpsPort { get; set; }
 
+
+        /// <summary>
+        /// Localization middleware
+        /// </summary>
+        public bool UseRequestLocalization { get; set; }
+        public string DefaultRequestCulture { get; set; }
+        public IList<string> SupportedCultures { get; set; }
+
         /// <summary>
         /// Gets or sets a value indicating whether ignore InstallUrlMiddleware
         /// </summary>
@@ -137,6 +151,8 @@
         /// Gets or sets a value indicating whether ignore IgnoreUsePoweredByMiddleware
         /// </summary>
         public bool IgnoreUsePoweredByMiddleware { get; set; }
+
+        public bool UseHtmlMinification { get; set; }
 
         public string ContentSecurityPolicyErrorLogUri { get; set; }
     }

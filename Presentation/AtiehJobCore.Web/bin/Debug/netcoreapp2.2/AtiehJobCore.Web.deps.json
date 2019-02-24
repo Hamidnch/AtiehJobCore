@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "dd6010677e137e3477e1851e5e307853254857f1"
+    "signature": "0d73e4b9defbd2283be160379fdd4fb4e71c3f3c"
   },
   "compilationOptions": {
     "defines": [
@@ -2207,6 +2207,51 @@
           "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
+      "WebMarkupMin.AspNet.Common/2.5.0": {
+        "dependencies": {
+          "WebMarkupMin.Core": "2.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebMarkupMin.AspNet.Common.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/WebMarkupMin.AspNet.Common.dll": {}
+        }
+      },
+      "WebMarkupMin.AspNetCore2/2.5.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Http": "2.2.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.2.0",
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0",
+          "Microsoft.Net.Http.Headers": "2.2.0",
+          "WebMarkupMin.AspNet.Common": "2.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebMarkupMin.AspNetCore2.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/WebMarkupMin.AspNetCore2.dll": {}
+        }
+      },
+      "WebMarkupMin.Core/2.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/WebMarkupMin.Core.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/WebMarkupMin.Core.dll": {}
+        }
+      },
       "AtiehJobCore.Core/1.0.0": {
         "dependencies": {
           "AutoMapper": "8.0.0",
@@ -2321,6 +2366,7 @@
           "Microsoft.Extensions.Caching.SqlServer": "2.2.0",
           "Microsoft.Extensions.DependencyInjection": "2.2.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "2.2.0",
+          "WebMarkupMin.AspNetCore2": "2.5.0",
           "cloudscribe.Web.Pagination": "2.1.7"
         },
         "runtime": {
@@ -5873,6 +5919,27 @@
       "sha512": "sha512-A/uxsWi/Ifzkmd4ArTLISMbfFs6XpRPsXZonrIqyTY70xi8t+mDtvSM5Os0RqyRDobjMBwIDHDL4NOIbkDwf7A==",
       "path": "system.xml.xpath.xmldocument/4.3.0",
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "WebMarkupMin.AspNet.Common/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-po5F9D9fJk5d0Pz/3PIBq1CNHaN/sGqqTYlqbIlj6E45PnMB5Zlpk3eWJB3klnVhpyBsWxdpVtx/RQUy3vr/SA==",
+      "path": "webmarkupmin.aspnet.common/2.5.0",
+      "hashPath": "webmarkupmin.aspnet.common.2.5.0.nupkg.sha512"
+    },
+    "WebMarkupMin.AspNetCore2/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5jKil1icxjm9NtiE7yNKjskVO0MTx8bVSGc59pDGveOfivMohgA1OtR6kp3Mwo9P+jjdxF8+3lKHvj9rTfkMIQ==",
+      "path": "webmarkupmin.aspnetcore2/2.5.0",
+      "hashPath": "webmarkupmin.aspnetcore2.2.5.0.nupkg.sha512"
+    },
+    "WebMarkupMin.Core/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Dz2n4pJU3gY6OO0VFQinzSgW5lznco6EcN1cLltU2YICesh3c1n5eTqrbl4wnh1+GTAtf6xKO0Zeq2dwXC5uBw==",
+      "path": "webmarkupmin.core/2.5.0",
+      "hashPath": "webmarkupmin.core.2.5.0.nupkg.sha512"
     },
     "AtiehJobCore.Core/1.0.0": {
       "type": "project",

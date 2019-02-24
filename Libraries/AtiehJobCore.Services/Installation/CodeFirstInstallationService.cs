@@ -3,6 +3,7 @@ using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain;
 using AtiehJobCore.Core.Domain.Catalog;
 using AtiehJobCore.Core.Domain.Common;
+using AtiehJobCore.Core.Domain.Employers;
 using AtiehJobCore.Core.Domain.Localization;
 using AtiehJobCore.Core.Domain.Logging;
 using AtiehJobCore.Core.Domain.News;
@@ -289,6 +290,8 @@ namespace AtiehJobCore.Services.Installation
                 IsSendPasswordSms = true,
                 IsSendPasswordEmail = true,
 
+                IsAgreement = true,
+
                 IsDisplayPassword = true,
                 DefaultPasswordFormat = PasswordFormat.Hashed,
                 HashedPasswordFormat = "SHA1",
@@ -333,6 +336,12 @@ namespace AtiehJobCore.Services.Installation
                 SuffixDeletedUsers = true,
                 AllowUsersToDeleteAccount = false,
                 AllowUsersToExportData = false
+            });
+            settingService.SaveSetting(new EmployerSettings
+            {
+                IsDisplayInsuranceCode = true,
+                IsOptionalInsuranceCode = false,
+                AllowDuplicateInsuranceCode = false
             });
             settingService.SaveSetting(new LocalizationSettings
             {

@@ -12,6 +12,11 @@ namespace AtiehJobCore.Core.Domain.Jobseekers
     public class Jobseeker : BaseMongoEntity
     {
         #region Property
+
+        //public string MobileNumber { get; set; }
+        //public string NationalCode { get; set; }
+        //public string Email { get; set; }
+
         /// <summary>
         /// شماره پرونده
         /// </summary>
@@ -34,19 +39,12 @@ namespace AtiehJobCore.Core.Domain.Jobseekers
         /// محل تولد
         /// </summary>
         public string BirthPlace { get; set; }
-        /// <summary>
-        /// تلفن همراه
-        /// </summary>
-        public string MobileNumber { get; set; }
-        public string NationalCode { get; set; }
+
         public string SsnId { get; set; }
 
         public string SsnSerial { get; set; }
         public DateTime? DateOfBirth { get; set; }
-        /// <summary>
-        /// ایمیل
-        /// </summary>
-        public string Email { get; set; }
+
         /// <summary>
         /// تاریخ ثبت نام
         /// </summary>

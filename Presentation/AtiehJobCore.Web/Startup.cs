@@ -1,4 +1,4 @@
-﻿using AtiehJobCore.Web.Framework.Infrastructure.Extensions;
+﻿using AtiehJobCore.Web.Framework.Infrastructure.Extensions.Startup;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

@@ -23,6 +23,12 @@ namespace AtiehJobCore.Web.Infrastructure
             routeBuilder.MapLocalizedRoute("RegisterJobseeker",
                             "account/user/registerjobseeker/",
                             new { controller = "User", action = "RegisterJobseeker" });
+
+            //register employer
+            routeBuilder.MapLocalizedRoute("RegisterEmployer",
+                "account/user/registeremployer/",
+                new { controller = "User", action = "RegisterEmployer" });
+
             //register result page
             routeBuilder.MapLocalizedRoute("RegisterResult",
                 "account/user/registerresult/{resultId}",

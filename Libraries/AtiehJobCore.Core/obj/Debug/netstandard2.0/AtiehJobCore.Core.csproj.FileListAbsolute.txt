@@ -10,9 +10,9 @@ D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandar
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\bin\Debug\netstandard2.0\AtiehJobCore.Core.deps.json
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\bin\Debug\netstandard2.0\AtiehJobCore.Core.dll
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\bin\Debug\netstandard2.0\AtiehJobCore.Core.pdb
-H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.csprojAssemblyReference.cache
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.csproj.CoreCompileInputs.cache
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.AssemblyInfoInputs.cache
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.AssemblyInfo.cs
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.dll
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.pdb
+H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.csprojAssemblyReference.cache

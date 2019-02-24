@@ -563,5 +563,20 @@ namespace AtiehJobCore.Services.Users
 
             return query.ToList();
         }
+
+        public bool IsDuplicateEmail(string email)
+        {
+            return _userRepository.Any(u => u.Email.ToLower().Trim() == email.ToLower().Trim());
+        }
+
+        public bool IsDuplicateMobileNumber(string mobileNumber)
+        {
+            return _userRepository.Any(u => u.MobileNumber.ToLower().Trim() == mobileNumber.ToLower().Trim());
+        }
+
+        public bool IsDuplicateNationalCode(string nationalCode)
+        {
+            return _userRepository.Any(u => u.NationalCode.ToLower().Trim() == nationalCode.ToLower().Trim());
+        }
     }
 }

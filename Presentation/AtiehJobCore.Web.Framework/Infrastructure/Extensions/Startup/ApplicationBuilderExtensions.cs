@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-using System.Threading.Tasks;
-using AtiehJobCore.Core.Configuration;
+﻿using AtiehJobCore.Core.Configuration;
 using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Http;
 using AtiehJobCore.Core.Infrastructure;
@@ -17,8 +15,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Net.Http.Headers;
+using System.Globalization;
+using System.Threading.Tasks;
+using WebMarkupMin.AspNetCore2;
 
-namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
+namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions.Startup
 {
     /// <summary>
     /// Represents extensions of IApplicationBuilder
@@ -295,6 +296,15 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions
         public static void UseAtiehJobPoweredBy(this IApplicationBuilder application)
         {
             application.UseMiddleware<PoweredByMiddleware>();
+        }
+
+        /// <summary>
+        /// Use WebMarkupMin for your application.
+        /// </summary>
+        /// <param name="application">Builder for configuring an application's request pipeline</param>
+        public static void UseHtmlMinification(this IApplicationBuilder application)
+        {
+            application.UseWebMarkupMin();
         }
     }
 }

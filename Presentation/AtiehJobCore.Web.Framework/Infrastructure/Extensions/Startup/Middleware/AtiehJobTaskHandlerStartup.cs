@@ -1,5 +1,4 @@
-﻿using System;
-using AtiehJobCore.Core.Contracts;
+﻿using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Infrastructure;
 using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Services.Logging;
@@ -8,8 +7,9 @@ using FluentScheduler;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
-namespace AtiehJobCore.Web.Framework.Infrastructure.Startup
+namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions.Startup.Middleware
 {
     /// <summary>
     /// Represents object for the configuring task on application startup

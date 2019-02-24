@@ -10,10 +10,10 @@ namespace AtiehJobCore.Web.Framework.Services
 {
     public partial interface IUserViewModelService
     {
-        LoginModel PrepareLogin();
-        RegisterSimpleJobseekerModel PrepareRegisterSimpleJobseekerModel(RegisterSimpleJobseekerModel model, bool excludeProperties,
+        LoginModel PrepareLoginModel();
+        RegisterJobseekerModel PrepareRegisterJobseekerModel(RegisterJobseekerModel model, bool excludeProperties,
             string overrideCustomUserAttributesXml = "");
-        RegisterSimpleEmployerModel PrepareRegisterSimpleEmployerModel(RegisterSimpleEmployerModel model, bool excludeProperties,
+        RegisterEmployerModel PrepareRegisterEmployerModel(RegisterEmployerModel model, bool excludeProperties,
             string overrideCustomUserAttributesXml = "");
         IList<UserAttributeModel> PrepareCustomAttributes(User user, string overrideAttributesXml = "");
         string ParseCustomAttributes(IFormCollection form);

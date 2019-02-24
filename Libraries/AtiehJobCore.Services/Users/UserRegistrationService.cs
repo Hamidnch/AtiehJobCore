@@ -274,6 +274,7 @@ namespace AtiehJobCore.Services.Users
             request.User.MobileNumber = request.MobileNumber;
             request.User.NationalCode = request.NationalCode;
             request.User.PasswordFormat = request.PasswordFormat;
+
             request.User.UserType = request.UserType;
 
             switch (request.PasswordFormat)
@@ -300,6 +301,7 @@ namespace AtiehJobCore.Services.Users
                     break;
             }
 
+            // Store History Passwords of user
             _userService.InsertUserPassword(request.User);
 
             request.User.Active = request.IsApproved;
@@ -602,6 +604,7 @@ namespace AtiehJobCore.Services.Users
             user.NationalCode = newNationalCode;
             _userService.UpdateUser(user);
         }
+
         #endregion
     }
 }
