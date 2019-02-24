@@ -437,3 +437,4 @@ H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcorea
 H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\bin\Debug\netcoreapp2.2\fa\AtiehJobCore.Resources.resources.dll
 H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.Views.pdb
 H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\AtiehJobCore.Web.csproj.CopyComplete
+H:\Programming New\AtiehJobCore\Presentation\AtiehJobCore.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Account\Views\User\RegisterEmployer.g.cshtml.cs

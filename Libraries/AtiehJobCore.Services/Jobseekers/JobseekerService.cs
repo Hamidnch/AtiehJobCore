@@ -21,9 +21,6 @@ namespace AtiehJobCore.Services.Jobseekers
             if (jobseeker == null)
                 throw new ArgumentNullException(nameof(jobseeker));
 
-            if (!string.IsNullOrEmpty(jobseeker.Email))
-                jobseeker.Email = jobseeker.Email.ToLower();
-
 
             var currentJobseeker = _jobseekerRepository.Insert(jobseeker);
 
