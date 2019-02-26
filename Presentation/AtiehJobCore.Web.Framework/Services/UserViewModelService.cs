@@ -8,6 +8,7 @@ using AtiehJobCore.Services.Users;
 using AtiehJobCore.Web.Framework.Models.Account;
 using AtiehJobCore.Web.Framework.Models.Account.Employer;
 using AtiehJobCore.Web.Framework.Models.Account.Jobseeker;
+using AtiehJobCore.Web.Framework.Models.Account.Placement;
 using AtiehJobCore.Web.Framework.Models.User;
 using AtiehJobCore.Web.Framework.Mvc.Captcha;
 using Microsoft.AspNetCore.Http;
@@ -91,6 +92,28 @@ namespace AtiehJobCore.Web.Framework.Services
             //model.InsuranceCodeEnabled = _employerSettings.IsDisplayInsuranceCode;
             //model.InsuranceCodeOptional = _employerSettings.IsOptionalInsuranceCode;
             //model.InsuranceCodeDuplicate = _employerSettings.AllowDuplicateInsuranceCode;
+
+            //custom user attributes
+            var customAttributes = PrepareCustomAttributes(_workContext.CurrentUser, overrideCustomUserAttributesXml);
+            foreach (var item in customAttributes)
+            {
+                model.UserAttributes.Add(item);
+            }
+
+            return model;
+        }
+
+        public RegisterPlacementModel PrepareRegisterPlacementModel(RegisterPlacementModel model, bool excludeProperties,
+            string overrideCustomUserAttributesXml = "")
+        {
+            if (model == null)
+                throw new ArgumentNullException(nameof(model));
+
+            model.UsernamesEnabled = _userSettings.UsernamesEnabled;
+            model.CheckUsernameAvailabilityEnabled = _userSettings.CheckUsernameAvailabilityEnabled;
+            model.DisplayCaptcha = _captchaSettings.Enabled && _captchaSettings.ShowOnRegistrationPage;
+            model.AcceptPrivacyPolicyEnabled = _userSettings.AcceptPrivacyPolicyEnabled;
+            model.HoneypotEnabled = _securitySettings.HoneypotEnabled;
 
             //custom user attributes
             var customAttributes = PrepareCustomAttributes(_workContext.CurrentUser, overrideCustomUserAttributesXml);

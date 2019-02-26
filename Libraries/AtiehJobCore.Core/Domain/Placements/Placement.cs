@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using AtiehJobCore.Core.Contracts;
+﻿using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain.Address;
-using AtiehJobCore.Core.Domain.Users;
 using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Core.MongoDb;
+using System;
+using System.Collections.Generic;
 
 namespace AtiehJobCore.Core.Domain.Placements
 {
@@ -18,7 +17,7 @@ namespace AtiehJobCore.Core.Domain.Placements
         public Placement(string fileNumber, string name, string managerName, string managerNationalCode,
             ActivityTypes? activityType, LicenseTypes? licenseType, DateTimeOffset? licenseDate,
             string licenseNumber, string licenseLocation, int? provinceCode, string workshopCode,
-            string mobile, string email, int userId)
+            string mobile, string email, string userId)
         {
             FileNumber = fileNumber;
             Name = name;
@@ -107,8 +106,8 @@ namespace AtiehJobCore.Core.Domain.Placements
         /// <summary>
         /// شناسه کاربری
         /// </summary>
-        public int UserId { get; set; }
-        public virtual User User { get; set; }
+        public string UserId { get; set; }
+        //public virtual User User { get; set; }
         /***************** ارتباط با جدول کاربر ********************/
     }
 }

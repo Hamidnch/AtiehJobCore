@@ -219,6 +219,7 @@ namespace AtiehJobCore.Services.Users
             {
                 UserGuid = Guid.NewGuid(),
                 Active = true,
+                UserType = UserType.Guest,
                 CreatedOnUtc = DateTime.UtcNow,
                 LastActivityDateUtc = DateTime.UtcNow,
                 UrlReferrer = urlReferrer
@@ -268,7 +269,10 @@ namespace AtiehJobCore.Services.Users
                 .Set(x => x.PasswordChangeDateUtc, user.PasswordChangeDateUtc)
                 .Set(x => x.Username, string.IsNullOrEmpty(user.Username) ? "" : user.Username.ToLower())
                 .Set(x => x.Deleted, user.Deleted)
+                .Set(x => x.UserType, user.UserType)
                 .Set(x => x.Jobseekers, user.Jobseekers)
+                .Set(x => x.Employers, user.Employers)
+                .Set(x => x.Placements, user.Placements)
                 .Set(x => x.MobileNumber, user.MobileNumber)
                 .Set(x => x.NationalCode, user.NationalCode);
 
@@ -349,15 +353,21 @@ namespace AtiehJobCore.Services.Users
             var builder = Builders<User>.Filter;
             var filter = builder.Eq(x => x.Id, user.Id);
             var update = Builders<User>.Update
-               .Set(x => x.Active, user.Active)
-               .Set(x => x.AdminComment, user.AdminComment)
-               .Set(x => x.IsSystemAccount, user.IsSystemAccount)
-               .Set(x => x.Active, user.Active)
-               .Set(x => x.Email, string.IsNullOrEmpty(user.Email) ? "" : user.Email.ToLower())
-               .Set(x => x.Password, user.Password)
-               .Set(x => x.SystemName, user.SystemName)
-               .Set(x => x.Username, string.IsNullOrEmpty(user.Username) ? "" : user.Username.ToLower())
-               .Set(x => x.Roles, user.Roles);
+                .Set(x => x.Active, user.Active)
+                .Set(x => x.AdminComment, user.AdminComment)
+                .Set(x => x.IsSystemAccount, user.IsSystemAccount)
+                .Set(x => x.Active, user.Active)
+                .Set(x => x.Email, string.IsNullOrEmpty(user.Email) ? "" : user.Email.ToLower())
+                .Set(x => x.Password, user.Password)
+                .Set(x => x.SystemName, user.SystemName)
+                .Set(x => x.Username, string.IsNullOrEmpty(user.Username) ? "" : user.Username.ToLower())
+                .Set(x => x.Roles, user.Roles)
+                .Set(x => x.UserType, user.UserType)
+                //.Set(x => x.Jobseekers, user.Jobseekers)
+                //.Set(x => x.Employers, user.Employers)
+                //.Set(x => x.Placements, user.Placements)
+                .Set(x => x.MobileNumber, user.MobileNumber)
+                .Set(x => x.NationalCode, user.NationalCode);
 
             var result = _userRepository.Collection.UpdateOneAsync(filter, update).Result;
             //event notification
@@ -564,19 +574,36 @@ namespace AtiehJobCore.Services.Users
             return query.ToList();
         }
 
-        public bool IsDuplicateEmail(string email)
+        public bool IsNopDuplicateEmail(string email)
         {
-            return _userRepository.Any(u => u.Email.ToLower().Trim() == email.ToLower().Trim());
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            var filter = Builders<User>.Filter.Eq(x => x.Email, email.ToLower());
+            var res = _userRepository.Collection.Find(filter).Any();
+            return !res;
         }
 
-        public bool IsDuplicateMobileNumber(string mobileNumber)
+        #region Check for duplicate values
+        public bool IsNopDuplicateMobileNumber(string mobileNumber)
         {
-            return _userRepository.Any(u => u.MobileNumber.ToLower().Trim() == mobileNumber.ToLower().Trim());
+            if (string.IsNullOrWhiteSpace(mobileNumber))
+                return false;
+
+            var filter = Builders<User>.Filter.Eq(x => x.MobileNumber, mobileNumber.ToLower());
+            var res = _userRepository.Collection.Find(filter).Any();
+            return !res;
         }
 
-        public bool IsDuplicateNationalCode(string nationalCode)
+        public bool IsNotDuplicateNationalCode(string nationalCode)
         {
-            return _userRepository.Any(u => u.NationalCode.ToLower().Trim() == nationalCode.ToLower().Trim());
+            if (string.IsNullOrWhiteSpace(nationalCode))
+                return false;
+
+            var filter = Builders<User>.Filter.Eq(x => x.NationalCode, nationalCode.ToLower());
+            var res = _userRepository.Collection.Find(filter).Any();
+            return !res;
         }
+        #endregion Check for duplicate values
     }
 }

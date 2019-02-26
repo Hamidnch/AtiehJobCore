@@ -48,7 +48,6 @@ namespace AtiehJobCore.Web.Framework.Models.Account.Jobseeker
         /// National code
         /// </summary>
         [AtiehJobResourceDisplayName("Account.Jobseeker.Fields.NationalCode")]
-        //[Remote("IsAllNationalCodeExist", nameof(Common), "", ErrorMessageResourceType = typeof(Resources), ErrorMessageResourceName = "DuplicateNationalCode", HttpMethod = "POST")]
         public string NationalCode { get; set; }
 
         /// <summary>
@@ -84,7 +83,7 @@ namespace AtiehJobCore.Web.Framework.Models.Account.Jobseeker
         /// <summary>
         /// توافقنامه
         /// </summary>
-        [AtiehJobResourceDisplayName("Account.Employer.Fields.Agreement")]
+        [AtiehJobResourceDisplayName("Account.Fields.Agreement")]
         public bool Agreement { get; set; }
 
         public bool DisplayCaptcha { get; set; }

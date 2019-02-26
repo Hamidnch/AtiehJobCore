@@ -21,6 +21,7 @@ using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Logging;
 using AtiehJobCore.Services.Media;
 using AtiehJobCore.Services.Messages;
+using AtiehJobCore.Services.Placements;
 using AtiehJobCore.Services.Security;
 using AtiehJobCore.Services.Seo;
 using AtiehJobCore.Services.Tasks;
@@ -142,6 +143,7 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
 
             builder.RegisterType<JobseekerService>().As<IJobseekerService>().InstancePerLifetimeScope();
             builder.RegisterType<EmployerService>().As<IEmployerService>().InstancePerLifetimeScope();
+            builder.RegisterType<PlacementService>().As<IPlacementService>().InstancePerLifetimeScope();
 
             builder.RegisterType<EncryptionService>().As<IEncryptionService>().InstancePerLifetimeScope();
             var databaseInstalled = DataSettingsHelper.DatabaseIsInstalled();

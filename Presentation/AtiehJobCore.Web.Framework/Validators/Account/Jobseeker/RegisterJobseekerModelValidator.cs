@@ -67,7 +67,7 @@ namespace AtiehJobCore.Web.Framework.Validators.Account.Jobseeker
 
                 if (!userSettings.AllowDuplicateEmail)
                 {
-                    RuleFor(x => x.Email).Must(userService.IsDuplicateEmail)
+                    RuleFor(x => x.Email).Must(userService.IsNopDuplicateEmail)
                         .WithMessage(localizationService.GetResource("Common.DuplicateEmail"));
                 }
             }
@@ -92,7 +92,7 @@ namespace AtiehJobCore.Web.Framework.Validators.Account.Jobseeker
 
                 if (!userSettings.AllowDuplicateMobileNumber)
                 {
-                    RuleFor(x => x.MobileNumber).Must(userService.IsDuplicateMobileNumber)
+                    RuleFor(x => x.MobileNumber).Must(userService.IsNopDuplicateMobileNumber)
                         .WithMessage(localizationService.GetResource("Common.DuplicateMobileNumber"));
                 }
             }
@@ -117,7 +117,7 @@ namespace AtiehJobCore.Web.Framework.Validators.Account.Jobseeker
 
                 if (!userSettings.AllowDuplicateNationalCode)
                 {
-                    RuleFor(x => x.NationalCode).Must(userService.IsDuplicateNationalCode)
+                    RuleFor(x => x.NationalCode).Must(userService.IsNotDuplicateNationalCode)
                         .WithMessage(localizationService.GetResource("Common.DuplicateNationalCode"));
                 }
             }

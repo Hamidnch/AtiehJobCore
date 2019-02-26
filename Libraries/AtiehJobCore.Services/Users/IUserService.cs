@@ -277,8 +277,8 @@ namespace AtiehJobCore.Services.Users
 
         #endregion
 
-        bool IsDuplicateEmail(string email);
-        bool IsDuplicateMobileNumber(string mobileNumber);
-        bool IsDuplicateNationalCode(string nationalCode);
+        bool IsNopDuplicateEmail(string email);
+        bool IsNopDuplicateMobileNumber(string mobileNumber);
+        bool IsNotDuplicateNationalCode(string nationalCode);
     }
 }

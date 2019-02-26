@@ -2,6 +2,7 @@
 using AtiehJobCore.Web.Framework.Models.Account;
 using AtiehJobCore.Web.Framework.Models.Account.Employer;
 using AtiehJobCore.Web.Framework.Models.Account.Jobseeker;
+using AtiehJobCore.Web.Framework.Models.Account.Placement;
 using AtiehJobCore.Web.Framework.Models.User;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace AtiehJobCore.Web.Framework.Services
         RegisterJobseekerModel PrepareRegisterJobseekerModel(RegisterJobseekerModel model, bool excludeProperties,
             string overrideCustomUserAttributesXml = "");
         RegisterEmployerModel PrepareRegisterEmployerModel(RegisterEmployerModel model, bool excludeProperties,
+            string overrideCustomUserAttributesXml = "");
+        RegisterPlacementModel PrepareRegisterPlacementModel(RegisterPlacementModel model, bool excludeProperties,
             string overrideCustomUserAttributesXml = "");
         IList<UserAttributeModel> PrepareCustomAttributes(User user, string overrideAttributesXml = "");
         string ParseCustomAttributes(IFormCollection form);

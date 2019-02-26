@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Collections.Generic;
 
 namespace AtiehJobCore.Web.Framework.Models
 {
@@ -45,6 +45,7 @@ namespace AtiehJobCore.Web.Framework.Models
         /// Gets or sets property to store any custom values for models 
         /// </summary>
         public Dictionary<string, object> CustomProperties { get; set; }
+
 
         #endregion
 

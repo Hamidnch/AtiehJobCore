@@ -3,6 +3,7 @@ using AtiehJobCore.Core.Contracts;
 using AtiehJobCore.Core.Domain;
 using AtiehJobCore.Core.Domain.Employers;
 using AtiehJobCore.Core.Domain.Jobseekers;
+using AtiehJobCore.Core.Domain.Placements;
 using AtiehJobCore.Core.Domain.Users;
 using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Core.Infrastructure;
@@ -13,11 +14,13 @@ using AtiehJobCore.Services.Events;
 using AtiehJobCore.Services.Jobseekers;
 using AtiehJobCore.Services.Localization;
 using AtiehJobCore.Services.Logging;
+using AtiehJobCore.Services.Placements;
 using AtiehJobCore.Services.Users;
 using AtiehJobCore.Web.Framework.Filters;
 using AtiehJobCore.Web.Framework.Models.Account;
 using AtiehJobCore.Web.Framework.Models.Account.Employer;
 using AtiehJobCore.Web.Framework.Models.Account.Jobseeker;
+using AtiehJobCore.Web.Framework.Models.Account.Placement;
 using AtiehJobCore.Web.Framework.Mvc.Captcha;
 using AtiehJobCore.Web.Framework.Security;
 using AtiehJobCore.Web.Framework.Services;
@@ -46,6 +49,7 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
         private readonly IWorkContext _workContext;
         private readonly IJobseekerService _jobseekerService;
         private readonly IEmployerService _employerService;
+        private readonly IPlacementService _placementService;
         private readonly CaptchaSettings _captchaSettings;
         private readonly UserSettings _userSettings;
         #endregion Fields
@@ -58,7 +62,7 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
             IEventPublisher eventPublisher, IUserActivityService userActivityService,
             IWorkContext workContext, IUserAttributeParser userAttributeParser,
             IGenericAttributeService genericAttributeService, IJobseekerService jobseekerService,
-            IEmployerService employerService)
+            IEmployerService employerService, IPlacementService placementService)
         {
             _userViewModelService = userViewModelService;
             _captchaSettings = captchaSettings;
@@ -74,6 +78,7 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
             _genericAttributeService = genericAttributeService;
             _jobseekerService = jobseekerService;
             _employerService = employerService;
+            _placementService = placementService;
         }
         #endregion Ctor
 
@@ -289,7 +294,7 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
                         Name = model.FirstName,
                         Family = model.LastName,
                         CurrentState = JobseekerState.PrimaryRegisteration,
-                        User = user
+                        //User = user
                     };
 
                     var newJobseeker = _jobseekerService.InsertJobseeker(jobseeker);
@@ -451,7 +456,7 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
                         CompanyName = model.CompanyName,
                         ManagerName = model.ManagerName,
                         CurrentState = EmployerState.PrimaryRegisteration,
-                        User = user
+                        //User = user
                     };
 
                     var newEmployer = _employerService.InsertEmployer(employer);
@@ -531,6 +536,164 @@ namespace AtiehJobCore.Web.Areas.Account.Controllers
             model = _userViewModelService.PrepareRegisterEmployerModel(model, true, userAttributesXml);
             return View(model);
         }
+
+        //available even when navigation is not allowed
+        [CheckAccessSite(true)]
+        public virtual IActionResult RegisterPlacement()
+        {
+            //check whether registration is allowed
+            if (_userSettings.UserRegistrationType == UserRegistrationType.Disabled)
+                return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.Disabled });
+
+            var model = new RegisterPlacementModel();
+            model = _userViewModelService.PrepareRegisterPlacementModel(model, false);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateCaptcha]
+        [ValidateHoneypot]
+        [PublicAntiForgery]
+        //available even when navigation is not allowed
+        [CheckAccessSite(true)]
+        public virtual IActionResult RegisterPlacement(RegisterPlacementModel model, string returnUrl, bool captchaValid, IFormCollection form)
+        {
+            //check whether registration is allowed
+            if (_userSettings.UserRegistrationType == UserRegistrationType.Disabled)
+                return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.Disabled });
+
+            if (_workContext.CurrentUser.IsRegistered())
+            {
+                //Already registered user. 
+                _atiehJobAuthenticationService.SignOut();
+
+                //Save a new record
+                _workContext.CurrentUser = _userService.InsertGuestUser();
+            }
+            var user = _workContext.CurrentUser;
+
+            //custom user attributes
+            var userAttributesXml = _userViewModelService.ParseCustomAttributes(form);
+            var userAttributeWarnings = _userAttributeParser.GetAttributeWarnings(userAttributesXml);
+            foreach (var error in userAttributeWarnings)
+            {
+                ModelState.AddModelError("", error);
+            }
+
+            //validate CAPTCHA
+            if (_captchaSettings.Enabled && _captchaSettings.ShowOnRegistrationPage && !captchaValid)
+            {
+                ModelState.AddModelError("", _captchaSettings.GetWrongCaptchaMessage(_localizationService));
+            }
+
+            if (ModelState.IsValid && ModelState.ErrorCount == 0)
+            {
+                if (_userSettings.UsernamesEnabled && model.Username != null)
+                {
+                    model.Username = model.Username.Trim();
+                }
+
+                var isApproved = _userSettings.UserRegistrationType == UserRegistrationType.Standard;
+
+                var registrationRequest = new UserRegistrationRequest(user, model.Email,
+                    _userSettings.UsernamesEnabled ? model.Username : model.Email,
+                    model.MobileNumber, model.NationalCode, model.Password,
+                    _userSettings.DefaultPasswordFormat, UserType.Placement, isApproved);
+
+                var registrationResult = _userRegistrationService.RegisterUser(registrationRequest);
+
+                if (registrationResult.Success)
+                {
+                    var placement = new Placement
+                    {
+                        //NationalCode = model.NationalCode,
+                        //MobileNumber = model.MobileNumber,
+                        //Email = model.Email,
+                        FileNumber = user.UserGuid.ToString().Replace("-", ""),
+                        UserId = user.Id,
+                        LicenseNumber = model.LicenseNumber
+                        //User = user
+                    };
+
+                    var newPlacement = _placementService.InsertPlacement(placement);
+
+                    user.Placements.Add(newPlacement);
+                    _userService.UpdateUser(user);
+
+                    //save user attributes
+                    _genericAttributeService.SaveAttribute(user, SystemUserAttributeNames.CustomUserAttributes, userAttributesXml);
+
+                    //login user now
+                    if (isApproved)
+                        _atiehJobAuthenticationService.SignIn(user, true);
+
+
+                    //notifications
+                    //if (_userSettings.NotifyNewUserRegistration)
+                    //    _workflowMessageService.SendUserRegisteredNotificationMessage(user, _localizationSettings.DefaultAdminLanguageId);
+
+                    //raise event       
+                    _eventPublisher.Publish(new UserRegisteredEvent(user));
+
+                    switch (_userSettings.UserRegistrationType)
+                    {
+                        case UserRegistrationType.EmailValidation:
+                            {
+                                //email validation message
+                                _genericAttributeService.SaveAttribute(user, SystemUserAttributeNames.AccountActivationToken,
+                                    Guid.NewGuid().ToString());
+                                //_workflowMessageService.SendUserEmailValidationMessage(user, _workContext.WorkingLanguage.Id);
+
+                                //result
+                                return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.EmailValidation });
+                            }
+                        case UserRegistrationType.AdminApproval:
+                            {
+                                return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.AdminApproval });
+                            }
+                        case UserRegistrationType.Standard:
+                            {
+                                //send user welcome message
+                                //_workflowMessageService.SendUserWelcomeMessage(user, _workContext.WorkingLanguage.Id);
+
+                                var redirectUrl = Url.RouteUrl("RegisterResult", new { resultId = (int)UserRegistrationType.Standard });
+                                if (string.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl))
+                                {
+                                    return Redirect(redirectUrl);
+                                }
+
+                                var webHelper = EngineContext.Current.Resolve<IWebHelper>();
+                                redirectUrl = webHelper.ModifyQueryString(redirectUrl,
+                                    "returnurl=" + WebUtility.UrlEncode(returnUrl), null);
+                                return Redirect(redirectUrl);
+                            }
+                        case UserRegistrationType.MobileValidation:
+                            {
+                                //result
+                                return RedirectToRoute("RegisterResult",
+                                    new { resultId = (int)UserRegistrationType.MobileValidation });
+                            }
+
+                        case UserRegistrationType.Disabled:
+                            break;
+                        default:
+                            {
+                                return RedirectToRoute("HomePage");
+                            }
+                    }
+                }
+
+                //errors
+                foreach (var error in registrationResult.Errors)
+                    ModelState.AddModelError("", error);
+            }
+
+            //If we got this far, something failed, redisplay form
+            model = _userViewModelService.PrepareRegisterPlacementModel(model, true, userAttributesXml);
+            return View(model);
+        }
+
 
         //available even when navigation is not allowed
         [CheckAccessSite(true)]

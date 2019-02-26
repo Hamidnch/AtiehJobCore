@@ -72,7 +72,7 @@ namespace AtiehJobCore.Web.Framework.Validators.Account.Employer
 
                 if (!userSettings.AllowDuplicateEmail)
                 {
-                    RuleFor(x => x.Email).Must(userService.IsDuplicateEmail)
+                    RuleFor(x => x.Email).Must(userService.IsNopDuplicateEmail)
                         .WithMessage(localizationService.GetResource("Common.DuplicateEmail"));
                 }
             }
@@ -97,7 +97,7 @@ namespace AtiehJobCore.Web.Framework.Validators.Account.Employer
 
                 if (!userSettings.AllowDuplicateMobileNumber)
                 {
-                    RuleFor(x => x.MobileNumber).Must(userService.IsDuplicateMobileNumber)
+                    RuleFor(x => x.MobileNumber).Must(userService.IsNopDuplicateMobileNumber)
                         .WithMessage(localizationService.GetResource("Common.DuplicateMobileNumber"));
                 }
             }
@@ -122,7 +122,7 @@ namespace AtiehJobCore.Web.Framework.Validators.Account.Employer
 
                 if (!userSettings.AllowDuplicateNationalCode)
                 {
-                    RuleFor(x => x.NationalCode).Must(userService.IsDuplicateNationalCode)
+                    RuleFor(x => x.NationalCode).Must(userService.IsNotDuplicateNationalCode)
                         .WithMessage(localizationService.GetResource("Common.DuplicateNationalCode"));
                 }
             }
@@ -131,10 +131,19 @@ namespace AtiehJobCore.Web.Framework.Validators.Account.Employer
 
             #region Insurance Code
 
-            if (!employerSettings.AllowDuplicateInsuranceCode)
+            if (employerSettings.IsDisplayInsuranceCode)
             {
-                RuleFor(x => x.NationalCode).Must(employerService.IsDuplicateInsuranceCode)
-                    .WithMessage(localizationService.GetResource("Common.DuplicateInsuranceCode"));
+                if (!employerSettings.IsOptionalInsuranceCode)
+                {
+                    RuleFor(x => x.InsuranceCode)
+                        .NotEmpty().WithMessage(localizationService.GetResource("Account.Fields.InsuranceCode.Required"));
+                }
+
+                if (!employerSettings.AllowDuplicateInsuranceCode)
+                {
+                    RuleFor(x => x.InsuranceCode).Must(employerService.IsNotDuplicateInsuranceCode)
+                        .WithMessage(localizationService.GetResource("Common.DuplicateInsuranceCode"));
+                }
             }
 
             #endregion Insurance Code

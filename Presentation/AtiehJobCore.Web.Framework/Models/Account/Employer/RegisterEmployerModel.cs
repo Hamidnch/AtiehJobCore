@@ -71,7 +71,7 @@ namespace AtiehJobCore.Web.Framework.Models.Account.Employer
         /// <summary>
         /// توافقنامه
         /// </summary>
-        [AtiehJobResourceDisplayName("Account.Employer.Fields.Agreement")]
+        [AtiehJobResourceDisplayName("Account.Fields.Agreement")]
         public bool Agreement { get; set; }
 
         public UserType UserType { get; set; }

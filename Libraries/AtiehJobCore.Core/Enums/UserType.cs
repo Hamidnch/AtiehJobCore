@@ -28,10 +28,10 @@ namespace AtiehJobCore.Core.Enums
         [Display(Name = "کاریاب")]
         Placement = 3,
         /// <summary>
-        /// سایر
+        /// مهمان
         /// </summary>
-        //[Display(Name = "سایر")]
+        [Display(Name = "مهمان")]
         [ScaffoldColumn(false)]
-        Other = 4,
+        Guest = 4
     }
 }

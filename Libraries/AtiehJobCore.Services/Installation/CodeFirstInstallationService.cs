@@ -7,6 +7,7 @@ using AtiehJobCore.Core.Domain.Employers;
 using AtiehJobCore.Core.Domain.Localization;
 using AtiehJobCore.Core.Domain.Logging;
 using AtiehJobCore.Core.Domain.News;
+using AtiehJobCore.Core.Domain.Placements;
 using AtiehJobCore.Core.Domain.Security;
 using AtiehJobCore.Core.Domain.Seo;
 using AtiehJobCore.Core.Domain.Users;
@@ -343,6 +344,12 @@ namespace AtiehJobCore.Services.Installation
                 IsOptionalInsuranceCode = false,
                 AllowDuplicateInsuranceCode = false
             });
+            settingService.SaveSetting(new PlacementSettings
+            {
+                IsDisplayLicenseNumber = true,
+                IsOptionalLicenseNumber = false,
+                AllowDuplicateLicenseNumber = false
+            });
             settingService.SaveSetting(new LocalizationSettings
             {
                 DefaultAdminLanguageId = _languageRepository.Table.Single(l => l.Name == "English").Id,
@@ -556,6 +563,33 @@ namespace AtiehJobCore.Services.Installation
                 SystemName = SystemUserRoleNames.Registered,
             };
             _roleRepository.Insert(crRegistered);
+
+            var jobSeekerRegistered = new Role
+            {
+                Name = "Jobseeker",
+                Active = true,
+                IsSystemRole = true,
+                SystemName = SystemUserRoleNames.Jobseeker,
+            };
+            _roleRepository.Insert(jobSeekerRegistered);
+
+            var employerRegistered = new Role
+            {
+                Name = "Employer",
+                Active = true,
+                IsSystemRole = true,
+                SystemName = SystemUserRoleNames.Employer,
+            };
+            _roleRepository.Insert(employerRegistered);
+
+            var placementRegistered = new Role
+            {
+                Name = "Placement",
+                Active = true,
+                IsSystemRole = true,
+                SystemName = SystemUserRoleNames.Placement,
+            };
+            _roleRepository.Insert(placementRegistered);
 
             var crGuests = new Role
             {

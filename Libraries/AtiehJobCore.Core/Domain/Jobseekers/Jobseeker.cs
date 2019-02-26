@@ -1,6 +1,5 @@
 ﻿using AtiehJobCore.Core.Domain.Address;
 using AtiehJobCore.Core.Domain.JobOpportunities;
-using AtiehJobCore.Core.Domain.Users;
 using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Core.MongoDb;
 using System;
@@ -380,7 +379,7 @@ namespace AtiehJobCore.Core.Domain.Jobseekers
         /// شناسه کاربری
         /// </summary>
         public string UserId { get; set; }
-        public virtual User User { get; set; }
+        //public virtual User User { get; set; }
         /***************** ارتباط با جدول کاربر ********************/
         #endregion Property
     }

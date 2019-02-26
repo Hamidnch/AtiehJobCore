@@ -228,37 +228,57 @@ namespace AtiehJobCore.Services.Users
                 }
             }
 
-            if (string.IsNullOrEmpty(request.MobileNumber))
+            if (_userSettings.IsDisplayMobileNumber)
             {
-                result.AddError(
-                    _localizationService.GetResource("Account.Register.Errors.MobileNumberIsNotProvided"));
-                return result;
-            }
-            if (_userService.GetUserByMobileNumber(request.MobileNumber) != null)
-            {
-                result.AddError(
-                    _localizationService.GetResource("Account.Register.Errors.MobileNumberAlreadyExists"));
-                return result;
+                if (!_userSettings.IsOptionalMobileNumber)
+                {
+                    if (string.IsNullOrEmpty(request.MobileNumber))
+                    {
+                        result.AddError(
+                            _localizationService.GetResource("Account.Register.Errors.MobileNumberIsNotProvided"));
+                        return result;
+                    }
+                }
+
+                if (!_userSettings.AllowDuplicateMobileNumber)
+                {
+                    if (_userService.GetUserByMobileNumber(request.MobileNumber) != null)
+                    {
+                        result.AddError(
+                            _localizationService.GetResource("Account.Register.Errors.MobileNumberAlreadyExists"));
+                        return result;
+                    }
+                }
             }
 
-            if (string.IsNullOrEmpty(request.NationalCode))
+            if (_userSettings.IsDisplayNationalCode)
             {
-                result.AddError(
-                    _localizationService.GetResource("Account.Register.Errors.NationalCodeIsNotProvided"));
-                return result;
-            }
-            if (_userService.GetUserByNationalCode(request.NationalCode) != null)
-            {
-                result.AddError(
-                    _localizationService.GetResource("Account.Register.Errors.NationalCodeAlreadyExists"));
-                return result;
+                if (!_userSettings.IsOptionalNationalCode)
+                {
+                    if (string.IsNullOrEmpty(request.NationalCode))
+                    {
+                        result.AddError(
+                            _localizationService.GetResource("Account.Register.Errors.NationalCodeIsNotProvided"));
+                        return result;
+                    }
+                }
+
+                if (_userService.GetUserByNationalCode(request.NationalCode) != null)
+                {
+                    result.AddError(
+                        _localizationService.GetResource("Account.Register.Errors.NationalCodeAlreadyExists"));
+                    return result;
+                }
             }
 
-            if (string.IsNullOrWhiteSpace(request.Password))
+            if (_userSettings.IsDisplayPassword)
             {
-                result.AddError(
-                    _localizationService.GetResource("Account.Register.Errors.PasswordIsNotProvided"));
-                return result;
+                if (string.IsNullOrWhiteSpace(request.Password))
+                {
+                    result.AddError(
+                        _localizationService.GetResource("Account.Register.Errors.PasswordIsNotProvided"));
+                    return result;
+                }
             }
 
             //event notification
@@ -274,7 +294,6 @@ namespace AtiehJobCore.Services.Users
             request.User.MobileNumber = request.MobileNumber;
             request.User.NationalCode = request.NationalCode;
             request.User.PasswordFormat = request.PasswordFormat;
-
             request.User.UserType = request.UserType;
 
             switch (request.PasswordFormat)

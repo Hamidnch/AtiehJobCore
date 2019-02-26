@@ -28,9 +28,10 @@ namespace AtiehJobCore.Services.Employers
             return currentEmployer;
         }
 
-        public bool IsDuplicateInsuranceCode(string insuranceCode)
+        public bool IsNotDuplicateInsuranceCode(string insuranceCode)
         {
-            return _employerRepository.Any(e => e.InsuranceCode == insuranceCode);
+            var r = _employerRepository.Any(e => e.InsuranceCode == insuranceCode);
+            return !r;
         }
     }
 }

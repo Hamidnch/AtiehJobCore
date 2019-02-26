@@ -5,6 +5,6 @@ namespace AtiehJobCore.Services.Employers
     public interface IEmployerService
     {
         Employer InsertEmployer(Employer employer);
-        bool IsDuplicateInsuranceCode(string insuranceCode);
+        bool IsNotDuplicateInsuranceCode(string insuranceCode);
     }
 }

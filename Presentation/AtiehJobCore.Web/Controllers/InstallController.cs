@@ -65,10 +65,11 @@ namespace AtiehJobCore.Web.Controllers
 
             var model = new InstallModel
             {
-                AdminEmail = "admin@yourstore.com",
+                AdminEmail = "admin@gmail.com",
                 InstallSampleData = false,
                 DatabaseConnectionString = "",
                 DataProvider = "mongodb"
+
             };
             foreach (var lang in _locService.GetAvailableLanguages())
             {
