@@ -365,7 +365,7 @@ namespace AtiehJobCore.Services.Users
                     }
                 case UserType.Admin:
                     break;
-                case UserType.Other:
+                case UserType.Guest:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

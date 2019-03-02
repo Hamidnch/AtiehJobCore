@@ -1,74 +1,273 @@
-﻿<footer>
+﻿@*<footer>
+        <div class="container">
+            <div class="support-layer">
+                <a href="#">در این سایت شغل مناسب خود را پیدا کنید.</a>
+                <span> </span>
+            </div>
+        </div>
+
+        <div class="top-layer">
+
+            <div class="container">
+                <section class="about-layer">
+                    <div class="inner">
+                        <ul>
+                            <li><a>آگهی‌های استخدام</a></li>
+                            <li><a>‌سوالات متداول</a></li>
+                        </ul>
+
+                    </div>
+                </section>
+
+                <div class="left-side">
+                    <div class="right-col">
+                        <ul>
+                            <li><a href="/">صفحه اصلی</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="left-col">
+                        <!-- newsletter -->
+                        <div class="newsletter">
+                            <h3> عضویت در خبرنامه </h3>
+                            <p>
+                                ثبت نام رایگان ...
+                            </p>
+
+                            <form data-ajax="true" data-method="post" data-ajax-mode="replace" data-ajax-success="EmailStatus"
+                                  action="/Home/AddToNewsLetter" method="post">
+
+                                <input type="text" name="Email" placeholder="ایمیل خود را وارد نمایید" id="NewsLetterEmail">
+                                <button type="submit" class="btn btn-success">عضویت</button>
+                            </form>
+
+                        </div>
+
+                        <!-- namad -->
+                        <div class="namad-layer">
+                            test
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+
+        <div class="bottom-layer">
+            <div class="container">
+                <div class="socials">
+                    <a href=""><i class="zmdi zmdi-facebook"></i></a>
+                    <a href=""><i class="zmdi zmdi-linkedin"></i></a>
+                    <a href=""><i class="zmdi zmdi-google-old"></i></a>
+                    <a href=""><i class="icon-whatsapp"></i></a>
+                    <a target="_blank" href="http://instagram.com/atiehjob"><i class="icon-instagram"></i></a>
+                    <a target="_blank" href="http://t.me/atiehjob"><i class="icon-telegram"></i></a>
+                </div>
+                <p>
+                    تمامی حقوق مادی و معنوی این سایت متعلق به <a href="/"> آتیه کار </a> می باشد،  کپی برداری از منابع پیگرد قانونی خواهد داشت .
+                </p>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </footer>*@
+
+<style>
+    .footer {
+        background: #222222 none repeat scroll 0 0;
+        border-top: 4px solid #fcab0e;
+        margin: 0;
+        padding: 20px 0;
+    }
+
+    .footer_dv {
+        width: 100%;
+    }
+
+    .footer-title {
+        color: #fcab0e;
+        font-family: "Samim";
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        border-bottom: 1px dashed #fcab0e;
+    }
+
+        .footer-title h4 {
+            font-size: 18px;
+            display: inline-block;
+            border-bottom: 2px solid lime;
+            padding-bottom: 10px;
+            margin-bottom: -1px;
+        }
+
+    .footer_dv ul {
+        list-style: outside none none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .footer_dv ul li:first-child {
+            border-top: medium none;
+            box-shadow: none;
+        }
+
+        .footer_dv ul li {
+            border-top: 1px solid #000;
+            box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2);
+            color: #f1f2f2;
+            padding: 5px 0;
+        }
+
+            .footer_dv ul li a {
+                color: white;
+            }
+
+    .footer_dv p {
+        color: #fff;
+        font-size: 14px;
+        line-height: 20px;
+        margin: 0 0 15px;
+        text-align: justify;
+    }
+
+
+
+
+
+    /*------------------*/
+    .snip1472 {
+        position: relative;
+        font-size: 20px;
+        color: #e6e6e6;
+        width: 45px;
+        margin: 4px;
+        height: 45px;
+        line-height: 45px;
+        display: inline-block;
+        text-align: center;
+        -webkit-perspective: 50em;
+        perspective: 50em;
+        text-decoration: none;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+        .snip1472:after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 2px solid #e6e6e6;
+            content: '';
+            z-index: -1;
+            border-radius: 50%;
+        }
+
+        .snip1472:before {
+            color: #fff;
+        }
+
+        .snip1472:before,
+        .snip1472:after {
+            -webkit-transition: all 0.45s ease-in-out;
+            transition: all 0.45s ease-in-out;
+        }
+
+        .snip1472:hover,
+        .snip1472:active,
+        .snip1472.hover {
+            /*color: #c0392b;*/
+            color: lime
+        }
+
+            .snip1472:hover:after,
+            .snip1472:active:after,
+            .snip1472.hover:after {
+                border-color: #fcab0e transparent #fcab0e transparent;
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+
+    .copy-right {
+        background-color: #424558;
+        /*position: fixed;*/
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 35px;
+        text-align: center;
+        color: #CCC;
+    }
+
+        .copy-right p {
+            padding: 10.5px;
+            margin: 0px;
+            line-height: 100%;
+        }
+
+        .copy-right a {
+            color: #fcab0e;
+        }
+</style>
+
+<section class="footer">
     <div class="container">
-        <div class="support-layer">
-            <a href="#">در این سایت شغل مناسب خود را پیدا کنید.</a>
-            <span> </span>
-        </div>
-    </div>
-
-    <div class="top-layer">
-
-        <div class="container">
-            <section class="about-layer">
-                <div class="inner">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="footer_dv">
+                    <div class="footer-title"><h4>مشخصات کلی</h4></div>
                     <ul>
-                        <li><a>آگهی‌های استخدام</a></li>
-                        <li><a>‌سوالات متداول</a></li>
+                        <li class="line_rv"><a href="#">درباره ما</a></li>
+
+                        <li><a href="hp-printer-support.php">Hp printer Support</a></li>
+                        <li><a href="dell-printer-support.php">Dell Printer Support</a></li>
+                        <li><a href="epson-printer-support.php">Epson printer Support</a></li>
+                        <li><a href="samsung-printer-support.php">Samsung Printer Support</a></li>
+                        <li><a href="lexmark-printer-support.php">Lexmark Printer Support</a></li>
                     </ul>
-
                 </div>
-            </section>
+            </div>
+            <div class="col-lg-4  col-md-4 col-sm-4">
+                <div class="footer_dv">
+                    <div class="footer-title"><h4>خدمات</h4></div>
 
-            <div class="left-side">
-                <div class="right-col">
                     <ul>
-                        <li><a href="/">صفحه اصلی</a></li>
+                        <li><a href="tosiba-printer-support.php">Toshiba Printer Support</a></li>
+                        <li><a href="panasonic-printer-support.php">Panasonic Printer Support</a></li>
+                        <li><a href="xerox-printer-support.php">Xerox Printer Support</a></li>
+                        <li><a href="brother-printer-support.php">Brother printer support</a></li>
+                        <li><a href="zebra-printer-support.php">Zebra printer support</a></li>
+                        <li><a href="lenovo-printer-support.php">Lenovo printer Support</a></li>
+
+
                     </ul>
-
                 </div>
-                <div class="left-col">
-                    <!-- newsletter -->
-                    <div class="newsletter">
-                        <h3> عضویت در خبرنامه </h3>
-                        <p>
-                            ثبت نام رایگان ...
-                        </p>
+            </div>
+            <div class="col-lg-4  col-md-4 col-sm-4">
+                <div class="footer_dv">
+                    <div class="footer-title"><h4>تماس با ما</h4></div>
 
-                        <form data-ajax="true" data-method="post" data-ajax-mode="replace" data-ajax-success="EmailStatus"
-                              action="/Home/AddToNewsLetter" method="post">
+                    <p>Printer customer Support</p>
+                    <p>
+                        USA (TOLL FREE) 8322372800<br>
 
-                            <input type="text" name="Email" placeholder="ایمیل خود را وارد نمایید" id="NewsLetterEmail">
-                            <button type="submit" class="btn btn-success">عضویت</button>
-                        </form>
-
-                    </div>
-
-                    <!-- namad -->
-                    <div class="namad-layer">
-                        test
+                    </p>
+                    <div class="col text-center">
+                        <br class="clearfix">
+                        <a href="#" class="snip1472"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="snip1472"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="snip1472"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="snip1472"><i class="fab fa-google-plus-g"></i></a>
                     </div>
                 </div>
             </div>
-
-            <div class="clearfix"></div>
-        </div>
-
-    </div>
-
-    <div class="bottom-layer">
-        <div class="container">
-            <div class="socials">
-                <a href=""><i class="zmdi zmdi-facebook"></i></a>
-                <a href=""><i class="zmdi zmdi-linkedin"></i></a>
-                <a href=""><i class="zmdi zmdi-google-old"></i></a>
-                <a href=""><i class="icon-whatsapp"></i></a>
-                <a target="_blank" href="http://instagram.com/atiehjob"><i class="icon-instagram"></i></a>
-                <a target="_blank" href="http://t.me/atiehjob"><i class="icon-telegram"></i></a>
-            </div>
-            <p>
-                تمامی حقوق مادی و معنوی این سایت متعلق به <a href="/"> آتیه کار </a> می باشد،  کپی برداری از منابع پیگرد قانونی خواهد داشت .
-            </p>
-            <div class="clearfix"></div>
         </div>
     </div>
-</footer>
+</section>
+<div class="copy-right">
+    <p>
+        تمامی حقوق مادی و معنوی این سایت متعلق به <a href="/"> آتیه کار </a> می باشد،  کپی برداری از منابع پیگرد قانونی خواهد داشت .
+    </p>
+</div>

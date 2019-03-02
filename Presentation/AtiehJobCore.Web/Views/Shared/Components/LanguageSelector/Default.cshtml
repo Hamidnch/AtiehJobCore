@@ -54,31 +54,31 @@
             Selected = lang.Id.Equals(Model.CurrentLanguageId)
         });
 
-        <div>
-            <div class="navbar-nav">
-                <div class="dropdown">
-                    <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown"
-                       id="userDropdown" aria-haspopup="true"
-                       aria-expanded="false" href="#">
-                        <img class="img-thumbnail userImage" src="" alt="" asp-append-version="true"
-                             onerror="this.style.visibility = 'hidden';this.width=0; this.height=0;" />
-                        <span class="author">زبان سیستم</span>
+
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown"
+               id="userDropdown" aria-haspopup="true" role="button"
+               aria-expanded="false" href="#">
+                @*<img class="img-thumbnail userImage" src="" alt="" asp-append-version="true"
+                    onerror="this.style.visibility = 'hidden';this.width=0; this.height=0;" />*@
+                <i class="fa fa-language">
+                </i>
+                زبان سیستم
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="userDropdown">
+
+                @foreach (var item in languages)
+                {
+                    var className = item.Selected ? "active" : "";
+                    <a class="dropdown-item @className" href="@item.Value">
+                        @item.Text
                     </a>
-
-                    <div class="dropdown-menu" aria-labelledby="userDropdown">
-
-                        @foreach (var item in languages)
-                        {
-                            var className = item.Selected ? "active" : "";
-                            <a class="dropdown-item @className" href="@item.Value">
-                                @item.Text
-                            </a>
-                        }
-                        <div class="dropdown-divider"></div>
-                    </div>
-                </div>
+                    <div class="dropdown-divider"></div>
+                }
             </div>
-        </div>
+        </li>
 
         @*<div class="col px-0 language-list-mobile option-list-mobile text-center">
                 <h6 class="language-button mobile-option-button mb-0">Language</h6>

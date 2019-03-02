@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="source\customs\account.css" />
     <None Remove="Views\Home\Index.cshtml~RF56fc6cc.TMP" />
     <None Remove="Views\Home\Index.cshtml~RF5d1237b.TMP" />
   </ItemGroup>
@@ -771,6 +772,7 @@
     <Content Include="source\core-ui\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
     <Content Include="source\core-ui\simple-line-icons\fonts\Simple-Line-Icons.woff" />
     <Content Include="source\core-ui\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="source\customs\account.css" />
     <Content Include="source\customs\custom.css" />
     <Content Include="source\customs\custom.js" />
     <Content Include="source\customs\custom.min.js" />
@@ -1151,6 +1153,9 @@
     <None Include="wwwroot\css\admin\ckeditor\styles.js" />
     <None Include="wwwroot\img\brand\logo.svg" />
     <None Include="wwwroot\img\brand\sygnet.svg" />
+    <None Include="wwwroot\img\slider\slide1.jpeg" />
+    <None Include="wwwroot\img\slider\slide2.jpeg" />
+    <None Include="wwwroot\img\slider\slide3.jpeg" />
     <None Include="wwwroot\temp\bootstrap-material-design.min.js" />
     <None Include="wwwroot\temp\floating-label.min.css" />
     <None Include="wwwroot\temp\ghpages-materialize.min.css" />

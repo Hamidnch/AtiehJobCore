@@ -12640,11 +12640,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web.Framework\\AtiehJobCore.Web.Framework.csproj",
+      "projectUniqueName": "D:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web.Framework\\AtiehJobCore.Web.Framework.csproj",
       "projectName": "AtiehJobCore.Web.Framework",
-      "projectPath": "H:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web.Framework\\AtiehJobCore.Web.Framework.csproj",
+      "projectPath": "D:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web.Framework\\AtiehJobCore.Web.Framework.csproj",
       "packagesPath": "C:\\Users\\Chegini-pc\\.nuget\\packages\\",
-      "outputPath": "H:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web.Framework\\obj\\",
+      "outputPath": "D:\\Programming New\\AtiehJobCore\\Presentation\\AtiehJobCore.Web.Framework\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12663,14 +12663,14 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\AtiehJobCore.Core.csproj": {
-              "projectPath": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\AtiehJobCore.Core.csproj"
+            "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\AtiehJobCore.Core.csproj": {
+              "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\AtiehJobCore.Core.csproj"
             },
-            "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\AtiehJobCore.Data.csproj": {
-              "projectPath": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\AtiehJobCore.Data.csproj"
+            "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\AtiehJobCore.Data.csproj": {
+              "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Data\\AtiehJobCore.Data.csproj"
             },
-            "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Services\\AtiehJobCore.Services.csproj": {
-              "projectPath": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Services\\AtiehJobCore.Services.csproj"
+            "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Services\\AtiehJobCore.Services.csproj": {
+              "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Services\\AtiehJobCore.Services.csproj"
             }
           }
         }

@@ -10341,11 +10341,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\AtiehJobCore.Core.csproj",
+      "projectUniqueName": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\AtiehJobCore.Core.csproj",
       "projectName": "AtiehJobCore.Core",
-      "projectPath": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\AtiehJobCore.Core.csproj",
+      "projectPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\AtiehJobCore.Core.csproj",
       "packagesPath": "C:\\Users\\Chegini-pc\\.nuget\\packages\\",
-      "outputPath": "H:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\obj\\",
+      "outputPath": "D:\\Programming New\\AtiehJobCore\\Libraries\\AtiehJobCore.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

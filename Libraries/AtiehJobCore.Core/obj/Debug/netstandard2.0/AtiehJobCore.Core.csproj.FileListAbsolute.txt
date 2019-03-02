@@ -1,12 +1,3 @@
-D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\bin\Debug\netstandard2.0\AtiehJobCore.Core.deps.json
-D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\bin\Debug\netstandard2.0\AtiehJobCore.Core.dll
-D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\bin\Debug\netstandard2.0\AtiehJobCore.Core.pdb
-D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.csproj.CoreCompileInputs.cache
-D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.AssemblyInfoInputs.cache
-D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.AssemblyInfo.cs
-D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.dll
-D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.pdb
-D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.csprojAssemblyReference.cache
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\bin\Debug\netstandard2.0\AtiehJobCore.Core.deps.json
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\bin\Debug\netstandard2.0\AtiehJobCore.Core.dll
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\bin\Debug\netstandard2.0\AtiehJobCore.Core.pdb
@@ -16,3 +7,12 @@ H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandar
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.dll
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.pdb
 H:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.csprojAssemblyReference.cache
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\bin\Debug\netstandard2.0\AtiehJobCore.Core.deps.json
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\bin\Debug\netstandard2.0\AtiehJobCore.Core.dll
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\bin\Debug\netstandard2.0\AtiehJobCore.Core.pdb
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.csprojAssemblyReference.cache
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.csproj.CoreCompileInputs.cache
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.AssemblyInfoInputs.cache
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.AssemblyInfo.cs
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.dll
+D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Core\obj\Debug\netstandard2.0\AtiehJobCore.Core.pdb

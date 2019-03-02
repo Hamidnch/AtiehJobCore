@@ -148,7 +148,7 @@ namespace AtiehJobCore.Services.Authentication.External
             var registrationRequest = new UserRegistrationRequest(_workContext.CurrentUser,
                 parameters.Email, parameters.Email, parameters.Email, parameters.Email,
                 CommonHelper.GenerateRandomDigitCode(20),
-                PasswordFormat.Hashed, UserType.Other, registrationIsApproved);
+                PasswordFormat.Hashed, UserType.Guest, registrationIsApproved);
 
             //whether registration request has been completed successfully
             var registrationResult = _userRegistrationService.RegisterUser(registrationRequest);

@@ -1,0 +1,59 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+body {
+    /*background: linear-gradient(#fff, #e2e2e2) no-repeat;*/
+    /*background: url(../images/bg.png) #f8f8ff;*/
+    font-family: 'Samim', Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #000;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Samim';
+    src: url('/webfonts/samim/Samim.eot');
+    src: url('/webfonts/samim/Samim.eot?#iefix') format('embedded-opentype'), 
+         url('/webfonts/samim/Samim.woff') format('woff'), 
+         url('/webfonts/samim/Samim.ttf') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Samim';
+    src: url('/webfonts/samim/Samim-Bold.eot');
+    src: url('/webfonts/samim/Samim-Bold.eot?#iefix') format('embedded-opentype'), 
+         url('/webfonts/samim/Samim-Bold.woff') format('woff'), 
+         url('/webfonts/samim/Samim-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+.field-validation-error {
+    margin-right: 7px;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.message-error,
+.message-error ul li {
+    color: #dc3545;
+} 
+.validation-summary-valid.alert-danger {
+    display: none;
+}
+
+.validation-summary-valid.alert-warning {
+    display: none;
+}
+#content {
+    padding-top: 50px;
+}

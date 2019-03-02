@@ -1,128 +1,219 @@
-﻿@*@inject IUsersPhotoService UsersPhotoService;
-    @{
-        var displayName = User.Identity.GetUserDisplayName();
-        var photoUrl = UsersPhotoService.GetCurrentUserPhotoUrl();
-    }*@
-
-@*navbar bg-dark navbar-dark navbar-expand-sm fixed-top*@
-<div class="navbar navbar-expand-md navbar-expand-sm navUp navbar-light bg-light fixed-top">
-    <div class="container-fluid">
-        <a asp-controller="Home" asp-action="Index" asp-area="" class="navbar-brand d-none d-sm-inline-block">
-            آتیه کار
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#myToggle" aria-controls="myToggle" aria-expanded="false"
-                aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="myToggle">
-            <div class="navbar-nav ml-2">
-                <a class="nav-item nav-link waves-effect waves-light btn" asp-area="" asp-controller="Home" asp-action="Index">
-                    <span class="fas fa-home" aria-hidden="true"></span>
+﻿<nav id="main-nav" class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+    <a asp-controller="Home" asp-action="Index" asp-area="" class="navbar-brand d-none d-sm-inline-block">
+        @T("AtiehJob.Logo")
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="fa fa-home" aria-hidden="true"></i>
                     خانه
+                    <span class="sr-only">(current)</span>
                 </a>
-            </div>
-
-            <div class="navbar-nav">
-                <div class="dropdown">
-                    <a class="nav-item nav-link waves-effect waves-light btn dropdown-toggle" data-toggle="dropdown"
-                       id="userDropdown" aria-haspopup="true"
-                       aria-expanded="false" href="#">
-                        <img class="img-thumbnail userImage" src="" alt="" asp-append-version="true"
-                             onerror="this.style.visibility = 'hidden';this.width=0; this.height=0;" />
-                        <span class="author">Test</span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" asp-controller="Home" asp-action="ColumnsOne" asp-area="">
-                            <span class="mr-1 fas fa-user" aria-hidden="true"></span>
-                            تک ستونی
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" asp-controller="Home" asp-action="ColumnsTwo" asp-area="">
-                            <span class="mr-1 fas fa-user" aria-hidden="true"></span>
-                            دو ستونی
-                        </a>
-                        <a class="dropdown-item" asp-controller="Home" asp-action="ColumnsThird" asp-area="">
-                            <span class="mr-1 fas fa-user" aria-hidden="true"></span>
-                            سه ستونی
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" asp-controller="Home" asp-action="Error" asp-area="">
-                            <span class="mr-1 fas fa-sign-out-alt" aria-hidden="true"></span>
-                            خطا
-                        </a>
-                    </div>
-                </div>
-            </div>
+            </li>
             @if (IsAuthenticated())
             {
                 if (IsAdminRole)
                 {
-                    <div class="navbar-nav ml-2 right">
-                        <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="Home" asp-action="Index" asp-area="Admin">
-                            <span class="fas fa-arrow-left" aria-hidden="true"></span> مدیر سیستم
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index" asp-area="Admin">
+                            <i class="fa fa-atlas" aria-hidden="true">
+                                <span class="badge badge-danger">11</span>
+                            </i>
+                            مدیر سیستم
                         </a>
-                    </div>
+                    </li>
                 }
-                <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="User" asp-action="Logout" asp-area="Account">
-                        <span class="fas fa-sign-out-alt" aria-hidden="true"></span> خروج
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="User" asp-action="Logout" asp-area="Account">
+                        <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+                        خروج
                     </a>
-                </div>
+                </li>
             }
             else
             {
-                <div class="navbar-nav ml-2">
-                    <a id="login-button" asp-action="Login" asp-controller="User" asp-area="Account"
-                       class="nav-item nav-link waves-effect waves-light btn">
-                        <span class="fas fa-sign-in-alt" aria-hidden="true"></span>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="Login" asp-controller="User" asp-area="Account">
+                        <i class="fa fa-sign-in-alt" aria-hidden="true">
+                        </i>
                         ورود
                     </a>
-                </div>
-                @*<div class="navbar-nav ml-2">
-                        <!-- Modal Trigger -->
-                        <a class="nav-item nav-link modal-trigger waves-effect waves-light btn" data-target="#login-modal"
-                           data-ajax="true" data-ajax-method="GET" data-ajax-mode="replace"
-                           data-toggle="modal" data-ajax-update="#login-modal" data-i-logon-link="true"
-                           asp-controller="User" asp-action="Login" asp-area="Account">
-                            ورود به سیستم
-                        </a>
-
-                    </div>*@
-
-                <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="User" asp-action="RegisterJobseeker" asp-area="Account">
-                        <span class="fas fa-plug"></span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="User" asp-action="RegisterJobseeker" asp-area="Account">
+                        <i class="fa fa-plug" aria-hidden="true">
+                        </i>
                         ثبت نام کارجو
                     </a>
-                </div>
-                <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="User" asp-action="RegisterEmployer" asp-area="Account">
-                        <span class="fas fa-plug"></span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="User" asp-action="RegisterEmployer" asp-area="Account">
+                        <i class="fa fa-plug" aria-hidden="true">
+                        </i>
                         ثبت نام کارفرما
                     </a>
-                </div>
-                <div class="navbar-nav ml-2">
-                    <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="User" asp-action="RegisterPlacement" asp-area="Account">
-                        <span class="fas fa-plug"></span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="User" asp-action="RegisterPlacement" asp-area="Account">
+                        <i class="fa fa-plug" aria-hidden="true">
+                        </i>
                         ثبت نام کاریاب
                     </a>
-                </div>
+                </li>
             }
-            <form class="form-inline mt-2 mt-md-0 mr-auto">
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </span>
-                    <input type="text" class="validate"
-                           placeholder="جستجو ..." id="txtSearch" name="txtSearch">
-                </div>
-            </form>
 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-envelope">
+                        <span class="badge badge-primary">11</span>
+                    </i>
+                    تست
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" asp-controller="Home" asp-action="ColumnsOne" asp-area="">تک ستونی</a>
+                    <a class="dropdown-item" asp-controller="Home" asp-action="ColumnsTwo" asp-area="">دو ستونی</a>
+                    <a class="dropdown-item" asp-controller="Home" asp-action="ColumnsThird" asp-area="">سه ستونی</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" asp-controller="Home" asp-action="Error" asp-area="">خطا</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-bell">
+                        <span class="badge badge-info">11</span>
+                    </i>
+                    پیام های دریافتی
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fa fa-globe">
+                        <span class="badge badge-success">11</span>
+                    </i>
+                    پیام های ارسالی
+                </a>
+            </li>
             @await Component.InvokeAsync("LanguageSelector")
-        </div>
+        </ul>
     </div>
-</div>
+</nav>
+
+
+@*<div class="navbar navbar-expand-md navbar-expand-sm navUp navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a asp-controller="Home" asp-action="Index" asp-area="" class="navbar-brand d-none d-sm-inline-block">
+                آتیه کار
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#myToggle" aria-controls="myToggle" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="myToggle">
+                <div class="navbar-nav ml-2">
+                    <a class="nav-item nav-link waves-effect waves-light btn" asp-area="" asp-controller="Home" asp-action="Index">
+                        <span class="fas fa-home" aria-hidden="true"></span>
+                        خانه
+                    </a>
+                </div>
+
+                <div class="navbar-nav">
+                    <div class="dropdown">
+                        <a class="nav-item nav-link waves-effect waves-light btn dropdown-toggle" data-toggle="dropdown"
+                           id="userDropdown" aria-haspopup="true"
+                           aria-expanded="false" href="#">
+                            <img class="img-thumbnail userImage" src="" alt="" asp-append-version="true"
+                                 onerror="this.style.visibility = 'hidden';this.width=0; this.height=0;" />
+                            <span class="author">Test</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" asp-controller="Home" asp-action="ColumnsOne" asp-area="">
+                                <span class="mr-1 fas fa-user" aria-hidden="true"></span>
+                                تک ستونی
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" asp-controller="Home" asp-action="ColumnsTwo" asp-area="">
+                                <span class="mr-1 fas fa-user" aria-hidden="true"></span>
+                                دو ستونی
+                            </a>
+                            <a class="dropdown-item" asp-controller="Home" asp-action="ColumnsThird" asp-area="">
+                                <span class="mr-1 fas fa-user" aria-hidden="true"></span>
+                                سه ستونی
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" asp-controller="Home" asp-action="Error" asp-area="">
+                                <span class="mr-1 fas fa-sign-out-alt" aria-hidden="true"></span>
+                                خطا
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @if (IsAuthenticated())
+                {
+                    if (IsAdminRole)
+                    {
+                        <div class="navbar-nav ml-2 right">
+                            <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="Home" asp-action="Index" asp-area="Admin">
+                                <span class="fas fa-arrow-left" aria-hidden="true"></span> مدیر سیستم
+                            </a>
+                        </div>
+                    }
+                    <div class="navbar-nav ml-2">
+                        <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="User" asp-action="Logout" asp-area="Account">
+                            <span class="fas fa-sign-out-alt" aria-hidden="true"></span> خروج
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <div class="navbar-nav ml-2">
+                        <a id="login-button" asp-action="Login" asp-controller="User" asp-area="Account"
+                           class="nav-item nav-link waves-effect waves-light btn">
+                            <span class="fas fa-sign-in-alt" aria-hidden="true"></span>
+                            ورود
+                        </a>
+                    </div>
+                    <div class="navbar-nav ml-2">
+                        <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="User" asp-action="RegisterJobseeker" asp-area="Account">
+                            <span class="fas fa-plug"></span>
+                            ثبت نام کارجو
+                        </a>
+                    </div>
+                    <div class="navbar-nav ml-2">
+                        <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="User" asp-action="RegisterEmployer" asp-area="Account">
+                            <span class="fas fa-plug"></span>
+                            ثبت نام کارفرما
+                        </a>
+                    </div>
+                    <div class="navbar-nav ml-2">
+                        <a class="nav-item nav-link waves-effect waves-light btn" asp-controller="User" asp-action="RegisterPlacement" asp-area="Account">
+                            <span class="fas fa-plug"></span>
+                            ثبت نام کاریاب
+                        </a>
+                    </div>
+                }
+                <form class="form-inline mt-2 mt-md-0 mr-auto">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                        <input type="text" class="validate"
+                               placeholder="جستجو ..." id="txtSearch" name="txtSearch">
+                    </div>
+                </form>
+
+                @await Component.InvokeAsync("LanguageSelector")
+            </div>
+        </div>
+    </div>*@

@@ -20,4 +20,41 @@
     //        }
     //    });
     //});
+
+    //$('#bootstrap-touch-slider').bsTouchSlider();
+
+    $(document).ready(function ()
+    {
+        $(".dropdown").hover(
+            function ()
+            {
+                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideDown("fast");
+                $(this).toggleClass('open');
+            },
+            function ()
+            {
+                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideUp("fast");
+                $(this).toggleClass('open');
+            }
+        );
+
+        // Fixed navbar
+        var navbar = $("#main-nav"),
+            distance = navbar.offset().top,
+            $window = $(window);
+        $window.scroll(function ()
+        {
+            if ($window.scrollTop() >= distance)
+            {
+                navbar.removeClass("fixed-top").addClass("fixed-top");
+                $("body").css("padding-top", "30px");
+            }
+            else
+            {
+                navbar.removeClass("fixed-top");
+                $("body").css("padding-top", "0");
+            }
+        });
+    });
+
 </script>
