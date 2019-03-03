@@ -306,5 +306,21 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions.Startup
         {
             application.UseWebMarkupMin();
         }
+
+        /// <summary>
+        /// Configures the default security headers for your application.
+        /// </summary>
+        /// <param name="application">Builder for configuring an application's request pipeline</param>
+        public static void UseDefaultSecurityHeaders(this IApplicationBuilder application)
+        {
+            var policyCollection = new HeaderPolicyCollection()
+                .AddXssProtectionBlock()
+                .AddContentTypeOptionsNoSniff()
+                .AddStrictTransportSecurityMaxAgeIncludeSubDomains(maxAgeInSeconds: 60 * 60 * 24 * 365) // maxage = one year in seconds
+                .AddReferrerPolicyStrictOriginWhenCrossOrigin()
+                .RemoveServerHeader();
+
+            application.UseSecurityHeaders(policyCollection);
+        }
     }
 }

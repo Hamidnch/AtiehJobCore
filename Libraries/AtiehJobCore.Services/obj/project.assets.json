@@ -1159,6 +1159,20 @@
           "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll": {}
         }
       },
+      "Microsoft.Extensions.Caching.Redis/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0",
+          "StackExchange.Redis.StrongName": "1.2.6"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Redis.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -3951,6 +3965,7 @@
           "Microsoft.CodeAnalysis.CSharp": "2.10.0",
           "Microsoft.CodeAnalysis.CSharp.Scripting": "2.10.0",
           "Microsoft.EntityFrameworkCore": "2.2.0",
+          "Microsoft.Extensions.Caching.Redis": "2.2.0",
           "Microsoft.Extensions.FileProviders.Physical": "2.2.0",
           "Microsoft.Extensions.Identity.Core": "2.2.0",
           "MongoDB.Bson": "2.7.3",
@@ -5096,6 +5111,19 @@
         "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.xml",
         "microsoft.extensions.caching.memory.2.2.0.nupkg.sha512",
         "microsoft.extensions.caching.memory.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Caching.Redis/2.2.0": {
+      "sha512": "t4PK+PDGx8WLYxZR5LmSv5iBv/8RfnblYct+f7QwSNboeAhgO2WZm/AhuyXXv6scBOhlyuyAHNGflSPgmbhHIA==",
+      "type": "package",
+      "path": "microsoft.extensions.caching.redis/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.Caching.Redis.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Caching.Redis.xml",
+        "microsoft.extensions.caching.redis.2.2.0.nupkg.sha512",
+        "microsoft.extensions.caching.redis.nuspec"
       ]
     },
     "Microsoft.Extensions.Configuration/2.2.0": {

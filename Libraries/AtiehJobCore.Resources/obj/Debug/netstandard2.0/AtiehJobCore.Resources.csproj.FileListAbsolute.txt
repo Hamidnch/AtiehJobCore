@@ -72,4 +72,3 @@ D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netst
 D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\fa\AtiehJobCore.Resources.resources.dll
 D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.dll
 D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.pdb
-D:\Programming New\AtiehJobCore\Libraries\AtiehJobCore.Resources\obj\Debug\netstandard2.0\AtiehJobCore.Resources.csprojAssemblyReference.cache

@@ -3,9 +3,9 @@ using AtiehJobCore.Core.Configuration;
 using AtiehJobCore.Core.Domain.Common;
 using AtiehJobCore.Core.Enums;
 using AtiehJobCore.Core.Extensions;
-using AtiehJobCore.Core.Infrastructure;
 using AtiehJobCore.Core.MongoDb.Data;
 using AtiehJobCore.Core.Utilities;
+using AtiehJobCore.Services.Events;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
@@ -39,7 +39,10 @@ namespace AtiehJobCore.Services.Configuration
         #region Fields
 
         private readonly IRepository<Setting> _settingRepository;
+        private readonly IEventPublisher _eventPublisher;
         private readonly ICacheManager _cacheManager;
+
+        private IDictionary<string, IList<SettingForCaching>> _allSettings = null;
 
         #endregion
 
@@ -49,11 +52,13 @@ namespace AtiehJobCore.Services.Configuration
         /// Ctor
         /// </summary>
         /// <param name="cacheManager">Cache manager</param>
+        /// <param name="eventPublisher">Event publisher</param>
         /// <param name="settingRepository">Setting repository</param>
-        public SettingService(ICacheManager cacheManager,
+        public SettingService(ICacheManager cacheManager, IEventPublisher eventPublisher,
             IRepository<Setting> settingRepository)
         {
             this._cacheManager = cacheManager;
+            this._eventPublisher = eventPublisher;
             this._settingRepository = settingRepository;
         }
 
@@ -67,7 +72,6 @@ namespace AtiehJobCore.Services.Configuration
             public string Id { get; set; }
             public string Name { get; set; }
             public string Value { get; set; }
-            public string StoreId { get; set; }
         }
 
         #endregion
@@ -80,15 +84,19 @@ namespace AtiehJobCore.Services.Configuration
         /// <returns>Settings</returns>
         protected virtual IDictionary<string, IList<SettingForCaching>> GetAllSettingsCached()
         {
+            if (_allSettings != null)
+                return _allSettings;
+
             //cache
             var key = string.Format(SettingsAllKey);
-            return _cacheManager.Get(key, () =>
+            _allSettings = _cacheManager.Get(key, () =>
             {
                 //we use no tracking here for performance optimization
                 //anyway records are loaded only for read-only operations
                 var query = from s in _settingRepository.Table
                             orderby s.Name
                             select s;
+
                 var settings = query.ToList();
                 var dictionary = new Dictionary<string, IList<SettingForCaching>>();
                 foreach (var s in settings)
@@ -111,12 +119,13 @@ namespace AtiehJobCore.Services.Configuration
                     else
                     {
                         //already added
-                        //most probably it's the setting with the same name but for some certain store (storeId > 0)
+                        //most probably it's the setting with the same name
                         dictionary[resourceName].Add(settingForCaching);
                     }
                 }
                 return dictionary;
             });
+            return _allSettings;
         }
 
         #endregion
@@ -187,12 +196,11 @@ namespace AtiehJobCore.Services.Configuration
             return _settingRepository.GetById(settingId);
         }
 
-        /// <inheritdoc />
         /// <summary>
         /// Get setting by key
         /// </summary>
         /// <param name="key">Key</param>
-        /// <param name="loadSharedValueIfNotFound">A value indicating whether a shared (for all stores) value should be loaded if a value specific for a certain is not found</param>
+        /// <param name="loadSharedValueIfNotFound">A value indicating whether a shared value should be loaded if a value specific for a certain is not found</param>
         /// <returns>Setting</returns>
         public virtual Setting GetSetting(string key, bool loadSharedValueIfNotFound = false)
         {
@@ -211,22 +219,24 @@ namespace AtiehJobCore.Services.Configuration
 
             //load shared value?
             if (setting == null && loadSharedValueIfNotFound)
-                setting = settingsByKey.FirstOrDefault(x => x.StoreId == "");
+                setting = settingsByKey.FirstOrDefault();
 
-            return setting != null ? GetSettingById(setting.Id) : null;
+            if (setting != null)
+                return GetSettingById(setting.Id);
+
+            return null;
         }
 
-        /// <inheritdoc />
         /// <summary>
         /// Get setting value by key
         /// </summary>
         /// <typeparam name="T">Type</typeparam>
         /// <param name="key">Key</param>
         /// <param name="defaultValue">Default value</param>
-        /// <param name="loadSharedValueIfNotFound">A value indicating whether a shared (for all stores) value should be loaded if a value specific for a certain is not found</param>
+        /// <param name="loadSharedValueIfNotFound">A value indicating whether a shared value should be loaded if a value specific for a certain is not found</param>
         /// <returns>Setting value</returns>
         public virtual T GetSettingByKey<T>(string key, T defaultValue = default(T),
-            bool loadSharedValueIfNotFound = false)
+           bool loadSharedValueIfNotFound = false)
         {
             if (string.IsNullOrEmpty(key))
                 return defaultValue;
@@ -243,7 +253,7 @@ namespace AtiehJobCore.Services.Configuration
 
             //load shared value?
             if (setting == null && loadSharedValueIfNotFound)
-                setting = settingsByKey.FirstOrDefault(x => x.StoreId == "");
+                setting = settingsByKey.FirstOrDefault();
 
             return setting != null ? CommonHelper.To<T>(setting.Value) : defaultValue;
         }
@@ -295,7 +305,6 @@ namespace AtiehJobCore.Services.Configuration
             return _settingRepository.Collection.Find(new BsonDocument()).SortBy(x => x.Name).ToList();
         }
 
-        /// <inheritdoc />
         /// <summary>
         /// Determines whether a setting exists
         /// </summary>
@@ -341,7 +350,7 @@ namespace AtiehJobCore.Services.Configuration
                     continue;
 
                 var key = type.Name + "." + prop.Name;
-                //load by store
+
                 var setting = GetSettingByKey<string>(key, loadSharedValueIfNotFound: true);
                 if (string.IsNullOrEmpty(setting))
                     continue;
@@ -359,7 +368,7 @@ namespace AtiehJobCore.Services.Configuration
                 catch (Exception ex)
                 {
                     var msg = $"Could not convert setting {key} to type {prop.PropertyType.FullName}";
-                    EngineContext.Current.Resolve<Logging.ILogger>().InsertLog(MongoLogLevel.Error, msg, ex.Message);
+                    Core.Infrastructure.EngineContext.Current.Resolve<Logging.ILogger>().InsertLog(MongoLogLevel.Error, msg, ex.Message);
                 }
             }
 
@@ -386,7 +395,6 @@ namespace AtiehJobCore.Services.Configuration
                 var key = typeof(T).Name + "." + prop.Name;
                 //Duck typing is not supported in C#. That's why we're using dynamic type
                 dynamic value = prop.GetValue(settings, null);
-
                 SetSetting(key, value != null ? value : "", false);
             }
 
@@ -421,7 +429,6 @@ namespace AtiehJobCore.Services.Configuration
             var key = settings.GetSettingKey(keySelector);
             //Duck typing is not supported in C#. That's why we're using dynamic type
             dynamic value = propInfo.GetValue(settings, null);
-
             SetSetting(key, value != null ? value : "", clearCache);
         }
 

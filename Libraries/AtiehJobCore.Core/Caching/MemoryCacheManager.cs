@@ -150,6 +150,17 @@ namespace AtiehJobCore.Core.Caching
 
         /// <inheritdoc />
         /// <summary>
+        /// Gets or sets the value associated with the specified key.
+        /// </summary>
+        /// <param name="key">Key of cached item</param>
+        /// <returns>The cached value associated with the specified key</returns>
+        public virtual (T result, bool fromCache) TryGetValue<T>(string key)
+        {
+            return _cache.TryGetValue(key, out T value) ? (value, true) : (default(T), false);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
         /// Adds the specified key and object to the cache
         /// </summary>
         /// <param name="key">Key of cached item</param>

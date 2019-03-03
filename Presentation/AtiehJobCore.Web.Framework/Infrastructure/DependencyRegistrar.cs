@@ -93,15 +93,12 @@ namespace AtiehJobCore.Web.Framework.Infrastructure
             builder.RegisterType<PerRequestCacheManager>().InstancePerLifetimeScope();
 
             //cache manager
+            builder.RegisterType<MemoryCacheManager>().As<ICacheManager>().Named<ICacheManager>("atiehjob_cache_static").SingleInstance();
+
             if (config.RedisCachingEnabled)
             {
-                builder.RegisterType<MemoryCacheManager>().As<ICacheManager>().Named<ICacheManager>("atiehjob_cache_static").SingleInstance();
-                builder.RegisterType<RedisConnectionWrapper>().As<IRedisConnectionWrapper>().SingleInstance();
-                builder.RegisterType<RedisCacheManager>().As<ICacheManager>().InstancePerLifetimeScope();
-            }
-            else
-            {
-                builder.RegisterType<MemoryCacheManager>().As<ICacheManager>().Named<ICacheManager>("atiehjob_cache_static").SingleInstance();
+                builder.RegisterType<DistributedRedisCache>().As<ICacheManager>().SingleInstance();
+                builder.RegisterType<DistributedRedisCacheExtended>().As<IDistributedRedisCacheExtended>().SingleInstance();
             }
 
             //work context

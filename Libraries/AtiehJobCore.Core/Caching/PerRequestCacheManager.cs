@@ -42,7 +42,6 @@ namespace AtiehJobCore.Core.Caching
         #endregion
 
         #region Methods
-
         /// <inheritdoc />
         /// <summary>
         /// Gets or sets the value associated with the specified key.
@@ -57,6 +56,19 @@ namespace AtiehJobCore.Core.Caching
                 return default(T);
 
             return (T)items[key];
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets the value associated with the specified key.
+        /// </summary>
+        /// <typeparam name="T">Type of cached item</typeparam>
+        /// <param name="key">Key of cached item</param>
+        /// <returns>The cached value associated with the specified key</returns>
+        public virtual (T result, bool fromCache) TryGetValue<T>(string key)
+        {
+            var items = GetItems();
+            return items?[key] == null ? (default(T), false) : ((T)items[key], true);
         }
 
         /// <inheritdoc />

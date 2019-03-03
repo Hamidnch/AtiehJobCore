@@ -23,6 +23,9 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions.Startup.Middlewar
         /// <param name="configuration">Configuration root of the application</param>
         public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
+            var config = new AtiehJobConfig();
+            configuration.GetSection("AtiehJobConfig").Bind(config);
+
             //compression
             services.AddResponseCompression();
 
@@ -34,6 +37,15 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions.Startup.Middlewar
 
             //add distributed memory cache
             services.AddDistributedMemoryCache();
+
+            //add distributed Redis cache
+            if (config.RedisCachingEnabled)
+            {
+                services.AddDistributedRedisCache(options =>
+                {
+                    options.Configuration = config.RedisCachingConnectionString;
+                });
+            }
 
             //add HTTP session state feature
             services.AddAtiehJobHttpSessionService();
@@ -56,6 +68,12 @@ namespace AtiehJobCore.Web.Framework.Infrastructure.Extensions.Startup.Middlewar
         public void Configure(IApplicationBuilder application)
         {
             var atiehJobConfig = EngineContext.Current.Resolve<AtiehJobConfig>();
+
+            //default security headers
+            if (atiehJobConfig.UseDefaultSecurityHeaders)
+            {
+                application.UseDefaultSecurityHeaders();
+            }
 
             //use hsts
             if (atiehJobConfig.UseHsts)

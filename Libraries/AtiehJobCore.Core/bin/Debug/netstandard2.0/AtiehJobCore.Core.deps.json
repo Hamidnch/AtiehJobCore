@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "3f309075dd6d1656dd6c139e729c67b553a36bf0"
+    "signature": "5a2f15c1885f85ef32812c66ad8925b56016a26e"
   },
   "compilationOptions": {},
   "targets": {
@@ -22,6 +22,7 @@
           "Microsoft.CodeAnalysis.CSharp": "2.10.0",
           "Microsoft.CodeAnalysis.CSharp.Scripting": "2.10.0",
           "Microsoft.EntityFrameworkCore": "2.2.0",
+          "Microsoft.Extensions.Caching.Redis": "2.2.0",
           "Microsoft.Extensions.FileProviders.Physical": "2.2.0",
           "Microsoft.Extensions.Identity.Core": "2.2.0",
           "MongoDB.Bson": "2.7.3",
@@ -981,6 +982,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18315"
+          }
+        }
+      },
+      "Microsoft.Extensions.Caching.Redis/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0",
+          "StackExchange.Redis.StrongName": "1.2.6"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Redis.dll": {
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.0.18315"
           }
@@ -3240,6 +3254,13 @@
       "sha512": "sha512-yFs44RzB2Pzfoj4uk+mEz3MTTQKyeWb8gDhv5GyVPfHnLv0eQhGwzbw/5WpxAcVyOgG/H3/0ULY6g0/7/B+r7w==",
       "path": "microsoft.extensions.caching.memory/2.2.0",
       "hashPath": "microsoft.extensions.caching.memory.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Caching.Redis/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-t4PK+PDGx8WLYxZR5LmSv5iBv/8RfnblYct+f7QwSNboeAhgO2WZm/AhuyXXv6scBOhlyuyAHNGflSPgmbhHIA==",
+      "path": "microsoft.extensions.caching.redis/2.2.0",
+      "hashPath": "microsoft.extensions.caching.redis.2.2.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/2.2.0": {
       "type": "package",

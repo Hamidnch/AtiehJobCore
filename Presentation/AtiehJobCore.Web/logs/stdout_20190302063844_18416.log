@@ -16689,3 +16689,4 @@ info: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
       Executed action AtiehJobCore.Web.Controllers.HomeController.Index (AtiehJobCore.Web) in 8.0431ms
 info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
       Request finished in 18.4288ms 200 text/html; charset=utf-8
+Application is shutting down...

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "db1b39b1fefd693f725a01ebfbc6561895e35c0a"
+    "signature": "d23c0ddb53694360a0e125175ae3f976b8bc14d2"
   },
   "compilationOptions": {},
   "targets": {
@@ -32,10 +32,12 @@
           "Microsoft.AspNetCore.ResponseCompression": "2.2.0",
           "Microsoft.AspNetCore.Rewrite": "2.2.0",
           "Microsoft.AspNetCore.Session": "2.2.0",
+          "Microsoft.Extensions.Caching.Memory": "2.2.0",
           "Microsoft.Extensions.Caching.SqlServer": "2.2.0",
           "Microsoft.Extensions.DependencyInjection": "2.2.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "2.2.0",
           "NETStandard.Library": "2.0.3",
+          "NetEscapades.AspNetCore.SecurityHeaders": "0.9.0",
           "WebMarkupMin.AspNetCore2": "2.5.0",
           "cloudscribe.Web.Pagination": "2.1.7"
         },
@@ -1515,6 +1517,19 @@
           }
         }
       },
+      "Microsoft.Extensions.Caching.Redis/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0",
+          "StackExchange.Redis.StrongName": "1.2.6"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Redis.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18315"
+          }
+        }
+      },
       "Microsoft.Extensions.Caching.SqlServer/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Caching.Abstractions": "2.2.0",
@@ -2035,6 +2050,19 @@
           "lib/netstandard1.5/MongoDB.Driver.GridFS.dll": {
             "assemblyVersion": "2.7.3.0",
             "fileVersion": "2.7.3.0"
+          }
+        }
+      },
+      "NetEscapades.AspNetCore.SecurityHeaders/0.9.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetEscapades.AspNetCore.SecurityHeaders.dll": {
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
           }
         }
       },
@@ -3714,6 +3742,7 @@
           "Microsoft.CodeAnalysis.CSharp": "2.10.0",
           "Microsoft.CodeAnalysis.CSharp.Scripting": "2.10.0",
           "Microsoft.EntityFrameworkCore": "2.2.0",
+          "Microsoft.Extensions.Caching.Redis": "2.2.0",
           "Microsoft.Extensions.FileProviders.Physical": "2.2.0",
           "Microsoft.Extensions.Identity.Core": "2.2.0",
           "MongoDB.Bson": "2.7.3",
@@ -4447,6 +4476,13 @@
       "path": "microsoft.extensions.caching.memory/2.2.0",
       "hashPath": "microsoft.extensions.caching.memory.2.2.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Caching.Redis/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-t4PK+PDGx8WLYxZR5LmSv5iBv/8RfnblYct+f7QwSNboeAhgO2WZm/AhuyXXv6scBOhlyuyAHNGflSPgmbhHIA==",
+      "path": "microsoft.extensions.caching.redis/2.2.0",
+      "hashPath": "microsoft.extensions.caching.redis.2.2.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.Caching.SqlServer/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -4747,6 +4783,13 @@
       "sha512": "sha512-3uFn+WmjQLtD13nlOg0C6rmYL4TU/GF6GbJOdSdN1jbDRvuQNZShnJsI63gSvp3cpOWDIGp9yYeZBJap0/pzvA==",
       "path": "mongodb.driver.gridfs/2.7.3",
       "hashPath": "mongodb.driver.gridfs.2.7.3.nupkg.sha512"
+    },
+    "NetEscapades.AspNetCore.SecurityHeaders/0.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-425v9eqdv2fwgw1F9mWhgMbWbLvosmdN2tT6EoV1383Cb9k5Prhs4eS/Tb+JdGzVuai52zbw0h62XaumN6+tiw==",
+      "path": "netescapades.aspnetcore.securityheaders/0.9.0",
+      "hashPath": "netescapades.aspnetcore.securityheaders.0.9.0.nupkg.sha512"
     },
     "NETStandard.Library/2.0.3": {
       "type": "package",

@@ -37,23 +37,24 @@ namespace AtiehJobCore.Services.Localization
         /// {0} : language ID
         /// {1} : resource key
         /// </remarks>
-        private const string LocalStringResourcesByResourceNameKey = "AtiehJob.lsr.{0}-{1}";
+        private const string LocalStringResourcesByResourceNameKey = "AtiehJob.lsr.{0}";
         /// <summary>
         /// Key pattern to clear cache
         /// </summary>
         private const string LocalStringResourcesPatternKey = "AtiehJob.lsr.";
+
+        private Dictionary<string, LocaleStringResource> _allLocaleStringResource = null;
 
         #endregion
 
         #region Fields
 
         private readonly IRepository<LocaleStringResource> _lsrRepository;
-        private readonly ILogger _logger;
         private readonly IWorkContext _workContext;
-        private readonly ILanguageService _languageService;
-        private readonly IEventPublisher _eventPublisher;
+        private readonly ILogger _logger;
         private readonly ICacheManager _cacheManager;
         private readonly LocalizationSettings _localizationSettings;
+        private readonly IEventPublisher _eventPublisher;
 
         #endregion
 
@@ -64,23 +65,21 @@ namespace AtiehJobCore.Services.Localization
         /// </summary>
         /// <param name="cacheManager">Cache manager</param>
         /// <param name="logger">Logger</param>
+        /// <param name="workContext">Work context</param>
         /// <param name="lsrRepository">Locale string resource repository</param>
-        /// <param name="languageService"></param>
         /// <param name="localizationSettings">Localization settings</param>
-        /// <param name="eventPublisher"></param>
+        /// <param name="eventPublisher">Event published</param>
         public LocalizationService(ICacheManager cacheManager,
-            ILogger logger, IRepository<LocaleStringResource> lsrRepository,
-            ILanguageService languageService,
-            LocalizationSettings localizationSettings,
-            IEventPublisher eventPublisher, IWorkContext workContext)
+            ILogger logger, IWorkContext workContext,
+            IRepository<LocaleStringResource> lsrRepository,
+            LocalizationSettings localizationSettings, IEventPublisher eventPublisher)
         {
-            _cacheManager = cacheManager;
-            _logger = logger;
-            _lsrRepository = lsrRepository;
-            _languageService = languageService;
-            _localizationSettings = localizationSettings;
-            _eventPublisher = eventPublisher;
-            _workContext = workContext;
+            this._cacheManager = cacheManager;
+            this._logger = logger;
+            this._workContext = workContext;
+            this._lsrRepository = lsrRepository;
+            this._localizationSettings = localizationSettings;
+            this._eventPublisher = eventPublisher;
         }
 
         #endregion
@@ -95,15 +94,15 @@ namespace AtiehJobCore.Services.Localization
         public virtual void DeleteLocaleStringResource(LocaleStringResource localeStringResource)
         {
             if (localeStringResource == null)
-                throw new ArgumentNullException(paramName: nameof(localeStringResource));
+                throw new ArgumentNullException(nameof(localeStringResource));
 
-            _lsrRepository.Delete(entity: localeStringResource);
+            _lsrRepository.Delete(localeStringResource);
 
             //cache
-            _cacheManager.RemoveByPattern(pattern: LocalStringResourcesPatternKey);
+            _cacheManager.RemoveByPattern(LocalStringResourcesPatternKey);
 
             //event notification
-            _eventPublisher.EntityDeleted(entity: localeStringResource);
+            _eventPublisher.EntityDeleted(localeStringResource);
         }
 
         /// <inheritdoc />
@@ -114,19 +113,7 @@ namespace AtiehJobCore.Services.Localization
         /// <returns>Locale string resource</returns>
         public virtual LocaleStringResource GetLocaleStringResourceById(string localeStringResourceId)
         {
-            return string.IsNullOrEmpty(value: localeStringResourceId) ? null : _lsrRepository.GetById(id: localeStringResourceId);
-        }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// Gets a locale string resource
-        /// </summary>
-        /// <param name="resourceName">A string representing a resource name</param>
-        /// <returns>Locale string resource</returns>
-        public virtual LocaleStringResource GetLocaleStringResourceByName(string resourceName)
-        {
-            var languageId = _languageService.GetAllLanguages().FirstOrDefault()?.Id;
-            return GetLocaleStringResourceByName(resourceName: resourceName, languageId: languageId);
+            return string.IsNullOrEmpty(localeStringResourceId) ? null : _lsrRepository.GetById(localeStringResourceId);
         }
 
         /// <inheritdoc />
@@ -137,8 +124,8 @@ namespace AtiehJobCore.Services.Localization
         /// <param name="languageId">Language identifier</param>
         /// <param name="logIfNotFound">A value indicating whether to log error if locale string resource is not found</param>
         /// <returns>Locale string resource</returns>
-        public virtual LocaleStringResource GetLocaleStringResourceByName(string resourceName,
-            string languageId, bool logIfNotFound = true)
+        public virtual LocaleStringResource GetLocaleStringResourceByName(string resourceName, string languageId,
+            bool logIfNotFound = true)
         {
             var query = from lsr in _lsrRepository.Table
                         orderby lsr.ResourceName
@@ -147,7 +134,7 @@ namespace AtiehJobCore.Services.Localization
             var localeStringResource = query.FirstOrDefault();
 
             if (localeStringResource == null && logIfNotFound)
-                _logger.Warning(message: string.Format(format: "Resource string ({0}) not found. Language ID = {1}", arg0: resourceName, arg1: languageId));
+                _logger.Warning($"Resource string ({resourceName}) not found. Language ID = {languageId}");
             return localeStringResource;
         }
 
@@ -159,8 +146,8 @@ namespace AtiehJobCore.Services.Localization
         /// <returns>Locale string resources</returns>
         public virtual IList<LocaleStringResource> GetAllResources(string languageId)
         {
-            var filter = Builders<LocaleStringResource>.Filter.Eq(field: x => x.LanguageId, value: languageId);
-            return _lsrRepository.Collection.Find(filter: filter).ToList();
+            var filter = Builders<LocaleStringResource>.Filter.Eq(x => x.LanguageId, languageId);
+            return _lsrRepository.Collection.Find(filter).ToList();
         }
 
         /// <inheritdoc />
@@ -171,16 +158,16 @@ namespace AtiehJobCore.Services.Localization
         public virtual void InsertLocaleStringResource(LocaleStringResource localeStringResource)
         {
             if (localeStringResource == null)
-                throw new ArgumentNullException(paramName: nameof(localeStringResource));
+                throw new ArgumentNullException(nameof(localeStringResource));
 
             localeStringResource.ResourceName = localeStringResource.ResourceName.ToLowerInvariant();
-            _lsrRepository.Insert(entity: localeStringResource);
+            _lsrRepository.Insert(localeStringResource);
 
             //cache
-            _cacheManager.RemoveByPattern(pattern: LocalStringResourcesPatternKey);
+            _cacheManager.RemoveByPattern(LocalStringResourcesPatternKey);
 
             //event notification
-            _eventPublisher.EntityInserted(entity: localeStringResource);
+            _eventPublisher.EntityInserted(localeStringResource);
         }
 
         /// <inheritdoc />
@@ -191,16 +178,16 @@ namespace AtiehJobCore.Services.Localization
         public virtual void UpdateLocaleStringResource(LocaleStringResource localeStringResource)
         {
             if (localeStringResource == null)
-                throw new ArgumentNullException(paramName: nameof(localeStringResource));
+                throw new ArgumentNullException(nameof(localeStringResource));
 
             localeStringResource.ResourceName = localeStringResource.ResourceName.ToLowerInvariant();
-            _lsrRepository.Update(entity: localeStringResource);
+            _lsrRepository.Update(localeStringResource);
 
             //cache
-            _cacheManager.RemoveByPattern(pattern: LocalStringResourcesPatternKey);
+            _cacheManager.RemoveByPattern(LocalStringResourcesPatternKey);
 
             //event notification
-            _eventPublisher.EntityUpdated(entity: localeStringResource);
+            _eventPublisher.EntityUpdated(localeStringResource);
         }
 
         /// <inheritdoc />
@@ -211,8 +198,7 @@ namespace AtiehJobCore.Services.Localization
         /// <returns>A string representing the requested resource string.</returns>
         public virtual string GetResource(string resourceKey)
         {
-            return _workContext.WorkingLanguage != null
-                ? GetResource(resourceKey, _workContext.WorkingLanguage.Id) : "";
+            return _workContext.WorkingLanguage != null ? GetResource(resourceKey, _workContext.WorkingLanguage.Id) : "";
         }
 
         /// <inheritdoc />
@@ -235,51 +221,59 @@ namespace AtiehJobCore.Services.Localization
             if (_localizationSettings.LoadAllLocaleRecordsOnStartup)
             {
                 //load all records (cached)
-                var key = string.Format(format: LocalStringResourcesAllKey, arg0: languageId);
-                var resources = _cacheManager.Get(key: key, acquire: () =>
+                if (_allLocaleStringResource != null)
                 {
-                    var dictionary = new Dictionary<string, LocaleStringResource>();
-                    var locales = GetAllResources(languageId: languageId);
-                    foreach (var locale in locales)
+                    if (_allLocaleStringResource.ContainsKey(resourceKey.ToLowerInvariant()))
+                        result = _allLocaleStringResource[resourceKey.ToLowerInvariant()].ResourceValue;
+                }
+                else
+                {
+                    var key = string.Format(LocalStringResourcesAllKey, languageId);
+                    _allLocaleStringResource = _cacheManager.Get(key, () =>
                     {
-                        var resourceName = locale.ResourceName.ToLowerInvariant();
-                        if (!dictionary.ContainsKey(key: resourceName))
-                            dictionary.Add(key: resourceName.ToLowerInvariant(), value: locale);
-                        else
+                        var dictionary = new Dictionary<string, LocaleStringResource>();
+                        var locales = GetAllResources(languageId);
+                        foreach (var locale in locales)
                         {
-                            _lsrRepository.Delete(entity: locale);
+                            var resourceName = locale.ResourceName.ToLowerInvariant();
+                            if (!dictionary.ContainsKey(resourceName))
+                                dictionary.Add(resourceName.ToLowerInvariant(), locale);
+                            else
+                            {
+                                _lsrRepository.Delete(locale);
+                            }
                         }
-                    }
-                    return dictionary;
-                });
-                if (resources.ContainsKey(key: resourceKey.ToLowerInvariant()))
-                    result = resources[key: resourceKey.ToLowerInvariant()].ResourceValue;
+                        return dictionary;
+                    });
+                    if (_allLocaleStringResource.ContainsKey(resourceKey.ToLowerInvariant()))
+                        result = _allLocaleStringResource[resourceKey.ToLowerInvariant()].ResourceValue;
+                }
             }
             else
             {
                 //gradual loading
-                var key = string.Format(format: LocalStringResourcesByResourceNameKey, arg0: languageId, arg1: resourceKey);
-                var lsr = _cacheManager.Get(key: key, acquire: () =>
+                var key = string.Format(LocalStringResourcesByResourceNameKey, languageId, resourceKey);
+                var lsr = _cacheManager.Get(key, () =>
                 {
                     var builder = Builders<LocaleStringResource>.Filter;
-                    var filter = builder.Eq(field: x => x.LanguageId, value: languageId);
-                    filter = filter & builder.Eq(field: x => x.ResourceName, value: resourceKey.ToLowerInvariant());
-                    return _lsrRepository.Collection.Find(filter: filter).FirstOrDefault()?.ResourceValue;
+                    var filter = builder.Eq(x => x.LanguageId, languageId);
+                    filter = filter & builder.Eq(x => x.ResourceName, resourceKey.ToLowerInvariant());
+                    return _lsrRepository.Collection.Find(filter).FirstOrDefault()?.ResourceValue;
                 });
 
                 if (lsr != null)
                     result = lsr;
             }
 
-            if (!string.IsNullOrEmpty(value: result))
+            if (!string.IsNullOrEmpty(result))
             {
                 return result;
             }
 
             if (logIfNotFound)
-                _logger.Warning(message: string.Format(format: "Resource string ({0}) is not found. Language ID = {1}", arg0: resourceKey, arg1: languageId));
+                _logger.Warning($"Resource string ({resourceKey}) is not found. Language ID = {languageId}");
 
-            if (!string.IsNullOrEmpty(value: defaultValue))
+            if (!string.IsNullOrEmpty(defaultValue))
             {
                 result = defaultValue;
             }
@@ -300,7 +294,7 @@ namespace AtiehJobCore.Services.Localization
         public virtual string ExportResourcesToXml(Language language)
         {
             if (language == null)
-                throw new ArgumentNullException(paramName: nameof(language));
+                throw new ArgumentNullException(nameof(language));
             var sb = new StringBuilder();
 
             var xwSettings = new XmlWriterSettings
@@ -308,20 +302,20 @@ namespace AtiehJobCore.Services.Localization
                 ConformanceLevel = ConformanceLevel.Auto
             };
 
-            using (var stringWriter = new StringWriter(sb: sb))
-            using (var xmlWriter = XmlWriter.Create(output: stringWriter, settings: xwSettings))
+            using (var stringWriter = new StringWriter(sb))
+            using (var xmlWriter = XmlWriter.Create(stringWriter, xwSettings))
             {
 
                 xmlWriter.WriteStartDocument();
-                xmlWriter.WriteStartElement(localName: "Language");
-                xmlWriter.WriteAttributeString(localName: "Name", value: language.Name);
+                xmlWriter.WriteStartElement("Language");
+                xmlWriter.WriteAttributeString("Name", language.Name);
 
-                var resources = GetAllResources(languageId: language.Id);
+                var resources = GetAllResources(language.Id);
                 foreach (var resource in resources)
                 {
-                    xmlWriter.WriteStartElement(localName: "LocaleResource");
-                    xmlWriter.WriteAttributeString(localName: "Name", value: resource.ResourceName);
-                    xmlWriter.WriteElementString(localName: "Value", ns: null, value: resource.ResourceValue);
+                    xmlWriter.WriteStartElement("LocaleResource");
+                    xmlWriter.WriteAttributeString("Name", resource.ResourceName);
+                    xmlWriter.WriteElementString("Value", null, resource.ResourceValue);
                     xmlWriter.WriteEndElement();
                 }
 
@@ -341,16 +335,16 @@ namespace AtiehJobCore.Services.Localization
         public virtual void ImportResourcesFromXml(Language language, string xml)
         {
             if (language == null)
-                throw new ArgumentNullException(paramName: nameof(language));
+                throw new ArgumentNullException(nameof(language));
 
-            if (string.IsNullOrEmpty(value: xml))
+            if (string.IsNullOrEmpty(xml))
                 return;
 
             //stored procedures aren't supported
             var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml: xml);
+            xmlDoc.LoadXml(xml);
 
-            var nodes = xmlDoc.SelectNodes(xpath: @"//Language/LocaleResource");
+            var nodes = xmlDoc.SelectNodes(@"//Language/LocaleResource");
             if (nodes != null)
             {
                 foreach (XmlNode node in nodes)
@@ -360,28 +354,27 @@ namespace AtiehJobCore.Services.Localization
                         continue;
                     }
 
-                    var name = node.Attributes[name: "Name"].InnerText.Trim();
+                    var name = node.Attributes["Name"].InnerText.Trim();
                     var value = "";
-                    var valueNode = node.SelectSingleNode(xpath: "Value");
+                    var valueNode = node.SelectSingleNode("Value");
                     if (valueNode != null)
                         value = valueNode.InnerText;
 
-                    if (string.IsNullOrEmpty(value: name))
+                    if (string.IsNullOrEmpty(name))
                         continue;
 
                     //do not use "Insert"/"Update" methods because they clear cache
                     //let's bulk insert
-
                     var resource = (from l in _lsrRepository.Table
-                                    where l.ResourceName.ToLowerInvariant() == name.ToLowerInvariant()
-                                          && l.LanguageId == language.Id
+                                    where l.ResourceName.ToLowerInvariant() == name.ToLowerInvariant() &&
+                                          l.LanguageId == language.Id
                                     select l).FirstOrDefault();
 
                     if (resource != null)
                     {
                         resource.ResourceName = resource.ResourceName.ToLowerInvariant();
                         resource.ResourceValue = value;
-                        _lsrRepository.Update(entity: resource);
+                        _lsrRepository.Update(resource);
                     }
                     else
                     {
@@ -392,13 +385,13 @@ namespace AtiehJobCore.Services.Localization
                                 ResourceName = name.ToLowerInvariant(),
                                 ResourceValue = value
                             });
-                        _lsrRepository.Insert(entity: lsr);
+                        _lsrRepository.Insert(lsr);
                     }
                 }
             }
 
             //clear cache
-            _cacheManager.RemoveByPattern(pattern: LocalStringResourcesPatternKey);
+            _cacheManager.RemoveByPattern(LocalStringResourcesPatternKey);
         }
 
         /// <inheritdoc />
@@ -410,15 +403,15 @@ namespace AtiehJobCore.Services.Localization
         public virtual void ImportResourcesFromXmlInstall(Language language, string xml)
         {
             if (language == null)
-                throw new ArgumentNullException(paramName: nameof(language));
+                throw new ArgumentNullException(nameof(language));
 
-            if (string.IsNullOrEmpty(value: xml))
+            if (string.IsNullOrEmpty(xml))
                 return;
             //stored procedures aren't supported
             var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml: xml);
+            xmlDoc.LoadXml(xml);
 
-            var nodes = xmlDoc.SelectNodes(xpath: @"//Language/LocaleResource");
+            var nodes = xmlDoc.SelectNodes(@"//Language/LocaleResource");
             if (nodes != null)
             {
                 foreach (XmlNode node in nodes)
@@ -428,13 +421,13 @@ namespace AtiehJobCore.Services.Localization
                         continue;
                     }
 
-                    var name = node.Attributes[name: "Name"].InnerText.Trim();
+                    var name = node.Attributes["Name"].InnerText.Trim();
                     var value = "";
-                    var valueNode = node.SelectSingleNode(xpath: "Value");
+                    var valueNode = node.SelectSingleNode("Value");
                     if (valueNode != null)
                         value = valueNode.InnerText;
 
-                    if (string.IsNullOrEmpty(value: name))
+                    if (string.IsNullOrEmpty(name))
                         continue;
 
                     var lsr = (
@@ -444,14 +437,13 @@ namespace AtiehJobCore.Services.Localization
                             ResourceName = name.ToLowerInvariant(),
                             ResourceValue = value
                         });
-                    _lsrRepository.Insert(entity: lsr);
+                    _lsrRepository.Insert(lsr);
                 }
             }
 
             //clear cache
-            _cacheManager.RemoveByPattern(pattern: LocalStringResourcesPatternKey);
+            _cacheManager.RemoveByPattern(LocalStringResourcesPatternKey);
         }
-
         public virtual string GetLanguageFromXml(string xml)
         {
             if (string.IsNullOrEmpty(value: xml))
@@ -463,7 +455,7 @@ namespace AtiehJobCore.Services.Localization
 
             return langNode;
         }
-
         #endregion
     }
+
 }

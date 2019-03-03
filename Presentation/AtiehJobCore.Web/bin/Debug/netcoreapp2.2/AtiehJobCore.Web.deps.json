@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "0d73e4b9defbd2283be160379fdd4fb4e71c3f3c"
+    "signature": "9adcdc198837344d2a7a9440f847e12f69b91569"
   },
   "compilationOptions": {
     "defines": [
@@ -958,6 +958,22 @@
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
         }
       },
+      "Microsoft.Extensions.Caching.Redis/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0",
+          "StackExchange.Redis.StrongName": "1.2.6"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Redis.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18315"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Redis.dll": {}
+        }
+      },
       "Microsoft.Extensions.PlatformAbstractions/1.1.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
@@ -1398,6 +1414,22 @@
         },
         "compile": {
           "lib/netstandard1.5/MongoDB.Driver.GridFS.dll": {}
+        }
+      },
+      "NetEscapades.AspNetCore.SecurityHeaders/0.9.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Options": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetEscapades.AspNetCore.SecurityHeaders.dll": {
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/NetEscapades.AspNetCore.SecurityHeaders.dll": {}
         }
       },
       "NETStandard.Library/2.0.3": {
@@ -2267,6 +2299,7 @@
           "Microsoft.CodeAnalysis.CSharp": "2.10.0",
           "Microsoft.CodeAnalysis.CSharp.Scripting": "2.10.0",
           "Microsoft.EntityFrameworkCore": "2.2.0",
+          "Microsoft.Extensions.Caching.Redis": "2.2.0",
           "Microsoft.Extensions.FileProviders.Physical": "2.2.0",
           "Microsoft.Extensions.Identity.Core": "2.2.0",
           "MongoDB.Bson": "2.7.3",
@@ -2363,9 +2396,11 @@
           "Microsoft.AspNetCore.ResponseCompression": "2.2.0",
           "Microsoft.AspNetCore.Rewrite": "2.2.0",
           "Microsoft.AspNetCore.Session": "2.2.0",
+          "Microsoft.Extensions.Caching.Memory": "2.2.0",
           "Microsoft.Extensions.Caching.SqlServer": "2.2.0",
           "Microsoft.Extensions.DependencyInjection": "2.2.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "2.2.0",
+          "NetEscapades.AspNetCore.SecurityHeaders": "0.9.0",
           "WebMarkupMin.AspNetCore2": "2.5.0",
           "cloudscribe.Web.Pagination": "2.1.7"
         },
@@ -5416,6 +5451,13 @@
       "path": "microsoft.codeanalysis.workspaces.common/2.10.0",
       "hashPath": "microsoft.codeanalysis.workspaces.common.2.10.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Caching.Redis/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-t4PK+PDGx8WLYxZR5LmSv5iBv/8RfnblYct+f7QwSNboeAhgO2WZm/AhuyXXv6scBOhlyuyAHNGflSPgmbhHIA==",
+      "path": "microsoft.extensions.caching.redis/2.2.0",
+      "hashPath": "microsoft.extensions.caching.redis.2.2.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.PlatformAbstractions/1.1.0": {
       "type": "package",
       "serviceable": true,
@@ -5576,6 +5618,13 @@
       "sha512": "sha512-3uFn+WmjQLtD13nlOg0C6rmYL4TU/GF6GbJOdSdN1jbDRvuQNZShnJsI63gSvp3cpOWDIGp9yYeZBJap0/pzvA==",
       "path": "mongodb.driver.gridfs/2.7.3",
       "hashPath": "mongodb.driver.gridfs.2.7.3.nupkg.sha512"
+    },
+    "NetEscapades.AspNetCore.SecurityHeaders/0.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-425v9eqdv2fwgw1F9mWhgMbWbLvosmdN2tT6EoV1383Cb9k5Prhs4eS/Tb+JdGzVuai52zbw0h62XaumN6+tiw==",
+      "path": "netescapades.aspnetcore.securityheaders/0.9.0",
+      "hashPath": "netescapades.aspnetcore.securityheaders.0.9.0.nupkg.sha512"
     },
     "NETStandard.Library/2.0.3": {
       "type": "package",

@@ -37,10 +37,9 @@ namespace AtiehJobCore.Core.Extensions
         /// <returns>Cached item</returns>
         public static T Get<T>(this ICacheManager cacheManager, string key, int cacheTime, Func<T> acquire)
         {
-            if (cacheManager.IsSet(key))
-            {
-                return cacheManager.Get<T>(key);
-            }
+            var value = cacheManager.TryGetValue<T>(key);
+            if (value.fromCache == true)
+                return value.result;
 
             var result = acquire();
             if (cacheTime > 0)
